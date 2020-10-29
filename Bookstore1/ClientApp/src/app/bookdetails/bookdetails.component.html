@@ -1,0 +1,67 @@
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v7.0" nonce="yIA9hiEk"></script>
+<div class="content flex-row d-flex" *ngIf="books">
+<div *ngFor="let book of books" class="image"><img src={{book.imageUrl}}></div>
+<div *ngFor="let book of books" class="details">
+<div >
+  <h2>{{book.title}} </h2>
+  <div>
+    <dl class="dl-horizontal">
+      <dt>
+        Author: <span>{{book.author}}</span>
+      </dt>
+      <dt>
+        Introduction: <span class="introduction">{{book.introduction}}</span>
+</dt>
+      <dt>
+        Genre: <span>{{book.genre}}</span>
+</dt>
+      <dt>
+        Price: <span>{{book.price}}&nbsp;kr</span>
+</dt>
+    </dl>
+  </div>
+</div>
+<div>
+  <a routerLink="/booklist">Go back</a>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)" >Choose</button>&nbsp;&nbsp;
+</div>
+<div class="sharebuttons d-flex flex-row">
+  <div class="fb-share-button" data-href="http://localhost:4200/bookdetails?id=1" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4200%2Fbookdetails%3Fid%3D1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore btn btn-success"  style="    width: 150px;
+    height: 40px; color: white;
+    background-color: #2e5cb8">Facebook</a></div>
+  <div>
+    <a class="twitter-share-button btn btn-success" style="width: 150px;
+    height: 40px;
+    color: white;
+    background-color: #85a3e0"
+       href="https://twitter.com/intent/tweet">
+      Twitter
+    </a>
+  </div>&nbsp;&nbsp;
+  <div>
+    <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+    <script type="IN/Share" data-url="http://localhost:4200/bookdetails?id=1">
+    </script>
+  </div>&nbsp;&nbsp;
+</div>
+</div>
+</div>
+<ng-template summaryHost></ng-template>
+<script>
+  window.twttr = (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function (f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+
+

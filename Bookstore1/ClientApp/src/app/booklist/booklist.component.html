@@ -1,0 +1,83 @@
+<div id="total">
+<ng-template summaryHost></ng-template>
+<div class="catelog row">Romance</div>
+<div class="row listrow">
+  <div class="leftnavigatingdiv">
+    <button (click)="slideLeftRomance()" class="btn btn-default">
+      <i class="material-icons">chevron_left</i>
+    </button>
+  </div>
+  <div class="content d-flex flex-row" #romanceBooks>
+    <div *ngFor="let book of romances" >
+      <div><img src="assets/images/askim.jpg"></div>
+      <div class="title">
+        {{book.title}}&nbsp;&nbsp;
+      </div>
+      <div class="title">
+        <span class="author">Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
+      </div>
+      <div>
+        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a> <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+      </div>
+    </div>
+  </div>
+  <div class="rightnavigatingdiv">
+    <button (click)="slideRightRomance()" class="btn btn-default">
+      <i class="material-icons">chevron_right</i>
+    </button>
+  </div>
+</div>
+<div class="catelog row">Fiction</div>
+
+<div class="row listrow">
+  <div class="leftnavigatingdiv">
+    <button (click)="sideLLeftFiction()" class="btn btn-default">
+      <i class="material-icons">chevron_left</i>
+    </button>
+  </div>
+  <div class="content d-flex flex-row" #fictionBooks>
+    <div *ngFor="let book of fictions">
+      <div><img src="assets/images/askim.jpg"></div>
+      <div class="title">{{book.title}}</div>
+      <div class="title">
+        <span class="author">Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
+      </div>
+      <div>
+        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a>
+        <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+      </div>
+    </div>
+  </div>
+  <div class="rightnavigatingdiv">
+    <button (click)="slideRightFiction()" class="btn btn-default">
+      <i class="material-icons">chevron_right</i>
+    </button>
+  </div>
+</div>
+<div class="catelog row">Crime</div>
+
+<div class="row listrow">
+  <div class="navBtn leftnavigatingdiv">
+    <button (click)="sideLeftCrime()" class="btn btn-default">
+      <i class="material-icons">chevron_left</i>
+    </button>
+  </div>
+  <div class="content d-flex flex-row" #crimeBooks>
+    <div *ngFor="let book of crimes">
+      <div><img src="assets/images/askim.jpg"></div>
+      <div class="title">{{book.title}}</div>
+      <div class="title">
+        <span class="author">Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
+      </div>
+      <div>
+        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a><button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+      </div>
+    </div>
+  </div>
+  <div class="rightnavigatingdiv">
+    <button (click)="slideRightCrime()" class="btn btn-default">
+      <i class="material-icons">chevron_right</i>
+    </button>
+  </div>
+</div>
+</div>

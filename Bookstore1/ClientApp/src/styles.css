@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: red;
+} 
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+body {
+  padding: 0;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+
+div {
+  margin: 0;
+}
+
+
+.footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.layer1 {
+    z-index: 1;
+}
+
+.layer2 {
+  z-index: 2;
+}
+
+body > div {
+
+    padding: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-spacing: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+    overflow-y: hidden;
+}
+
+div, button, input[type=text] {
+  border-radius: 4px;
+  border: none;
+}
+
+.summaryPosition {
+    z-index: 4;
+    position: absolute;
+    top: 200px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button:hover {
+  background-color: blue;
+  color: white;
+}
+
+button {
+    font-weight: bold;
+}

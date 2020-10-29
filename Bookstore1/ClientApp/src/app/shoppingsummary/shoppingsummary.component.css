@@ -1,0 +1,62 @@
+#myDiv {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  z-index: 4;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  height: 25%;
+  width: 35%;
+  overflow-y:auto;
+  text-align: left;
+  padding: 10px;
+  word-wrap: break-word;
+  border-radius: 4px;
+  visibility: visible;
+}
+
+#myDivHeader {
+  padding-bottom: 20px;
+  cursor: move;
+  background-color: #f1f1f1;
+  color: #fff;
+}
+
+#x {
+  float: right;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  margin: 0;
+}
+
+th, td {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.title {
+  width: 40%;
+}
+
+.price, .amount, .remove {
+  width: 20%;
+}
+
+#x:hover {
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+}
+
+button {
+    font-weight: 500;
+}
+
+

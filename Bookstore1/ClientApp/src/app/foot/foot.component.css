@@ -1,0 +1,32 @@
+
+#bg-book {
+  //background-color: antiquewhite;
+  background-color: transparent;
+  height: 150px;
+  margin: 0;
+}
+
+text {
+    fill: black;
+}
+
+.greenText {
+  fill: black;
+  text-decoration: underline;
+}
+
+.coffee {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 800;
+  animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: 800;
+  }
+}

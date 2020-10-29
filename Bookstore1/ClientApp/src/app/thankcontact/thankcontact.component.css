@@ -1,0 +1,32 @@
+.bubble {
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+  width: 300px;
+  background: #ddd;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+  margin-top: 10%;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #ddd;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ddd;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+}
+
+.content {
+  height: 507px;
+  padding-left: 40%;
+  color: #000000;
+  font-weight: 400;
+}

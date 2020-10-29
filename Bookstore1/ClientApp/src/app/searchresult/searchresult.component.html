@@ -1,0 +1,22 @@
+<div class="container" style="height: 507px">
+  <div id="result"> Search result  </div>
+  <div class="content d-flex flex-row">
+    <div *ngFor="let book of books" class="cell">
+      <div><img src="assets/images/askim.jpg" width="115" height="172"></div>
+      <div class="title">
+        <span>Title:</span> &nbsp;{{book.title}}&nbsp;&nbsp;
+      </div>
+      <div>
+        <span>Author:</span> &nbsp;{{book.author}}&nbsp;&nbsp;
+      </div>
+      <div>
+        <span>Price:</span> &nbsp;{{book.price}}&nbsp;kr
+      </div>
+      <div>
+        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a> <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template summaryHost></ng-template>
+

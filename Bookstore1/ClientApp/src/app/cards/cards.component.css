@@ -1,0 +1,12 @@
+.container {
+  background-color: #f2f2f2;
+  box-shadow: 2px;
+}
+
+.container > div div{
+  border-bottom: 1px dotted #f2f2f2 ;
+}
+
+.noneborder {
+  border: none;
+}

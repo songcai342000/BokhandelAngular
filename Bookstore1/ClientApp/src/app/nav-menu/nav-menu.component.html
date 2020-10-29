@@ -1,0 +1,57 @@
+<div class="linkDiv linkDiv3"></div>
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 layer2">
+    <div class="container-fluid">
+      <div class="navbar-brand text-white"><span>Forest bookstore</span></div>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item navitem-left">
+            <div id="searchLinkDiv" (mousemove)="searchFocus()" (mouseout)="searchBlur()" style="height: 35px; width: 120px">
+              <a class="nav-link text-white" [routerLink]="" (click)="loadSearchBox()"><i class="material-icons">search</i></a>
+            </div>
+          </li>
+          <li class="nav-item navitem-left" [routerLinkActive]="['link-active']">
+            <div id="homeLinkDiv" (mousemove)="homeFocus()" (mouseout)="homeBlur()" style="height: 95%">
+              <a class="nav-link text-white dropdown text-white dropdown-toggle" data-toggle="dropdown" [routerLink]="['/']">Home</a>
+              <div class="" style="position: relative; left: 25%; top: -20px; z-index: 2; width: 94%; height: 0" (click)="caretUp()">
+                <ul class="dropdown-menu" style=" background-color: #ddd; position: relative;  top: 20px; left: -20%; z-index: 5">
+                  <li><a [routerLink]="['statistic']" style="margin-top: 0; color: black">Statistic</a></li>
+                  <li><a [routerLink]="['contact']" style="color: black">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+            
+          </li>
+
+          <li class="nav-item  navitem-left" id="booksli" [routerLinkActive]="['link-active']" >
+            <div id="booksLinkDiv" (mousemove)="booksFocus()" (mouseout)="booksBlur()" style="height: 95%">
+              <a id="booksLink" class="nav-link text-white" [routerLink]="['/booklist']">Books</a>
+            </div>
+          </li>
+          <li class="nav-item  navitem-left" id="cartli" [routerLinkActive]="['link-active']">
+            <div id="shoppingcartdiv">
+              <div class="zeroPadding">
+                <app-shoppingcart [bookCount]="bookNumber"></app-shoppingcart>
+              </div>
+              <div class="zeroPadding">
+                <a class="nav-link text-white" [routerLink]="" (click)="loadSummary()">
+                  <i class="material-icons">shopping_cart</i>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+<ng-template searchHost></ng-template>
+<div id="close">
+  <button id="x" (click)="closeDisplay()">
+    X
+  </button>
+</div>
+<ng-template summaryHost class="summaryPosition"></ng-template>
+
+

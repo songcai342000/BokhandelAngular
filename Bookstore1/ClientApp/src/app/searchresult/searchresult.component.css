@@ -1,0 +1,32 @@
+.container {
+    padding-left: 15%;
+    padding-top: 1%;
+}
+
+#result {
+    font-weight: bold;
+    margin-bottom: 4%;
+    font-size: 14px;
+    padding-left: 35%;
+}
+
+.content {
+    overflow-x: scroll;
+    width: 80%;
+    height: 65%;
+}
+
+.title {
+  font-size: 14px;
+  width: 90%;
+  height: auto;
+  word-wrap: break-word;
+}
+
+span {
+    font-weight: bold;
+}
+
+.cell {
+    width: 19%;
+}

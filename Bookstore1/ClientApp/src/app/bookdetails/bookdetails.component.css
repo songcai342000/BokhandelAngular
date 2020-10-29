@@ -1,0 +1,32 @@
+.content {
+  height: 507px;
+  width: auto;
+  margin-left: 33%;
+  margin-top: 4%;
+}
+.sharebuttons {
+    display: flex;
+    margin-top: 10px;
+}
+
+.sharebuttons button {
+  min-width: 120px;
+}
+
+.image {
+  margin-right: 2%;
+}
+
+.details {
+  width: 45%;
+  padding-left: 2%;
+}
+
+span {
+    font-weight: 400;
+}
+
+.introduction {
+    overflow-wrap: break-word; 
+}
+

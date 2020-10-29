@@ -1,0 +1,75 @@
+<div class="navigation">
+  <div class="leftnavigatingdiv">
+    <button (click)="slideLeftRomance()" class="btn btn-default">
+      <i class="material-icons">chevron_left</i>
+    </button>
+  </div>
+  <div class="content" #romanceBooks>
+    <div class="title">Romance is running </div>
+    <div class="d-flex flex-row">
+      <cdk-virtual-scroll-viewport *cdkVirtualFor="let book of romances" [class.selected]="book===selectedBook" orientation="horizental">
+        <div><img src="assets/images/askim.jpg" width="115" height="172"></div>
+        <div>{{book.title}}</div><div>
+          <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>&nbsp;&nbsp;
+          <a href="/bookdetails?id={{book.bookId}}">Detail</a>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+
+  </div>
+  <div class="rightnavigatingdiv">
+    <button (click)="slideRightRomance()" class="btn btn-default">
+      <i class="material-icons">chevron_right</i>
+    </button>
+  </div>
+</div>
+<div class="navigation">
+  <div class="leftnavigatingdiv">
+    <button (click)="sideLLeftFiction()" class="btn btn-default">
+      <i class="material-icons">chevron_left</i>
+    </button>
+  </div>
+  <div class="content" #fictionBooks>
+    <div class="title">Fiction</div>
+    <div class="d-flex flex-row">
+      <div *ngFor="let book of fictions" [class.selected]="book===selectedBook">
+        <div><img src="assets/images/askim.jpg" width="115" height="172"></div>
+        <div class="booktitle">{{book.title}}</div><div>
+          <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+          <a href="/bookdetails?id={{book.bookId}}">Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rightnavigatingdiv">
+    <button (click)="slideRightFiction()" class="btn btn-default">
+      <i class="material-icons">chevron_right</i>
+    </button>
+  </div>
+</div>
+<div class="navigation">
+  <div class="navBtn leftnavigatingdiv">
+    <button (click)="sideLeftCrime()" class="btn btn-default">
+      <i class="material-icons">chevron_left</i>
+    </button>
+  </div>
+  <div class="content" #crimeBooks>
+    <div class="title">Crime</div>
+    <div class="d-flex flex-row">
+      <div *ngFor="let book of crimes" [class.selected]="book===selectedBook">
+        <div><img src="assets/images/askim.jpg" width="115" height="172"></div>
+        <div>{{book.title}}</div><div>
+          <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>&nbsp;&nbsp;
+          <a href="/bookdetails?id={{book.bookId}}">Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="rightnavigatingdiv">
+  <button (click)="slideRightCrime()" class="btn btn-default">
+    <i class="material-icons">chevron_right</i>
+  </button>
+</div>
+</div>
+<ng-template summaryHost></ng-template>
+

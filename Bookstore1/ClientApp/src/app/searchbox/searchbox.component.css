@@ -1,0 +1,36 @@
+#searchBox {
+  width: 30%;
+  height: 400px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 6.5%;
+  z-index: 3;
+  padding: 1%;
+  padding-right: 2%;
+  background-color: #e6e6e6;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+input[type="text"], button {
+  border: none;
+}
+
+button {
+  text-align: center;
+  vertical-align: central;
+  border: none;
+  margin-top: 2px;
+  height: 85%;
+  border-radius: 15px;
+}
+
+#x {
+  float: right;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  margin: 0;
+}

@@ -1,0 +1,16 @@
+<div id="searchBox" style="width: auto; height: auto;  position: absolute; left: 50%; top: 6.5%; z-index: 3; padding: 1%; padding-right: 2%">
+    
+    <div class="d-flex flex-row">
+      <div ><input type="search" placeholder="Type your search term" (change)="getSearchTerm($event)" required></div><div>
+        <button type="button" (click)="sendSearch()" class="btn-default" style="">Search</button>
+      </div>
+    </div>
+    <div style="margin-top: 5px"><label for="condition">Search By</label></div>
+    <div>
+      <input type="radio" value="title" name="condition" (click)="byTitle()"> Title
+    </div>
+    <div>
+      <input type="radio" value="author" name="condition" (click)="byAuthor()"> Author
+    </div>
+</div>
+

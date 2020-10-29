@@ -1,0 +1,93 @@
+.bubble {
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+  width: 300px;
+  background: #ddd;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+  margin-top: 10%;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #ddd;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ddd;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+}
+
+.content {
+  height: 507px;
+  padding-left: 40%;
+  color: #000000;
+  font-weight: 400;
+}
+
+:host {
+  display: block;
+}
+
+.open-close-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  
+}
+
+@keyframes rotateText {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.1);
+  }
+}
+
+#bubbleDiv {
+  animation: rotateText 5s;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+#expectionDiv {
+  position: relative;
+  top: -100px;
+  z-index: 4;
+  width: 300px;
+  height: 100px;
+  opacity: 0;
+  background-color: #ddd;
+  animation: fadeIn 5s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  text-align: center;
+  padding-top: 4%;
+}
+
+@keyframes fadeIn {
+  10% {
+    opacity: 0.2;
+  }
+  30% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  80% {
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+  }
+}
