@@ -20,7 +20,7 @@ import { ShoppingsummaryComponent } from '../shoppingsummary/shoppingsummary.com
 export class NavMenuComponent implements OnInit {
   [x: string]: any;
   searchCondition: string = '';
-  bookNumber: number = 0;
+  @Input() bookNumber: number = 0;
   isExpanded = false;
   isShowDiv = false;
   isOpen = false;
@@ -33,17 +33,27 @@ export class NavMenuComponent implements OnInit {
 
   ngOnInit() {
     //localStorage.clear();
-    this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
+    //this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
+    this.loadSummaryComponent();
   }
 
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
-    if (localStorage.length > 0) {
+    if (localStorage.length > 1) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
     }
-    else {
+    if (localStorage.length <= 1) {
       this.bookNumber = 0;
+      alert(localStorage.length);
     }
+    let v = localStorage.getItem('3');
+    if (v == 'y' || v == 'r' || v == 'c') {
+      if (!document.getElementById("test")) {
+        this.loadSummaryComponent();
+      }
+    }
+   
+    
   }
 
 
@@ -55,13 +65,21 @@ export class NavMenuComponent implements OnInit {
     this.isExpanded = !this.isExpanded;
   }*/
 
-  //resolve the dynamic component 
+  //load the summary
   loadSummary() {
-    if (localStorage.length > 0) {
+    if (localStorage.length > 1) {
+      localStorage.setItem('3', 'y');
+    }
+  }
+
+  //resolve the dynamic component 
+  loadSummaryComponent() {
+    if (localStorage.length > 1) {
       let componentFactory = this.componentFactoryResolver.resolveComponentFactory(ShoppingsummaryComponent);
       const viewContainerRef = this.summaryHost.viewContainerRef;
       viewContainerRef.clear();
       const componentRef = viewContainerRef.createComponent(componentFactory);
+      alert("lll");
     }
   }
 

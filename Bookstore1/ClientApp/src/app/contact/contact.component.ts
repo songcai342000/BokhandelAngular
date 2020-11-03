@@ -23,15 +23,15 @@ export class ContactComponent implements OnInit {
 
   countries = ['Australia', 'Canada',
     'USA', 'Norway'];
-  contact = new Contact(2, 'James', 'Bond', 'jamesbond@yahoo.com', 'Australia', '');
+  contact = new Contact(2, '', '', '', '', '');
 
   //add the video to database
-  newContact(): void {
+  newContact(contact: Contact): void {
     sessionStorage.setItem('1', 'contact');
-    /*this.bookService.newContact(this.contact).subscribe(() => {
+     this.bookService.newContact(this.contact).subscribe(() => {
       this.router.navigateByUrl('/thankcontact');
-    });*/
-    this.router.navigateByUrl('/thankcontact');
+    }); 
+   // this.router.navigateByUrl('/thankcontact');
   }
 
   calculateLength(event: any) {

@@ -22,10 +22,10 @@ import { BookAmount } from '../bookAmount';
 })
 export class BooklistComponent implements OnInit {
   @Input() book: Book;
-  private crimes: Crime[];
-  private romances: Romance[];
-  private visibleRomances: Romance[];
-  private fictions: Fiction[];
+  crimes: Crime[];
+  romances: Romance[];
+  visibleRomances: Romance[];
+  fictions: Fiction[];
   startItemR: number;
   endItemR: number;
   bookNumber: number;
@@ -48,18 +48,20 @@ export class BooklistComponent implements OnInit {
 
   onSelect(book: Book): void {
     this.book = book;
+    localStorage.setItem('3', 'y');
     this.bookService.register(this.book);
+    alert("fff");
     //this.loadComponent();
     //this.componentRef.destroy();
     //this.createComponent();
-    if (!document.getElementById("test")) {
-      this.loadComponent();
+    /*if (!document.getElementById("test")) {
+      //this.loadComponent();
       document.getElementById("test").style.height = "auto";
     }
     else {
       //this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
       //this.loadComponent();
-    }
+    }*/
   }
 
   //get crime books

@@ -30,8 +30,9 @@ export class BookdetailsComponent implements OnInit {
   //put a book in the shopping cart
   chooseBook(book: Book): void {
     this.book = book;
+    localStorage.setItem('3', 'y');
     this.bookService.register(this.book);
-    this.loadComponent();
+    //this.loadComponent();
   }
 
   //resolve the dynamic component 

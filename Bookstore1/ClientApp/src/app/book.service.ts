@@ -30,7 +30,7 @@ export class BookService {
   constructor(private http: HttpClient) { }
   //register to localStorage
   register(book: Book) {
-    if (localStorage.length == 0) {
+    if (localStorage.length == 1) {
       this.bks.length = 0;//clear bks
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
@@ -49,6 +49,7 @@ export class BookService {
       let obj = books[i];
       if (obj.bookId == bookAmount["bookId"]) {
         books.splice(i, 1);
+        break;
       }
     }
     //update the bookamount array in localstorage
@@ -70,7 +71,7 @@ export class BookService {
     let itemNumber;
     let totalPrice = 0;
     let totalAmount = 0;
-    if (localStorage.length > 0) {
+    if (localStorage.length > 1) {
       this.bks = JSON.parse(localStorage.getItem('0'));
       bks = this.bks;
       for (var a = 0; a < this.bks.length; a++) {

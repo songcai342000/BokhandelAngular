@@ -14,6 +14,7 @@ export class ShoppingsummaryComponent implements OnInit {
   books: Book[] = [];
   bookAmounts: BookAmount[]=[];
   dragPosition = { x: 0, y: 0 };
+  isShow = true;
 
   @Input() bookAmount: BookAmount;
   @Input() totalAmount: number;
@@ -24,27 +25,39 @@ export class ShoppingsummaryComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
+    document.getElementById("test").style.height = "0px";
     this.getSummary();
     this.setPosition();
   }
 
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
-    if (localStorage.length > 0) {
-      this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-      this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
-      this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
-      this.isShow = false;
-      if (this.isShow) {
+    let v = localStorage.getItem('3');
+    if (v == 'y' || v == 'c' || v == 'r') {
+      if (localStorage.length > 1) {
+        this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
+        this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
+        this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
+        /*this.isShow = false;
+        if (this.isShow) {
+          this.isShow = true;
+        }
+        else {
+          this.isShow = false;
+        }*/
         this.isShow = true;
+        if (this.isShow) {
+          this.isShow = false;
+        }
+        else {
+          this.isShow = true;
+        }
       }
       else {
-        this.isShow = false;
+        this.totalAmount = 0;
+        this.totalPrice = 0;
       }
-    }
-    else {
-      this.totalAmount = 0;
-      this.totalPrice = 0;
+      localStorage.setItem('3', '');
     }
   }
 
@@ -63,6 +76,7 @@ export class ShoppingsummaryComponent implements OnInit {
     this.bookAmount = bookAmount;
     this.bookService.removeItem(this.bookAmount);
     this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
+    localStorage.setItem('3', 'r');
   }
   
   //create shopping summary
@@ -103,6 +117,7 @@ export class ShoppingsummaryComponent implements OnInit {
 
   clearCart() {
     localStorage.clear();
+    localStorage.setItem('3', 'c');
     this.getSummary();
   }
 

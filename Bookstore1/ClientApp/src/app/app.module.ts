@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ShoppingsummaryComponent } from './shoppingsummary/shoppingsummary.component';
-import { BooksComponent } from './books/books.component';
 import { LoadsummaryDirective } from './loadsummary.directive';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { LoadcartDirective } from './loadcart.directive';
@@ -26,7 +25,6 @@ import { StatisticComponent } from './statistic/statistic.component';
 import { AgmCoreModule } from '@agm/core';
 import { Chart } from 'chart.js';
 import { AppRoutingModule } from './app-routing.module';
-import { BooksModule } from './books/books.module';
 import { BooklistComponent } from './booklist/booklist.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { LoadsearchDirective } from './loadsearch.directive';
@@ -43,7 +41,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    BooksComponent,
     ShoppingsummaryComponent,
     LoadsummaryDirective,
     ShoppingcartComponent,
@@ -75,7 +72,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'bookdetails/:id', component: BookdetailsComponent },
       { path: 'bookdetails', component: BookdetailsComponent },
-      { path: 'books', component: BooksComponent },
       { path: 'searchresult', component: SearchresultComponent },
       { path: 'searchresult/:title', component: SearchresultComponent },
       { path: 'searchresult/:author', component: SearchresultComponent },
@@ -88,7 +84,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       { path: 'fetch-data', component: FetchDataComponent }
     ]),
     AppRoutingModule,
-    BooksModule,
     BrowserModule,
     BrowserAnimationsModule
   ],

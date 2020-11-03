@@ -19,10 +19,10 @@ export class PostaddressComponent implements OnInit {
 
   countries = ['Australia', 'Canada',
     'USA', 'Norway'];
-  user = new User(2, '', 'James', 'Bond', 'jamesbond@yahoo.com', 'Dronningsgata 100', '0100', 'Australia', '+61  92000000');
+  user = new User(2, '', '', '', '', '', '', '', '');
 
   //add the video to database
-  saveAddress(address): void {
+  saveAddress(user: User): void {
     localStorage.clear();
     this.bookService.newCustomer(this.user).subscribe(() => {
       sessionStorage.setItem('2', 'paid');
