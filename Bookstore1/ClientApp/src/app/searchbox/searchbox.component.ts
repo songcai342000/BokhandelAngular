@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentRef, Output, EventEmitter } from '@angular/core';
 import { BookService } from '../book.service';
 import { Router } from '@angular/router';
 import { Book } from '../book';
@@ -15,7 +15,7 @@ export class SearchboxComponent implements OnInit {
   books$: Book[];
   searchTerm = '';
   searchCondition = '';
-
+ // @Output() loadResult = new EventEmitter();
   constructor(private bookService: BookService, private route: Router) { }
     ngOnInit(): void {
   }
@@ -49,12 +49,16 @@ export class SearchboxComponent implements OnInit {
   }
 
   sendSearch() {
+    //localStorage.setItem('4', 'ch');
     if (this.searchCondition == 'author') {
+      //location.assign("/searchresult?" + "author=" + this.searchTerm); 
       this.route.navigate(['/searchresult'], { queryParams: { author: this.searchTerm } });
-    }
+    } 
     else if (this.searchCondition == 'title') {
+      alert("s");
       this.route.navigate(['/searchresult'], { queryParams: { title: this.searchTerm } });
     }
+    
   }
 
 }

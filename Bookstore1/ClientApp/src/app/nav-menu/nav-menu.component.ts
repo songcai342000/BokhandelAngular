@@ -3,13 +3,15 @@ import { ShoppingcartComponent } from '../shoppingcart/shoppingcart.component';
 import { SearchboxComponent } from '../searchbox/searchbox.component';
 import { LoadcartDirective } from '../loadcart.directive';
 import { BookService } from '../book.service';
-import { Book } from '../book';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, state, style, animate, transition, stagger, query } from '@angular/animations';
 import { LoadsearchDirective } from '../loadsearch.directive';
 import { Router } from '@angular/router';
 import { LoadsummaryDirective } from '../loadsummary.directive';
 import { ShoppingsummaryComponent } from '../shoppingsummary/shoppingsummary.component';
+import { Book } from '../book';
+import { BookAmount } from '../bookamount';
+import { DragDropModule, CdkDragEnd } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-nav-menu',
@@ -20,21 +22,33 @@ import { ShoppingsummaryComponent } from '../shoppingsummary/shoppingsummary.com
 export class NavMenuComponent implements OnInit {
   [x: string]: any;
   searchCondition: string = '';
-  @Input() bookNumber: number = 0;
+  bookNumber: number = 0;
   isExpanded = false;
   isShowDiv = false;
   isOpen = false;
   searchedBooks: Book[];
   currentPath: string;
+  //[xx: string]: any;
+  books: Book[] = [];
+  bookAmounts: BookAmount[] = [];
+  dragPosition = { x: 0, y: 0 };
+  isShow = true;
+
+  @Input() bookAmount: BookAmount;
+  @Input() totalAmount: number;
+  @Input() totalPrice: number;
   @ViewChild(LoadsearchDirective, { static: true }) searchHost: LoadsearchDirective;
   @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
   componentRef: ComponentRef<any>;
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private route: Router) { }
 
   ngOnInit() {
+    this.setPosition();
     //localStorage.clear();
-    //this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
-    this.loadSummaryComponent();
+    //this.loadSummaryComponent();
+    if (localStorage.getItem('0') != null) {
+      this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
+    }
   }
 
   @HostListener('window:click', ['$event'])
@@ -42,18 +56,33 @@ export class NavMenuComponent implements OnInit {
     if (localStorage.length > 1) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
     }
-    if (localStorage.length <= 1) {
+    else if (localStorage.length <= 1) {
       this.bookNumber = 0;
-      alert(localStorage.length);
     }
     let v = localStorage.getItem('3');
     if (v == 'y' || v == 'r' || v == 'c') {
-      if (!document.getElementById("test")) {
-        this.loadSummaryComponent();
+       
+      document.getElementById("test").style.height = "auto";
+      if (localStorage.length > 1) {
+        this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
+        this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
+        this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
+        this.isShow = true;
+        if (this.isShow) {
+          this.isShow = false;
+        }
+        else {
+          this.isShow = true;
+        }
       }
+      else {
+        this.totalAmount = 0;
+        this.totalPrice = 0;
+      }
+      localStorage.setItem('3', '');
     }
-   
-    
+
+
   }
 
 
@@ -79,7 +108,6 @@ export class NavMenuComponent implements OnInit {
       const viewContainerRef = this.summaryHost.viewContainerRef;
       viewContainerRef.clear();
       const componentRef = viewContainerRef.createComponent(componentFactory);
-      alert("lll");
     }
   }
 
@@ -236,8 +264,64 @@ export class NavMenuComponent implements OnInit {
     document.getElementsByClassName("dropdown")[0].className = "dropdown text-white dropdown-toggle caret-up"
   }
 
-  ngOnDestroy() {
-    
+  //close the shopping record div
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+    //document.getElementById("test").style.height = "0px";
+    /*if (this.componentRef) {
+      alert("yy");
+      this.componentRef.destroy();
+    }
+    document.getElementById("test").style.visibility = "hidden";*/
   }
+
+
+  removeItem(bookAmount: BookAmount) {
+    this.bookAmount = bookAmount;
+    this.bookService.removeItem(this.bookAmount);
+    this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
+    localStorage.setItem('3', 'r');
+  }
+
+  //create shopping summary
+  getSummary(): void {
+    //this.bookService.createSummary(this.bookAmounts, this.books);
+    this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
+  }
+
+  dragEnded(event: CdkDragEnd) {
+    const { x, y } = event.distance;
+    this.dragPosition.x += x;
+    this.dragPosition.y += y;
+    sessionStorage.clear();
+    sessionStorage.setItem("0", JSON.stringify({ x: this.dragPosition.x, y: this.dragPosition.y }));
+  }
+
+  getPosition() {
+    let obj = document.getElementById("myDiv").getBoundingClientRect();
+
+  }
+
+  //set the start position of a draged element when the page is reloaded
+  setPosition() {
+    if (sessionStorage.length != 0) {
+      let obj = JSON.parse(sessionStorage.getItem("0"));
+      this.dragPosition.x = obj.x;
+      this.dragPosition.y = obj.y;
+    }
+    else {
+      let original = document.getElementById("myDiv").getBoundingClientRect();
+      this.dragPosition.x = 500;
+      this.dragPosition.y = -1000;
+    }
+  }
+
+  clearCart() {
+    localStorage.clear();
+    localStorage.setItem('3', 'c');
+    this.getSummary();
+  }
+
+
 
 }

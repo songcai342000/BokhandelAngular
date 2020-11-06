@@ -25,8 +25,7 @@ export class ShoppingsummaryComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
-    document.getElementById("test").style.height = "0px";
-    this.getSummary();
+    //this.getSummary();
     this.setPosition();
   }
 
@@ -34,17 +33,11 @@ export class ShoppingsummaryComponent implements OnInit {
   handleStorage(event) {
     let v = localStorage.getItem('3');
     if (v == 'y' || v == 'c' || v == 'r') {
+       document.getElementById("test").style.height = "auto";
       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
         this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
         this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
-        /*this.isShow = false;
-        if (this.isShow) {
-          this.isShow = true;
-        }
-        else {
-          this.isShow = false;
-        }*/
         this.isShow = true;
         if (this.isShow) {
           this.isShow = false;
@@ -64,13 +57,14 @@ export class ShoppingsummaryComponent implements OnInit {
   //close the shopping record div
   toggleDisplay() {
     this.isShow = !this.isShow;
-    document.getElementById("test").style.height = "0px";
+    //document.getElementById("test").style.height = "0px";
     /*if (this.componentRef) {
       alert("yy");
       this.componentRef.destroy();
     }
     document.getElementById("test").style.visibility = "hidden";*/
   }
+
 
   removeItem(bookAmount: BookAmount) {
     this.bookAmount = bookAmount;
@@ -83,7 +77,6 @@ export class ShoppingsummaryComponent implements OnInit {
   getSummary(): void {
     //this.bookService.createSummary(this.bookAmounts, this.books);
     this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-    //alert(this.bookAmounts.length);
   }
 
   dragEnded(event: CdkDragEnd) {

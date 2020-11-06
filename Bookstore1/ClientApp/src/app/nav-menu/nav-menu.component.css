@@ -84,36 +84,32 @@ span {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-.dropdown {
-  position: relative;
-  min-width: 100%;
+#homeDiv {
+    display: inline;
 }
+
+#dropdownDiv {
+  position: absolute;
+  top: 20%;
+  left: 78%;
+  width: 2%;
+  height: 10%;
+  z-index: 4;
+}
+
 
 .dropdown-menu {
-  min-width: 50%;
-  padding-left: 8%;
-  padding-top: 2%;
-  margin-left: 15%;
+  position: relative;
+  left: -200%;
+  width: 80%;
+  padding-left: 100%;
+  padding-top: 10%;
   font-weight: 300;
   font-size: 13px;
+  z-index: 5;
+  background-color: #ddd;
 }
 
-@keyframes slideIn {
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0rem);
-    opacity: 1;
-  }
-
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-}
 
 @media (min-width: 768px) {
   .animate {
@@ -258,6 +254,98 @@ nav-item:hover{
   border-top-width: 0;
   border-bottom: 4px solid #fff;
 }
+
+
+#searchBox {
+  width: 30%;
+  height: 400px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 6.5%;
+  z-index: 3;
+  padding: 1%;
+  padding-right: 2%;
+  background-color: #e6e6e6;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+input[type="text"], button {
+  border: none;
+}
+
+button {
+  text-align: center;
+  vertical-align: central;
+  border: none;
+  margin-top: 2px;
+  height: 85%;
+  border-radius: 15px;
+}
+
+#myDiv {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  z-index: 4;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  height: 25%;
+  width: 35%;
+  overflow-y: auto;
+  text-align: left;
+  padding: 10px;
+  word-wrap: break-word;
+  border-radius: 4px;
+  visibility: visible;
+}
+
+#myDivHeader {
+  padding-bottom: 20px;
+  cursor: move;
+  background-color: #f1f1f1;
+  color: #fff;
+}
+
+#xx {
+  float: right;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  margin: 0;
+}
+
+th, td {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.title {
+  width: 40%;
+}
+
+.price, .amount, .remove {
+  width: 20%;
+}
+
+#xx:hover {
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+}
+
+button {
+  font-weight: 500;
+}
+
 
 
 

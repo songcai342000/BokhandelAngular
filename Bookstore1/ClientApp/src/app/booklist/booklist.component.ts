@@ -13,7 +13,6 @@ import { Reservation } from '../reservation';
 import { Order } from '../order';
 import { BookAmount } from '../bookAmount';
 
-
 @Component({
   selector: 'app-booklist',
   templateUrl: './booklist.component.html',
@@ -33,8 +32,7 @@ export class BooklistComponent implements OnInit {
   @ViewChild('romanceBooks', { static: true }) romanceBooks: ElementRef;
   @ViewChild('fictionBooks', { static: true }) fictionBooks: ElementRef;
   //private componentRef: ComponentRef<any>;
- // @ViewChild('summaryHost', { read: ViewContainerRef }) entry: ViewContainerRef;
- // @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
+
   books: Book[];
   @Input() bookAmounts: BookAmount[];
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) { }
@@ -50,18 +48,6 @@ export class BooklistComponent implements OnInit {
     this.book = book;
     localStorage.setItem('3', 'y');
     this.bookService.register(this.book);
-    alert("fff");
-    //this.loadComponent();
-    //this.componentRef.destroy();
-    //this.createComponent();
-    /*if (!document.getElementById("test")) {
-      //this.loadComponent();
-      document.getElementById("test").style.height = "auto";
-    }
-    else {
-      //this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-      //this.loadComponent();
-    }*/
   }
 
   //get crime books
@@ -120,17 +106,12 @@ export class BooklistComponent implements OnInit {
   }
 
   //resolve the dynamic component 
-  loadComponent() {
+  /*loadComponent() {
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(ShoppingsummaryComponent);
     //this.vcRef.clear();
     const viewContainerRef = this.vcRef.createComponent(componentFactory);
     const componentRef = viewContainerRef.instance.vcRef;
-  }
-
-  /*createComponent() {
-    this.entry.clear();
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ShoppingsummaryComponent);
-    const componentRef = this.entry.createComponent(componentFactory);
-    //componentRef.instance.c
   }*/
+
+ 
 }

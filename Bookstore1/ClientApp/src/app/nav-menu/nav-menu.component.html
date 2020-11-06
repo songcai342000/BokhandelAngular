@@ -10,20 +10,22 @@
               <a class="nav-link text-white" [routerLink]="" (click)="loadSearchBox()"><i class="material-icons">search</i></a>
             </div>
           </li>
-          <li class="nav-item navitem-left" [routerLinkActive]="['link-active']">
+          <li class="nav-item navitem-left" [routerLinkActive]="['link-active']" id="homeDiv">
             <div id="homeLinkDiv" (mousemove)="homeFocus()" (mouseout)="homeBlur()" style="height: 95%">
-              <a class="nav-link text-white dropdown text-white dropdown-toggle" data-toggle="dropdown" [routerLink]="['/']">Home</a>
-              <div class="" style="position: relative; left: 25%; top: -20px; z-index: 2; width: 94%; height: 0" (click)="caretUp()">
-                <ul class="dropdown-menu" style=" background-color: #ddd; position: relative;  top: 20px; left: -20%; z-index: 5">
+              <a class="nav-link text-white" [routerLink]="['/']" style="width: 90%; z-index: 1">Home</a>
+            </div>
+            <div id="dropdownDiv">
+              <a class="nav-link text-white dropdown text-white dropdown-toggle" data-toggle="dropdown" [routerLink]=""></a>
+              <div style="height: 0; width: 150%; position: relative; top: -15%" >
+                <ul class="dropdown-menu">
                   <li><a [routerLink]="['statistic']" style="margin-top: 0; color: black">Statistic</a></li>
                   <li><a [routerLink]="['contact']" style="color: black">Contact us</a></li>
                 </ul>
               </div>
             </div>
-            
           </li>
 
-          <li class="nav-item  navitem-left" id="booksli" [routerLinkActive]="['link-active']" >
+          <li class="nav-item  navitem-left" id="booksli" [routerLinkActive]="['link-active']">
             <div id="booksLinkDiv" (mousemove)="booksFocus()" (mouseout)="booksBlur()" style="height: 95%">
               <a id="booksLink" class="nav-link text-white" [routerLink]="['/booklist']">Books</a>
             </div>
@@ -52,6 +54,36 @@
     X
   </button>
 </div>
-<ng-template summaryHost class="summaryPosition"></ng-template>
+<!-- Draggable DIV -->
+<div *ngIf="bookAmounts" id="test">
+  <div cdkDrag id="myDiv" [cdkDragFreeDragPosition]="dragPosition" *ngIf="!isShow" (cdkDragEnded)="dragEnded($event)">
+    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+    <div id="myDivHeader">
+      <button id="xx" (mousedown)="toggleDisplay()">
+        X
+      </button>
+    </div>
+    <table>
+      <tr>
+        <th class="title">Title</th>
+        <th class="amount">Amount</th>
+        <th class="price">Price</th>
+        <th class="remove"></th>
+      </tr>
+      <tr *ngFor="let bookAmount of bookAmounts">
+        <td class="title">{{bookAmount.title}}</td>
+        <td>{{bookAmount.amount}}</td>
+        <td>Price: {{bookAmount.price}}</td>
+        <td><button value="Remove" class=".btn-default" (click)="removeItem(bookAmount)">Remove</button></td>
+      </tr>
+      <tr>
+        <td><a [routerLink]="['postaddress']" routerLinkActive="active">Pay</a></td>
+        <td>{{totalAmount}}</td>
+        <td>{{totalPrice}} kr</td>
+        <td><button class=".btn-default" (click)="clearCart()">Clear</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
 
 

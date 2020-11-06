@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, ComponentRef } from '@angular/core';
 import { BookService } from '../book.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Book } from '../book';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, filter, pairwise, startWith, takeUntil } from 'rxjs/operators';
 import { LoadsummaryDirective } from '../loadsummary.directive';
+import { Subject } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-searchresult',
@@ -14,25 +15,27 @@ export class SearchresultComponent implements OnInit {
   books: Book[] = [];
   title: string;
   author: string;
+  public destroyed = new Subject<any>();
+  componentRef: ComponentRef<any>;
+
   @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
 
-  constructor(private bookService: BookService, private route: ActivatedRoute) { }
+  constructor(private bookService: BookService, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
-    if (this.route.snapshot.queryParams["title"] != null && this.route.snapshot.queryParams["title"] != "")
-    {
-      this.getByTitle();
-    }
-    else if (this.route.snapshot.queryParams["author"] != null && this.route.snapshot.queryParams["author"] != "") {
-      this.getByAuthor();
-    }
+    this.route.queryParamMap.subscribe((paramMap: ParamMap) => {
+      const t = paramMap.get('title');
+       if (t != null && t != '') {
+        this.bookService.getByTitle(this.route.snapshot.queryParams["title"]).subscribe(books => this.books = books);
+       }
+    });
+    this.route.queryParamMap.subscribe((paramMap: ParamMap) => {
+      const a = paramMap.get('author');
+      if (a != null && a != '') {
+        this.bookService.getByAuthor(this.route.snapshot.queryParams["author"]).subscribe(books => this.books = books);
+      }
+    });
   }
 
-  getByTitle(): void {
-    this.bookService.getByTitle(this.route.snapshot.queryParams["title"]).subscribe(books => this.books = books);
-  }
-
-  getByAuthor() {
-    this.bookService.getByAuthor(this.route.snapshot.queryParams["author"]).subscribe(books => this.books = books);
-  }
 }

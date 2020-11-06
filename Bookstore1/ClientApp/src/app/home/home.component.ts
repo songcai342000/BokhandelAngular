@@ -9,4 +9,12 @@ export class HomeComponent {
   constructor() { }
   ngOnInit() {
   }
+
+  getCover() {
+    document.getElementById("iframeDiv").style.opacity = "0.5";
+  }
+
+  removeCover() {
+    document.getElementById("iframeDiv").style.opacity = "0";
+  }
 }

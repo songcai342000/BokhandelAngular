@@ -30,7 +30,8 @@ export class BookService {
   constructor(private http: HttpClient) { }
   //register to localStorage
   register(book: Book) {
-    if (localStorage.length == 1) {
+    //localStorage.clear();
+    if (localStorage.length <= 1) {
       this.bks.length = 0;//clear bks
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
@@ -38,7 +39,6 @@ export class BookService {
     else {
       this.bks = JSON.parse(localStorage.getItem('0'));
       this.bks.push(book);
-      //localStorage.clear();
       localStorage.setItem('0', JSON.stringify(this.bks));
     }
   }
@@ -158,5 +158,4 @@ export class BookService {
     };
   }
 }
-
 

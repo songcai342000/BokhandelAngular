@@ -8,3 +8,8 @@
   padding: 30%;
   height: 100%;
 }
+
+
+iframe {
+    border: none;
+}

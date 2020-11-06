@@ -9,13 +9,11 @@ import { User } from './user';
 import { Reservation } from './reservation';
 import { Order } from './order';
 
-
 @Injectable({
   providedIn: 'root'
 })
-
 export class BookService {
-  amount: number=0;
+  amount: number = 0;
   books: Book[];
   bookAmount: BookAmount;
   bks: Book[] = [];
@@ -29,12 +27,11 @@ export class BookService {
   private contactUrl = 'api/Contacts';
   private userUrl = 'api/Users';
 
-
-
   constructor(private http: HttpClient) { }
   //register to localStorage
   register(book: Book) {
-    if (localStorage.length == 0) {
+    alert("rrr");
+    if (localStorage.length <= 1) {
       this.bks.length = 0;//clear bks
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
@@ -45,19 +42,15 @@ export class BookService {
       //localStorage.clear();
       localStorage.setItem('0', JSON.stringify(this.bks));
     }
-    /*this.bks = JSON.parse(localStorage.getItem('0'));
-    this.bks.push(book);
-    localStorage.clear();
-    localStorage.setItem('0', JSON.stringify(this.bks));*/
-    //localStorage.clear();
   }
 
   removeItem(bookAmount: BookAmount) {
-    var books = JSON.parse(localStorage.getItem('0'));
-    for (var i = 0; i < books.length; i++) {
-      var obj = books[i];
+    let books = JSON.parse(localStorage.getItem('0'));
+    for (let i = 0; i < books.length; i++) {
+      let obj = books[i];
       if (obj.bookId == bookAmount["bookId"]) {
         books.splice(i, 1);
+        break;
       }
     }
     //update the bookamount array in localstorage
@@ -73,44 +66,45 @@ export class BookService {
   }
 
   //create shopping summary
-  createSummary(bookAms: BookAmount[], bks: Book[]): void {
+  createSummary(bookAms: BookAmount[], bks: Book[]) {
+    bookAms = [];
     bookAms.length = 0;
-    var itemNumber;
-    var totalPrice = 0;
-    var totalAmount = 0;
-    alert("hjk");
-   // if (localStorage.length > 0) {
+    let itemNumber;
+    let totalPrice = 0;
+    let totalAmount = 0;
+    if (localStorage.length > 1) {
       this.bks = JSON.parse(localStorage.getItem('0'));
       bks = this.bks;
-      for (var a = 0; a < bks.length; a++) {
+      for (var a = 0; a < this.bks.length; a++) {
         itemNumber = 0;
         for (var b = 0; b < bks.length; b++) {
-          if (bks[a]["bookId"] == bks[b]["bookId"]) {
+          if (this.bks[a]["bookId"] == bks[b]["bookId"]) {
             itemNumber++; //calculate the repeating items
             if (itemNumber > 1) {
-              bks.splice(b, 1);
+              this.bks.splice(b, 1);
               b--;
             }
           }
         }
-        bookAms.push({ bookId: bks[a]["bookId"], title: bks[a]["title"], amount: itemNumber, price: parseInt(bks[a]["price"]) * itemNumber }); //put in a bookamount object
+        bookAms.push({ bookId: this.bks[a]["bookId"], title: this.bks[a]["title"], amount: itemNumber, price: parseInt(this.bks[a]["price"]) * itemNumber }); //put in a bookamount object
         totalAmount += itemNumber;
-        totalPrice += parseInt(bks[a]["price"]) * itemNumber;
-        localStorage.setItem('0', JSON.stringify(bks));
+        totalPrice += parseInt(this.bks[a]["price"]) * itemNumber;
       }
       localStorage.removeItem('1');
       localStorage.removeItem('2');
       localStorage.setItem('1', totalAmount.toString());
       localStorage.setItem('2', totalPrice.toString());
-   // }
+    }
+    return bookAms;
+    // }
   }
 
 
   //get romance book list
   getRomanceBooks(): Observable<Book[]> {
     //return this.http.get<Book[]>(this.romanceUrl).pipe(
-      //tap((newBooks: Book[]) => alert("test error")),
-      //catchError(this.handelError));
+    //tap((newBooks: Book[]) => alert("test error")),
+    //catchError(this.handelError));
     return this.http.get<Book[]>(this.romanceUrl);
   }
 
@@ -155,14 +149,15 @@ export class BookService {
   }
 
   handelError(books: Book[]) {
-  return (error: any): Observable<Book[]> => {
+    return (error: any): Observable<Book[]> => {
 
-    // TODO: send the error to remote logging infrastructure
-    //console.error(error); // log to console instead
+      // TODO: send the error to remote logging infrastructure
+      //console.error(error); // log to console instead
 
-    // Let the app keep running by returning an empty result.
-    return of(books);
-   };
+      // Let the app keep running by returning an empty result.
+      return of(books);
+    };
   }
 }
+
 

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Bookstore1
 {
@@ -24,8 +25,13 @@ namespace Bookstore1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<BookContext>(options =>
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+                services.AddDbContext<BookContext>(options =>
+       options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionProd")));
+            else 
+                services.AddDbContext<BookContext>(options =>
        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.BuildServiceProvider().GetService<BookContext>().Database.Migrate();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
