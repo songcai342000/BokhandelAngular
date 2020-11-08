@@ -114,5 +114,7 @@ export class ShoppingsummaryComponent implements OnInit {
     this.getSummary();
   }
 
- 
+  sendInvoice() {
+
+  }
 }

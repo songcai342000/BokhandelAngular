@@ -23,9 +23,10 @@ namespace Bookstore1.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IEmailService _mailService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IEmailService mailService)
         {
             _logger = logger;
+            _mailService = mailService;
         }
 
         [HttpGet]
@@ -41,12 +42,13 @@ namespace Bookstore1.Controllers
             .ToArray();
         }
 
-        /*[HttpGet]
-        public async Task<IActionResult> SendInvoice(Order order)
+        [HttpGet]
+        public async Task<IActionResult> SendInvoice(string fromDisplayName, string fromMailAddress, string toMail, string toMailAddress, string subject, string message)
         {
-            Order.
-            await _mailService.SendEmailAsync(_mailService);
-        }*/
+            //Order.
+            await _mailService.SendEmailAsync(fromDisplayName, fromMailAddress, toMail, toMailAddress, subject, message);
+            return NoContent();
+        }
 
         /*public void Send(EmailMessage emailMessage)
         {

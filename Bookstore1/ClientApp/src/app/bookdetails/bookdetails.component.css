@@ -1,8 +1,8 @@
 .content {
   height: 507px;
-  width: auto;
-  margin-left: 33%;
-  margin-top: 4%;
+  width: 1000px;
+  margin-left: 450px;
+  margin-top: 50px;
 }
 .sharebuttons {
     display: flex;

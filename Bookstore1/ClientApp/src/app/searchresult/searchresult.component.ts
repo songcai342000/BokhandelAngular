@@ -13,6 +13,7 @@ import { Subject } from 'rxjs/internal/Subject';
 })
 export class SearchresultComponent implements OnInit {
   books: Book[] = [];
+  book: Book;
   title: string;
   author: string;
   public destroyed = new Subject<any>();
@@ -38,4 +39,9 @@ export class SearchresultComponent implements OnInit {
     });
   }
 
+  onSelect(book: Book): void {
+    this.book = book;
+    localStorage.setItem('3', 'y');
+    this.bookService.register(this.book);
+  }
 }

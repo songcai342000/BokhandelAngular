@@ -27,6 +27,8 @@
 .content {
   height: 507px;
   padding-left: 40%;
+  padding-top: 50px;
   color: #000000;
   font-weight: 400;
+  width: 1000px;
 }

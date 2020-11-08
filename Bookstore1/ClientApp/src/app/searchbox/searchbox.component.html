@@ -1,5 +1,9 @@
-<div id="searchBox" style="width: auto; height: auto;  position: absolute; left: 50%; top: 6.5%; z-index: 3; padding: 1%; padding-right: 2%">
-    
+<div id="searchBox">
+  <div id="close">
+    <button id="x" (click)="closeDisplay()">
+      X
+    </button>
+  </div>
     <div class="d-flex flex-row">
       <div ><input type="search" placeholder="Type your search term" (change)="getSearchTerm($event)" required></div><div>
         <button type="button" (click)="sendSearch()" class="btn-default" style="">Search</button>

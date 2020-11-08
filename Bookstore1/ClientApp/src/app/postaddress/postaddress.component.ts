@@ -30,9 +30,9 @@ export class PostaddressComponent implements OnInit {
     });
   }
 
-  @HostListener('window:click', ['$event'])
+ /* @HostListener('window:click', ['$event'])
   handleStorage(event) {
     
-  }
+  }*/
 
 }

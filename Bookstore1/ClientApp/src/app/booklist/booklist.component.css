@@ -67,9 +67,10 @@ a {
 }
 
 img {
-    width: 115px;
-    height: 172px;
+  width: 115px;
+  height: 172px;
 }
+
   img:hover {
   border: 3px solid #ffcc00;
 }

@@ -15,7 +15,8 @@ export class SearchboxComponent implements OnInit {
   books$: Book[];
   searchTerm = '';
   searchCondition = '';
- // @Output() loadResult = new EventEmitter();
+  componentRef: ComponentRef<any>;
+
   constructor(private bookService: BookService, private route: Router) { }
     ngOnInit(): void {
   }
@@ -55,10 +56,20 @@ export class SearchboxComponent implements OnInit {
       this.route.navigate(['/searchresult'], { queryParams: { author: this.searchTerm } });
     } 
     else if (this.searchCondition == 'title') {
-      alert("s");
       this.route.navigate(['/searchresult'], { queryParams: { title: this.searchTerm } });
     }
     
   }
+
+  //close the shopping record div
+  closeDisplay() {
+    if (this.componentRef) {
+      this.componentRef.destroy();
+    }
+    document.getElementById("searchBox").style.visibility = "hidden";
+    document.getElementById("close").style.visibility = "hidden";
+
+  }
+
 
 }

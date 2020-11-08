@@ -1,15 +1,9 @@
 
-#imagecolumn {
-    padding: 30%;
-    height: 100%;
-}
-
-#textcolumn {
-  padding: 30%;
-  height: 100%;
-}
-
-
 iframe {
     border: none;
+}
+
+#textDiv {
+    margin-left: 150px;
+    padding-left: 150px;
 }

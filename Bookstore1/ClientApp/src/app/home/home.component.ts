@@ -11,10 +11,10 @@ export class HomeComponent {
   }
 
   getCover() {
-    document.getElementById("iframeDiv").style.opacity = "0.5";
+    document.getElementById("frameDiv").style.opacity = "0.5";
   }
 
   removeCover() {
-    document.getElementById("iframeDiv").style.opacity = "0";
+    document.getElementById("frameDiv").style.opacity = "1";
   }
 }

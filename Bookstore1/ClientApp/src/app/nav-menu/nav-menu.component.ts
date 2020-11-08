@@ -112,7 +112,7 @@ export class NavMenuComponent implements OnInit {
   }
 
   loadSearchBox() {
-    document.getElementById("close").style.visibility = "visible";
+    //document.getElementById("close").style.visibility = "visible";
     //var f = document.getElementById("formDiv");
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(SearchboxComponent);
     const viewContainerRef = this.searchHost.viewContainerRef;

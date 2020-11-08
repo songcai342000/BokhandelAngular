@@ -1,10 +1,11 @@
 .content {
     height: 507px;
+    width: 1000px;
 }
 
-p{
-    margin-top: 4%;
-    font-size: 24px;
-    font-weight: bold;
-    padding-left: 40%;
+p {
+  padding-top: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 65%;
 }

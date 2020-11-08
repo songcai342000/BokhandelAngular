@@ -25,8 +25,8 @@ namespace Bookstore1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-                services.AddDbContext<BookContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<BookContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
