@@ -4,6 +4,7 @@
   background-color: transparent;
   height: 150px;
   margin: 0;
+  width: 100%;
 }
 
 text {
@@ -13,12 +14,6 @@ text {
 .greenText {
   fill: black;
   text-decoration: underline;
-}
-
-.coffee {
-  stroke-dasharray: 400;
-  stroke-dashoffset: 800;
-  animation: dash 3s linear infinite;
 }
 
 @keyframes dash {

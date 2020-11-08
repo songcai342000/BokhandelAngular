@@ -17,6 +17,7 @@ export class BookService {
   books: Book[];
   bookAmount: BookAmount;
   bks: Book[] = [];
+  invoice: any;
   private booksUrl = 'api/Books';
   private crimeUrl = 'api/Books/CrimeBooks';
   private romanceUrl = 'api/Books/RomanceBooks';
@@ -26,6 +27,7 @@ export class BookService {
   private newUrl = 'api/Books/NewBooks';
   private contactUrl = 'api/Contacts';
   private userUrl = 'api/Users';
+  private weatherUrl = 'api/WeatherForecast';
 
   constructor(private http: HttpClient) { }
   //register to localStorage
@@ -145,6 +147,10 @@ export class BookService {
 
   getByAuthor(author: string) {
     return this.http.get<Book[]>(this.searchAuthorUrl + '/' + author);
+  }
+
+  sendInvoice(user: User) {
+    return this.http.get<any>(this.weatherUrl + '/' + user);
   }
 
   handelError(books: Book[]) {

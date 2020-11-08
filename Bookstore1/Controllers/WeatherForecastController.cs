@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MimeKit;
 using MimeKit.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Bookstore1.Controllers
 {
@@ -43,10 +45,11 @@ namespace Bookstore1.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SendInvoice(string fromDisplayName, string fromMailAddress, string toMail, string toMailAddress, string subject, string message)
+        public async Task<IActionResult> SendInvoice(User user)
         {
-            //Order.
-            await _mailService.SendEmailAsync(fromDisplayName, fromMailAddress, toMail, toMailAddress, subject, message);
+            string fname = user.FirstName;
+            // await _mailService.SendEmailAsync(fromDisplayName, fromMailAddress, toMail, toMailAddress, subject, message);
+            await _mailService.SendEmailAsync(user.FirstName + " " + user.FirstName, "songcai342000@gmail.com", user.FirstName, "songcai342000@yahoo.com", "Invoice", "Confirmation");
             return NoContent();
         }
 

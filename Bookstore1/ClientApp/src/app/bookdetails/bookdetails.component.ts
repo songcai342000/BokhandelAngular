@@ -43,4 +43,8 @@ export class BookdetailsComponent implements OnInit {
     const componentRef = viewContainerRef.createComponent(componentFactory);
   }
 
+  historyBack() {
+    window.history.back();
+  }
+
 }

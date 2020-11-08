@@ -22,7 +22,7 @@
   </div>
 </div>
 <div>
-  <a routerLink="/booklist">Go back</a>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)" >Choose</button>&nbsp;&nbsp;
+  <button class="btn-default" (click)="historyBack()" style="color: #2e5cb8">Go back</button>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)" >Choose</button>&nbsp;&nbsp;
 </div>
 <div class="sharebuttons d-flex flex-row">
   <div class="fb-share-button" data-href="http://localhost:4200/bookdetails?id=1" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4200%2Fbookdetails%3Fid%3D1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore btn btn-success"  style="    width: 150px;
@@ -39,13 +39,12 @@
   </div>&nbsp;&nbsp;
   <div>
     <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-    <script type="IN/Share" data-url="http://localhost:4200/bookdetails?id=1">
+    <script type="IN/Share" data-url="https://bookstorenetservice2.azurewebsites.net">
     </script>
   </div>&nbsp;&nbsp;
 </div>
 </div>
 </div>
-<ng-template summaryHost></ng-template>
 <script>
   window.twttr = (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],

@@ -3,6 +3,7 @@ import { Book } from '../book';
 import { BookAmount } from '../bookamount';
 import { DragDropModule, CdkDragEnd } from '@angular/cdk/drag-drop';
 import { BookService } from '../book.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-shoppingsummary',
@@ -15,6 +16,7 @@ export class ShoppingsummaryComponent implements OnInit {
   bookAmounts: BookAmount[]=[];
   dragPosition = { x: 0, y: 0 };
   isShow = true;
+  invoice: any;
 
   @Input() bookAmount: BookAmount;
   @Input() totalAmount: number;
@@ -114,7 +116,5 @@ export class ShoppingsummaryComponent implements OnInit {
     this.getSummary();
   }
 
-  sendInvoice() {
-
-  }
+ 
 }

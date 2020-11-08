@@ -24,9 +24,17 @@ export class PostaddressComponent implements OnInit {
   //add the video to database
   saveAddress(user: User): void {
     localStorage.clear();
+    //this.sendInvoice(this.user);
     this.bookService.newCustomer(this.user).subscribe(() => {
       sessionStorage.setItem('2', 'paid');
+      localStorage.setItem('3', 'c');
       this.router.navigateByUrl('/thankyou');
+    });
+  }
+
+  sendInvoice(user: User): void {
+    this.bookService.sendInvoice(this.user).subscribe(() => {
+      sessionStorage.setItem('2', 'paid');
     });
   }
 
