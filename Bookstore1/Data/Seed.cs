@@ -142,6 +142,7 @@ namespace Bookstore1.Data
 
             new User
             {
+                UserName = "",
                 FirstName = "Paul",
                 FamilyName = "Max",
                 Address = "Furuveien 7",
