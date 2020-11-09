@@ -35,13 +35,13 @@ input[type=text], input[type=submit], input[type=email], select, textarea {
   width: 100%;
 }
 
-input[type=text] {
-  border: 1px solid #dddddd;
-}
+  input[type=text] {
+    border: 1px solid #dddddd;
+  }
 
-/*input[type=submit]:hover {
+input[type=submit]:hover {
   background-color: #f2f2f2;
-}*/
+}
 
 form {
   box-shadow: 1px #888888;

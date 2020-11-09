@@ -1,6 +1,5 @@
 nav {
   min-height: 40px;
-  opacity: 0.8;
   background-color: black;
   min-width: 100%;
 }
@@ -21,7 +20,6 @@ a.navbar-brand {
   word-break: break-all;
   padding-top: 12%;
   background-color: black;
-  opacity: 0.5;
   min-width: 100%;
 }
 

@@ -4,6 +4,15 @@
   margin-left: 450px;
   margin-top: 50px;
 }
+
+#gobackBtn {
+  color: #2e5cb8;
+}
+
+#gobackBtn:hover {
+  color: white;
+}
+
 .sharebuttons {
     display: flex;
     margin-top: 10px;

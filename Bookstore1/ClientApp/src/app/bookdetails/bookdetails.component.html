@@ -1,49 +1,50 @@
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v7.0" nonce="yIA9hiEk"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v8.0" nonce="PWkINhof"></script>
 <div class="content flex-row d-flex" *ngIf="books">
-<div *ngFor="let book of books" class="image"><img src={{book.imageUrl}}></div>
-<div *ngFor="let book of books" class="details">
-<div >
-  <h2>{{book.title}} </h2>
-  <div>
-    <dl class="dl-horizontal">
-      <dt>
-        Author: <span>{{book.author}}</span>
-      </dt>
-      <dt>
-        Introduction: <span class="introduction">{{book.introduction}}</span>
-</dt>
-      <dt>
-        Genre: <span>{{book.genre}}</span>
-</dt>
-      <dt>
-        Price: <span>{{book.price}}&nbsp;kr</span>
-</dt>
-    </dl>
-  </div>
-</div>
-<div>
-  <button class="btn-default" (click)="historyBack()" style="color: #2e5cb8">Go back</button>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)" >Choose</button>&nbsp;&nbsp;
-</div>
-<div class="sharebuttons d-flex flex-row">
-  <div class="fb-share-button" data-href="http://localhost:4200/bookdetails?id=1" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4200%2Fbookdetails%3Fid%3D1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore btn btn-success"  style="    width: 150px;
+  <div *ngFor="let book of books" class="image"><img src={{book.imageUrl}}></div>
+  <div *ngFor="let book of books" class="details">
+    <div>
+      <h2>{{book.title}} </h2>
+      <div>
+        <dl class="dl-horizontal">
+          <dt>
+            Author: <span>{{book.author}}</span>
+          </dt>
+          <dt>
+            Introduction: <span class="introduction">{{book.introduction}}</span>
+          </dt>
+          <dt>
+            Genre: <span>{{book.genre}}</span>
+          </dt>
+          <dt>
+            Price: <span>{{book.price}}&nbsp;kr</span>
+          </dt>
+        </dl>
+      </div>
+    </div>
+    <div>
+      <button class="btn-default" (click)="historyBack()" id="gobackBtn">Go back</button>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)">Choose</button>&nbsp;&nbsp;
+    </div>
+    <div class="sharebuttons d-flex flex-row">
+      <div class="fb-share-button" data-href="https://bookstorenetservice2.azurewebsites.net/bookdetails/{{id}}" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore  btn btn-success" style="    width: 150px;
     height: 40px; color: white;
     background-color: #2e5cb8">Facebook</a></div>
-  <div>
-    <a class="twitter-share-button btn btn-success" style="width: 150px;
+      <div>
+        <a class="twitter-share-button btn btn-success" style="width: 150px;
     height: 40px;
     color: white;
     background-color: #85a3e0"
-       href="https://twitter.com/intent/tweet">
-      Twitter
-    </a>
-  </div>&nbsp;&nbsp;
-  <div>
-    <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-    <script type="IN/Share" data-url="https://bookstorenetservice2.azurewebsites.net">
-    </script>
-  </div>&nbsp;&nbsp;
-</div>
-</div>
+           href="https://twitter.com/intent/tweet">
+          Twitter
+        </a>
+      </div>&nbsp;&nbsp;
+      <div>
+        <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+        <script type="IN/Share" data-url="https://bookstorenetservice2.azurewebsites.net">
+        </script>
+      </div>&nbsp;&nbsp;
+    </div>
+  </div>
 </div>
 <script>
   window.twttr = (function (d, s, id) {

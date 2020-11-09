@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
+  video: string;
   constructor() { }
   ngOnInit() {
   }

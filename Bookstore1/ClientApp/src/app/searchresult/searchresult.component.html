@@ -1,4 +1,4 @@
-<div class="container" style="height: 507px">
+<div class="container">
   <div id="result"> Search result  </div>
   <div class="content d-flex flex-row">
     <div *ngFor="let book of books" class="cell">
@@ -13,7 +13,7 @@
         <span>Price:</span> &nbsp;{{book.price}}&nbsp;kr
       </div>
       <div>
-        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a> <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a> &nbsp;<button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
       </div>
     </div>
   </div>

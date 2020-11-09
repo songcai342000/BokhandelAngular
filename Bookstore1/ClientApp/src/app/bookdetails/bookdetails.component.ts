@@ -13,6 +13,7 @@ import { LoadsummaryDirective } from '../loadsummary.directive';
 export class BookdetailsComponent implements OnInit {
   books: Book[];
   book: Book;
+  id: number;
   isShow = false;
   @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
   constructor(private router: ActivatedRoute, private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver) { }
@@ -23,8 +24,9 @@ export class BookdetailsComponent implements OnInit {
 
   //get book by id
   getBook(): void {
-    const id = +this.router.snapshot.paramMap.get('id');
-    this.bookService.getBook(id).subscribe(books => this.books = books);
+    //const id = +this.router.snapshot.paramMap.get('id');
+    this.id = +this.router.snapshot.paramMap.get('id');
+    this.bookService.getBook(this.id).subscribe(books => this.books = books);
   }
 
   //put a book in the shopping cart
