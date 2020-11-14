@@ -1,14 +1,19 @@
-
 #bg-book {
-  //background-color: antiquewhite;
   background-color: transparent;
-  height: 150px;
-  margin: 0;
+  height: auto;
+  margin-bottom: 0;
+  padding: 0;
   width: 100%;
+  position: relative;
+  bottom: -5%;
+}
+
+svg {
+  z-index: 2;
 }
 
 text {
-    fill: black;
+  fill: black;
 }
 
 .greenText {

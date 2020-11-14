@@ -1,7 +1,16 @@
-.row {
+/*.row {
   width: 1200px;
   margin-top: 0;
   margin-left: 150px;
+}*/
+
+.row {
+  height: 95%;
+  min-width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  margin-bottom: 0;
 }
 
 agm-map {

@@ -82,6 +82,8 @@ namespace Bookstore1.Controllers
         {
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
+            //EmailService ms = new EmailService();
+           // await ms.SendEmailAsync(user., "", "", "", "", "");
 
             return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }

@@ -43,10 +43,11 @@ export class NavMenuComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private route: Router) { }
 
   ngOnInit() {
+   // document.getElementById("topDiv").style.width = window.innerWidth + "px";
+   // document.getElementById("topDiv").style.minWidth = "100%";
+
     this.setPosition();
-    //localStorage.clear();
-    //this.loadSummaryComponent();
-    if (localStorage.getItem('0') != null) {
+   if (localStorage.getItem('0') != null) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
     }
   }

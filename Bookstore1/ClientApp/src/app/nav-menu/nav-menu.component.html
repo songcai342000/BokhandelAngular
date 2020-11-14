@@ -1,22 +1,18 @@
-<div style="    padding: 0;
-    margin: 0;
-    background-color: black;
-    width: 100%;
-    max-height: 40px">
-<div style="width: 1550px; padding: 0">
+<div id="topDiv">
   <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 layer2">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" id="navfiled">
       <div class="container-fluid">
         <div class="navbar-brand text-white"><span>Forest bookstore</span></div>
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
           <ul class="navbar-nav flex-grow">
             <li class="nav-item navitem-left">
-              <div id="searchLinkDiv" (mousemove)="searchFocus()" (mouseout)="searchBlur()" style="height: 35px; width: 120px">
+              <div id="searchLinkDiv" (mousemove)="searchFocus()" (mouseout)="searchBlur()" style="height: 93%; width: 100%">
                 <a class="nav-link text-white" [routerLink]="" (click)="loadSearchBox()"><i class="material-icons">search</i></a>
               </div>
             </li>
             <li class="nav-item navitem-left" [routerLinkActive]="['link-active']" id="homeDiv">
-              <div id="homeLinkDiv" (mousemove)="homeFocus()" (mouseout)="homeBlur()" style="height: 95%">
+              <div id="homeLinkDiv" (mousemove)="homeFocus()" (mouseout)="homeBlur()" style="    height: 93%;
+    width: 100%">
                 <a class="nav-link text-white" [routerLink]="['/']" style="width: 90%; z-index: 1">Home</a>
               </div>
               <div id="dropdownDiv">
@@ -31,7 +27,7 @@
             </li>
 
             <li class="nav-item  navitem-left" id="booksli" [routerLinkActive]="['link-active']">
-              <div id="booksLinkDiv" (mousemove)="booksFocus()" (mouseout)="booksBlur()" style="height: 95%">
+              <div id="booksLinkDiv" (mousemove)="booksFocus()" (mouseout)="booksBlur()" style="height: 93%; width: 100%">
                 <a id="booksLink" class="nav-link text-white" [routerLink]="['/booklist']">Books</a>
               </div>
             </li>
@@ -87,8 +83,8 @@
     </div>
   </div>
   <div style="position: relative; height: 0"><ng-template searchHost></ng-template></div>
-</div>
-</div>
+  </div>
+
 
 
 

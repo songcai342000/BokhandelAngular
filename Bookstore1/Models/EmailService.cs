@@ -31,8 +31,11 @@ namespace Bookstore1.Models
 		)
 		{
 			var email = new MimeMessage();
-			email.From.Add(new MailboxAddress(fromDisplayName, fromEmailAddress));
-			email.To.Add(new MailboxAddress(toMail, toEmailAddress));
+			//email.From.Add(new MailboxAddress(fromDisplayName, fromEmailAddress));
+			email.From.Add(new MailboxAddress(fromEmailAddress));
+			//email.To.Add(new MailboxAddress(toMail, toEmailAddress));
+
+			email.To.Add(new MailboxAddress(toMail));
 			email.Subject = subject;
 
 			var body = new BodyBuilder
@@ -43,10 +46,10 @@ namespace Bookstore1.Models
 			using (var client = new SmtpClient())
 			{
 				client.ServerCertificateValidationCallback = (sender, certificate, certChainType, errors) => true;
-				client.AuthenticationMechanisms.Remove("XOAUTH2");
+				//client.AuthenticationMechanisms.Remove("XOAUTH2");
 
-				await client.ConnectAsync(_smptSettings.Server, _smptSettings.Port, true);
-				await client.AuthenticateAsync(_smptSettings.Username, _smptSettings.Password);
+				await client.ConnectAsync("smpt.gmail.com", 587);
+				await client.AuthenticateAsync("songcai342000@gmail.com", "9634441102sC");
 				await client.SendAsync(email);
 				await client.DisconnectAsync(true);
 			}

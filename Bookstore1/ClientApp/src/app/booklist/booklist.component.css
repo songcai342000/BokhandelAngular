@@ -1,7 +1,19 @@
-.total{
+/*.total{
     width: 1000px;
+}*/
+
+.total {
+  height: 100%;
+  width: 100%;
+  padding-left: 32%;
+  padding-right: 32%;
+  padding-top: 2%;
+  margin-left: 2%;
+  background-color: green;
 }
-.navigation {
+
+
+/*.navigation {
   display: flex;
   width: 100%;
   height: 33%;
@@ -9,48 +21,98 @@
   margin-right: 100px;
 }
 
-.catelog {
+.navigation {
+  display: flex;
+  width: 100%;
+  height: 33%;
+  margin-left: 4%;
+  margin-right: 4%;
+}*/
+
+/*.catelog {
   height: 60px;
   padding-left: 250px;
   font-weight: bold;
+}*/
+
+.catelog {
+  padding-left: 12%;
+  margin-bottom: 2%;
+  font-weight: bold;
 }
 
-.listrow {
+/*.listrow {
   height: auto;
   padding-left: 150px;
   margin-bottom: 50px;
+}*/
+
+.listrow {
+  height: auto;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 2%;
 }
 
-.content {
+/*.content {
   width: 1000px;
   overflow-x: scroll;
+}*/
+
+.content {
+  width: 85%;
+  overflow-x: scroll;
+  justify-content: flex-start;
 }
 
-  .content > div {
+  /*.content > div {
     width: 120px;
     margin-right: 20px;
     margin-bottom: 50px;
     justify-content: flex-start;
     word-wrap: normal;
+  }*/
+
+  .content > div {
+    width: 120px;
+    margin-right: 2%;
+    margin-bottom: 4%;
+    word-wrap: normal;
   }
+
+
+/*.rightnavigatingdiv {
+  padding-top: 5%;
+  text-align: right;
+  width: 120px;
+}*/
 
 .rightnavigatingdiv {
   padding-top: 5%;
   text-align: right;
-  width: 120px;
+  width: 4.5%;
 }
+
+/*.leftnavigatingdiv {
+  padding-top: 5%;
+  text-align: left;
+  width: 120px;
+}*/
 
 .leftnavigatingdiv {
   padding-top: 5%;
   text-align: left;
-  width: 120px;
+  width: 5%;
 }
 
 .title {
   font-size: 14px;
-  width:auto;
+  width: 88%;
   height: auto;
   white-space: nowrap;
+  word-wrap: break-word;
   overflow: hidden;
 }
 
@@ -65,6 +127,11 @@ a {
 .material-icons {
   font-size: 18px;
 }
+
+/*img {
+  width: 115px;
+  height: 172px;
+}*/
 
 img {
   width: 115px;

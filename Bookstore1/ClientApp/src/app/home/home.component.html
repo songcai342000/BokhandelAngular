@@ -1,9 +1,12 @@
-<div class="d-flex flex-row" style="padding-top: 50px; margin-right: 100px; height: 557px" id="container">
-  <div style="width: auto; padding-left: 75px; border: none" id="frameDiv" (mouseover)="getCover()" (mouseout)="removeCover()">
-    <iframe src="https://www.youtube.com/watch?v=XBKGBIEv-7I" width="620" height="450"></iframe>
+<div class="d-flex flex-row" id="homeDiv" style="height: 70%; padding-left: 6%; padding-right: 6%; padding-top: 2%">
+  <div style="border: none" id="frameDiv" (mouseover)="getCover()" (mouseout)="removeCover()">
+    <video width="400" controls>
+      <source src="mov_bbb.mp4" type="video/mp4">
+      <source src="mov_bbb.ogg" type="video/ogg">
+      Your browser does not support HTML5 video.
+    </video>
   </div>
- 
-  <div id="textDiv" style="padding-left: 80px; width: 650px">
+  <div id="textDiv" style="padding-left: 6%; ">
     <div>
       <label for="history">Long history</label>
       <p>

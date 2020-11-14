@@ -1,6 +1,13 @@
-.container {
+/*.container {
     height: 807px;
     margin-left: 150px;
+}*/
+
+.container {
+  height: 105%;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 2%;
 }
 
 #formTitle {

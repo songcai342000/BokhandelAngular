@@ -1,11 +1,25 @@
-.content {
+/*.content {
     height: 557px;
     width: 1000px;
+}*/
+
+.content {
+  height: 75%;
+  width: 100%;
+  padding-left: 37%;
+  padding-right: 35%;
+  padding-top: 2%;
 }
 
-p {
+/*p {
   padding-top: 50px;
   font-size: 24px;
   font-weight: bold;
   padding-left: 65%;
+}*/
+
+p {
+  padding-top: 2%;
+  font-size: 24px;
+  font-weight: bold;
 }

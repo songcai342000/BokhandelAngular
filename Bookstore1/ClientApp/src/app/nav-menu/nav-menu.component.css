@@ -1,21 +1,73 @@
-nav {
-  min-height: 40px;
-  background-color: black;
+#topDiv {
+  margin: 0;
   min-width: 100%;
+}
+
+
+
+
+/*
+
+@media only screen and (max-width: 600px) {
+  #topDiv {
+    padding: 0%;
+    margin: 0;
+    width: 500px
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #topDiv {
+    padding: 0%;
+    margin: 0;
+    width: 600px
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #topDiv {
+    padding: 0%;
+    margin: 0;
+    width: 1250px
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  #topDiv {
+    padding: 0%;
+    margin: 0;
+    width: 1650px
+  }
+}
+
+@media only screen and (max-width: 1680px) {
+  #topDiv {
+    padding: 0%;
+    margin: 0;
+    width: 1700px
+  }
+}*/
+
+nav {
+  background-color: black;
+  height: 100%;
+  width: 100%;
 }
 
 .navbar-nav  {
   border: none;
-  width: 500px;
+  width: 40%;
 }
 
 .navbar-nav > li {
   border: none;
-  width: 120px;
+  //width: 120px;
+  width: 24%;
 }
 
+
 a.navbar-brand {
-  height: 40px;
+  height: 100%;
   white-space: normal;
   word-break: break-all;
   padding-top: 12%;
@@ -24,13 +76,18 @@ a.navbar-brand {
 }
 
 .linkDiv {
-  height: 40px;
-  width: 100px;
+  height: 100%;
+  width: 25%;
+  border: none;
   position: absolute;
   top: 10px;
   left: 64%;
   z-index: 2;
   background-color: transparent;
+}
+
+div {
+    border: none;
 }
 
 .linkDiv:hover {
@@ -209,6 +266,7 @@ app-shoppingcart {
 
 #shoppingcartdiv {
   margin-bottom: 10px;
+  margin-left: 55%;
 }
 
 #close {

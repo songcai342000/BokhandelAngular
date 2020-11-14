@@ -9,7 +9,7 @@
       <label for="firstName">First Name</label>
       <input type="text" class="form-control" name="firstName" id="firstName" [(ngModel)]="user.firstName" #firstName="ngModel" size="25" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">
       <div *ngIf="!firstName?.valid && (firstName?.dirty || firstName?.touched)">
-        First Name must contain at least two letters and start with A capital letter
+        First Name must contain at least two letters and start with a capital letter
         <div *ngIf="firstName.errors.required">
           First Name is required
         </div>
@@ -19,7 +19,7 @@
       <label for="lastName">Last Name</label>
       <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" size="25" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">
       <div *ngIf="!lastName?.valid && (lastName?.dirty || lastName?.touched)">
-        Last Name must contain at least two letters and start with A capital letter
+        Last Name must contain at least two letters and start with a capital letter
         <div *ngIf="lastName.errors.required">
           Last Name is required
         </div>
