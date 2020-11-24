@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./thankcontact.component.css']
 })
 export class ThankcontactComponent implements OnInit {
-
+  userId: number;
   constructor(private route: Router) { }
 
   ngOnInit(): void {

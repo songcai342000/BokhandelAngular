@@ -38,8 +38,10 @@ export class ShoppingsummaryComponent implements OnInit {
        document.getElementById("test").style.height = "auto";
       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-        this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
-        this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
+        //this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
+        //this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
+        this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
+        this.totalPrice = parseInt((JSON.parse(localStorage.getItem('1')))[1]);
         this.isShow = true;
         if (this.isShow) {
           this.isShow = false;

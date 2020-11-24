@@ -145,10 +145,11 @@ namespace Bookstore1.Data
                 UserName = "",
                 FirstName = "Paul",
                 FamilyName = "Max",
+                Mail = "max@yahoo.com",
                 Address = "Furuveien 7",
                 PostNumber = "1102",
                 Country = "Norway",
-                Mobil = "92929292"
+                Mobil = "+47 92929292"
             }
         );
             context.Registrations.AddRange(

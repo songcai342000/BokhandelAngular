@@ -54,7 +54,11 @@ export class NavMenuComponent implements OnInit {
 
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
-    if (localStorage.length > 1) {
+    let l = localStorage.length;
+    if (l == 0) {
+      document.getElementById("test").style.height = "0";
+    }
+    else if (localStorage.length > 1) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
     }
     else if (localStorage.length <= 1) {
@@ -66,8 +70,11 @@ export class NavMenuComponent implements OnInit {
       document.getElementById("test").style.height = "auto";
       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-        this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
-        this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
+        //this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
+        //this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
+        this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
+        this.totalPrice = parseInt((JSON.parse(localStorage.getItem('1')))[1]);
+
         this.isShow = true;
         if (this.isShow) {
           this.isShow = false;

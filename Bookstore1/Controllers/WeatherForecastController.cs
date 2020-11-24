@@ -52,7 +52,7 @@ namespace Bookstore1.Controllers
         {
             string fname = user.FirstName;
             // await _mailService.SendEmailAsync(fromDisplayName, fromMailAddress, toMail, toMailAddress, subject, message);
-            await _mailService.SendEmailAsync(user.FirstName + " " + user.FirstName, "songcai342000@gmail.com", user.FirstName, "songcai342000@yahoo.com", "Invoice", "Confirmation");
+            await _mailService.SendEmailAsync("Linda", "songcai342000@gmail.com", "Song", "songcai342000@yahoo.com", "Invoice", "Confirmation");
             return NoContent();
         }
 

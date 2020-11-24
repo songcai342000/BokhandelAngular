@@ -146,8 +146,8 @@ span {
 #dropdownDiv {
   position: absolute;
   top: 20%;
-  left: 78%;
-  width: 2%;
+  left: 78.6%;
+  width: auto;
   height: 10%;
   z-index: 4;
 }
@@ -155,9 +155,9 @@ span {
 
 .dropdown-menu {
   position: relative;
-  left: -200%;
+  left: -300%;
   width: 80%;
-  padding-left: 100%;
+  padding-left: 130%;
   padding-top: 10%;
   font-weight: 300;
   font-size: 13px;

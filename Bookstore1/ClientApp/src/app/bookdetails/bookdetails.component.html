@@ -26,9 +26,11 @@
       <button class="btn-default" (click)="historyBack()" id="gobackBtn">Go back</button>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)">Choose</button>&nbsp;&nbsp;
     </div>
     <div class="sharebuttons d-flex flex-row">
-      <div class="fb-share-button" data-href="https://bookstorenetservice2.azurewebsites.net/bookdetails/{{id}}" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore  btn btn-success" style="    width: 150px;
+      <div class="fb-share-button" data-href="https://bookstorenetservice2.azurewebsites.net/bookdetails/{{id}}" data-layout="button_count" data-size="small">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore  btn btn-success" style="    width: 150px;
     height: 40px; color: white;
-    background-color: #2e5cb8">Facebook</a></div>
+    background-color: #2e5cb8">Facebook</a>
+      </div>
       <div>
         <a class="twitter-share-button btn btn-success" style="width: 150px;
     height: 40px;
@@ -46,6 +48,7 @@
     </div>
   </div>
 </div>
+<input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
 <script>
   window.twttr = (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],

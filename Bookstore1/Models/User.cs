@@ -13,6 +13,7 @@ namespace Bookstore1.Models
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string FamilyName { get; set; }
+        public string Mail { get; set; }
         public string Address { get; set; }
         public string PostNumber { get; set; }
         public string Country { get; set; }

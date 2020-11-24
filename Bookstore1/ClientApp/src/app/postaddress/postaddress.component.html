@@ -1,5 +1,5 @@
 <div class="container">
-  <form #addressForm="ngForm" (ngSubmit)="saveAddress(user)">
+  <form #addressForm="ngForm" (ngSubmit)="saveAddressOrder()">
     <label for="contactForm" id="formTitle" form="addressForm">Register Your Post Address</label>
     <div class="form-group">
       <label for="username">User Name</label>
@@ -16,12 +16,12 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="lastName">Last Name</label>
-      <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" size="25" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">
-      <div *ngIf="!lastName?.valid && (lastName?.dirty || lastName?.touched)">
-        Last Name must contain at least two letters and start with a capital letter
-        <div *ngIf="lastName.errors.required">
-          Last Name is required
+      <label for="familyName">Family Name</label>
+      <input type="text" class="form-control" name="familyName" id="familyName" [(ngModel)]="user.familyName" #familyName="ngModel" size="25" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">
+      <div *ngIf="!familyName?.valid && (familyName?.dirty || familyName?.touched)">
+        Family Name must contain at least two letters and start with a capital letter
+        <div *ngIf="familyName.errors.required">
+          Family Name is required
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
     </div>
     <div class="form-group">
       <label for="postnr">Post Number</label>
-      <input type="text" class="form-control" name="postnr" id="postnr" [(ngModel)]="user.postnumber" #postnr="ngModel" required pattern="^(\d){4,}(\s)*?$">
+      <input type="text" class="form-control" name="postnr" id="postnr" [(ngModel)]="user.postNumber" #postnr="ngModel" required pattern="^(\d){4,}(\s)*?$">
       <div *ngIf="!postnr?.valid && (postnr?.dirty || postnr?.touched)">
         <div *ngIf="postnr.errors.required">
           Post number is required
@@ -87,7 +87,8 @@
         </div>
       </div>
     </div>
-    <div><button type="submit" class="form-control" [disabled]="!addressForm.form.valid" (click)="clearCart()">Submit</button></div>
+    <div><button type="submit" class="form-control" [disabled]="!addressForm.form.valid" (click)="removeSession4()">Submit</button></div>
   </form>
+  <input type="text" id="orderIdInput" *ngIf="orderIdStr" value="{{orderIdStr}}" style="visibility: visible" (change)="saveOrderId($event)">
 </div>
 

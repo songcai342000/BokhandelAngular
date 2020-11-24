@@ -42,16 +42,26 @@ namespace Bookstore1.Controllers
             return order;
         }
 
+        // GET: api/Orders/GetOrderId/5
+        [HttpGet("GetOrderId")]
+        public string GetOrderId()
+        {
+            string orderId = _context.Orders.Max(o => o.OrderId).ToString();
+
+            return orderId;
+        }
+
         // PUT: api/Orders/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrder(int id, Order order)
         {
-            if (id != order.OrderId)
+            order.OrderId = id;
+            /*if (id != order.OrderId)
             {
                 return BadRequest();
-            }
+            }*/
 
             _context.Entry(order).State = EntityState.Modified;
 

@@ -12,6 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Reservation } from '../reservation';
 import { Order } from '../order';
 import { BookAmount } from '../bookAmount';
+import { User } from '../user';
+import { Subject } from 'rxjs/internal/Subject';
+import { concat } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-booklist',
@@ -28,9 +32,19 @@ export class BooklistComponent implements OnInit {
   startItemR: number;
   endItemR: number;
   bookNumber: number;
+  parameters: string[] = [];
+  userId: string;
+  user: User;
+  order: Order;
+  orderId: string;
+  obj: Object;
+  ids: string[] = [];
+
   @ViewChild('crimeBooks', { static: true }) crimeBooks: ElementRef;
   @ViewChild('romanceBooks', { static: true }) romanceBooks: ElementRef;
   @ViewChild('fictionBooks', { static: true }) fictionBooks: ElementRef;
+  @ViewChild('idInput', { static: true }) idElf: ElementRef;
+
   //private componentRef: ComponentRef<any>;
 
   books: Book[];
@@ -38,10 +52,19 @@ export class BooklistComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) { }
 
   ngOnInit() {
+    //localStorage.clear();
     this.getCrimeBooks();
     this.getFictionBooks();
     this.getRomanceBooks();
-    sessionStorage.clear();
+    //sessionStorage.clear();
+    //if no userId, get userId
+   // let v = localStorage.getItem('4');
+    let v = localStorage.getItem('4');
+    // let o = localStorage.getItem('5');
+    if (v == null || v == '') {
+      //localStorage.setItem('4', 'no');
+      this.newCustomer();
+    }
   }
 
   onSelect(book: Book): void {
@@ -49,6 +72,36 @@ export class BooklistComponent implements OnInit {
     localStorage.setItem('3', 'y');
     this.bookService.register(this.book);
   }
+
+  newCustomer() {
+    this.user = { userId: 0, userName: '', firstName: '', familyName: '', mail: '', address: '', postNumber: '', country: '', mobil: ''};
+    this.bookService.newCustomer(this.user).subscribe(() => {
+      this.bookService.getLastUser().subscribe(userId => this.userId = userId);
+    });
+  }
+
+  //listener to input text change event
+  @HostListener('window:click', ['$event'])
+  handleStorage(event) {
+    let elem1 = document.getElementById("idInput");
+    //alert(elem1);
+    //if (localStorage.getItem('4') == 'no' && elem1 != undefined && elem1 != null) {
+    if (elem1 != undefined && elem1 != null) {
+      //alert('4');
+      let e1 = new Event('change', { bubbles: true });
+      //elem.dispatchEvent(e)
+      //make it asynatic
+      //alert("change");
+      setTimeout(() => elem1.dispatchEvent(e1));
+    }
+  }
+
+  saveUserId(event: any) {
+   // localStorage.setItem('4', event.target.value);
+    let ev = event.target.value;
+    localStorage.setItem('4', ev);
+  }
+
 
   //get crime books
   getBooks(): void {
@@ -112,6 +165,4 @@ export class BooklistComponent implements OnInit {
     const viewContainerRef = this.vcRef.createComponent(componentFactory);
     const componentRef = viewContainerRef.instance.vcRef;
   }*/
-
- 
 }

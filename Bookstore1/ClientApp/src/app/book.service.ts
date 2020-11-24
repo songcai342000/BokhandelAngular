@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, ErrorHandler } from '@angular/core';
-import { Observable, of, empty } from 'rxjs';
+import { Injectable, ErrorHandler, ElementRef } from '@angular/core';
+import { Observable, of, empty, forkJoin, concat } from 'rxjs';
 import { BookAmount } from './bookAmount';
 import { tap, catchError } from 'rxjs/operators';
 import { Contact } from './contact';
@@ -17,8 +17,11 @@ export class BookService {
   books: Book[];
   bookAmount: BookAmount;
   bks: Book[] = [];
+  parameters: string[] = [];
   invoice: any;
   video: string;
+  user: User;
+  order: Order;
   private booksUrl = 'api/Books';
   private crimeUrl = 'api/Books/CrimeBooks';
   private romanceUrl = 'api/Books/RomanceBooks';
@@ -28,21 +31,25 @@ export class BookService {
   private newUrl = 'api/Books/NewBooks';
   private contactUrl = 'api/Contacts';
   private userUrl = 'api/Users';
-  private weatherUrl = 'api/WeatherForecast';
-  private videoUrl = 'api/WeatherForecast';
+  private orderUrl = 'api/Orders';
+  private reservationUrl = 'api/Reservations';
 
 
   constructor(private http: HttpClient) { }
+
   //register to localStorage
   register(book: Book) {
     //localStorage.clear();
-    if (localStorage.length <= 1) {
+    alert(localStorage.length);
+   // if (localStorage.length <= 1) {
+    if (localStorage.length <= 2) {
       this.bks.length = 0;//clear bks
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
     }
     else {
       this.bks = JSON.parse(localStorage.getItem('0'));
+      alert(this.bks.length);
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
     }
@@ -94,15 +101,17 @@ export class BookService {
         totalAmount += itemNumber;
         totalPrice += parseInt(this.bks[a]["price"]) * itemNumber;
       }
-      localStorage.removeItem('1');
-      localStorage.removeItem('2');
-      localStorage.setItem('1', totalAmount.toString());
-      localStorage.setItem('2', totalPrice.toString());
+      this.parameters.push(totalAmount.toString())
+      this.parameters.push(totalPrice.toString())
+      localStorage.setItem('1', JSON.stringify(this.parameters));
+      //localStorage.removeItem('1');
+      //localStorage.removeItem('2');
+      //localStorage.setItem('1', totalAmount.toString());
+      //localStorage.setItem('2', totalPrice.toString());
     }
     return bookAms;
     // }
   }
-
 
   //get romance book list
   getRomanceBooks(): Observable<Book[]> {
@@ -144,6 +153,31 @@ export class BookService {
     return this.http.post<User>(this.userUrl, customer);
   }
 
+  updateCustomer(id: number, customer: User) {
+    return this.http.put<User>(this.userUrl + '/' + id, customer);
+  }
+
+  getLastUser() {
+    return this.http.get<string>(this.userUrl + '/' + 'GetLastUser');
+  }
+
+  /*newCustomerAndId(user: User) {
+    let response1 = this.newCustomer(user);
+    let response2 = this.getLastUser();
+  }*/
+
+  newOrder(order: Order) {
+    return this.http.post<Order>(this.orderUrl, order);
+  }
+
+  updateOrder(id: number, order: Order) {
+    return this.http.put<Order>(this.orderUrl + "/" + id, order);
+  }
+
+  getOrderId() {
+    return this.http.get<string>(this.orderUrl + '/' + 'GetOrderId');
+  }
+
   getByTitle(title: string) {
     return this.http.get<Book[]>(this.searchTitleUrl + '/' + title);
   }
@@ -152,13 +186,23 @@ export class BookService {
     return this.http.get<Book[]>(this.searchAuthorUrl + '/' + author);
   }
 
-  sendInvoice(user: User) {
-    return this.http.get<any>(this.weatherUrl + '/' + user);
+  sendInvoice(orderId: number) {
+    return this.http.get<User>(this.userUrl + '/SendInvoice/' + orderId);
   }
 
-  getVideo(video: string) {
-    return this.http.get<string>(this.videoUrl + '/' + video);
+  reservateBook(reservation: Reservation) {
+    alert("res0");
+    return this.http.post<Reservation>(this.reservationUrl, reservation);
   }
+
+  reservateBooks(reservations: string) {
+    alert("res0");
+    return this.http.post<Reservation>(this.reservationUrl + "/" + 'PostReservations', reservations);
+  }
+
+  /*getVideo(video: string) {
+    return this.http.get<string>(this.videoUrl + '/' + video);
+  }*/
 
   handelError(books: Book[]) {
     return (error: any): Observable<Book[]> => {
