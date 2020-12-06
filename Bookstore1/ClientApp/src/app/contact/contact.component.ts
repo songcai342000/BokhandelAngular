@@ -25,11 +25,11 @@ export class ContactComponent implements OnInit {
     'USA', 'Norway'];
   contact = new Contact(2, '', '', '', '', '');
 
-  //add the video to database
+  //add the contact to database
   newContact(contact: Contact): void {
     sessionStorage.setItem('1', 'contact');
      this.bookService.newContact(this.contact).subscribe(() => {
-      this.router.navigateByUrl('/thankcontact');
+      this.router.navigate(['/thankcontact']);
     }); 
    // this.router.navigateByUrl('/thankcontact');
   }

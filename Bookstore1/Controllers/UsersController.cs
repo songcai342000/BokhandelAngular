@@ -104,9 +104,9 @@ namespace Bookstore1.Controllers
         [HttpGet("SendInvoice/{orderId}")]
         public async Task<ActionResult<Book[]>> SendInvoice(int orderId)
         {
-            var books = from o in _context.Orders
-                        join re in _context.Reservations on o.OrderId equals re.OrderId
-                        join b in _context.Books on re.BookId equals b.BookId
+            var books = from b in _context.Books
+                        join re in _context.Reservations on b.BookId equals re.BookId
+                        join o in _context.Orders on re.OrderId equals o.OrderId
                         where o.OrderId == orderId
                         select new
                         {
@@ -126,14 +126,14 @@ namespace Bookstore1.Controllers
             /*StringBuilder sb = new StringBuilder();
             sb.AppendLine("Invoice");
             sb.AppendLine("Your Order Number: " + orderId.ToString());*/
-            String sb = "<div style='padding: 5% '><div style='width: 100%; text-align: center; font-weight: bold'>Invoice </div><div style='width: 100%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div>";
+            String sb = "<div style='padding: 5%; font-size: 14px; width: 100%'><div style='width: 100%; text-align: center; font-weight: bold; font-size: 16px'>Invoice </div><br><div style='width: 100%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div><hr style='margin-right: 12%'>";
             double sum = 0;
             foreach (var bk in books)
             {
-                sb += "<div style='width: 100%;'><div style='width: 70%; overflow-wrap: break-word'>" + bk.Title + "</div><div style='width: 30%;'>" + bk.Price.ToString() + " kr </div></div>";
+                sb += "<div style='width: 100%;  display: flex'><div style='width: 70%; overflow-wrap: break-word'>" + bk.Title + "</div><div style='width: 30%;'>" + bk.Price.ToString() + " kr </div></div>";
                 sum += bk.Price;
             }
-             sb += "<div style='width: 100%;'>Total price: " + sum.ToString() + "</div></div>";
+             sb += "<div style='width: 100%; font-weight: bold'>Total price: " + sum.ToString() + " kr </div></div>";
             _emailService = new EmailService();
             await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@gmail.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Invoice", sb.ToString());
             return NoContent();

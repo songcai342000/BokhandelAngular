@@ -43,8 +43,6 @@ export class NavMenuComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private route: Router) { }
 
   ngOnInit() {
-   // document.getElementById("topDiv").style.width = window.innerWidth + "px";
-   // document.getElementById("topDiv").style.minWidth = "100%";
 
     this.setPosition();
    if (localStorage.getItem('0') != null) {
@@ -57,6 +55,7 @@ export class NavMenuComponent implements OnInit {
     let l = localStorage.length;
     if (l == 0) {
       document.getElementById("test").style.height = "0";
+      this.bookNumber = 0;
     }
     else if (localStorage.length > 1) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
@@ -70,8 +69,6 @@ export class NavMenuComponent implements OnInit {
       document.getElementById("test").style.height = "auto";
       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-        //this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
-        //this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
         this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
         this.totalPrice = parseInt((JSON.parse(localStorage.getItem('1')))[1]);
 

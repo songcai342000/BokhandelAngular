@@ -22,6 +22,7 @@ import { ThankcontactComponent } from './thankcontact/thankcontact.component';
 import { FootComponent } from './foot/foot.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatisticComponent } from './statistic/statistic.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 import { AgmCoreModule } from '@agm/core';
 import { Chart } from 'chart.js';
 import { AppRoutingModule } from './app-routing.module';
@@ -56,6 +57,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FootComponent,
     SearchresultComponent,
     LoadsearchDirective,
+    FavoritesComponent,
     SearchboxComponent
   ],
   imports: [
@@ -80,6 +82,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       { path: 'postaddress', component: PostaddressComponent },
       { path: 'thankyou', component: ThankyouComponent },
       { path: 'thankcontact', component: ThankcontactComponent },
+      { path: 'favorites', component: FavoritesComponent },
       { path: '**', component: PageNotFoundComponent },
       { path: 'fetch-data', component: FetchDataComponent }
     ]),

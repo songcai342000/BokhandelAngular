@@ -17,7 +17,7 @@ export class BookService {
   books: Book[];
   bookAmount: BookAmount;
   bks: Book[] = [];
-  parameters: string[] = [];
+  parameters: number[] = [];
   invoice: any;
   video: string;
   user: User;
@@ -40,7 +40,7 @@ export class BookService {
   //register to localStorage
   register(book: Book) {
     //localStorage.clear();
-    alert(localStorage.length);
+    //alert(localStorage.length);
    // if (localStorage.length <= 1) {
     if (localStorage.length <= 2) {
       this.bks.length = 0;//clear bks
@@ -49,7 +49,7 @@ export class BookService {
     }
     else {
       this.bks = JSON.parse(localStorage.getItem('0'));
-      alert(this.bks.length);
+      //alert(this.bks.length);
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
     }
@@ -83,6 +83,7 @@ export class BookService {
     let itemNumber;
     let totalPrice = 0;
     let totalAmount = 0;
+    this.parameters = [];
     if (localStorage.length > 1) {
       this.bks = JSON.parse(localStorage.getItem('0'));
       bks = this.bks;
@@ -101,8 +102,8 @@ export class BookService {
         totalAmount += itemNumber;
         totalPrice += parseInt(this.bks[a]["price"]) * itemNumber;
       }
-      this.parameters.push(totalAmount.toString())
-      this.parameters.push(totalPrice.toString())
+      this.parameters.push(totalAmount)
+      this.parameters.push(totalPrice)
       localStorage.setItem('1', JSON.stringify(this.parameters));
       //localStorage.removeItem('1');
       //localStorage.removeItem('2');
@@ -191,12 +192,12 @@ export class BookService {
   }
 
   reservateBook(reservation: Reservation) {
-    alert("res0");
+    //alert("res0");
     return this.http.post<Reservation>(this.reservationUrl, reservation);
   }
 
   reservateBooks(reservations: string) {
-    alert("res0");
+    //alert("res0");
     return this.http.post<Reservation>(this.reservationUrl + "/" + 'PostReservations', reservations);
   }
 

@@ -19,6 +19,7 @@ export class SearchresultComponent implements OnInit {
   author: string;
   user: User;
   userId: string;
+  ids: number[] = [];
   public destroyed = new Subject<any>();
   componentRef: ComponentRef<any>;
 
@@ -73,8 +74,12 @@ export class SearchresultComponent implements OnInit {
   }
 
   saveUserId(event: any) {
-    let ev = event.target.value;
-    localStorage.setItem('4', ev);
+    // localStorage.setItem('4', event.target.value);
+    let l4 = localStorage.getItem('4');
+    if (l4 == null || l4 == '') {
+      this.ids.push(parseInt(event.target.value));
+      localStorage.setItem('4', JSON.stringify(this.ids));
+    }
   }
 
 

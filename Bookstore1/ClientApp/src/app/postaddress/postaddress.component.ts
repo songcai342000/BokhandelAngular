@@ -22,46 +22,59 @@ export class PostaddressComponent implements OnInit {
   orderId: number;
   orderIdInputV: string;
   orderIdStr: string;
-  ids: string[] = [];
+  ids: number[] = [];
   userId: number;
   obj: object
+  count: number;
   @ViewChild('idInput', { static: false }) newIdElf: ElementRef;
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
    // sessionStorage.removeItem('4');
-
-    this.userId = parseInt(localStorage.getItem('4'));
-   // alert(this.userId);
+    this.ids = JSON.parse(localStorage.getItem('4'));
+    if (this.ids != null) {
+      this.userId = this.ids[0];
+      //alert(this.userId);
+    }
+    if (this.ids != null && this.ids.length == 2) {
+      this.orderId = this.ids[1];
+     // alert(this.orderId);
+    }
     if (this.userId == null || this.userId == NaN || this.userId == 0) {
       this.router.navigate(['/page-not-found']);
     }
     this.books = JSON.parse(localStorage.getItem('0'));
-    this.newOrder();
+    this.newOrder(this.userId);
   }
 
   //listener to input text change event
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
-    let elem1 = document.getElementById("orderIdInput");
-    //alert('1');
-    let l = sessionStorage.getItem('4');
-    alert(l);
-    if (l != 'oid' && elem1 != undefined && elem1 != null) {
-      let e1 = new Event('change', { bubbles: true });
-      //make it asynatic
-      //alert("change");
-      setTimeout(() => elem1.dispatchEvent(e1));
-      sessionStorage.setItem('4', 'oid');
+    if (this.orderId == null || this.orderId == undefined) {
+      let elem1 = document.getElementById("orderIdInput");
+     // let l = sessionStorage.getItem('4');
+      //if (l != 'oid' && parseInt(l) != NaN && elem1 != undefined && elem1 != null) {
+      if (elem1 != undefined && elem1 != null) {
+        let e1 = new Event('change', { bubbles: true });
+        //make it asynatic
+        //alert("change");
+        setTimeout(() => elem1.dispatchEvent(e1));
+       // sessionStorage.setItem('4', 'oid');
+      }
     }
   }
 
   saveOrderId(event: any) {
-    alert('1');
-    this.orderIdInputV = event.target.value;
-    alert(this.orderIdInputV);
-    this.orderId = parseInt(this.orderIdInputV);
-    alert(this.orderId);
+   // this.ids = JSON.parse(localStorage.getItem('4'));
+   // alert('1');
+    if (this.ids.length < 2) {
+      this.orderIdInputV = event.target.value;
+      //alert(this.orderIdInputV);
+      this.orderId = parseInt(this.orderIdInputV);
+      this.ids.push(this.orderId);
+      localStorage.setItem('4', JSON.stringify(this.ids));
+      //sessionStorage.setItem('4', this.orderId.toString());
+    }
   }
 
   countries = ['Australia', 'Canada',
@@ -71,21 +84,17 @@ export class PostaddressComponent implements OnInit {
   //update user and order
   saveAddressOrder(): void {
     //make it is ready for event trigger
-    try {
+    //alert(this.orderId);
       this.bookService.updateCustomer(this.userId, this.user).subscribe(() => {
-        this.updateOrder();
+        this.updateOrder(this.orderId, this.userId, this.books);
       });
-      this.clearCart();
-      this.sendInvoice();
-    }
-    catch {
-      alert("Something is wrong. Please try again");
-    }
+  
+    
   }
 
-  newOrder() {
+  newOrder(uid: number) {
   //  alert(localStorage.getItem('4'));
-    this.order = { userId: this.userId, status: 'Not Paid'};
+    this.order = { userId: uid, status: 'Not Paid'};
     this.bookService.newOrder(this.order).subscribe(() => {
       this.getOrderId();
     });
@@ -95,26 +104,36 @@ export class PostaddressComponent implements OnInit {
     this.bookService.getOrderId().subscribe(orderIdStr => this.orderIdStr = orderIdStr);
   }
 
-  updateOrder() {
-    this.order = { orderId: this.orderId, userId: this.userId, status: 'Paid'};
-    this.bookService.updateOrder(this.orderId, this.order).subscribe(() => {
+  updateOrder(oid: number, uid: number, bks: Book[]) {
+    this.order = { orderId: oid, userId: uid, status: 'Paid'};
+    this.bookService.updateOrder(oid, this.order).subscribe(() => {
       //saveReservation must be wrapped together
-      this.saveReservation();
+      this.saveReservation(oid, bks);
     });
   }
 
-  clearCart() {
-    localStorage.clear();
-    sessionStorage.setItem('3', 'i');
-  }
-
-  saveReservation() {
+  saveReservation(oid: number, bks: Book[]) {
     let l = this.books.length;
+    //alert(l);
+    this.count = 0;
     for (let i = 0; i < l; i++) {
       let now = new Date(Date.now());
-      this.reservation = { orderId: this.orderId, bookId: this.books[i]["bookId"], reservationTime: now };
+      this.reservation = { orderId: oid, bookId: bks[i]["bookId"], reservationTime: now };
       this.bookService.reservateBook(this.reservation).subscribe(() => {
       });
+      this.count++;
+    }
+    //alert(l);
+    //alert(this.count);
+    //if all reservations are registrated
+    if (this.count == l) {
+      this.books = [];
+      localStorage.setItem('0', JSON.stringify(this.books));
+      sessionStorage.setItem('2', 'paid');
+      this.router.navigate(['/thankyou']);
+    }
+    else {
+      alert("Something is wrong. Please try later.");
     }
   }
 
@@ -130,20 +149,24 @@ export class PostaddressComponent implements OnInit {
     }
   }*/
 
-  sendInvoice(): void {
-    this.bookService.sendInvoice(this.orderId).subscribe(() => {
-      sessionStorage.setItem('2', 'paid');
-      this.router.navigate(['/thankyou']);
-    });
-  }
+  /*clearCart() {
+    localStorage.clear();
+    sessionStorage.setItem('3', 'i');
+  }*/
 
-  removeSession4() {
-    sessionStorage.removeItem('4');
-  }
+ 
 
  /* @HostListener('window:click', ['$event'])
   handleStorage(event) {
     
   }*/
+
+  sendInvoice(id: number): void {
+    this.bookService.sendInvoice(id).subscribe(() => {
+      //sessionStorage.setItem('2', 'paid');
+    });
+  }
+
+
 
 }

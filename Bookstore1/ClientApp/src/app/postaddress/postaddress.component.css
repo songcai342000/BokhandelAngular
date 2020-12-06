@@ -3,6 +3,13 @@
     margin-left: 150px;
 }*/
 
+/*.container {
+  height: 115%;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 2%;
+}*/
+
 .container {
   height: 115%;
   padding-left: 6%;
@@ -12,9 +19,15 @@
 
 #formTitle {
   margin-left: 35%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
   font-size: 16px;
 
+}
+
+@media only screen and (max-width: 800px) {
+  #formTitle {
+    margin-left: 22%;
+  }
 }
 
 input[type=text] {
@@ -31,3 +44,15 @@ form {
   position: relative;
   border: 1px solid transparent;
 }
+
+
+
+/*form {
+  width: 100%;
+  padding-left: 25%;
+  padding-right: 25%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid transparent;
+}*/

@@ -1,6 +1,6 @@
 <div class="container">
   <form #addressForm="ngForm" (ngSubmit)="saveAddressOrder()">
-    <label for="contactForm" id="formTitle" form="addressForm">Register Your Post Address</label>
+    <label for="contactForm" id="formTitle" form="addressForm">Your Post Address</label>
     <div class="form-group">
       <label for="username">User Name</label>
       <input type="text" class="form-control" name="userName" id="username" [(ngModel)]="user.userName" #userName="ngModel" size="25" value="">
@@ -87,8 +87,11 @@
         </div>
       </div>
     </div>
-    <div><button type="submit" class="form-control" [disabled]="!addressForm.form.valid" (click)="removeSession4()">Submit</button></div>
+    <div><button type="submit" class="form-control" [disabled]="!addressForm.form.valid" id="submitBtn">Submit</button></div>
   </form>
-  <input type="text" id="orderIdInput" *ngIf="orderIdStr" value="{{orderIdStr}}" style="visibility: visible" (change)="saveOrderId($event)">
-</div>
+  <input type="text" id="orderIdInput" *ngIf="orderIdStr" value="{{orderIdStr}}" style="visibility: hidden" (change)="saveOrderId($event)">
 
+</div>
+<p style="visibility: hidden">
+  In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
+</p>

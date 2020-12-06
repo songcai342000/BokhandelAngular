@@ -38,7 +38,7 @@ export class BooklistComponent implements OnInit {
   order: Order;
   orderId: string;
   obj: Object;
-  ids: string[] = [];
+  ids: number[] = [];
 
   @ViewChild('crimeBooks', { static: true }) crimeBooks: ElementRef;
   @ViewChild('romanceBooks', { static: true }) romanceBooks: ElementRef;
@@ -98,8 +98,11 @@ export class BooklistComponent implements OnInit {
 
   saveUserId(event: any) {
    // localStorage.setItem('4', event.target.value);
-    let ev = event.target.value;
-    localStorage.setItem('4', ev);
+    let l4 = localStorage.getItem('4');
+    if (l4 == null || l4 == '') {
+      this.ids.push(parseInt(event.target.value));
+      localStorage.setItem('4', JSON.stringify(this.ids));
+    }
   }
 
 

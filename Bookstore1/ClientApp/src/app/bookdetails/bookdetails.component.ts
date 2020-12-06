@@ -19,6 +19,8 @@ export class BookdetailsComponent implements OnInit {
   parameters: string[] = [];
   isShow = false;
   userId: string;
+  ids: number[] = [];
+
   @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
   @ViewChild('idInput', { static: true }) idElf: ElementRef;
 
@@ -59,8 +61,12 @@ export class BookdetailsComponent implements OnInit {
   }
 
   saveUserId(event: any) {
-    let ev = event.target.value;
-    localStorage.setItem('4', ev);
+    // localStorage.setItem('4', event.target.value);
+    let l4 = localStorage.getItem('4');
+    if (l4 == null || l4 == '') {
+      this.ids.push(parseInt(event.target.value));
+      localStorage.setItem('4', JSON.stringify(this.ids));
+    }
   }
 
 

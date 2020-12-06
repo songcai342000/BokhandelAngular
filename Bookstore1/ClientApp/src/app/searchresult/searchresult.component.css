@@ -1,8 +1,15 @@
-.container {
+/*.container {
   margin-left: 250px;
   padding-left: 100px;
   padding-top: 50px;
   height: 557px;
+}*/
+
+.container {
+  padding-left: 15%;
+  padding-top: 2%;
+  height: 70%;
+  width: 100%;
 }
 
 #result {

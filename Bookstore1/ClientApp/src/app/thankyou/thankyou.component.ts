@@ -9,16 +9,36 @@ import { BookService } from '../book.service';
 })
 
 export class ThankyouComponent implements OnInit {
-  constructor(private route: Router, private bookService: BookService) { }
+  orderId: number;
+
+  constructor(private router: Router, private bookService: BookService) { }
 
   ngOnInit(): void {
     let s = sessionStorage.getItem('2');
     if (s == null || s == '' || s == 'unpaid') {
-      this.route.navigate(['/page-not-found']);
+      this.router.navigate(['/page-not-found']);
     }
-    sessionStorage.setItem('2', 'unpaid');
+    this.orderId = (JSON.parse(localStorage.getItem('4')))[1];
+   // alert(this.orderId);
+    if (this.orderId > 0) {
+      //alert("test");
+      this.clearCart();
+      sessionStorage.setItem('2', 'unpaid');
+      setTimeout(()=>this.sendInvoice(this.orderId), 8000);
+    }
+    else {
+      this.router.navigate(['/page-not-found']);
+    }
   }
 
- 
+  sendInvoice(id: number): void {
+    this.bookService.sendInvoice(id).subscribe(() => {
+      //sessionStorage.setItem('2', 'paid');
+    });
+  }
 
+  clearCart() {
+    localStorage.clear();
+    sessionStorage.setItem('3', 'i');
+  }
 }

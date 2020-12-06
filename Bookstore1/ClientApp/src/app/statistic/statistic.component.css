@@ -5,16 +5,27 @@
   padding-top: 50px;
 }*/
 
-div {
-  min-width: 100%;
+/*.centent {
   height: 101%;
   padding-left: 32%;
   padding-right: 32%;
   padding-top: 2%;
   padding-bottom: 0;
-  margin-bottom: 0%;
-  position: relative;
-  margin-top: 0%;
-  bottom: 0;
+  min-width: 100%;
+}*/
+
+.content {
+  height: 75%;
+  padding-left: 32%;
+  padding-right: 32%;
+  padding-top: 2%;
 }
 
+
+canvas {
+  width: auto;
+}
+
+p {
+    visibility: hidden;
+}

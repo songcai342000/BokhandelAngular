@@ -1,39 +1,39 @@
-<div class="row">
-  <div class="col-md-6">
-      <div class="callDiv">
-        <div class="d-flex flex-row">
-          <div class="col-sm-6">
-            <label>Telephone</label>
-          </div>
-          <div class="col-sm-6">
-            <i class="material-icons">call</i>
-          </div>
+<div class="content d-flex flex-row">
+  <div  class="col-sm-6" id="leftDiv">
+    <div class="callDiv">
+      <div class="d-flex flex-row">
+        <div class="col-sm-6">
+          <label>Telephone</label>
         </div>
-        <div class="d-flex flex-row">
-          <div class="col-sm-6">
-            800 000 000
-          </div>
-          <div class="col-sm-6">
-          </div>
+        <div class="col-sm-6">
+          <i class="material-icons">call</i>
         </div>
       </div>
-      <div class="addressDiv">
-        <div class="d-flex flex-row">
+      <div class="d-flex flex-row">
+        <div class="col-sm-6">
+          800 000 000
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+    </div>
+    <div class="addressDiv">
+      <div class="d-flex flex-row">
         <div class="col-sm-6">
           <label>Address</label>
         </div>
         <div class="col-sm-6">
           <i class="material-icons">place</i>
         </div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="col-sm-6">
+          16 Queen street<br>Washington 1000
         </div>
-        <div class="d-flex flex-row">
-          <div class="col-sm-6">
-            16 Queen street<br>Washington 1000
-          </div>
-          <div class="col-sm-6">
-          </div>
+        <div class="col-sm-6">
         </div>
       </div>
+    </div>
     <div class="mapDiv">
       <agm-map [latitude]="lat" [longitude]="lng">
         <agm-marker [latitude]="lat" [longitude]="lng">
@@ -41,7 +41,7 @@
       </agm-map>
     </div>
   </div>
-  <div class="col-md-6">
+  <div id="rightDiv" class="col-sm-6">
     <form #contactForm="ngForm" (ngSubmit)="newContact(contact)">
       <label for="contactForm" id="formTitle">Send message</label>
       <div class="form-group">
@@ -109,5 +109,8 @@
       <div><input type="submit" class="form-control" [disabled]="!contactForm.form.valid" value="Submit"></div>
     </form>
   </div>
+  <p style="visibility: hidden">
+    In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
+  </p>
 </div>
 

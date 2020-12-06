@@ -14,10 +14,10 @@ export class HomeComponent {
   }
 
   getCover() {
-    document.getElementById("frameDiv").style.opacity = "0.5";
+    document.getElementById("iframeDiv").style.opacity = "0.5";
   }
 
   removeCover() {
-    document.getElementById("frameDiv").style.opacity = "1";
+    document.getElementById("iframeDiv").style.opacity = "1";
   }
 }
