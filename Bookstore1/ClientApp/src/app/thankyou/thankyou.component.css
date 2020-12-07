@@ -51,7 +51,7 @@
   bottom: -1%;
 }*/
 
-@media only screen and (max-width: 800px){
+/*@media only screen and (max-width: 800px){
   .bubble-bottom-left:before {
     content: "";
     width: 0px;
@@ -64,7 +64,7 @@
     left: 6%;
     bottom: -3%;
   }
-}
+}*/
 
 /*.content {
   background-color: red;
@@ -85,6 +85,8 @@
   color: #000000;
   font-weight: 400;
   min-width: 100%;
+  padding-left: 30%;
+  padding-right: 30%;
 }
 
 

@@ -133,7 +133,7 @@ namespace Bookstore1.Controllers
                 sb += "<div style='width: 100%;  display: flex'><div style='width: 70%; overflow-wrap: break-word'>" + bk.Title + "</div><div style='width: 30%;'>" + bk.Price.ToString() + " kr </div></div>";
                 sum += bk.Price;
             }
-             sb += "<div style='width: 100%; font-weight: bold'>Total price: " + sum.ToString() + " kr </div></div>";
+             sb += "<div style='width: 100%; font-weight: bold'>Sum: " + sum.ToString() + " kr </div></div>";
             _emailService = new EmailService();
             await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@gmail.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Invoice", sb.ToString());
             return NoContent();

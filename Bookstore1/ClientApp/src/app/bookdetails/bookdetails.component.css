@@ -1,8 +1,16 @@
 .content {
   height: 75%;
   width: 100%;
-  padding-left: 28%;
+  padding-left: 24%;
+  padding-right: 24%;
   margin-top: 2%;
+}
+
+@media only screen and (max-width: 800px){
+  .content {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 #gobackBtn {
