@@ -14,7 +14,8 @@ export class StatisticComponent implements OnInit {
 
   ngOnInit(): void {
     this.ctx = this.donut.nativeElement.getContext('2d');
-      var data = new Chart(this.ctx, {
+    var data = new Chart(this.ctx, {
+      responsive: true,
       type: 'bar',
       data: {
         labels: ['NULRaghuvamsa SudhaL', 'Arvind Gupta TED Talk', 'Event Loop - Philip Roberts', 'Betty is a lucky girl', 'Purple', 'Gone with laugh'],
