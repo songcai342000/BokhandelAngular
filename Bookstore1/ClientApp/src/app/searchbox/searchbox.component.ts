@@ -52,11 +52,16 @@ export class SearchboxComponent implements OnInit {
   sendSearch() {
     //localStorage.setItem('4', 'ch');
     if (this.searchCondition == 'author') {
-      //location.assign("/searchresult?" + "author=" + this.searchTerm); 
+      //location.assign("/searchresult?" + "author=" + this.searchTerm);
+      this.closeDisplay();
       this.route.navigate(['/searchresult'], { queryParams: { author: this.searchTerm } });
-    } 
+    }
     else if (this.searchCondition == 'title') {
+      this.closeDisplay();
       this.route.navigate(['/searchresult'], { queryParams: { title: this.searchTerm } });
+    }
+    else {
+      alert("Please choose a condition");
     }
     
   }

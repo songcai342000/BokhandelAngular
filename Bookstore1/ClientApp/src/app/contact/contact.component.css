@@ -97,6 +97,12 @@ agm-map {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  #formTitle {
+    margin-left: 33%;
+  }
+}
+
 input[type=text], input[type=submit], input[type=email], select, textarea {
   width: 100%;
 }

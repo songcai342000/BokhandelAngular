@@ -31,9 +31,9 @@
     min-width: 38%;
     margin-right: 4%;
     margin-bottom: 8%;
-    word-wrap: normal;
   }
 }
+
 
 .title {
   width: 85%;
@@ -49,5 +49,4 @@ span {
   width: 19%;
   margin-right: 2%;
   margin-bottom: 4%;
-  word-wrap: normal;
 }
