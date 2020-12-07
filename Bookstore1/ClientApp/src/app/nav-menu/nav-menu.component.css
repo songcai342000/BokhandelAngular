@@ -71,12 +71,7 @@ nav {
     width: 10%;
     height: 10%;
     right: 29%;
-    left: 60%;
-    margin-left: 1%;
-  }
-
-  #dropdownDiv.a {
-    margin-left: 10px;
+    left: 62%;
   }
 
     #dropdownDiv ul {
@@ -434,7 +429,6 @@ button {
 th, td {
   padding: 10px;
   padding-bottom: 5px;
-  border: none;
 }
 
 table {
