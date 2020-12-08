@@ -4,7 +4,7 @@
 }*/
 
 .content {
-  height: 70%;
+  height: 100%;
   width: 100%;
   padding-left: 40%;
   padding-right: 40%;
@@ -24,7 +24,9 @@
   font-weight: bold;
 }
 
-@media only screen and (max-width: 770px) {
+
+
+@media only screen and (max-width: 800px) {
   .content {
     padding-left: 10%;
     padding-right: 10%;
@@ -32,10 +34,9 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
   .content {
-    padding-left: 35%;
-    padding-right: 35%;
+    padding-left: 15%;
     padding-top: 2%;
   }
 }
