@@ -19,11 +19,11 @@
   padding-top: 2%;
 }
 
-.content > div {
-    width: 35%;
+/*.content > div {
+    width: 30%;
     margin-left: 30%;
     position: relative;
-}
+}*/
 
 p {
     visibility: hidden;
@@ -32,7 +32,7 @@ p {
 @media only screen and (max-width: 800px){
   .content > div {
     width: 70%;
-    margin-left: 15%;
+    width: 15%;
     position: relative;
   }
 }
