@@ -59,26 +59,16 @@ nav {
   width: 40%;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 720px) {
   ul.navbar-nav {
     border: none;
     width: 80%;
   }
 
   #dropdownDiv {
-    position: absolute;
-    top: 20%;
-    width: 50%;
-    height: 10%;
-    left: 64%;
+    left: 435px;
   }
 
-   
-  .dropdown-menu {
-    min-width: 100px;
-    padding-right: 5px;
-    z-index: 4;
-  }
 }
 
 
