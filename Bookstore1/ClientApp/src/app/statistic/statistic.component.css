@@ -36,3 +36,11 @@ p {
     position: relative;
   }
 }
+
+@media only screen and (min-width: 800px) {
+  .content > div {
+    width: 45%;
+    margin-left: 25%;
+    position: relative;
+  }
+}
