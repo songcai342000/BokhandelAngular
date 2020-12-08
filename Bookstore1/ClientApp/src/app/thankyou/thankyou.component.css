@@ -80,7 +80,7 @@
 }*/
 
 .content {
-  height: 80%;
+  height: 100%;
   padding-top: 3%;
   color: #000000;
   font-weight: 400;
@@ -121,7 +121,7 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   text-align: center;
-  padding-top: 4%;
+  padding-top: 13%;
 }
 
 /*#expectionDiv {

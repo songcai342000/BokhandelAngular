@@ -61,7 +61,8 @@ export class SearchboxComponent implements OnInit {
       this.route.navigate(['/searchresult'], { queryParams: { title: this.searchTerm } });
     }
     else {
-      alert("Please choose a condition");
+      this.searchCondition = '';
+      alert("Please choose a search condition");
     }
     
   }
