@@ -8,9 +8,15 @@
   padding-right: 32%;
   padding-top: 2%;
   margin-left: 2%;
+  height: auto;
+  margin-bottom: 0;
 }
 
-
+@media only screen and (min-height: 1050px) {
+  .container {
+    height: 110%;
+  }
+}
 /*.navigation {
   display: flex;
   width: 100%;
@@ -26,13 +32,11 @@
   margin-left: 4%;
   margin-right: 4%;
 }*/
-
 /*.catelog {
   height: 60px;
   padding-left: 250px;
   font-weight: bold;
 }*/
-
 .catelog {
   padding-left: 12%;
   margin-bottom: 2%;

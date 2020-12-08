@@ -21,6 +21,26 @@
   margin-bottom: 0;
 }
 
+@media only screen and (min-height: 1050px) {
+  .content {
+    height: 110%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    padding-left: 5%;
+  }
+
+  #rightDiv {
+      min-width: 62%;
+  }
+
+  form {
+      padding-right: 10px;
+  }
+}
+
 agm-map {
   height: 250px;
 }

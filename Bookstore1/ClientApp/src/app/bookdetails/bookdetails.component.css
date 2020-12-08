@@ -2,7 +2,9 @@
   height: 100%;
   width: 100%;
   margin-top: 2%;
+  margin-bottom: 0;
 }
+
 
 @media only screen and (max-width: 800px){
   .content {
