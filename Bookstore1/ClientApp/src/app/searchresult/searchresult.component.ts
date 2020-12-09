@@ -49,6 +49,10 @@ export class SearchresultComponent implements OnInit {
       //localStorage.setItem('4', 'no');
       this.newCustomer();
     }
+
+        alert(window.innerWidth);
+    alert(window.outerWidth);
+    alert(window.innerHeight);
   }
 
   newCustomer() {

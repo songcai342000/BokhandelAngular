@@ -1,15 +1,15 @@
-<div class="content" style="padding-left: 6%; padding-right: 6%; padding-top: 2%; display: flex; ">
+<div class="total" style="padding-left: 6%; padding-right: 6%; padding-top: 2%; display: flex; ">
  
   <div style="border: none; width: 40%" >
   
-      <iframe src="https://www.youtube.com/embed/LczZRp9Obm8" width="100%" height="45%" style="border: none" (mouseover)="getCover()" (mouseout)="removeCover()" id="iframe">
+      <iframe src="https://www.youtube.com/embed/j8uIRPaRHBY" width="100%" height="70%" style="border: none" (mouseover)="getCover()" (mouseout)="removeCover()" id="iframe">
       </iframe>
   </div>
 
-  <div style="padding-left: 7%; padding-right: 7%; width: 60%">
+  <div style="padding-left: 7%; padding-right: 0%; width: 60%">
 
-    
-      <label>Long history</label>
+    <div id="background-div" style="background-image: linear-gradient(white, #ffff99); padding: 5% 8%; box-shadow: #ddd 0 0 3px 3px">
+      <div class="title" style="display: flex"><label>Long history</label><div id="circle1" style=" width: 25px; height: 25px; background-color: red; margin-left: 1%; margin-top: -0.1%; border-radius: 50%; animation: fadeIn 3s;" [@openClose]="isClosed ? 'closed' : 'open'"></div></div>
       <p style="margin-bottom: 5%">
         Forest Bookstore was opened by John Kenny and his wife Mary Kenny in 1946. It was in a tiny size for only one year and has become the largest bookstore in the country since 1956.
         Today it is one of the biggest tax contributer in the state. Except the contributions to
@@ -30,7 +30,7 @@
         We are a quick learner of new technologies. We apply the newest technologies in the whole of our service process, while user-friendly thought is our most important service idea. Our considerate
         work has won us the title of "The most pleasant bookstore in the country" for five years in a row.
       </p>
-   
+    </div>
   </div>
 
  

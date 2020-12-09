@@ -65,6 +65,9 @@ export class BooklistComponent implements OnInit {
       //localStorage.setItem('4', 'no');
       this.newCustomer();
     }
+    //alert(window.innerWidth);
+  // alert(window.outerWidth);
+
   }
 
   onSelect(book: Book): void {

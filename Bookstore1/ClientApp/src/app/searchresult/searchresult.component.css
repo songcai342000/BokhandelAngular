@@ -6,7 +6,7 @@
 }*/
 
 .container {
-  padding-left: 15%;
+  padding-left: 10%;
   padding-top: 2%;
   height: 100%;
   width: 100%;
@@ -21,17 +21,65 @@
 .content {
   overflow-x: scroll;
   justify-content: flex-start;
-  width: 80%;
+  width: auto;
   padding-bottom: 4%;
+  margin-right: 10%;
 }
 
-@media only screen and (max-width: 800px){
 
+@media only screen and (max-width: 800px) {
+  #background {
+    margin-right: 3%;
+    margin-left: 3%;
+    background-color: red;
+  }
+ 
+}
+
+/*@media only screen and (min-width: 800px) {
   .cell {
-    min-width: 38%;
-    margin-right: 4%;
+    min-width: 24%;
     margin-bottom: 8%;
   }
+
+#background {
+  margin-left: 8%;
+}
+}
+
+@media only screen and (max-width: 1100px) {
+  .cell {
+    min-width: 35%;
+    margin-bottom: 8%;
+  }
+
+  #background {
+    margin-left: 8%;
+  }
+}*/
+
+@media only screen and (max-width: 1280px) {
+  .cell {
+    min-width: 24%;
+    margin-bottom: 8%;
+  }
+
+  #background {
+    margin-left: 8%;
+  }
+}
+
+.cell {
+  width: 17%;
+  margin-right: 1%;
+  margin-bottom: 4%;
+}
+
+
+#background {
+  background-image: linear-gradient(white, #ffff99);
+  padding: 6% 0% 6% 6%;
+  margin-right: 15%;
 }
 
 
@@ -45,8 +93,3 @@ span {
     font-weight: bold;
 }
 
-.cell {
-  width: 19%;
-  margin-right: 2%;
-  margin-bottom: 4%;
-}

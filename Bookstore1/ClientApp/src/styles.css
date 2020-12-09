@@ -95,11 +95,12 @@ body > div {
   margin-bottom: 0;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #f2f2f2;
 }
 
 body {
   overflow-x: hidden;
+  background-color: #f2f2f2;
 }
 
 .container {

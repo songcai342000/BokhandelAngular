@@ -12,6 +12,11 @@
   margin-bottom: 0;
 }
 
+#background {
+  padding: 10% 8%;
+  background-color: aliceblue;
+}
+
 /*p {
   padding-top: 50px;
   font-size: 24px;

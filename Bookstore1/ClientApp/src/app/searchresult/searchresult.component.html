@@ -1,7 +1,8 @@
 <div class="container">
+  <div id="background">
   <div id="result"> Search result  </div>
   <div class="content d-flex flex-row">
-    <div *ngFor="let book of books" class="cell">
+    <div *ngFor="let book of books" class="cell" >
       <div><img src="assets/images/askim.jpg" width="115" height="172"></div>
       <div class="title">
         <span>Title:</span> &nbsp;{{book.title}}&nbsp;&nbsp;
@@ -17,7 +18,7 @@
       </div>
     </div>
   </div>
-
+ </div>
 </div>
 <input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
 <p style="visibility: hidden">

@@ -19,11 +19,13 @@
   padding-top: 2%;
 }
 
-.content > div {
-    width: 30%;
-    margin-left: 30%;
+  .content > div {
+    margin-left: 35%;
+    margin-right: 35%;
     position: relative;
-}
+    background-image: linear-gradient(white, #ffff99);
+  }
+
 
 p {
     visibility: hidden;

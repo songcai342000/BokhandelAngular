@@ -1,4 +1,5 @@
 <div id="total">
+  <div id="background">
   <ng-template summaryHost></ng-template>
   <div class="catelog row">Romance</div>
   <div class="row listrow">
@@ -80,6 +81,7 @@
       </button>
     </div>
   </div>
+    </div>
 </div>
 <input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
 <p style="visibility: hidden">
