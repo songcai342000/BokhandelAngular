@@ -52,6 +52,13 @@
   display: flex;
 }
 
+@media only screen and (max-width: 1400px) {
+  #background {
+      height: auto;
+    padding: 6% 6% 6% 6%;
+  }
+}
+
 #gobackBtn {
   color: #2e5cb8;
 }
@@ -71,10 +78,11 @@
 
 .image {
   margin-right: 2%;
+  margin-bottom: 1%;
 }
 
 .details {
-  width: 45%;
+  width: 61%;
   padding-left: 2%;
 }
 

@@ -110,9 +110,9 @@
   -webkit-animation: left 3s linear;
   -moz-animation: left 3s linear;
   animation: left 3s linear both;
-  -webkit-animation-delay: 3s;
-  -moz-animation-delay: 3s;
-  animation-delay: 3s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 @keyframes left {
@@ -147,9 +147,9 @@
     -webkit-animation: right 3s linear;
     -moz-animation: right 3s linear;
     animation: right 3s linear both;
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    animation-delay: 6s;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s;
   }
 
 @keyframes right {

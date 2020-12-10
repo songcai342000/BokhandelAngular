@@ -126,11 +126,11 @@ namespace Bookstore1.Controllers
             /*StringBuilder sb = new StringBuilder();
             sb.AppendLine("Invoice");
             sb.AppendLine("Your Order Number: " + orderId.ToString());*/
-            String sb = "<div style='padding: 5%; font-size: 14px; width: 100%'><div style='width: 100%; text-align: center; font-weight: bold; font-size: 16px'>Invoice </div><br><div style='width: 100%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div><hr style='margin-right: 12%'>";
+            String sb = "<div style='padding: 5%; font-size: 14px; width: 100%'><div style='width: 100%; text-align: center; font-weight: bold; font-size: 16px'>Invoice </div><br><div style='width: 100%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div><hr style='margin-right: 10%'>";
             double sum = 0;
             foreach (var bk in books)
             {
-                sb += "<div style='width: 100%;  display: flex'><div style='width: 70%; overflow-wrap: break-word'>" + bk.Title + "</div><div style='width: 30%;'>" + bk.Price.ToString() + " kr </div></div>";
+                sb += "<div style='width: 100%;  display: flex'><div style='width: 80%; overflow-wrap: break-word'>" + bk.Title + "</div><div style='width: 20%;'>" + bk.Price.ToString() + " kr </div></div>";
                 sum += bk.Price;
             }
              sb += "<div style='width: 100%; font-weight: bold'>Sum: " + sum.ToString() + " kr </div></div>";

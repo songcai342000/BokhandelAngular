@@ -11,7 +11,7 @@ export class LinkdemopageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    setTimeout(() => this.navigate(), 10000);
+    setTimeout(() => this.navigate(), 8000);
     //this.numbers();
   }
 

@@ -20,8 +20,8 @@
 }
 
   .content > div {
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 36%;
+    margin-right: 36%;
     position: relative;
     background-image: linear-gradient(white, #ffff99);
   }
@@ -41,8 +41,26 @@ p {
 
 @media only screen and (min-width: 800px) {
   .content > div {
-    width: 45%;
-    margin-left: 25%;
+    width: 46%;
+    margin-left: 27%;
     position: relative;
   }
 }
+
+/*@media only screen and (max-width: 1280px) {
+  .content > div {
+    width: 70%;
+    margin-left: 26%;
+    margin-right: 26%;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .content > div {
+    width: 70%;
+    margin-left: 32%;
+    margin-right: 32%;
+    position: relative;
+  }
+}*/
