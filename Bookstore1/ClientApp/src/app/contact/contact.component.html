@@ -46,7 +46,7 @@
     </div>
     <div id="rightDiv" class="col-sm-6">
 
-      <form #contactForm="ngForm" (ngSubmit)="newContact(contact)">
+      <form #contactForm="ngForm" >
         <label for="contactForm" id="formTitle">Send message</label>
         <div class="form-group">
           <label for="fname">First Name</label>
@@ -110,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div><input type="submit" class="form-control" [disabled]="!contactForm.form.valid" value="Submit"></div>
+        <div><input type="submit" class="form-control" [disabled]="!contactForm.form.valid" value="Submit" (click)="newContact(contact)"></div>
       </form>
 
     </div>

@@ -1,6 +1,6 @@
 <div class="container">
   <div id="background">
-  <form #addressForm="ngForm" (ngSubmit)="saveAddressOrder()">
+  <form #addressForm="ngForm">
     <label for="contactForm" id="formTitle" form="addressForm">Your Post Address</label>
     <div class="form-group">
       <label for="username">User Name</label>
@@ -88,7 +88,7 @@
         </div>
       </div>
     </div>
-    <div><button type="submit" class="form-control" [disabled]="!addressForm.form.valid" id="submitBtn">Submit</button></div>
+    <div><button type="submit" class="form-control" [disabled]="!addressForm.form.valid" id="submitBtn" (click)="saveAddressOrder()">Submit</button></div>
   </form>
   </div>
   <input type="text" id="orderIdInput" *ngIf="orderIdStr" value="{{orderIdStr}}" style="visibility: hidden" (change)="saveOrderId($event)">
