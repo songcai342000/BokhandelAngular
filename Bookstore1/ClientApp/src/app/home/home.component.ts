@@ -45,7 +45,7 @@ export class HomeComponent {
     setInterval(() => this.fade(), 3000);
     this.videos = ['fCUkgxNXuJk', 'DUPIecuKN4I', 'U79ehAX1V98'];
     this.count = 0;
-    setInterval(() => this.shiftVideo(this.videos), 5000);
+    setInterval(() => this.shiftVideo(this.videos), 15000);
 
   }
 
