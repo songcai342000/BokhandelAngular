@@ -42,7 +42,7 @@ export class HomeComponent {
 
   constructor() { }
   ngOnInit() {
-    setInterval(() => this.fade(), 2000);
+    setInterval(() => this.fade(), 3000);
     this.videos = ['fCUkgxNXuJk', 'DUPIecuKN4I', 'U79ehAX1V98'];
     this.count = 0;
     setInterval(() => this.shiftVideo(this.videos), 5000);
