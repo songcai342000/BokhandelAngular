@@ -33,6 +33,8 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
 import { PostaddressComponent } from './postaddress/postaddress.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LinkdemopageComponent } from './linkdemopage/linkdemopage.component';
+
 
 
 @NgModule({
@@ -58,6 +60,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     SearchresultComponent,
     LoadsearchDirective,
     FavoritesComponent,
+    LinkdemopageComponent,
     SearchboxComponent
   ],
   imports: [
@@ -83,6 +86,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       { path: 'thankyou', component: ThankyouComponent },
       { path: 'thankcontact', component: ThankcontactComponent },
       { path: 'favorites', component: FavoritesComponent },
+      { path: 'linkdemopage', component: LinkdemopageComponent },
       { path: '**', component: PageNotFoundComponent },
       { path: 'fetch-data', component: FetchDataComponent }
     ]),

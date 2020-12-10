@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-page-not-found',
-  templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.css']
+  selector: 'app-linkdemopage',
+  templateUrl: './linkdemopage.component.html',
+  styleUrls: ['./linkdemopage.component.css']
 })
-export class PageNotFoundComponent implements OnInit {
+export class LinkdemopageComponent implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    setTimeout(() => this.navigate(), 6000);
+    setTimeout(()=> this.navigate(), 10000);
   }
 
   navigate() {

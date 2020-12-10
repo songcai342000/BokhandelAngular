@@ -50,9 +50,9 @@ export class SearchresultComponent implements OnInit {
       this.newCustomer();
     }
 
-        alert(window.innerWidth);
+        /*alert(window.innerWidth);
     alert(window.outerWidth);
-    alert(window.innerHeight);
+    alert(window.innerHeight);*/
   }
 
   newCustomer() {

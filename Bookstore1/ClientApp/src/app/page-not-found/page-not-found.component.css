@@ -6,15 +6,17 @@
 .content {
   height: 100%;
   width: 100%;
-  padding-left: 40%;
-  padding-right: 40%;
+  padding-left: 35%;
+  padding-right: 35%;
   padding-top: 2%;
   margin-bottom: 0;
 }
 
 #background {
-  padding: 10% 8%;
-  background-color: aliceblue;
+  padding-left: 18%;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  background-image: linear-gradient(white, #ffff99);
 }
 
 /*p {
@@ -42,15 +44,16 @@
 
 @media only screen and (max-width: 1300px) {
   .content {
-    padding-left: 15%;
+    padding-left: 25%;
+    padding-right: 25%;
     padding-top: 2%;
   }
 }
 
 @media only screen and (max-width: 1400px) {
   .content {
-    padding-left: 38%;
-    padding-right: 38%;
+    padding-left: 30%;
+    padding-right: 30%;
     padding-top: 2%;
   }
 }
