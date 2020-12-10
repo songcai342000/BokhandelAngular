@@ -11,10 +11,19 @@ export class LinkdemopageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    setTimeout(()=> this.navigate(), 10000);
+    setTimeout(() => this.navigate(), 10000);
+    //this.numbers();
   }
 
   navigate() {
     this.router.navigate(['']);
+  }
+
+  numbers() {
+    let numbers = [3, 2, 1];
+    for (let i = 0; i < numbers.length; i++) {
+      document.getElementById('loading').innerText = numbers[i].toString();
+      setTimeout(() => { }, 1000);
+    }
   }
 }

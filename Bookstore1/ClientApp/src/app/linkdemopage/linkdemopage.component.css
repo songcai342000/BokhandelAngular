@@ -33,6 +33,17 @@
   top: 25%;
 }
 
+  #loading::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    margin: 30px auto;
+    position: relative;
+    left: -35%;
+    top: 25%;
+    z-index: 5;
+  }
+
 .outer-shadow,
 .inner-shadow {
   z-index: 4;
