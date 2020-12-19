@@ -3,9 +3,9 @@
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" id="navfiled">
       <div class="container-fluid">
         <div class="navbar-brand text-white"><span>Forest bookstore</span></div>
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="navbarright">
           <ul class="navbar-nav flex-grow">
-            <li class="nav-item navitem-left">
+            <li class="nav-item navitem-left" id="searchli">
               <div id="searchLinkDiv" (mousemove)="searchFocus()" (mouseout)="searchBlur()" style="height: 93%; width: 100%">
                 <a class="nav-link text-white" [routerLink]="" (click)="loadSearchBox()"><i class="material-icons">search</i></a>
               </div>
@@ -16,10 +16,10 @@
                 <a class="nav-link text-white" [routerLink]="['/']" style="width: 90%; z-index: 1">Home</a>
               </div>
               <div id="dropdownDiv">
-                <a class="nav-link text-white dropdown text-white dropdown-toggle" data-toggle="dropdown" [routerLink]="" ></a>
-                <div >
-                  <ul class="dropdown-menu" style="position: absolute; left:-80px" >
-                    <li><a [routerLink]="['statistic']" style="margin-top: 0; color: black;">Statistic</a></li>
+                <a class="nav-link text-white dropdown text-white dropdown-toggle" data-toggle="dropdown" [routerLink]=""></a>
+                <div>
+                  <ul class="dropdown-menu" style="position: absolute; left:-80px">
+                    <li><a [routerLink]="['statistic']" style="margin-top: 0; color: black;">Statistics</a></li>
                     <li><a [routerLink]="['contact']" style="color: black;">Contact us</a></li>
                   </ul>
                 </div>
@@ -47,7 +47,31 @@
         </div>
       </div>
     </nav>
+    <!-- Top Navigation Menu -->
+    <div class="mobilnav">
 
+      <a href="#home" class="active" >
+        Forest Bookstore <div href="#" id="mobilCart">
+          <app-shoppingcart [bookCount]="bookNumber" id="bknMobil"></app-shoppingcart>
+          <i class="fa fa-shopping-cart text-white" aria-hidden="true" [routerLink]="" (click)="loadSummary()" id="faCart"></i>
+        </div>
+      </a>
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="mobilLinks">
+        <a href="#" [routerLink]="['home']" [routerLinkAktiv]="['link-active']"><i class="fa fa-search" aria-hidden="true"></i></a>
+        <a href="#" [routerLink]="['statistic']" [routerLinkAktiv]="['link-active']">Statistics</a>
+        <a href="#" [routerLink]="['contact']" [routerLinkAktiv]="['link-active']">Contact</a>
+        <a href="#" [routerLink]="['booklist']" [routerLinkAktiv]="['link-active']">Books</a>
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" (click)="toggleMobilMeny()">
+        <i class="fa fa-bars"></i>
+      </a>
+     
+    </div>
+   
   </header>
 
 

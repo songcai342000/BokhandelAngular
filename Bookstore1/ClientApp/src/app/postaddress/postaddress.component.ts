@@ -30,6 +30,13 @@ export class PostaddressComponent implements OnInit {
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
+    let t = document.getElementById('total');
+    if (window.innerHeight < 800) {
+      t.style.height = 'auto';
+    }
+    else {
+      t.style.height = '100%';
+    }
    // sessionStorage.removeItem('4');
     this.ids = JSON.parse(localStorage.getItem('4'));
     if (this.ids != null) {

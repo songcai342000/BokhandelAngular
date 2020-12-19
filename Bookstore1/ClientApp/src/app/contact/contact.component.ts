@@ -15,6 +15,22 @@ export class ContactComponent implements OnInit {
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
+    let t = document.getElementById('total');
+    if (window.innerWidth < 698) {
+      let b = document.getElementById("contentBig");
+      b.remove();
+    }
+    else {
+      let s = document.getElementById("contentSmall");
+      s.remove();
+    }
+    if (window.innerHeight < 800) {
+      t.style.height = 'auto';
+    }
+    else {
+      t.style.height = '100%';
+    }
+    
 
   }
   //coordinator got from Geocoding page of Google

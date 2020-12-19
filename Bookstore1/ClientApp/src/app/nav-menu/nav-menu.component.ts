@@ -43,9 +43,9 @@ export class NavMenuComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private route: Router) { }
 
   ngOnInit() {
-
+    this.smallScreen();
     this.setPosition();
-   if (localStorage.getItem('0') != null) {
+    if (localStorage.getItem('0') != null) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
     }
   }
@@ -327,6 +327,32 @@ export class NavMenuComponent implements OnInit {
     this.getSummary();
   }
 
+  smallScreen() {
+    /*if (window.innerWidth < 400) {
+      let s = document.getElementById("myDiv");
+      s.style.width = window.innerWidth + "px";
+      s.style.fontSize = "1vw";
+      s.style.position = "absolute";
+      s.style.left = "0";
+      s.style.top = "0";
 
+    }*/
+    if (window.innerWidth > 680) {
+      let m = document.getElementsByClassName("mobilnav")[0];
+      m.remove();
+    }
+    else {
+      let n = document.getElementsByTagName("nav")[0];
+      n.remove();
+    }
+  }
 
+  toggleMobilMeny() {
+  var x = document.getElementById("mobilLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 }

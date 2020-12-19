@@ -11,6 +11,13 @@ export class PageNotFoundComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    let t = document.getElementById('total');
+    if (window.innerHeight < 800) {
+      t.style.height = 'auto';
+    }
+    else {
+      t.style.height = '100%';
+    }
     setTimeout(() => this.navigate(), 6000);
   }
 

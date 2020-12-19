@@ -65,8 +65,12 @@ nav {
     width: 80%;
   }
 
-  #dropdownDiv {
+  /*#dropdownDiv {
     left: 430px;
+  }*/
+
+  #dropdownDiv {
+    left: 58vw;
   }
 }
 
@@ -74,6 +78,8 @@ nav {
 .dropdown-menu {
   z-index: 4;
   min-width: 120px;
+  position: relative;
+  right: 150%;
 }
 
 /*#dropdownDiv {
@@ -156,7 +162,6 @@ div {
 
 .navitem-left {
   border-radius: 4px 0 0 4px;
- 
 }
 
 .navitem-right {
@@ -166,6 +171,12 @@ div {
 span {
   font-weight: 800;
   font-size: 22px;
+}
+
+
+span {
+  font-weight: 800;
+  font-size: 2vw;
 }
 
 .small-opacity {
@@ -180,6 +191,11 @@ span {
   }
 }
 
+@media (max-width: 800px) {
+  
+
+}
+
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
@@ -187,8 +203,6 @@ span {
 #homeDiv {
     display: inline;
 }
-
-
 
 .dropdown-menu {
   position: relative;
@@ -459,6 +473,377 @@ button {
 }
 
 
+/* Style the navigation menu */
+.mobilnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .mobilnav #mobilLinks {
+    display: none;
+  }
+
+  /* Style navigation menu links */
+.mobilnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+    /* Style the hamburger menu */
+.mobilnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+    /* Add a grey background color on mouse-over */
+  .mobilnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+}
 
 
+#mobilLinks{
+}
+
+
+/*#mobilCart {
+  position: absolute;
+  float: right;
+  right: 8%;
+  display: block;
+  text-align: center;
+  padding: 0;
+  font-size: 2.5vw;
+  background-color: red;
+}
+
+#faCart {
+  position: absolute;
+  bottom: 0.3vh;
+  right: 0.5vw;
+}
+
+#bknMobil {
+  position: absolute;
+  bottom: 0.4vh;
+  right: 0.7vw;
+}*/
+
+
+
+/*@media (max-width: 285px) {
+  #mobilCart {
+    z-index: 2;
+    position: absolute;
+    left: 70%;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: auto;
+    height: 100%;
+    top: 0;
+    background-color: red;
+  }
+
+  #faCart {
+    position: absolute;
+    left: 2%;
+    bottom: -20px;
+    font-size: 10px;
+  }
+
+  #bknMobil {
+    left: 5px;
+    top: -10px;
+    font-size: 10px;
+    margin-bottom: 5px;
+    position: absolute;
+  }
+}
+
+@media (max-width: 350px) {
+  #mobilCart {
+    z-index: 2;
+    position: absolute;
+    right: 80%;
+    padding: 2px 0 2px 0;
+    width: 20px;
+    height: 100%;
+    top: 0;
+    background-color: red;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: -18px;
+    right: 0;
+    left: 0;
+    font-size: 2.5em;
+  }
+
+  #bknMobil {
+    left: 0;
+    top: -8px;
+    font-size: 10px;
+    position: absolute;
+  }
+}
+
+
+@media (max-width: 380px) {
+  #mobilCart {
+    z-index: 2;
+    position: absolute;
+    left: 60%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 100%;
+    top: 0;
+    background-color: red;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+}
+
+
+
+  @media (max-width: 480px) {
+    #mobilCart {
+      z-index: 2;
+      position: absolute;
+      left: 65%;
+      padding: 2px 0 2px 0;
+      width: auto;
+      height: 100%;
+      top: 0;
+      background-color: red;
+    }
+
+    #faCart {
+      position: absolute;
+      bottom: 30%;
+      right: 0;
+      left: 0;
+      font-size: 1.2em;
+    }
+
+    #bknMobil {
+      left: 0.6em;
+      top: 5%;
+      font-size: 0.8em;
+      position: absolute;
+    }
+  }*/
+
+@media only screen and (max-width: 319px) {
+  #mobilCart {
+    position: absolute;
+    left: 67%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    margin-bottom: 3px;
+    font-size: 0.6em;
+    position: absolute;
+  }
+}
+
+@media (width: 320px) {
+  #mobilCart {
+    position: absolute;
+    right: 25%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    top: 5% !important;
+    font-size: 0.6em;
+    position: absolute;
+  }
+}
+
+@media (width: 360px) {
+  #mobilCart {
+    position: absolute;
+    right: 20%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    top: 5% !important;
+    font-size: 0.6em;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 370px){
+  #mobilCart {
+    position: absolute;
+    right: 22%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 32%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    margin-bottom: 3px;
+    font-size: 0.7em;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 371px) and (max-width: 410px){
+    #mobilCart{
+  position: absolute;
+  left: 78%;
+  padding: 2px 0 2px 0;
+  width: auto;
+  height: 40px;
+  top: 0;
+  background-color: red;
+}
+
+#faCart {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  font-size: 1.2em;
+}
+
+#bknMobil {
+  left: 0.6em;
+  top: 5%;
+  font-size: 0.8em;
+  position: absolute;
+}
+}
+
+@media only screen and (min-width: 410px) and (max-width: 580px) {
+  #mobilCart {
+    position: absolute;
+    left: 81%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 55px;
+    top: 0;
+    background-color: red;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 581px) and (max-width: 680px) {
+  #mobilCart {
+    position: absolute;
+    left: 86.5%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+    background-color: red;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+}
 

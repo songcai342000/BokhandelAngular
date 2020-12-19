@@ -42,30 +42,72 @@ form {
 
 }
 
-@media only screen and (max-width: 800px) {
+
+  @media only screen and (max-width: 480px) {
+    .centainer {
+      padding-left: 2%;
+      padding-right: 2%;
+    }
+
+    #background {
+      background-image: linear-gradient(white, #ffff99);
+      margin: 2% 0%;
+      padding: 8% 0 15% 0;
+      width: auto;
+    }
+
+    form {
+      margin-left: -2%;
+      width: auto;
+      font-size: 3.0vw;
+    }
+
+    #formTitle {
+      margin-left: 10%;
+      margin-right: 10%;
+      font-size: 3.0vw;
+    }
+
+    .form-control {
+      height: 90%;
+    }
+  }
+
+@media only screen and (max-width: 400px) {
+  form {
+    font-size: 3.5vw;
+  }
+
   #formTitle {
-    margin-left: 22%;
+    font-size: 3.5vw;
   }
 }
 
-input[type=text] {
-  border: 1px solid #dddddd;
-}
 
-input[type=submit]:hover {
-  background-color: #f2f2f2;
-}
+  @media only screen and (max-width: 800px) {
+    #formTitle {
+      margin-left: 22%;
+    }
+  }
 
-form {
-  width: 55%;
-  left: 25%;
-  position: relative;
-  border: 1px solid transparent;
-}
+  input[type=text] {
+    border: 1px solid #dddddd;
+  }
+
+  input[type=submit]:hover {
+    background-color: #f2f2f2;
+  }
+
+  form {
+    width: 55%;
+    left: 25%;
+    position: relative;
+    border: 1px solid transparent;
+  }
 
 
 
-/*form {
+  /*form {
   width: 100%;
   padding-left: 25%;
   padding-right: 25%;

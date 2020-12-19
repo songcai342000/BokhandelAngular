@@ -1,5 +1,5 @@
-<div class="total">
-  <div class="content d-flex flex-row" style="height: 90%; ">
+<div id="total">
+  <div class="content" style="height: 90%; " id="contentBig">
     <div class="col-sm-6" id="leftDiv">
 
       <div class="callDiv">
@@ -46,7 +46,7 @@
     </div>
     <div id="rightDiv" class="col-sm-6">
 
-      <form #contactForm="ngForm" >
+      <form #contactForm="ngForm">
         <label for="contactForm" id="formTitle">Send message</label>
         <div class="form-group">
           <label for="fname">First Name</label>
@@ -112,6 +112,122 @@
         </div>
         <div><input type="submit" class="form-control" [disabled]="!contactForm.form.valid" value="Submit" (click)="newContact(contact)"></div>
       </form>
+
+    </div>
+  </div>
+
+  <div class="content" style="height: 90%;" id="contentSmall">
+
+    <div id="rightDiv" class="col-sm-6">
+
+      <form #contactForm="ngForm">
+        <label for="contactForm" id="formTitle">Send message</label>
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="contact.firstName" #firstName="ngModel" size="25" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">
+          <div *ngIf="!firstName?.valid && (firstName?.dirty || firstName?.touched)">
+            <div *ngIf="firstName.errors.required">
+              First Name is required
+            </div>
+            <div *ngIf="firstName.invalid">
+              First Name must contain at least two letters and start with a capital letter
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="contact.lastName" #lastName="ngModel" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">
+          <div *ngIf="!lastName?.valid && (lastName?.dirty || lastName?.touched)">
+            <div *ngIf="lastName.errors.required">
+              Last Name is required
+            </div>
+            <div *ngIf="lastName.invalid">
+              Last Name must contain at least two letters and start with a capital letter
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="mail" name="mail" [(ngModel)]="contact.mail" #mail="ngModel" required pattern="^.+?@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,3}$">
+          <div *ngIf="!mail?.valid && (mail?.dirty || mail?.touched)">
+            <div *ngIf="mail.errors.required">
+              Email is required
+            </div>
+            <div *ngIf="mail.invalid">
+              Email address is invalid
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" class="form-control" name="country" [(ngModel)]="contact.country" #country="ngModel" required>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="norway">Norway</option>
+            <option value="usa">USA</option>
+          </select>
+          <div *ngIf="!country?.valid && (country?.dirty || country?.touched)">
+            <div *ngIf="country.errors.required">
+              Country is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" class="form-control" name="content" style="height:170px" [(ngModel)]="contact.content" #content="ngModel" required minlength="50" maxlength="500" (keydown)="calculateLength($event)"></textarea>
+          <div *ngIf="!content?.valid && (content?.dirty || content?.touched)">
+            <div *ngIf="content.errors.required">
+              Content is required
+            </div>
+            <div *ngIf="content.errors.minlength || content.errors.maxlength">
+              {{contentLength}}
+            </div>
+          </div>
+        </div>
+        <div><input type="submit" class="form-control" [disabled]="!contactForm.form.valid" value="Submit" (click)="newContact(contact)"></div>
+      </form>
+    </div>
+    <div class="col-sm-6" id="leftDiv">
+      <div class="callDiv">
+        <div class="d-flex flex-row">
+          <div class="col-sm-6">
+            <label>Telephone</label>
+          </div>
+          <div class="col-sm-6">
+            <i class="material-icons">call</i>
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="col-sm-6">
+            800 000 000
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+      </div>
+      <div class="addressDiv">
+        <div class="d-flex flex-row">
+          <div class="col-sm-6">
+            <label>Address</label>
+          </div>
+          <div class="col-sm-6">
+            <i class="material-icons">place</i>
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="col-sm-6">
+            16 Queen street<br>Washington 1000
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+      </div>
+      <div class="mapDiv">
+        <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng">
+          </agm-marker>
+        </agm-map>
+      </div>
 
     </div>
   </div>

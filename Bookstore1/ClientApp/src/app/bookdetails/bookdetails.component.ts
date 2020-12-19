@@ -28,6 +28,7 @@ export class BookdetailsComponent implements OnInit {
 
   ngOnInit() {
     //localStorage.clear();
+    this.smallScreen();
     this.getBook();
     //if no userId, get userId
     let v = localStorage.getItem('4');
@@ -86,15 +87,23 @@ export class BookdetailsComponent implements OnInit {
   }
 
   //resolve the dynamic component 
-  loadComponent() {
+  /*loadComponent() {
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(ShoppingsummaryComponent);
     const viewContainerRef = this.summaryHost.viewContainerRef;
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent(componentFactory);
-  }
+  }*/
 
   historyBack() {
     window.history.back();
+  }
+
+  smallScreen() {
+    if (window.innerWidth < 450) {
+      let i = document.getElementsByTagName("img")[0];
+      i.setAttribute("height", "120");
+      i.setAttribute("width", "80");
+    }
   }
 
 }

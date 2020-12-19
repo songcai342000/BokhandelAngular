@@ -13,6 +13,13 @@ export class StatisticComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let t = document.getElementById('total');
+    if (window.innerHeight < 800) {
+      t.style.height = 'auto';
+    }
+    else {
+      t.style.height = '100%';
+    }
     this.ctx = this.donut.nativeElement.getContext('2d');
     var data = new Chart(this.ctx, {
       responsive: true,

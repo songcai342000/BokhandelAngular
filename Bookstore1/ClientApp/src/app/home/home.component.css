@@ -1,13 +1,26 @@
 
-
-.total {
+#total {
   height: auto;
   margin-bottom: 0;
 }
 
+#iframeDiv {
+  width: 40%;
+}
+
+
+#articleDiv {
+  width: 40%;
+}
+
+
 @media only screen and (min-height: 1050px){
-    .content {
+    #content {
         height: 100%;
     }
+
 }
+
+
+
 

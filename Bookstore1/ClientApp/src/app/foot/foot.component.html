@@ -1,31 +1,135 @@
-<p id="bg-book">
-  <svg height="100%" width="100%"  xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1536 150" preserveAspectRatio="xMinYMin">
-    <path fill="white"
-          d="M 0 150 L 725 150 Q 775 100 825 150 L 1550 150" />
+<div id="bg-book">
+  <div id="tooltipDiv" class="tooltip1"></div>
+  <!--
+  <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1536 170" preserveAspectRatio="xMinYMin" id="svgBig">
 
-    <path id="edge" fill="#ffff99" stroke="#ffff66" stroke-width="1"
-          d="M 0 150 L 0 60 Q 675 0 775 60 Q 875 0 1550 60 L1550 150  825 150 Q775 125 725 150 L0 150" />
-    <path id="innerLine" fill="none" stroke="#ffff66" stroke-width="1"
-          d="M 0 120 Q 675 50 775 120 M 775 120 Q 875 50 1550 120" />
+    <path id="edge" fill="#ffff99" stroke="#ddd" stroke-width="1"
+          d="M 0 170 L 0 60 Q 675 0 775 60 Q 875 0 1550 60 L1550 170  825 170 Q775 125 725 170 L0 170" />
+    <path id="innerLine" fill="none" stroke="#ddd" stroke-width="1"
+          d="M 0 140 Q 675 60 775 140 M 775 140 Q 875 60 1550 140" />
     <path id="hiddenLeft" fill="none" stroke="none" stroke-width="1"
-          d="M 0 95 Q 675 25 775 95" />
+          d="M 0 105 Q 675 35 775 105" />
     <path id="hiddenRight1" fill="none" stroke="none" stroke-width="1"
-          d="M 775 82 Q 875 12 1550 82" />
+          d="M 775 92 Q 875 22 1550 92" />
     <path id="hiddenRight2" fill="none" stroke="none" stroke-width="1"
-          d="M 775 107 Q 875 37 1550 107" />
-    <path id="middleline" fill="none" stroke="#ffff66" stroke-width="1"
-          d="M 775 120 L 775 60" />
+          d="M 775 112 Q 875 42 1550 112" />
+    <path id="middleline" fill="none" stroke="#ddd" stroke-width="1"
+          d="M 775 140 L 775 60" />
     <text>
-      <textPath href="#hiddenLeft" startOffset="150px">
+      <textPath href="#hiddenLeft" startOffset="10%">
         &#169; Copyright Sellereite Translation and Web Professional 2020. All right reserved.
       </textPath>
-      <textPath href="#hiddenRight1" startOffset="130px" class="greenText">
-        <a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style="font-size: 13px">Events</a>&nbsp;&nbsp;<a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style="font-size: 13px">One book one week</a>&nbsp;&nbsp;<a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style=" font-size: 13px">One guest one week</a>&nbsp;&nbsp;<a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style=" font-size: 13px">On Facebook</a>&nbsp;&nbsp;<a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style=" font-size: 13px">On Tweeter</a>
+      <textPath href="#hiddenRight1" startOffset="3%" class="greenText">
+        <a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="ee">Events</a>&nbsp;&nbsp;<a href="#" id="week" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">One book one week</a>&nbsp;&nbsp;<a href="#" id="guest" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">One guest one week</a>&nbsp;&nbsp;<a href="#" id="onfacebook" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">On Facebook</a>&nbsp;&nbsp;<a href="#" id="tweeter" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">On Tweeter</a>
       </textPath>
-      <textPath href="#hiddenRight2" startOffset="130px" class="greenText">
-       <a href="#"  [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style="font-size: 13px">Environment protection</a>&nbsp;&nbsp;<a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style=" font-size: 13px">Our divisions</a>&nbsp;&nbsp;<a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style=" font-size: 13px">Ofen asked questions</a>&nbsp;&nbsp;<a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style=" font-size: 13px">Privacy</a>&nbsp;&nbsp; <a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" style="font-size: 13px">Send us a mail</a>
-</textPath>
+      <textPath href="#hiddenRight2" startOffset="3%" class="greenText">
+        <a href="#" id="envpretion" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Environment protection</a>&nbsp;&nbsp;<a href="#" id="divisions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Our divisions</a>&nbsp;&nbsp;<a href="#" id="questions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Ofen asked questions</a>&nbsp;&nbsp;<a href="#" id="privacy" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Privacy</a>&nbsp;&nbsp; <a href="#" id="mail" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Send us a mail</a>
+      </textPath>
     </text>
   </svg>
-</p>
+  -->
+  <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 780 170" preserveAspectRatio="xMinYMin" id="svgBig">
+
+    <path id="edge" fill="#ffff99" stroke="#ddd" stroke-width="1"
+          d="M 0 170 L 0 120 Q 290 70 390 100 Q 490 70 780 120 L780 170 440 170 Q390 155 340 170 L0 170" />
+    <path id="innerLine" fill="none" stroke="#ddd" stroke-width="1"
+          d="M 0 165 Q 290 120 390 150 Q 490 120 780 165" />
+    <path id="hiddenLeft1" fill="none" stroke="none" stroke-width="1"
+          d="M 0 160 Q 290 110 390 140" />
+    <path id="hiddenLeft2" fill="none" stroke="none" stroke-width="1"
+          d="M 0 147 Q 290 97 390 127" />
+    <path id="hiddenLeft3" fill="none" stroke="none" stroke-width="1"
+          d="M 0 135 Q 290 85 390 115" />
+    <path id="hiddenRight1" fill="none" stroke="none" stroke-width="1"
+          d="M 390 140 Q 490 110 780 160" />
+    <path id="hiddenRight2" fill="none" stroke="none" stroke-width="1"
+          d="M 390 127 Q 490 97 780 147" />
+    <path id="hiddenRight3" fill="none" stroke="none" stroke-width="1"
+          d="M 390 115 Q 490 85 780 135" />
+    <path id="middleline" fill="none" stroke="#ddd" stroke-width="1"
+          d="M 390 150 L 390 100" />
+    <text>
+      <textPath href="#hiddenLeft3" startOffset="35%">
+        <a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="ee">Events</a>&nbsp;&nbsp;
+        <a href="#" id="week" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">One book one week</a>
+      </textPath>
+      <textPath href="#hiddenLeft2" startOffset="35%">
+        <a href="#" id="guest" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">One guest one week</a>&nbsp;&nbsp;
+        <a href="#" id="onfacebook" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">On Facebook</a>
+      </textPath>
+      <textPath href="#hiddenLeft1" startOffset="35%">
+        &#169; All right reserved.
+      </textPath>
+      <textPath href="#hiddenRight3" startOffset="27%" class="greenText">
+        <a href="#" id="tweeter" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">On Tweeter</a>&nbsp;&nbsp;
+        <a href="#" id="envpretion" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Environment protection</a>
+      </textPath>
+      <textPath href="#hiddenRight2" startOffset="27%" class="greenText">
+        <a href="#" id="divisions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Our divisions</a>
+        &nbsp;&nbsp;<a href="#" id="questions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Ofen asked questions</a>
+      </textPath>
+      <textPath href="#hiddenRight1" startOffset="27%" class="greenText">
+        <a href="#" id="privacy" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Privacy</a>&nbsp;&nbsp; <a href="#" id="mail" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Send us a mail</a>
+      </textPath>
+    </text>
+  </svg>
+  <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 780 210" preserveAspectRatio="xMinYMin" id="svgMiddel">
+
+    <path id="edge" fill="#ffff99" stroke="#ddd" stroke-width="1"
+          d="M 0 210 L 0 50 Q 290 0 390 30 Q 490 0 780 50 L780 210 440 210 Q390 195 340 210 L0 210" />
+    <path id="innerLine" fill="none" stroke="#ddd" stroke-width="1"
+          d="M 0 200 Q 290 160 390 190 Q 490 160 780 200" />
+    <path id="hiddenLeft1" fill="none" stroke="none" stroke-width="1"
+          d="M 0 95 Q 290 45 390 75" />
+    <path id="hiddenLeft2" fill="none" stroke="none" stroke-width="1"
+          d="M 0 135 Q 290 85 390 115" />
+    <path id="hiddenLeft3" fill="none" stroke="none" stroke-width="1"
+          d="M 0 175 Q 290 125 390 155" />
+    <path id="hiddenRight1" fill="none" stroke="none" stroke-width="1"
+          d="M 390 155 Q 490 125 780 175" />
+    <path id="hiddenRight2" fill="none" stroke="none" stroke-width="1"
+          d="M 390 115 Q 490 85 780 135" />
+    <path id="hiddenRight3" fill="none" stroke="none" stroke-width="1"
+          d="M 390 75 Q 490 45 780 95" />
+    <path id="middleline" fill="none" stroke="#ddd" stroke-width="1"
+          d="M 390 150 L 390 100" />
+    <text>
+      <textPath href="#hiddenLeft3" startOffset="5%" id="leftText1">
+        <a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="ee">Events</a>&nbsp;&nbsp;
+        <a href="#" id="week" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">One book one week</a>
+      </textPath>
+      <textPath href="#hiddenLeft2" startOffset="5%" class="leftText">
+        <a href="#" id="guest" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">One guest one week</a>&nbsp;&nbsp;
+        <a href="#" id="onfacebook" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">On Facebook</a>
+      </textPath>
+      <textPath href="#hiddenLeft1" startOffset="5%" class="leftText">
+        &#169; All right reserved.
+      </textPath>
+      <textPath href="#hiddenRight3" startOffset="5%" class="greenText">
+        <a href="#" id="tweeter" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">On Tweeter</a>&nbsp;&nbsp;
+        <a href="#" id="envpretion" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Environmental protection</a>
+      </textPath>
+      <textPath href="#hiddenRight2" startOffset="5%" class="greenText">
+        <a href="#" id="divisions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Our divisions</a>
+        &nbsp;&nbsp;<a href="#" id="questions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Ofen asked questions</a>
+      </textPath>
+      <textPath href="#hiddenRight1" startOffset="5%" class="greenText">
+        <a href="#" id="privacy" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Privacy</a>&nbsp;&nbsp; <a href="#" id="mail" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)">Send us a mail</a>
+      </textPath>
+    </text>
+  </svg>
+  <div id="footerSmall">
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="evn">Events</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="week">One week one book</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="guest">One guest one week</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="fb">On facebook</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="tweeter">On tweeter</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="ep">Environmental protection</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="di">Divisions</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="questions">Often asked questions</a></div>
+    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip($event)" value="Events" id="pri">Privacy</a></div>
+    <div class="gridItem">&#169; All right reserved.</div>
+
+  </div>
+</div>
 

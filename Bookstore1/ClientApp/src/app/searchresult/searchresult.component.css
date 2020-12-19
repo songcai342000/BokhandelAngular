@@ -6,7 +6,8 @@
 }*/
 
 .container {
-  padding-left: 10%;
+  padding-left: 12%;
+  padding-right: 12%;
   padding-top: 2%;
   height: 100%;
   width: 100%;
@@ -18,55 +19,16 @@
     padding-left: 0;
 }
 
+img {
+    object-fit: cover;
+}
+
 .content {
   overflow-x: scroll;
+  display: flex;
   justify-content: flex-start;
   width: auto;
   padding-bottom: 4%;
-  margin-right: 10%;
-}
-
-
-@media only screen and (max-width: 800px) {
-  #background {
-    margin-right: 3%;
-    margin-left: 3%;
-    background-color: red;
-  }
- 
-}
-
-/*@media only screen and (min-width: 800px) {
-  .cell {
-    min-width: 24%;
-    margin-bottom: 8%;
-  }
-
-#background {
-  margin-left: 8%;
-}
-}
-
-@media only screen and (max-width: 1100px) {
-  .cell {
-    min-width: 35%;
-    margin-bottom: 8%;
-  }
-
-  #background {
-    margin-left: 8%;
-  }
-}*/
-
-@media only screen and (max-width: 1280px) {
-  .cell {
-    min-width: 24%;
-    margin-bottom: 8%;
-  }
-
-  #background {
-    margin-left: 8%;
-  }
 }
 
 .cell {
@@ -78,8 +40,7 @@
 
 #background {
   background-image: linear-gradient(white, #ffff99);
-  padding: 6% 0% 6% 6%;
-  margin-right: 15%;
+  padding: 6% 6% 6% 6%;
 }
 
 
@@ -90,6 +51,37 @@
 }
 
 span {
-    font-weight: bold;
+  font-weight: bold;
 }
+
+
+
+@media only screen and (max-width: 800px) {
+
+  .container {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .cell {
+    min-width: 30%;
+    margin-right: 4%;
+  }
+
+  img {
+      object-fit: cover;
+  }
+ 
+}
+
+
+@media only screen and (max-width: 1280px) {
+  .cell {
+    min-width: 24%;
+    margin-bottom: 8%;
+  }
+
+ 
+}
+
 

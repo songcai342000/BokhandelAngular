@@ -42,11 +42,11 @@ export class HomeComponent {
 
   constructor() { }
   ngOnInit() {
-    setInterval(() => this.fade(), 3000);
+    this.smallScreen();
+    setInterval(() => this.fade(), 4000);
     this.videos = ['fCUkgxNXuJk', 'DUPIecuKN4I', 'U79ehAX1V98'];
     this.count = 0;
-    setInterval(() => this.shiftVideo(this.videos), 15000);
-
+    setInterval(() => this.shiftVideo(this.videos), 8000);
   }
 
   fade() {
@@ -68,4 +68,37 @@ export class HomeComponent {
   removeCover() {
     document.getElementById("iframe").style.opacity = "1";
   }
+
+  smallScreen() {
+    let t = document.getElementById('total');
+    t.style.display = 'flex';
+    if (window.innerWidth < 699) {
+      t.style.display = 'block';
+      let i = document.getElementById('iframeDiv');
+      let a = document.getElementById('articleDiv');
+      i.style.paddingLeft = '15%';
+      i.style.paddingRight = '15%';
+      i.style.width = 'auto';
+      i.style.height = '35%';
+      i.style.marginBottom = '7%';
+      a.style.paddingLeft = '5%';
+      a.style.paddingRight = '5%';
+      a.style.width = 'auto';
+    }
+    else if (window.innerWidth < 1100 && window.innerWidth >= 699) {
+      document.getElementById('iframeDiv').style.height = '55%';
+      t.style.height = '100%';
+    }
+    else if (window.innerWidth < 1200 && window.innerWidth >= 1100) {
+      document.getElementById('iframeDiv').style.height = '65%';
+      t.style.height = '100%';
+    }
+    else {
+      t.style.height = '100%';
+      document.getElementById('iframeDiv').style.height = '80%';
+    }
+  }
+
+  
+
 }

@@ -3,97 +3,365 @@
   width: 100%;
   margin-top: 2%;
   margin-bottom: 0;
-}
-
-
-/*@media only screen and (max-width: 800px){
-  .content {
-    padding: 0;
-  }
-
-  #background{
-      width: 100%;
-      height: 100%;
-  }
-}
-
-@media only screen and (min-width: 800px){
-  .content {
-    padding-left: 20%;
-    padding-right: 20%;
-  }
-}*/
-
-@media only screen and (max-width: 1200px) {
-  .content {
-    padding-left: 20%;
-    padding-right: 20%;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
-  .content {
-    padding-left: 20%;
-    padding-right: 20%;
-  }
-}
-
-@media only screen and (min-width: 1400px) {
-  .content {
-    padding-left: 30%;
-    padding-right: 30%;
-  }
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-bottom: 2%;
 }
 
 #background {
+  width: 100%;
   background-image: linear-gradient(white, #ffff99);
-  padding: 6%;
+  padding: 6% 6% 6% 6%;
   height: 70%;
   display: flex;
 }
 
-@media only screen and (max-width: 1400px) {
+.cell {
+    display: flex;
+}
+
+.fb-xfbml-parse-ignore {
+  width: 144px !important;
+}
+
+.twitter-share-button {
+  width: 144px !important;
+}
+
+@media only screen and (max-width: 300px) and (min-width: 240px){
+  .content {
+    padding-top: 1% !important;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    margin-bottom: 0;
+    padding-bottom: 4% !important;
+    font-size: 12px;
+  }
+
   #background {
-      height: auto;
+    margin: 0;
     padding: 6% 6% 6% 6%;
+    height: auto;
+    width: 100%;
+  }
+
+  .cell {
+    padding: 0 0.2% 0 0;
+    display: block;
+  }
+
+  .image {
+    height: 25%;
+    float: left;
+    width: 25%;
+    object-fit: scale-down;
+  }
+
+  img {
+    padding: 0 0.2% 0 0 !important;
+    margin: 0;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    line-height: 1% !important;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 100px !important;
+  }
+
+  .twitter-share-button {
+    width: 100px !important;
   }
 }
 
-#gobackBtn {
-  color: #2e5cb8;
+@media only screen and (max-width: 400px) and (min-width: 301px){
+  .content {
+    font-size: 13px;
+  }
 }
 
-#gobackBtn:hover {
-  color: white;
+@media only screen and (max-width: 450px) and (min-width: 401px) {
+  .content {
+    padding-top: 1% !important;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    margin-bottom: 0;
+    padding-bottom: 4% !important;
+  }
+
+  #background {
+    margin: 0;
+    padding: 6% 6% 6% 6%;
+    height: auto;
+    width: 100%;
+  }
+
+  .cell {
+    padding: 0 0.2% 0 0;
+    display: block;
+  }
+
+  .image {
+    height: 50%;
+    float: left;
+    width: 50%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    object-fit: scale-down;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    line-height: 2%;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 48% !important;
+  }
+
+  .twitter-share-button {
+    width: 48% !important;
+  }
 }
 
-.sharebuttons {
+@media only screen and (max-width: 550px) and (min-width: 449px) {
+  .content {
+    padding-top: 1% !important;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    margin-bottom: 0;
+    padding-bottom: 4% !important;
+  }
+
+  #background {
+    margin: 0;
+    padding: 6% 6% 6% 6%;
+    height: auto !important;
+    width: 100%;
+  }
+
+  .cell {
+    padding: 0 0.2% 0 0;
+    display: block;
+  }
+
+  .image {
+    float: left;
+    width: 50%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    object-fit: scale-down;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    line-height: 2%;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 20%;
+  }
+
+  .twitter-share-button {
+    width: 20%;
+  }
+}
+
+
+@media only screen and (max-width: 800px) and (min-width: 551px) {
+  .content {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2%;
+  }
+
+
+  .cell {
+    display: block;
+  }
+
+  .image {
+    padding: 0.2%;
+    padding-right: 2%;
+    float: left;
+    object-fit: cover;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 108px !important;
+  }
+
+  .twitter-share-button {
+    width: 108px !important;
+  }
+
+  #background {
+    margin: 0;
+    padding: 6% 6% 6% 6%;
+    height: auto;
+    width: auto;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    line-height: 2%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 801px) {
+  .content {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  #background {
+    height: auto;
+    padding: 6% 2% 12% 6%;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 100px !important;
+  }
+
+  .twitter-share-button {
+    width: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1201px) {
+  .content {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  #background {
+    height: auto;
+    padding: 6% 3% 12% 6%;
+  }
+
+}
+
+  #gobackBtn {
+    color: #2e5cb8;
+  }
+
+    #gobackBtn:hover {
+      color: white;
+    }
+
+  #operationBtns {
+    padding-left: 0;
     display: flex;
+  }
+
+  .sharebuttons {
+    display: flex;
+    padding-left: 0;
     margin-top: 10px;
-}
+  }
 
-.sharebuttons button {
-  min-width: 120px;
-}
 
-.image {
-  margin-right: 2%;
-  margin-bottom: 1%;
-}
+  .fb-xfbml-parse-ignore {
+    background-color: #2e5cb8;
+    color: white;
+    width: 150px;
+  }
 
-.details {
-  width: 61%;
-  padding-left: 2%;
-}
+  .twitter-share-button {
+    background-color: #85a3e0;
+    color: white;
+    width: 150px;
+  }
 
-span {
+  .image {
+    margin-right: 2%;
+    margin-bottom: 1%;
+  }
+
+  .details {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  span {
     font-weight: 400;
+  }
+
+  .introduction {
+    overflow-wrap: break-word;
+  }
+
+
+  @media only screen and (min-width: 1401px) and (max-width: 1490px){
+    #background {
+      width: auto;
+      background-image: linear-gradient(white, #ffff99);
+      padding: 6% 6% 6% 6%;
+      height: auto;
+      display: flex;
+    }
+
+    .cell {
+      display: flex;
+    }
+
+    .fb-xfbml-parse-ignore {
+      width: 120px !important;
+    }
+
+    .twitter-share-button {
+      width: 120px !important;
+    }
+  }
+
+@media only screen and (min-width: 1491px) {
+  #background {
+    width: auto;
+    background-image: linear-gradient(white, #ffff99);
+    padding: 6% 6% 6% 6%;
+    height: auto;
+    display: flex;
+  }
+
+  .cell {
+    display: flex;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 130px !important;
+  }
+
+  .twitter-share-button {
+    width: 130px !important;
+  }
 }
-
-.introduction {
-    overflow-wrap: break-word; 
-}
-
-
 
 

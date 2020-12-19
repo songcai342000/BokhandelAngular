@@ -52,6 +52,13 @@ export class BooklistComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) { }
 
   ngOnInit() {
+    let t = document.getElementById('total');
+    if (window.innerHeight < 800) {
+      t.style.height = 'auto';
+    }
+    else {
+      t.style.height = '100%';
+    }
     //localStorage.clear();
     this.getCrimeBooks();
     this.getFictionBooks();
@@ -171,4 +178,7 @@ export class BooklistComponent implements OnInit {
     const viewContainerRef = this.vcRef.createComponent(componentFactory);
     const componentRef = viewContainerRef.instance.vcRef;
   }*/
+
+
+
 }

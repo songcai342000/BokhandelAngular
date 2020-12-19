@@ -12,12 +12,12 @@
   padding-top: 2%;
   margin-bottom: 0;
 }*/
-.total {
+#total {
   min-width: 100%;
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 2%;
-  margin-bottom: 0;
+  margin: 0;
   height: auto;
 }
 
@@ -34,32 +34,66 @@
   background-image: linear-gradient(white, #ffff99);
   margin-bottom: 0;
   padding-bottom: 10%;
+  display: flex;
+}
+
+@media only screen and (max-width: 698px) and (min-width: 531px){
+  .content {
+    display: block;
+  }
+
+  #formTitle {
+    margin-left: 45%;
+  }
+
+  form {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  #rightDiv {
+      width: auto;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  
+  #formTitle {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
 }
 
 @media only screen and (min-height: 1050px) {
-  .total {
+  #total {
     height: 120%;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) and (min-width: 698px) {
   .content {
     padding-left: 5%;
     padding-right: 5%;
   }
 
-  .total {
+  #total {
     padding-left: 5%;
     padding-right: 5%;
   }
 
   #rightDiv {
-      min-width: 62%;
-      margin-left: -7%;
+    min-width: 62%;
+    margin-left: -7%;
   }
 
   form {
-      padding-right: 10px;
+    padding-right: 10px;
   }
 }
 

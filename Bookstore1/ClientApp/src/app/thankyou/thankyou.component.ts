@@ -14,6 +14,7 @@ export class ThankyouComponent implements OnInit {
   constructor(private router: Router, private bookService: BookService) { }
 
   ngOnInit(): void {
+    
     let s = sessionStorage.getItem('2');
     if (s == null || s == '' || s == 'unpaid') {
       this.router.navigate(['/page-not-found']);

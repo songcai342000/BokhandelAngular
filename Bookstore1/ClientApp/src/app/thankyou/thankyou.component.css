@@ -1,8 +1,8 @@
 .bubble {
   position: relative;
-  font-size: 14px;
   line-height: 24px;
   width: 300px;
+  /*font-size: 14px;*/
   background-image: linear-gradient(white, #ffff99);
   border-radius: 40px;
   padding: 24px;
@@ -51,20 +51,7 @@
   bottom: -1%;
 }*/
 
-/*@media only screen and (max-width: 800px){
-  .bubble-bottom-left:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 24px solid #ddd;
-    border-top: 24px solid #ddd;
-    border-right: 24px solid transparent;
-    border-bottom: 20px solid transparent;
-    left: 6%;
-    bottom: -3%;
-  }
-}*/
+
 
 /*.content {
   background-color: red;
@@ -84,8 +71,10 @@
   padding-top: 3%;
   color: #000000;
   font-weight: 400;
+  font-size: 1em;
   min-width: 100%;
   padding-left: 38%;
+  padding-right: 38%;
 }
 
 
@@ -119,8 +108,9 @@
   animation-delay: 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  /*font-size: 14px;*/
   text-align: center;
-  padding-top: 4%;
+  padding-top: 12%;
 }
 
 /*#expectionDiv {
@@ -155,5 +145,13 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .content {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 0.5em;
   }
 }

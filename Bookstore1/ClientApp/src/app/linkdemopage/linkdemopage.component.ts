@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,16 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./linkdemopage.component.css']
 })
 export class LinkdemopageComponent implements OnInit {
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     setTimeout(() => this.navigate(), 8000);
     //this.numbers();
+    window.scrollTo(0, 0);
   }
 
   navigate() {
-    this.router.navigate(['']);
+    this.router.navigate(['booklist']);
   }
 
   numbers() {
@@ -25,5 +26,10 @@ export class LinkdemopageComponent implements OnInit {
       document.getElementById('loading').innerText = numbers[i].toString();
       setTimeout(() => { }, 1000);
     }
+  }
+
+  //create a color belt from mouse to text
+  createBelt() {
+    //get position of vtext
   }
 }

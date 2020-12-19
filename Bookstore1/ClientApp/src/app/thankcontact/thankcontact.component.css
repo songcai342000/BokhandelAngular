@@ -40,8 +40,18 @@
 .content {
   height: 100%;
   padding-left: 38%;
+  padding-right: 38%;
+  font-size: 1em;
   padding-top: 2%;
   color: #000000;
   font-weight: 400;
   min-width: 100%;
+}
+
+@media only screen and (max-width: 698px) {
+  .content {
+    padding-left: 35%;
+    padding-right: 35%;
+    font-size: 0.5em;
+  }
 }
