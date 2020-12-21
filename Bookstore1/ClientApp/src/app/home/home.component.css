@@ -1,7 +1,8 @@
 
 #total {
-  height: auto;
+  height: 100%;
   margin-bottom: 0;
+  display: flex;
 }
 
 #iframeDiv {
@@ -10,7 +11,36 @@
 
 
 #articleDiv {
-  width: 40%;
+  width: 60%;
+  padding-left: 7%;
+}
+
+/*@media only screen and (min-width: 699px) and (max-width: 1100px) {
+  #iframeDiv {
+    height: 45%;
+  }
+  #total {
+    height: 100%;
+  }
+
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1200px) {
+  #iframeDiv {
+    height: 65%;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  #iframeDiv {
+    height: 85%;
+  }
+}
+
+@media only screen and (max-width: 698px) {
+  #iframeDiv {
+    height: 40%;
+  }
 }
 
 
@@ -19,7 +49,7 @@
         height: 100%;
     }
 
-}
+}*/
 
 
 

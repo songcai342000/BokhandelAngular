@@ -71,11 +71,14 @@ export class HomeComponent {
 
   smallScreen() {
     let t = document.getElementById('total');
-    t.style.display = 'flex';
+    let i = document.getElementById('iframeDiv');
+    let a = document.getElementById('articleDiv');
+    /*t.style.display = 'flex';
+    i.style.width = '40%';
+    a.style.width = '60%';
+    a.style.paddingLeft = '7%';*/
     if (window.innerWidth < 699) {
       t.style.display = 'block';
-      let i = document.getElementById('iframeDiv');
-      let a = document.getElementById('articleDiv');
       i.style.paddingLeft = '15%';
       i.style.paddingRight = '15%';
       i.style.width = 'auto';
@@ -84,18 +87,21 @@ export class HomeComponent {
       a.style.paddingLeft = '5%';
       a.style.paddingRight = '5%';
       a.style.width = 'auto';
+      i.style.height = '50%';
     }
     else if (window.innerWidth < 1100 && window.innerWidth >= 699) {
-      document.getElementById('iframeDiv').style.height = '55%';
       t.style.height = '100%';
+      i.style.height = '35%';
     }
     else if (window.innerWidth < 1200 && window.innerWidth >= 1100) {
-      document.getElementById('iframeDiv').style.height = '65%';
       t.style.height = '100%';
+      i.style.height = '55%';
+
     }
     else {
       t.style.height = '100%';
-      document.getElementById('iframeDiv').style.height = '80%';
+      i.style.height = '60%';
+
     }
   }
 
