@@ -12,7 +12,7 @@ export class PageNotFoundComponent implements OnInit {
 
   ngOnInit(): void {
     let t = document.getElementById('total');
-    if (window.innerHeight < 800) {
+    if (window.innerHeight < 1050) {
       t.style.height = 'auto';
     }
     else {

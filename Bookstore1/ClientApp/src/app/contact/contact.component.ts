@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit {
       t.style.height = 'auto';
     }
     else {
-      t.style.height = '100%';
+      t.style.height = '150%';
     }
     
 

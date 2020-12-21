@@ -2,7 +2,7 @@
   position: relative;
   line-height: 24px;
   width: 300px;
-  /*font-size: 14px;*/
+  font-size: 14px;
   background-image: linear-gradient(white, #ffff99);
   border-radius: 40px;
   padding: 24px;
@@ -108,9 +108,9 @@
   animation-delay: 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  /*font-size: 14px;*/
+  font-size: 14px;
   text-align: center;
-  padding-top: 12%;
+  padding-top: 10%;
 }
 
 /*#expectionDiv {
@@ -148,10 +148,147 @@
   }
 }
 
-@media only screen and (max-width: 800px){
+/*@media only screen and (max-width: 800px){
   .content {
     padding-left: 10%;
     padding-right: 10%;
     font-size: 0.5em;
   }
+}*/
+
+@media only screen and (max-width: 599px) and (min-width: 400px) {
+  .content {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 0.5em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+  #expectionDiv {
+    width: 100%;
+    padding-top: 12%;
+  }
 }
+
+
+@media only screen and (max-width: 299px) and (min-width: 240px) {
+  .content {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    font-size: 0.3em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+  #expectionDiv {
+    width: 100%;
+    padding-top: 15%;
+  }
+}
+
+
+@media only screen and (max-width: 349px) and (min-width: 300px) {
+  .content {
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 2%;
+    font-size: 1em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+  #expectionDiv {
+    width: 100%;
+    padding-top: 14%;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 799px) {
+  .content {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 2%;
+    font-size: 1em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+  #expectionDiv {
+    width: 100%;
+    padding-top: 12%;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 599px) {
+  .content {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 2%;
+    font-size: 1em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+
+  #expectionDiv {
+    width: 100%;
+    padding-top: 15%;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 800px) {
+  .content {
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-top: 2%;
+    font-size: 1em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+  #expectionDiv {
+    width: 100%;
+    padding-top: 15%;
+  }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 1001px) {
+  .content {
+    padding-left: 38%;
+    padding-right: 38%;
+    padding-top: 2%;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+  #expectionDiv {
+    width: 100%;
+    padding-top: 14%;
+  }
+}
+
+
+@media only screen and (max-width: 1400px) and (min-width: 1301px) {
+  .content {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 2%;
+  }
+}
+

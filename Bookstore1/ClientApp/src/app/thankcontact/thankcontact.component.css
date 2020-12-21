@@ -48,10 +48,135 @@
   min-width: 100%;
 }
 
-@media only screen and (max-width: 698px) {
+@media only screen and (max-width: 800px) and (min-width: 400px) {
   .content {
-    padding-left: 35%;
-    padding-right: 35%;
+    padding-left: 32%;
+    padding-right: 32%;
     font-size: 0.5em;
   }
+
+  .bubble {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    width: 100%;
+    background-image: linear-gradient(white, #ffff99);
+    border-radius: 40px;
+    padding: 24px;
+    text-align: center;
+    color: #000;
+  }
+
+  .bubble-bottom-left:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #ffff99;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #ffff99;
+    border-bottom: 20px solid transparent;
+    left: 8%;
+    bottom: -24px;
+  }
+
 }
+
+@media only screen and (max-width: 349px) and (min-width: 300px) {
+  .content {
+    padding-left: 17%;
+    padding-right: 17%;
+    padding-top: 2%;
+    font-size: 0.3em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 299px) and (min-width: 240px) {
+  .content {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    font-size: 0.3em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+ 
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 799px) {
+  .content {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 2%;
+    font-size: 0.5em;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+
+ 
+}
+
+@media only screen and (min-width: 350px) and (max-width: 599px) {
+  .content {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 2%;
+    font-size: 0.5em;
+  }
+
+  .bubble {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    width: 100%;
+    background-image: linear-gradient(white, #ffff99);
+    border-radius: 40px;
+    padding: 24px;
+    text-align: center;
+    color: #000;
+  }
+
+  .bubble-bottom-left:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #ffff99;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #ffff99;
+    border-bottom: 20px solid transparent;
+    left: 8%;
+    bottom: -24px;
+  }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 801px) {
+  .content {
+    padding-left: 38%;
+    padding-right: 38%;
+    padding-top: 2%;
+  }
+
+  .bubble {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1301px) {
+  .content {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 2%;
+  }
+}
+

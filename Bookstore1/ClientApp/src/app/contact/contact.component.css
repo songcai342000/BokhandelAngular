@@ -21,6 +21,10 @@
   height: auto;
 }
 
+#leftDiv, #rightDiv {
+    height: auto;
+}
+
 /*.content {
   min-width: 100%;
   padding-left: 10%;
@@ -37,10 +41,7 @@
   display: flex;
 }
 
-@media only screen and (max-width: 698px) and (min-width: 531px){
-  .content {
-    display: block;
-  }
+@media only screen and (max-width: 697px) and (min-width: 500px){
 
   #formTitle {
     margin-left: 45%;
@@ -61,11 +62,52 @@
   }
 }
 
-@media only screen and (max-width: 530px) {
-  
+@media only screen and (max-width: 499px) and (min-width: 350px) {
+  .content {
+    display: block;
+    height: auto;
+    padding-bottom: 16%;
+  }
+
   #formTitle {
     margin-left: 15%;
     margin-right: 15%;
+  }
+
+  agm-map {
+    height: 50%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 349px) and (min-width: 240px) {
+  #total {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    position: relative;
+  }
+  
+  .content {
+    display: block;
+    height: auto;
+    padding: 0% 0% 16% 0% !important;
+    font-size: 0.8em;
+    margin-top: 0 !important;
+  }
+
+  #formTitle {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  agm-map {
+    height: 50%;
+    width: 100%;
+  }
+
+  form {
+    padding: 25px 0 0 0;
   }
 
 }
@@ -77,9 +119,11 @@
 }
 
 @media only screen and (max-width: 800px) and (min-width: 698px) {
+ 
   .content {
     padding-left: 5%;
     padding-right: 5%;
+    height: auto;
   }
 
   #total {
@@ -95,6 +139,8 @@
   form {
     padding-right: 10px;
   }
+
+  
 }
 
 agm-map {
@@ -106,6 +152,7 @@ agm-map {
   margin-top: 8%;
   margin-left: 8%;
   margin-right: 8%;
+  height: auto;
 }
 
 .callDiv {
@@ -156,7 +203,7 @@ form {
   box-shadow: 1px #888888;
   padding: 30px;
   padding-top: 25px;
-  margin-left: 20px;
+ /* margin-left: 20px;*/
   border: 1px solid transparent;
   border-radius: 4px;
 }

@@ -31,7 +31,8 @@ p {
     visibility: hidden;
 }
 
-@media only screen and (max-width: 800px){
+
+@media only screen and (max-width: 690px) and (min-width: 400px){
   .content > div {
     width: 70%;
     margin-left: 15%;
