@@ -139,7 +139,7 @@
   padding-top: 5%;
 }
 
-@media only screen and (max-width: 1100px) {
+/*@media only screen and (max-width: 1100px) {
   .leftnavigatingdiv {
     padding-top: 10%;
   }
@@ -156,29 +156,10 @@
       position: relative;
     right: 15%;
   }
-}
+}*/
 
 
-@media only screen and (max-width: 1280px) {
-  .leftnavigatingdiv {
-    padding-top: 10%;
-  }
-
-  .rightnavigatingdiv {
-    padding-top: 10%;
-  }
-
-    .rightnavigatingdiv > button {
-      margin-left: 5%;
-    }
-
-  .leftnavigatingdiv > button {
-    margin-left: 15%;
-  }
-}
-
-
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1400px) and (min-width: 1281px) {
   .leftnavigatingdiv {
     padding-top: 8%;
   }
@@ -188,16 +169,59 @@
   }
 
     .rightnavigatingdiv > button {
-      margin-left: 5%;
+      margin-left: 4%;
     }
 
   .leftnavigatingdiv > button {
     margin-left: 50%;
   }
-
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (min-width: 850px) and (max-width: 1099px) {
+  .rightnavigatingdiv button, .leftnavigatingdiv button {
+    width: 30px;
+    height: 30px;
+    padding: 8% 8%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 10%;
+  }
+
+  .rightnavigatingdiv {
+    padding-top: 10%;
+  }
+
+    .rightnavigatingdiv > button {
+      margin-left: 25%;
+    }
+
+  .leftnavigatingdiv > button {
+    position: relative;
+    right: 15%;
+  }
+}
+
+
+@media only screen and (max-width: 1280px) and (min-width: 1100px) {
+  .leftnavigatingdiv {
+    padding-top: 5%;
+  }
+
+  .rightnavigatingdiv {
+    padding-top: 5%;
+  }
+
+    .rightnavigatingdiv > button {
+      margin-left: 10%;
+    }
+
+  .leftnavigatingdiv > button {
+    position: relative;
+    right: 10%;
+  }
+}
+@media only screen and (max-width: 849px) and (min-width: 771px) {
 
   .rightnavigatingdiv {
     padding-top: 12%;
@@ -214,7 +238,37 @@
     }
 
   .rightnavigatingdiv > button {
-    margin-left: 5%;
+    margin-left: 10%;
+    padding: 13%;
+  }
+
+  .leftnavigatingdiv > button {
+    margin-left: 30%;
+  }
+
+    .centent {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 770px) and (min-width: 701px) {
+
+  .rightnavigatingdiv {
+    padding-top: 15%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 15%;
+  }
+
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 35px;
+      height: 35px;
+      padding: 13%;
+    }
+
+  .rightnavigatingdiv > button {
+    margin-left: 12%;
     text-align: right;
     padding: 13%;
   }
@@ -224,13 +278,45 @@
     text-align: center;
   }
 
-    .centent {
-        width: auto;
+  .centent {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 600px) {
+
+  .rightnavigatingdiv {
+    padding-top: 15%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 15%;
+  }
+
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 35px;
+      height: 35px;
+      padding: 13%;
     }
+
+  .rightnavigatingdiv > button {
+    margin-left: 5%;
+    text-align: right;
+    padding: 13%;
+  }
+
+  .leftnavigatingdiv > button {
+    margin-left: 20%;
+    text-align: center;
+  }
+
+  .centent {
+    width: auto;
+  }
 }
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (min-width: 550px) and and (max-width: 599px) {
 
   .rightnavigatingdiv {
     padding-top: 20%;
@@ -240,10 +326,10 @@
     padding-top: 20%;
   }
 
-  .rightnavigatingdiv button, .leftnavigatingdiv button {
-    width: 35px;
-    height: 35px;
-  }
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 35px;
+      height: 35px;
+    }
 
   .rightnavigatingdiv > button {
     margin-left: 5%;
@@ -254,10 +340,9 @@
     margin-left: 17%;
     padding-left: 5%;
   }
-
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (min-width: 450px) and and (max-width: 549px) {
 
   .rightnavigatingdiv {
     padding-top: 25%;
@@ -285,63 +370,122 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 449px) and (min-width: 400px) {
 
   .rightnavigatingdiv {
-    padding-top: 30%;
+    padding-top: 25%;
   }
 
   .leftnavigatingdiv {
-    padding-top: 30%;
+    padding-top: 25%;
   }
 
     .rightnavigatingdiv button, .leftnavigatingdiv button {
       width: 24px;
       height: 24px;
+      padding-top: 10%;
+      padding-bottom: 10%;
+    }
+
+  .rightnavigatingdiv > button {
+    margin-left: 12%;
+    padding-left: 10%;
+  }
+
+  .leftnavigatingdiv > button {
+    margin-left: 10%;
+    padding-left: 5%;
+  }
+}
+
+@media only screen and (max-width: 399px) and (min-width: 350px) {
+
+  .rightnavigatingdiv {
+    padding-top: 25%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 25%;
+  }
+
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 20px;
+      height: 20px;
+      padding: 5% 10% 5% 10%;
+    }
+
+  .rightnavigatingdiv > button {
+    margin-left: 15%;
+    padding-left: 3%;
+  }
+
+  .leftnavigatingdiv > button {
+    margin-left: 11%;
+    padding-left: 3%;
+  }
+}
+
+
+@media only screen and (max-width: 349px) and (min-width: 300px) {
+
+  .rightnavigatingdiv {
+    padding-top: 25%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 25%;
+  }
+
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 20px;
+      height: 20px;
+      padding: 5% 10% 5% 10%;
+    }
+
+  .rightnavigatingdiv > button {
+    margin-left: 4%;
+    padding-left: 10%;
+  }
+
+  .leftnavigatingdiv > button {
+    margin-left: 11%;
+    padding-left: 5%;
+  }
+}
+
+
+@media only screen and (max-width: 299px) and (min-width: 240px) {
+
+  .rightnavigatingdiv {
+    padding-top: 35%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 35%;
+  }
+
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 15px;
+      height: 15px;
       padding-top: 10%;
       padding-bottom: 10%;
     }
 
   .rightnavigatingdiv > button {
     margin-left: 5%;
-    padding-left: 10%;
-  }
-
-  .leftnavigatingdiv > button {
-    margin-left: 2%;
-    padding-left: 5%;
-  }
-}
-
-@media only screen and (max-width: 380px) {
-
-  .rightnavigatingdiv {
-    padding-top: 30%;
-  }
-
-  .leftnavigatingdiv {
-    padding-top: 30%;
-  }
-
-    .rightnavigatingdiv button, .leftnavigatingdiv button {
-      width: 24px;
-      height: 24px;
-      padding-top: 10%;
-      padding-bottom: 10%;
-    }
-
-  .rightnavigatingdiv > button {
-    margin-left: 11%;
-    padding-left: 10%;
+    padding-right: 20%;
+    color: transparent;
   }
 
   .leftnavigatingdiv > button {
     margin-left: 11%;
-    padding-left: 5%;
+    padding-right: 2px;
+    color: transparent;
   }
 }
 
-@media only screen and (max-width: 360px) {
+
+/*@media only screen and (max-width: 360px) {
 
   .rightnavigatingdiv {
     padding-top: 30%;
@@ -402,7 +546,7 @@
   .leftnavigatingdiv > button {
     background-color: #ddd;
   }
-}
+}*/
 
 
 
