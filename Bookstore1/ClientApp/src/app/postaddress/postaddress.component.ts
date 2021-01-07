@@ -30,12 +30,18 @@ export class PostaddressComponent implements OnInit {
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
-    let t = document.getElementById('total');
+   /* let t = document.getElementById('total');
     if (window.innerHeight < 800) {
       t.style.height = 'auto';
     }
     else {
       t.style.height = '100%';
+    }*/
+    if (window.innerWidth < 300) {
+      let b = document.getElementById('background');
+      let f = document.getElementById('formTitle');
+      b.style.fontSize = '0.8em';
+      f.innerHTML = "Postal-address";
     }
    // sessionStorage.removeItem('4');
     this.ids = JSON.parse(localStorage.getItem('4'));

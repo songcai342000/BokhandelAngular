@@ -28,6 +28,14 @@ form {
     margin-left: -2%;
 }
 
+#labelDiv {
+    text-align: center;
+}
+
+label {
+    padding: 0;
+}
+
 @media only screen and (min-height: 1050px) {
   .container {
     height: 120%;
@@ -35,15 +43,46 @@ form {
 }
 
 
-#formTitle {
+/*#formTitle {
   margin-left: 35%;
+  margin-right: 35%;
   margin-bottom: 10%;
-  font-size: 16px;
+  font-size: 1em;
+}*/
 
+@media only screen and (max-width: 480px) and (min-width: 401px) {
+  .centainer {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  #background {
+    background-image: linear-gradient(white, #ffff99);
+    margin: 2% 0%;
+    padding: 8% 0 15% 0;
+    width: auto;
+  }
+
+  form {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: auto;
+    font-size: 3.0vw;
+  }
+
+  /*#formTitle {
+    margin-left: 28%;
+    margin-right: 28%;
+    font-size: 3.0vw;
+  }*/
+
+  .form-control {
+    height: 90%;
+  }
 }
 
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 400px) and (min-width: 301px) {
     .centainer {
       padding-left: 2%;
       padding-right: 2%;
@@ -57,38 +96,67 @@ form {
     }
 
     form {
-      margin-left: -2%;
+      margin-right: 2%;
+      margin-left: 2%;
       width: auto;
-      font-size: 3.0vw;
+      font-size: 3.6vw;
     }
 
-    #formTitle {
-      margin-left: 10%;
-      margin-right: 10%;
-      font-size: 3.0vw;
-    }
+    /*#formTitle {
+      margin-left: 23%;
+      margin-right: 23%;
+      font-size: 3.6vw;
+    }*/
 
     .form-control {
       height: 90%;
     }
   }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 300px) and (max-width: 200px) {
   form {
-    font-size: 3.5vw;
+    margin-right: 2%;
+    margin-left: 2%;
   }
 
   #formTitle {
-    font-size: 3.5vw;
+   word-break: keep-all;
+  }
+
+  .centainer {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  #background {
+    background-image: linear-gradient(white, #ffff99);
+    margin: 2% 0%;
+    padding: 8% 0 15% 0;
+    width: auto;
   }
 }
 
+@media only screen and (max-width: 600px) and (min-width: 481px) {
+  /* #formTitle {
+    margin-left: 28%;
+    margin-right: 28%;
+  }*/
+}
 
-  @media only screen and (max-width: 800px) {
-    #formTitle {
-      margin-left: 22%;
-    }
-  }
+
+@media only screen and (max-width: 800px) and (min-width: 601px) {
+  /*#formTitle {
+    margin-left: 33%;
+    margin-right: 33%;
+  }*/
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 801px) {
+  /*#formTitle {
+    margin-left: 33%;
+    margin-right: 33%;
+  }*/
+}
 
   input[type=text] {
     border: 1px solid #dddddd;
@@ -99,8 +167,8 @@ form {
   }
 
   form {
-    width: 55%;
-    left: 25%;
+    margin-right: 15%;
+    margin-left: 15%;
     position: relative;
     border: 1px solid transparent;
   }

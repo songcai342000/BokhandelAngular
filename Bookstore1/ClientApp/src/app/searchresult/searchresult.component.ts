@@ -30,13 +30,6 @@ export class SearchresultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let t = document.getElementById('total');
-    if (window.innerHeight < 800) {
-      t.style.height = 'auto';
-    }
-    else {
-      t.style.height = '100%';
-    }
     this.route.queryParamMap.subscribe((paramMap: ParamMap) => {
       const t = paramMap.get('title');
        if (t != null && t != '') {

@@ -77,7 +77,7 @@ export class HomeComponent {
     i.style.width = '40%';
     a.style.width = '60%';
     a.style.paddingLeft = '7%';*/
-    if (window.innerWidth < 699) {
+    if (window.innerWidth < 600) {
       t.style.display = 'block';
       i.style.paddingLeft = '15%';
       i.style.paddingRight = '15%';
@@ -89,7 +89,11 @@ export class HomeComponent {
       a.style.width = 'auto';
       i.style.height = '50%';
     }
-    else if (window.innerWidth < 1100 && window.innerWidth >= 699) {
+    else if (window.innerWidth < 801 && window.innerWidth >= 600) {
+      t.style.height = '100%';
+      i.style.height = '30%';
+    }
+    else if (window.innerWidth < 1100 && window.innerWidth >= 801) {
       t.style.height = '100%';
       i.style.height = '35%';
     }

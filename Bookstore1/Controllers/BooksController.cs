@@ -132,8 +132,31 @@ namespace Bookstore1.Controllers
             return await books.ToListAsync();
         }
 
+        // GET: api/Books/SearchByTitle/author
+        [HttpGet("GetAuthorBooks/{id}")]
+        public async Task<ActionResult<IEnumerable<Object>>> GetAuthorBooks(int id)
+        {
+            var registration = from aid in _context.Registrations where aid.BookId == id select new
+                                {
+                                    AuthorId = aid.AuthorId
+                                };
+            int authorId = registration.FirstOrDefault().AuthorId;
+            var books = from r in _context.Registrations
+                        join a in _context.Authors on r.AuthorId equals a.AuthorId
+                        join b in _context.Books on r.BookId equals b.BookId
+                        where r.AuthorId == authorId
+                        select new
+                        {
+                            BookId = b.BookId,
+                            Title = b.Title,
+                            Genre = b.Genre,
+                            Price = b.Price,
+                        };
+            return await books.ToListAsync();
+        }
+
         // GET: api/Books/5.
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] 
         public async Task<ActionResult<IEnumerable<Object>>> GetBook(int id)
         {
             var books = from rg in _context.Registrations

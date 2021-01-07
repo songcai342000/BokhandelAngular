@@ -10,7 +10,7 @@ export class FootComponent implements OnInit {
   tooltip: string;
   ngOnInit(): void {
     this.smallScreen();
-    alert(window.innerWidth);
+    //alert(window.innerWidth);
   }
 
   getTooltip(event: any) {
@@ -25,7 +25,12 @@ export class FootComponent implements OnInit {
     tooltip.style.width = s.length * 9 + "px";
     tooltip.style.left = event.clientX + "px";
     //tooltip.style.top = window.innerHeight - event.clientY + 20 + "px";
-    tooltip.style.top = window.innerHeight - event.clientY + 80 + "px";
+    if (window.innerWidth > 1000) {
+        tooltip.style.bottom = window.innerHeight - event.clientY - 200 + "px";
+    }
+    else {
+      tooltip.style.bottom = '50px';
+    }
     tooltip.style.borderColor = "#ddd";
     tooltip.style.backgroundColor = "white";
   }

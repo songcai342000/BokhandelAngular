@@ -47,7 +47,7 @@
     <div id="rightDiv" class="col-sm-6">
 
       <form #contactForm="ngForm">
-        <label for="contactForm" id="formTitle">Send message</label>
+        <div id="titleDiv"><label for="contactForm" id="formTitle">Send message</label></div>
         <div class="form-group">
           <label for="fname">First Name</label>
           <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="contact.firstName" #firstName="ngModel" size="25" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">
@@ -121,7 +121,7 @@
     <div id="rightDiv" class="col-sm-6">
 
       <form #contactForm="ngForm">
-        <label for="contactForm" id="formTitle">Send message</label>
+        <div id="titleDiv"><label for="contactForm" id="formTitle">Send message</label></div>
         <div class="form-group">
           <label for="fname">First Name</label>
           <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="contact.firstName" #firstName="ngModel" size="25" required pattern="^[A-ZÅØÆ][a-zA-ZÅØÆåøæ]{1,}(\s)*?$">

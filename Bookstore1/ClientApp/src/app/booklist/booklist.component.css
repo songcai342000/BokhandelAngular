@@ -9,7 +9,7 @@
     padding-right: 32%;
     padding-top: 2%;
     margin-left: 2%;
-    height: 120%;
+    height: 150%;
     margin-bottom: 0;
   }
 }
@@ -20,17 +20,6 @@
   padding: 6% 0 12% 0;
 }
 
-@media only screen and (min-height: 1050px) {
-  .total {
-    width: 100%;
-    padding-left: 32%;
-    padding-right: 32%;
-    padding-top: 2%;
-    margin-left: 2%;
-    height: 120%;
-    margin-bottom: 0;
-  }
-}
 /*.navigation {
   display: flex;
   width: 100%;
@@ -306,7 +295,7 @@
   }
 
   .leftnavigatingdiv > button {
-    margin-left: 20%;
+    margin-left: 15%;
     text-align: center;
   }
 
@@ -332,7 +321,7 @@
     }
 
   .rightnavigatingdiv > button {
-    margin-left: 5%;
+    margin-left: 7%;
     padding-left: 10%;
   }
 
@@ -342,7 +331,38 @@
   }
 }
 
-@media only screen and (min-width: 450px) and and (max-width: 549px) {
+
+@media only screen and (min-width: 501px) and (max-width: 549px) {
+
+  .rightnavigatingdiv {
+    padding-top: 15%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 15%;
+  }
+
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 25px;
+      height: 25px;
+      padding-top: 20%;
+      padding-bottom: 20%;
+    }
+
+  .rightnavigatingdiv > button {
+    margin-left: 10%;
+    padding-left: 9%;
+    padding-top: 5%;
+  }
+
+  .leftnavigatingdiv > button {
+    margin-left: 30%;
+    padding-left: 9%;
+    padding-top: 5%;
+  }
+}
+
+@media only screen and (min-width: 450px) and and (max-width: 500px) {
 
   .rightnavigatingdiv {
     padding-top: 25%;
@@ -372,6 +392,18 @@
 
 @media only screen and (max-width: 449px) and (min-width: 400px) {
 
+   div {
+      font-size: 0.5rem;
+   }
+
+  a, .btn-default {
+    font-size: 0.7rem;
+  }
+
+  .catelog {
+    font-size: 0.9rem;
+  }
+
   .rightnavigatingdiv {
     padding-top: 25%;
   }
@@ -398,7 +430,7 @@
   }
 }
 
-@media only screen and (max-width: 399px) and (min-width: 350px) {
+@media only screen and (max-width: 399px) and (min-width: 371px) {
 
   .rightnavigatingdiv {
     padding-top: 25%;
@@ -415,13 +447,49 @@
     }
 
   .rightnavigatingdiv > button {
-    margin-left: 15%;
     padding-left: 3%;
   }
 
   .leftnavigatingdiv > button {
-    margin-left: 11%;
+    margin-left: 25%;
     padding-left: 3%;
+  }
+
+  .content {
+    margin-left: 2.5%;
+    width: 78%;
+  }
+}
+
+
+@media only screen and (max-width: 370px) and (min-width: 350px) {
+
+  .rightnavigatingdiv {
+    padding-top: 25%;
+  }
+
+  .leftnavigatingdiv {
+    padding-top: 25%;
+  }
+
+    .rightnavigatingdiv button, .leftnavigatingdiv button {
+      width: 20px;
+      height: 20px;
+      padding: 5% 10% 5% 10%;
+    }
+
+  .rightnavigatingdiv > button {
+    padding-left: 3%;
+  }
+
+  .leftnavigatingdiv > button {
+    margin-left: 20%;
+    padding-left: 3%;
+  }
+
+  .content {
+      margin-left: 2.5%;
+      width: 78%;
   }
 }
 
@@ -456,31 +524,78 @@
 
 @media only screen and (max-width: 299px) and (min-width: 240px) {
 
+  .catelog {
+    font-size: 0.9rem;
+  }
+
+  .content {
+    height: auto;
+    font-size: 0.15em;
+    margin-bottom: 5%;
+  }
+
+    .content a, .content button {
+      font-size: 0.8rem;
+    }
+
   .rightnavigatingdiv {
     padding-top: 35%;
+    padding-left: 3.5%;
   }
 
   .leftnavigatingdiv {
     padding-top: 35%;
+    padding-left: 2%;
   }
 
-    .rightnavigatingdiv button, .leftnavigatingdiv button {
-      width: 15px;
-      height: 15px;
-      padding-top: 10%;
-      padding-bottom: 10%;
-    }
-
-  .rightnavigatingdiv > button {
-    margin-left: 5%;
-    padding-right: 20%;
-    color: transparent;
+  .rightnavigatingdiv a {
+    background-color: transparent;
+    text-align: center;
+    color: #7094db;
+    text-decoration: none;
   }
 
-  .leftnavigatingdiv > button {
-    margin-left: 11%;
-    padding-right: 2px;
-    color: transparent;
+  .leftnavigatingdiv a {
+    background-color: transparent;
+    text-align: center;
+    color: #7094db;
+    text-decoration: none;
+  }
+
+  .rightnavigatingdiv a:link {
+    color: #7094db;
+  }
+
+  .leftnavigatingdiv a:link {
+    background-color: transparent;
+    color: #7094db;
+    text-decoration: none;
+  }
+
+  .rightnavigatingdiv a:hover {
+    background-color: transparent;
+    color: #7094db;
+    text-decoration: none;
+  }
+
+  .leftnavigatingdiv a:hover {
+    color: #7094db;
+  }
+
+  .rightnavigatingdiv a:active {
+    color: #7094db;
+  }
+
+  .leftnavigatingdiv a:active {
+    color: #7094db;
+  }
+
+  .rightnavigatingdiv a:visited {
+    color: #7094db;
+  }
+
+  .leftnavigatingdiv a:visited {
+    color: #7094db;
   }
 }
 

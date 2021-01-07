@@ -23,6 +23,7 @@ export class BookService {
   user: User;
   order: Order;
   private booksUrl = 'api/Books';
+  private authorBooksUrl = 'api/Books/GetAuthorBooks';
   private crimeUrl = 'api/Books/CrimeBooks';
   private romanceUrl = 'api/Books/RomanceBooks';
   private fictionUrl = 'api/Books/FictionBooks';
@@ -144,6 +145,10 @@ export class BookService {
 
   searchBooks(searchTerm: string) {
     return this.http.get<Book[]>(this.booksUrl + '/' + searchTerm);
+  }
+
+  getAuthorBooks(id: number) {
+    return this.http.get<Book[]>(this.authorBooksUrl + '/' + id);
   }
 
   newContact(contact: Contact) {

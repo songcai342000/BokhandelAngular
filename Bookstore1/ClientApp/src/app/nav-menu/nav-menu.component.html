@@ -18,9 +18,9 @@
               <div id="dropdownDiv">
                 <a class="nav-link text-white dropdown text-white dropdown-toggle" data-toggle="dropdown" [routerLink]=""></a>
                 <div>
-                  <ul class="dropdown-menu" style="position: absolute; left:-80px">
-                    <li><a [routerLink]="['statistic']" style="margin-top: 0; color: black;">Statistics</a></li>
-                    <li><a [routerLink]="['contact']" style="color: black;">Contact us</a></li>
+                  <ul class="dropdown-menu" style="position: absolute; width: auto; padding: 2px;">
+                    <li><a [routerLink]="['statistic']" style="margin-top: 0; margin-left: 15px; color: black;">Statistics</a></li>
+                    <li><a [routerLink]="['contact']" style="color: black; margin-left: 15px">Contact us</a></li>
                   </ul>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                   <app-shoppingcart [bookCount]="bookNumber"></app-shoppingcart>
                 </div>
                 <div class="zeroPadding">
-                  <a class="nav-link text-white" [routerLink]="" (click)="loadSummary()">
+                  <a class="nav-link text-white" [routerLink]=""  (click)="loadSummary()">
                     <i class="material-icons">shopping_cart</i>
                   </a>
                 </div>
@@ -48,18 +48,18 @@
       </div>
     </nav>
     <!-- Top Navigation Menu -->
-    <div class="mobilnav">
+    <div class="mobilnav" >
 
-      <a href="#home" class="active" >
+      <a href="#home" class="active" [routerLink]="" (click)="loadSummary()">
         Forest Bookstore <div href="#" id="mobilCart">
           <app-shoppingcart [bookCount]="bookNumber" id="bknMobil"></app-shoppingcart>
-          <i class="fa fa-shopping-cart text-white" aria-hidden="true" [routerLink]="" (click)="loadSummary()" id="faCart"></i>
+          <i class="fa fa-shopping-cart text-white" aria-hidden="true" id="faCart"></i>
         </div>
       </a>
 
       <!-- Navigation links (hidden by default) -->
       <div id="mobilLinks">
-        <a href="#" [routerLink]="['home']" routerLinkActive="active"><i class="fa fa-search" aria-hidden="true"></i></a>
+        <a href="#" [routerLink]="" (click)="loadSearchBox()"><i class="fa fa-search" aria-hidden="true"></i></a>
         <a href="#" [routerLink]="['statistic']" routerLinkActive="active">Statistics</a>
         <a href="#" [routerLink]="['contact']" routerLinkActive="active">Contact</a>
         <a href="#" [routerLink]="['booklist']" routerLinkActive="active">Books</a>
@@ -77,7 +77,7 @@
 
   <!-- Draggable DIV -->
   <div *ngIf="bookAmounts" id="test">
-    <div cdkDrag id="myDiv" [cdkDragFreeDragPosition]="dragPosition" *ngIf="!isShow" (cdkDragEnded)="dragEnded($event)">
+    <div cdkDrag id="myDiv" [cdkDragFreeDragPosition]="dragPosition" *ngIf="!isShow" (cdkDragEnded)="dragEnded($event)" [style.width]="summaryWidth">
       <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
       <div id="myDivHeader">
         <button id="xx" (mousedown)="toggleDisplay()">
@@ -94,7 +94,7 @@
         <tr *ngFor="let bookAmount of bookAmounts">
           <td class="title">{{bookAmount.title}}</td>
           <td>{{bookAmount.amount}}</td>
-          <td>Price: {{bookAmount.price}}</td>
+          <td>Price: {{bookAmount.price}} kr</td>
           <td><button value="Remove" class=".btn-default" (click)="removeItem(bookAmount)">Remove</button></td>
         </tr>
         <tr>

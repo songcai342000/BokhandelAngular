@@ -1,12 +1,12 @@
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v8.0" nonce="PWkINhof"></script>
-  <div class="content" *ngIf="books" id="total">
+<div id="total">
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v8.0" nonce="PWkINhof"></script>
+  <div *ngIf="books" id="onebook">
     <div id="background">
       <div class="cell" *ngFor="let book of books">
-      <div class="image"><img src={{book.imageUrl}}></div>
-      <div  class="details">
-        <div>
-          <h2>{{book.title}} </h2>
+        <div class="image"><img src={{book.imageUrl}}></div>
+        <div class="details">
+          <div>
+            <h2>{{book.title}} </h2>
             <dl class="dl-horizontal">
               <dt>
                 Author: <span>{{book.author}}</span>
@@ -21,40 +21,71 @@
                 Price: <span>{{book.price}}&nbsp;kr</span>
               </dt>
             </dl>
-        </div>
-        <div id="operationBtns">
-          <button class="btn-default" (click)="historyBack()" id="gobackBtn">Go back</button>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)">Choose</button>&nbsp;&nbsp;
-        </div>
-  
-        <div class="sharebuttons">
-            <a target="_blank" class="fb-share-button" data-href="https://bookstorenetservice2.azurewebsites.net/bookdetails/{{id}}" data-layout="button_count" data-size="small" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore  btn btn-success" >Facebook</a>
+          </div>
+          <div id="operationBtns">
+            <button class="btn-default" (click)="historyBack()" id="gobackBtn">Go back</button>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)">Choose</button>&nbsp;&nbsp;
+          </div>
+
+          <div class="sharebuttons">
+            <a target="_blank" class="fb-share-button" data-href="https://bookstorenetservice2.azurewebsites.net/bookdetails/{{id}}" data-layout="button_count" data-size="small" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore  btn btn-success">Facebook</a>
             <a class="twitter-share-button btn btn-success"
                href="https://twitter.com/intent/tweet">
               Twitter
             </a>
+          </div>
         </div>
       </div>
-        </div>
-   
+
     </div>
   </div>
-<input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
-<script>
-  window.twttr = (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
-      t = window.twttr || {};
-    if (d.getElementById(id)) return t;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
 
-    t._e = [];
-    t.ready = function (f) {
-      t._e.push(f);
-    };
+  <!--
+  <div *ngFor="let book of books" *ngIf="authorBooks" id="authorTitle">
 
-    return t;
-  }(document, "script", "twitter-wjs"));</script>
+  </div>
+  -->
+
+  <div id="authorTitleDiv"><label>The books of the author</label></div>
+
+  <div id="authorbooks" *ngIf="authorBooks">
+    <div *ngFor="let book of authorBooks">
+
+      <div>{{book.title}} </div>
+      <div>
+        {{book.genre}}
+      </div>
+      <div>
+        {{book.price}}&nbsp;kr
+      </div>
+      <div>
+        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active" (click)="getNewBook(book.bookId)">Detail </a>
+      </div>
+      <div>
+        <button class="btn-default" (click)="chooseBook(book)">Choose </button>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div id="domibox"><figure><img src="assets/images/GuwenguanzhiSmallFront.png" ><figcaption><img src="assets/images/GuwenguanzhiSmallBottom.png"></figcaption></figure><figure><img src="assets/images/GuwenguanzhiSmallFront.png"><figcaption><img src="assets/images/GuwenguanzhiSmallBottom.png"></figcaption></figure></div>
+  <input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
+    </div>
+    -->
+  <script>
+    window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
 
 

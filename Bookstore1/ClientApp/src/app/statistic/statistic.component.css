@@ -31,7 +31,16 @@ p {
     visibility: hidden;
 }
 
-@media only screen and (max-width: 499px) and (min-width: 240px) {
+@media only screen and (max-width: 300px) and (min-width: 200px) {
+  .content > div {
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 0;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 499px) and (min-width: 301px) {
   .content > div {
     margin-left: 5%;
     margin-right: 5%;

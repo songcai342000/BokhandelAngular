@@ -1,4 +1,4 @@
-.content {
+ .content {
   height: 100%;
   width: 100%;
   padding-left: 35%;
@@ -8,7 +8,7 @@
 }
 
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1400px) and (min-width: 781px) {
 
   #loading {
     position: relative;
@@ -16,11 +16,10 @@
   }
 }
 
-@media only screen and (max-width: 780px) {
-
-  #vtext {
-    font-size: 3vw;
-    padding-top: 4%;
+@media only screen and (max-width: 450px) and (min-width: 200px) {
+  .content {
+    padding-left: 20%;
+    padding-right: 20%;
   }
 }
 
@@ -40,7 +39,6 @@
     to {
       transform: translateY(100px)
     }
-
 }
 
 #loading {

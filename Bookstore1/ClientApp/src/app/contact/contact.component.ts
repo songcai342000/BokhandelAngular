@@ -16,20 +16,22 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     let t = document.getElementById('total');
-    if (window.innerWidth < 698) {
+    if (window.innerWidth < 600) {
       let b = document.getElementById("contentBig");
+      let s = document.getElementById("contentSmall");
       b.remove();
+      s.style.display = 'block';
     }
     else {
       let s = document.getElementById("contentSmall");
       s.remove();
     }
-    if (window.innerHeight < 800) {
+    /*if (window.innerHeight < 800) {
       t.style.height = 'auto';
     }
     else {
       t.style.height = '150%';
-    }
+    }*/
     
 
   }

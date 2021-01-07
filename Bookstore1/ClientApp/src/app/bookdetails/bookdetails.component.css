@@ -1,5 +1,17 @@
-.content {
-  height: 100%;
+#total{
+  height: auto;
+  width: 100%;
+  margin: 0;
+}
+
+/*@media only screen and (min-height: 1050px){
+  #total {
+    height: 100%;
+  }
+}*/
+
+#onebook {
+ /* height: 100%;*/
   width: 100%;
   margin-top: 2%;
   margin-bottom: 0;
@@ -10,6 +22,7 @@
   padding-bottom: 2%;
 }
 
+
 #background {
   width: 100%;
   background-image: linear-gradient(white, #ffff99);
@@ -17,6 +30,77 @@
   height: 70%;
   display: flex;
 }
+
+#authorTitle {
+  width: 100%;
+  padding-left: 30%;
+  margin-bottom: 3vh;
+}
+
+#authorbooks {
+  width: auto;
+  background-image: linear-gradient(white, #ffff99);
+  padding: 20px;
+  margin: 1% 5% 5% 5%;
+  height: auto;
+}
+
+#authorTitleDiv {
+    text-align: center;
+    width: auto;
+}
+
+label {
+    padding: 0;
+}
+
+/*label {
+  margin-left: 42%;
+  margin-right: 42%;
+  margin-top: 2%;
+  font-size: 1.4em;
+}*/
+#authorbooks > div {
+  padding-left: 2px;
+  padding-right: 2px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% auto;
+  border-radius: 0;
+  width: auto;
+}
+
+#authorbooks > div div {
+  padding: 5% 12% 5% 12%;
+  text-align: center;
+}
+
+  #authorbooks > div div:nth-child(1){
+    text-align: left;
+  }
+
+  #authorbooks > div:nth-child(2n) {
+    background-color: white;
+    height: auto;
+  }
+
+  #authorbooks > div:nth-child(2n+1) {
+    background-color: #f2f2f2;
+    height: auto;
+  }
+
+  #authorbooks > div:nth-child(2n) button {
+    background-color: #f2f2f2;
+  }
+
+  #authorbooks > div:nth-child(2n+1) button {
+    background-color: white;
+  }
+
+
+  #authorbooks > div button:hover {
+    color: white;
+    background-color: blue;
+  }
 
 .cell {
     display: flex;
@@ -30,14 +114,132 @@
   width: 144px !important;
 }
 
+figure {
+  margin: 0 0 0 0;
+  width: 50%;
+  height: auto;
+  transform-origin: center bottom;
+  transform-style: preserve-3d;
+  transition: 1s transform;
+  padding: 0;
+}
+
+  figure img {
+    width: 100%;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    object-fit: scale-down;
+  }
+
+  figure::before {
+    content: '';
+    position: absolute;
+    top: -3%;
+    left: 13%;
+    height: 65%;
+    width: 85%;
+    box-shadow: 0 0 2vw 2vw rgba(0, 0, 0, 0.1), inset 0 0 4vw 2vw rgba(0, 0, 0, 0.1);
+    transition: 1s;
+    transform: rotateX(95deg) translateZ(-80px) scale(0.75);
+    transform-origin: inherit;
+  }
+
+  figure:hover {
+    transform: rotateX(75deg) translateZ(4vh) scaleX(0.90);
+  }
+
+    figure:hover::before {
+      position: absolute;
+      left: 20%;
+      width: 68%;
+      height: 65%;
+      top: -60%;
+      box-shadow: 0vh 0vh 1vw 1vw rgba(0, 0, 0, 0.6), inset 0 0 7vw 7vw rgba(0, 0, 0, 0.6);
+      transform: rotateX(-5deg) translateZ(-40px) scale(1);
+    }
+
+  figure figcaption {
+    width: 100%;
+    height: 10%;
+    color: #fff;
+    position: relative;
+    top: -25%;
+    left: 0%;
+    transform-origin: center top;
+    transform: rotateX(-89.9deg) scaleX(1);
+  }
+
+#domibox {
+  padding-left: 39%;
+  padding-right: 31%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+#gobackBtn {
+  color: #2e5cb8;
+}
+
+  #gobackBtn:hover {
+    color: white;
+  }
+
+#operationBtns {
+  padding-left: 0;
+  display: flex;
+}
+
+.sharebuttons {
+  display: flex;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+
+.fb-xfbml-parse-ignore {
+  background-color: #2e5cb8;
+  color: white;
+  width: 150px;
+}
+
+.twitter-share-button {
+  background-color: #85a3e0;
+  color: white;
+  width: 150px;
+}
+
+.image {
+  margin-right: 2%;
+  margin-bottom: 1%;
+}
+
+.details {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+span {
+  font-weight: 400;
+}
+
+.introduction {
+  overflow-wrap: break-word;
+}
+
+
 @media only screen and (max-width: 300px) and (min-width: 240px){
-  .content {
+  #onebook {
     padding-top: 1% !important;
     padding-left: 4% !important;
     padding-right: 4% !important;
     margin-bottom: 0;
     padding-bottom: 4% !important;
-    font-size: 12px;
+    font-size: 0.6em;
+  }
+
+  #authorbooks {
+    font-size: 0.6em;
   }
 
   #background {
@@ -53,15 +255,17 @@
   }
 
   .image {
-    height: 25%;
     float: left;
+    height: 25%;
     width: 25%;
-    object-fit: scale-down;
   }
 
   img {
     padding: 0 0.2% 0 0 !important;
     margin: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
   }
 
   .details {
@@ -74,27 +278,146 @@
   }
 
   .fb-xfbml-parse-ignore {
-    width: 100px !important;
+    width: 30vw !important;
+    height: 12vw !important;
+    font-size: 1.3em;
+    padding: 7px 10px 7px 10px;
   }
 
   .twitter-share-button {
-    width: 100px !important;
+    width: 30vw !important;
+    height: 12vw !important;
+    font-size: 1.3em;
+    padding: 7px 10px 7px 10px;
   }
+
+  #authorbooks {
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+    #authorbooks div {
+      padding-left: 0px;
+      padding-right: 2px;
+    }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .btn-default {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  #authorbooks > div {
+    height: auto;
+  }
+
+  /*label {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    font-size: 0.9em;
+  }*/
+
+#domibox {
+  width: auto;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 15%;
+  margin-bottom: 35%;
+  height: 5vh;
+  padding-right: 38%;
+  padding-left: 38%;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-@media only screen and (max-width: 400px) and (min-width: 301px){
-  .content {
-    font-size: 13px;
-  }
+figure {
+  margin: 0;
+  padding-left: 7%;
+  padding-right: 7%;
+  width: 90%;
+  height: auto;
+  transform-origin: center bottom;
+  transform-style: preserve-3d;
+  transition: 1s transform;
+  padding: 0;
 }
 
-@media only screen and (max-width: 450px) and (min-width: 401px) {
-  .content {
+  figure img {
+    width: 77%;
+    height: 77%;
+    object-fit: scale-down;
+  }
+
+  figure::before {
+    content: '';
+    position: absolute;
+    top: -6%;
+    left: 8%;
+    height: 5%;
+    width: 30%;
+    box-shadow: 0 0 2vw 2vw rgba(0, 0, 0, 0.1), inset 0 0 4vw 2vw rgba(0, 0, 0, 0.1);
+    transition: 1s;
+    transform: rotateX(95deg) translateZ(-80px) scale(0.75);
+    transform-origin: inherit;
+  }
+
+  figure:hover {
+    transform: rotateX(75deg) translateZ(4vh) scaleX(0.95);
+  }
+
+    figure:hover::before {
+      position: absolute;
+      left: 10%;
+      width: 30%;
+      box-shadow: 0vh 0vh 0.5vw 1vw rgba(0, 0, 0, 0.6), inset 0 0 3vw 3vw rgba(0, 0, 0, 0.6);
+      transform: rotateX(-5deg) translateZ(-26px) scale(1);
+    }
+
+  figure figcaption {
+    width: 100%;
+    height: 10%;
+    color: #fff;
+    position: relative;
+    top: -12%;
+    transform-origin: center top;
+    transform: rotateX(-89.9deg);
+  }
+
+  @keyframes domino {
+    to {
+      position: absolute;
+      left: 4%;
+      width: 41%;
+      box-shadow: 0vh 0vh 0.5vw 2vw rgba(0, 0, 0, 0.4), inset 0 0 12vw 6vw rgba(0, 0, 0, 0.4);
+      transform: rotateX(-5deg) translateZ(-26px) scale(1);
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 350px) and (min-width: 301px) {
+  #onebook {
+    font-size: 0.8em;
     padding-top: 1% !important;
     padding-left: 4% !important;
     padding-right: 4% !important;
     margin-bottom: 0;
     padding-bottom: 4% !important;
+  }
+
+  #authorbooks {
+    font-size: 0.7em;
+  }
+
+  h3 {
+    font-size: 0.5em;
   }
 
   #background {
@@ -133,15 +456,394 @@
 
   .fb-xfbml-parse-ignore {
     width: 48% !important;
+    font-size: 1.2em;
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
 
   .twitter-share-button {
     width: 48% !important;
+    font-size: 1.2em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .btn-default {
+    padding-left: 2px;
+    padding-right: 2px;
+    width: auto;
+  }
+
+  /*#authorbooks > div button {
+    width: 100%;
+  }*/
+
+  /* label {
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 2%;
+    font-size: 1.1em;
+  }*/
+
+  #domibox {
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    height: 5vh;
+    padding-right: 40%;
+    padding-left: 40%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  figure {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    transform-origin: center bottom;
+    transform-style: preserve-3d;
+    transition: 1s transform;
+    padding: 0;
+  }
+
+    figure img {
+      width: 90%;
+      height: 90%;
+      object-fit: scale-down;
+    }
+
+    figure::before {
+      content: '';
+      position: absolute;
+      top: -6%;
+      left: 20%;
+      height:50%;
+      width: 50%;
+      box-shadow: 0 0 2vw 2vw rgba(0, 0, 0, 0.1), inset 0 0 7vw 7vw rgba(0, 0, 0, 0.1);
+      transition: 1s;
+      transform: rotateX(95deg) translateZ(-40px) scale(0.95);
+      transform-origin: inherit;
+    }
+
+    figure:hover {
+      transform: rotateX(75deg) translateZ(1vh) scaleX(0.95);
+    }
+
+      figure:hover::before {
+        position: absolute;
+        left: 5%;
+        top: 30%;
+        height: 60%;
+        width: 92%;
+        box-shadow: 0vh 0vh 0.5vw 0.5vw rgba(0, 0, 0, 0.4), inset 0 0 7vw 7vw rgba(0, 0, 0, 0.4);
+        transform: rotateX(8deg) translateZ(2px) scale(0.9);
+      }
+
+    figure figcaption {
+      width: 100%;
+      height: 10%;
+      color: #fff;
+      position: relative;
+      top: -60%;
+      transform-origin: center top;
+      transform: rotateX(-89.9deg);
+    }
+}
+
+@media only screen and (max-width: 400px) and (min-width: 351px) {
+  #onebook {
+    font-size: 0.8em;
+    padding-top: 1% !important;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    margin-bottom: 0;
+    padding-bottom: 4% !important;
+  }
+
+  #authorbooks {
+    font-size: 0.7em;
+  }
+
+  h3 {
+    font-size: 0.5em;
+  }
+
+  #background {
+    margin: 0;
+    padding: 6% 6% 6% 6%;
+    height: auto;
+    width: 100%;
+  }
+
+  .cell {
+    padding: 0 0.2% 0 0;
+    display: block;
+  }
+
+  .image {
+    height: 50%;
+    float: left;
+    width: 50%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    object-fit: scale-down;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    line-height: 2%;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 48% !important;
+    font-size: 1.2em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .twitter-share-button {
+    width: 48% !important;
+    font-size: 1.2em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .btn-default {
+    padding-left: 2px;
+    padding-right: 2px;
+    width: auto;
+  }
+
+  /*#authorbooks > div button {
+    width: 100%;
+  }*/
+
+  /*label {
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 2%;
+    font-size: 1.1em;
+  }*/
+
+  #domibox {
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    height: 5vh;
+    padding-right: 40%;
+    padding-left: 40%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  figure {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    transform-origin: center bottom;
+    transform-style: preserve-3d;
+    transition: 1s transform;
+    padding: 0;
+  }
+
+    figure img {
+      width: 90%;
+      height: 90%;
+      object-fit: scale-down;
+    }
+
+    figure::before {
+      content: '';
+      position: absolute;
+      top: -6%;
+      left: 20%;
+      height: 50%;
+      width: 50%;
+      box-shadow: 0 0 2vw 2vw rgba(0, 0, 0, 0.1), inset 0 0 7vw 7vw rgba(0, 0, 0, 0.1);
+      transition: 1s;
+      transform: rotateX(95deg) translateZ(-40px) scale(0.95);
+      transform-origin: inherit;
+    }
+
+    figure:hover {
+      transform: rotateX(75deg) translateZ(1vh) scale(0.95);
+    }
+
+      figure:hover::before {
+        position: absolute;
+        left: 20%;
+        top: 50%;
+        width: 60%;
+        box-shadow: 0vh 0vh 2vw 2vw rgba(0, 0, 0, 0.4), inset 0 0 4vw 4vw rgba(0, 0, 0, 0.4);
+        transform: rotateX(-5deg) translateZ(-40px) scale(0.9);
+      }
+
+    figure figcaption {
+      width: 100%;
+      height: 10%;
+      color: #fff;
+      position: relative;
+      top: -60%;
+      transform-origin: center top;
+      transform: rotateX(-89.9deg) scale(1);
+    }
+}
+
+@media only screen and (max-width: 450px) and (min-width: 401px) {
+  #onebook {
+    padding-top: 1% !important;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    margin-bottom: 0;
+    padding-bottom: 4% !important;
+    font-size: 0.8em;
+  }
+
+  #authorbooks {
+    font-size: 0.8em;
+  }
+
+  #background {
+    margin: 0;
+    padding: 6% 6% 6% 6%;
+    height: auto;
+    width: 100%;
+  }
+
+  .cell {
+    padding: 0 0.2% 0 0;
+    display: block;
+  }
+
+  .image {
+    height: 50%;
+    float: left;
+    width: 50%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    object-fit: scale-down;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    line-height: 2%;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 48% !important;
+    height: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 1.3em;
+  }
+
+  .twitter-share-button {
+    width: 48% !important;
+    height: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 1.3em;
+  }
+
+  .btn-default {
+    padding-left: 2px;
+    padding-right: 2px;
+    min-width: 50px;
+  }
+
+  /*label {
+    margin-left: 28%;
+    margin-right: 28%;
+    margin-top: 2%;
+    font-size: 1.1em;
+  }*/
+
+  figure {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    transform-origin: center bottom;
+    transform-style: preserve-3d;
+    transition: 1s transform;
+    padding: 0;
+  }
+
+    figure img {
+      width: 80%;
+      height: 80%;
+      margin-left: 3vw;
+      margin-right: 3vw;
+      object-fit: scale-down;
+    }
+
+    figure::before {
+      content: '';
+      position: absolute;
+      top: -6%;
+      left: 25%;
+      height: 67%;
+      width: 60%;
+      box-shadow: 0 0 4vw 4vw rgba(0, 0, 0, 0.1), inset 0 0 7vw 7vw rgba(0, 0, 0, 0.1);
+      transition: 1s;
+      transform: rotateX(99deg) translateZ(-30px) scale(0.75);
+      transform-origin: inherit;
+    }
+
+    figure:hover {
+      transform: rotateX(75deg) translateZ(1vh) scaleX(0.95);
+    }
+
+      figure:hover::before {
+        position: absolute;
+        left: 30%;
+        width: 60%;
+        top: 36%;
+        height: 55%;
+        box-shadow: 0vh 0vh 2vw 2vw rgba(0, 0, 0, 0.4), inset 0 0 8vw 8vw rgba(0, 0, 0, 0.4);
+        transform: rotateX(-5deg) translateZ(-30px) scale(0.9);
+      }
+
+    figure figcaption {
+      width: 100%;
+      height: 5%;
+      color: #fff;
+      position: relative;
+      top: -30%;
+      left: -13%;
+      transform-origin: center top;
+      transform: rotateX(-88.9deg) scale(1.1);
+    }
+
+  #domibox {
+    padding-left: 35%;
+    padding-right: 35%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
   }
 }
 
 @media only screen and (max-width: 550px) and (min-width: 449px) {
-  .content {
+  #onebook {
     padding-top: 1% !important;
     padding-left: 4% !important;
     padding-right: 4% !important;
@@ -189,11 +891,23 @@
   .twitter-share-button {
     width: 20%;
   }
+
+  /*label {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2%;
+    font-size: 3.5vw;
+  }*/
 }
 
 
-@media only screen and (max-width: 800px) and (min-width: 551px) {
-  .content {
+@media only screen and (max-width: 700px) and (min-width: 551px) {
+
+    #total {
+        font-size: 0.9em;
+    }
+
+  #onebook {
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 2%;
@@ -213,10 +927,119 @@
 
   .fb-xfbml-parse-ignore {
     width: 108px !important;
+    font-size: 1.1em;
   }
 
   .twitter-share-button {
     width: 108px !important;
+    font-size: 1.1em;
+  }
+
+  #background {
+    margin: 0;
+    padding: 6% 6% 6% 6%;
+    height: auto;
+    width: auto;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0;
+  }
+
+   .title {
+    line-height: 2%;
+  }
+
+  /*label {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 2%;
+    font-size: 2.5vw;
+  }*/
+ 
+
+  #authorbooks > div {
+    height: 5vh;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.9em;
+  }
+
+  #domibox {
+    margin-top: 20%;
+  }
+
+  figure::before {
+    content: '';
+    position: absolute;
+    top: -6%;
+    left: 20%;
+    height: 80%;
+    width: 60%;
+    box-shadow: 0 0 3vw 3vw rgba(0, 0, 0, 0.1), inset 0 0 8vw 8vw rgba(0, 0, 0, 0.1);
+    transition: 1s;
+    transform: rotateX(95deg) translateZ(-20px) scale(0.75);
+    transform-origin: inherit;
+  }
+
+  figure:hover {
+    transform: rotateX(75deg) translateZ(2vh) scaleX(0.95);
+  }
+
+    figure:hover::before {
+      position: absolute;
+      left: 10%;
+      width: 30%;
+      box-shadow: 0vh 0vh 1vw 1vw rgba(0, 0, 0, 0.6), inset 0 0 8vw 8vw rgba(0, 0, 0, 0.6);
+      transform: rotateX(-5deg) translateZ(-26px) scale(1);
+    }
+
+  figure figcaption {
+    width: 100%;
+    height: 10%;
+    color: #fff;
+    position: relative;
+    top: -12%;
+    transform-origin: center top;
+    transform: rotateX(-89.9deg);
+  }
+
+
+}
+
+@media only screen and (min-width: 701px) and (max-width: 800px) {
+
+  #total {
+    font-size: 0.9em;
+  }
+
+  #onebook {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2%;
+  }
+
+
+  .cell {
+    display: block;
+  }
+
+  .image {
+    padding: 0.2%;
+    padding-right: 2%;
+    float: left;
+    object-fit: cover;
+  }
+
+  .fb-xfbml-parse-ignore {
+    width: 108px !important;
+    font-size: 1.1em;
+  }
+
+  .twitter-share-button {
+    width: 108px !important;
+    font-size: 1.1em;
   }
 
   #background {
@@ -234,10 +1057,75 @@
   .title {
     line-height: 2%;
   }
+
+  /*label {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 2%;
+    font-size: 2.5vw;
+  }*/
+
+  #authorbooks {
+    width: auto;
+    margin: 1% 10% 5% 10%;
+    height: auto;
+  }
+
+
+  #authorbooks > div {
+    height: 5vh;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.9em;
+  }
+
+  #authorbooks > div div:nth-child(5) {
+      margin-right: 0%;
+    padding-right: 0em;
+  }
+
+  figure::before {
+    content: '';
+    position: absolute;
+    top: -6%;
+    left: 25%;
+    height: 80%;
+    width: 60%;
+    box-shadow: 0 0 3vw 3vw rgba(0, 0, 0, 0.1), inset 0 0 8vw 8vw rgba(0, 0, 0, 0.1);
+    transition: 1s;
+    transform: rotateX(95deg) translateZ(-20px) scale(0.75);
+    transform-origin: inherit;
+  }
+
+  figure:hover {
+    transform: rotateX(75deg) translateZ(2vh) scaleX(0.95);
+  }
+
+    figure:hover::before {
+      position: absolute;
+      left: 10%;
+      width: 30%;
+      box-shadow: 0vh 0vh 1vw 1vw rgba(0, 0, 0, 0.6), inset 0 0 8vw 8vw rgba(0, 0, 0, 0.6);
+      transform: rotateX(-5deg) translateZ(-26px) scale(1);
+    }
+
+  figure figcaption {
+    width: 100%;
+    height: 10%;
+    color: #fff;
+    position: relative;
+    top: -15%;
+    transform-origin: center top;
+    transform: rotateX(-89.9deg);
+  }
+
+  #domibox {
+    margin-top: 10%;
+  }
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 801px) {
-  .content {
+  #onebook {
     padding-left: 20%;
     padding-right: 20%;
   }
@@ -254,10 +1142,25 @@
   .twitter-share-button {
     width: 100px !important;
   }
+
+  /*label {
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 2%;
+  }*/
+
+  #authorbooks {
+      font-size: 0.9em;
+  }
+
+    #authorbooks > div div:nth-child(5) {
+      margin-right: 0%;
+      padding-right: 0em;
+    }
 }
 
 @media only screen and (max-width: 1400px) and (min-width: 1201px) {
-  .content {
+  #onebook {
     padding-left: 20%;
     padding-right: 20%;
   }
@@ -267,58 +1170,21 @@
     padding: 6% 3% 12% 6%;
   }
 
-}
+  /*label {
+    margin-left: 40%;
+    width: 20%;
+    margin-top: 2%;
+  }*/
 
-  #gobackBtn {
-    color: #2e5cb8;
+  #authorbooks {
+    font-size: 0.9em;
   }
 
-    #gobackBtn:hover {
-      color: white;
+    #authorbooks > div div:nth-child(5) {
+      margin-right: 0%;
+      padding-right: 0em;
     }
-
-  #operationBtns {
-    padding-left: 0;
-    display: flex;
-  }
-
-  .sharebuttons {
-    display: flex;
-    padding-left: 0;
-    margin-top: 10px;
-  }
-
-
-  .fb-xfbml-parse-ignore {
-    background-color: #2e5cb8;
-    color: white;
-    width: 150px;
-  }
-
-  .twitter-share-button {
-    background-color: #85a3e0;
-    color: white;
-    width: 150px;
-  }
-
-  .image {
-    margin-right: 2%;
-    margin-bottom: 1%;
-  }
-
-  .details {
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-
-  span {
-    font-weight: 400;
-  }
-
-  .introduction {
-    overflow-wrap: break-word;
-  }
-
+}
 
   @media only screen and (min-width: 1401px) and (max-width: 1490px){
     #background {
@@ -339,6 +1205,11 @@
 
     .twitter-share-button {
       width: 120px !important;
+    }
+
+    #authorbooks > div div:nth-child(5) {
+      margin-right: 0%;
+      padding-right: 0em;
     }
   }
 
@@ -362,6 +1233,10 @@
   .twitter-share-button {
     width: 130px !important;
   }
-}
 
+  #authorbooks > div div:nth-child(5) {
+    margin-right: 0%;
+    padding-right: 0em;
+  }
+}
 

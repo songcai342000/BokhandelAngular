@@ -1,4 +1,4 @@
-import { Component, ViewChild, ComponentFactoryResolver, OnInit, HostListener, Input, HostBinding, ComponentRef, Output } from '@angular/core';
+import { Component, ViewChild, ComponentFactoryResolver, OnInit, HostListener, Input, HostBinding, ComponentRef, Output, ElementRef } from '@angular/core';
 import { ShoppingcartComponent } from '../shoppingcart/shoppingcart.component';
 import { SearchboxComponent } from '../searchbox/searchbox.component';
 import { LoadcartDirective } from '../loadcart.directive';
@@ -37,12 +37,15 @@ export class NavMenuComponent implements OnInit {
   @Input() bookAmount: BookAmount;
   @Input() totalAmount: number;
   @Input() totalPrice: number;
+  @Input() summaryWidth: string;
+  @ViewChild('myDiv', { static: true }) summaryDiv: ElementRef;
   @ViewChild(LoadsearchDirective, { static: true }) searchHost: LoadsearchDirective;
   @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
   componentRef: ComponentRef<any>;
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private route: Router) { }
 
   ngOnInit() {
+    //localStorage.clear();
     this.smallScreen();
     this.setPosition();
     if (localStorage.getItem('0') != null) {
@@ -65,8 +68,15 @@ export class NavMenuComponent implements OnInit {
     }
     let v = localStorage.getItem('3');
     if (v == 'y' || v == 'r' || v == 'c') {
-       
-      document.getElementById("test").style.height = "auto";
+      /*let m = document.getElementById("myDiv");
+      if (window.innerWidth < 400) {
+        m.setAttribute('style', 'width: 100px');
+        alert('1');
+      }
+      else {
+        m.setAttribute('style', 'width: 400px');
+        alert('4');
+      }*/
       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
         this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
@@ -86,8 +96,6 @@ export class NavMenuComponent implements OnInit {
       }
       localStorage.setItem('3', '');
     }
-
-
   }
 
 
@@ -337,13 +345,21 @@ export class NavMenuComponent implements OnInit {
       s.style.top = "0";
 
     }*/
-    if (window.innerWidth > 680) {
+    if (window.innerWidth > 599) {
       let m = document.getElementsByClassName("mobilnav")[0];
       m.remove();
     }
     else {
       let n = document.getElementsByTagName("nav")[0];
       n.remove();
+      this.setWidth();
+    }
+  }
+
+  setWidth() {
+    if (window.innerWidth < 450) {
+      this.summaryWidth = '90vw';
+      alert('t');
     }
   }
 

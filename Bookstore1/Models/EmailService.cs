@@ -48,8 +48,9 @@ namespace Bookstore1.Models
 				client.ServerCertificateValidationCallback = (sender, certificate, certChainType, errors) => true;
 				client.AuthenticationMechanisms.Remove("XOAUTH2");
 
+				//await client.ConnectAsync("smtp.broadpark.no", 587);
 				await client.ConnectAsync("smtp.gmail.com", 587);
-				await client.AuthenticateAsync("songcai342000@gmail.com", "9634441102sC");
+				await client.AuthenticateAsync("songcai342000@gmail.com", "200219681102sC");
 				await client.SendAsync(email);
 				await client.DisconnectAsync(true);
 			}

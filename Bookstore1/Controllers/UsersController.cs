@@ -126,16 +126,16 @@ namespace Bookstore1.Controllers
             /*StringBuilder sb = new StringBuilder();
             sb.AppendLine("Invoice");
             sb.AppendLine("Your Order Number: " + orderId.ToString());*/
-            String sb = "<div style='padding: 5%; font-size: 14px; width: 100%'><div style='width: 100%; text-align: center; font-weight: bold; font-size: 16px'>Invoice </div><br><div style='width: 100%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div><hr style='margin-right: 12%'>";
+            String sb = "<div style='padding: 5%; font-size: 14px; width: 100%'><div style='width: 100%; text-align: center; font-weight: bold; font-size: 16px'>Receipt </div><br><div style='width: 100%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div><hr>";
             double sum = 0;
             foreach (var bk in books)
             {
-                sb += "<div style='width: 100%;  display: flex'><div style='width: 70%; overflow-wrap: break-word'>" + bk.Title + "</div><div style='width: 30%;'>" + bk.Price.ToString() + " kr </div></div>";
+                sb += "<div style='width: 100%;  display: flex'><span style='width: 75%; overflow-wrap: break-word; float: left'>" + bk.Title + "</span><span style='width: 25%; float: right'>" + bk.Price.ToString() + " kr </span></span>";
                 sum += bk.Price;
             }
-             sb += "<div style='width: 100%; font-weight: bold'>Sum: " + sum.ToString() + " kr </div></div>";
+             sb += "<hr><div style='width: 100%; font-weight: bold'>Sum: " + sum.ToString() + " kr </div></div>";
             _emailService = new EmailService();
-            await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@gmail.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Invoice", sb.ToString());
+            await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@gmail.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Receipt (Fake)", sb.ToString());
             return NoContent();
         }
 

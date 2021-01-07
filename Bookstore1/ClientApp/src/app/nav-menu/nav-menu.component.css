@@ -3,51 +3,6 @@
   min-width: 100%;
 }
 
-
-
-
-/*
-
-@media only screen and (max-width: 600px) {
-  #topDiv {
-    padding: 0%;
-    margin: 0;
-    width: 500px
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #topDiv {
-    padding: 0%;
-    margin: 0;
-    width: 600px
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  #topDiv {
-    padding: 0%;
-    margin: 0;
-    width: 1250px
-  }
-}
-
-@media only screen and (max-width: 1600px) {
-  #topDiv {
-    padding: 0%;
-    margin: 0;
-    width: 1650px
-  }
-}
-
-@media only screen and (max-width: 1680px) {
-  #topDiv {
-    padding: 0%;
-    margin: 0;
-    width: 1700px
-  }
-}*/
-
 nav {
   background-color: black;
   height: 100%;
@@ -59,29 +14,14 @@ nav {
   width: 40%;
 }
 
-@media only screen and (max-width: 800px) {
-  ul.navbar-nav {
-    border: none;
-    width: 80%;
-  }
-
-  /*#dropdownDiv {
-    left: 430px;
-  }*/
-
-  #dropdownDiv {
-    left: 58vw;
-  }
-}
-
-
 .dropdown-menu {
-  z-index: 4;
-  min-width: 120px;
-  position: relative;
-  right: 150%;
+  min-width: 110px; 
+  right: 100% !important;
 }
 
+  .dropdown-menu li {
+    z-index: 4;
+  }
 /*#dropdownDiv {
   position: absolute;
   top: 20%;
@@ -99,6 +39,8 @@ nav {
   width: auto;
   height: 10%;
 }
+
+
 
 
   #dropdownDiv > div {
@@ -191,17 +133,12 @@ span {
   }
 }
 
-@media (max-width: 800px) {
-  
-
-}
-
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 #homeDiv {
-    display: inline;
+  display: inline;
 }
 
 .dropdown-menu {
@@ -225,6 +162,7 @@ span {
     -webkit-animation-fill-mode: both;
   }
 }
+
 
 .dropdown-toggle {
   min-width: 100%;
@@ -405,8 +343,8 @@ button {
 
 #myDiv {
   position: absolute;
-  left: 10%;
-  top: 10%;
+  left: 5vh;
+  top: 5vw;
   z-index: 4;
   background-color: aliceblue;
   border: 1px solid #d3d3d3;
@@ -419,6 +357,517 @@ button {
   word-wrap: break-word;
   border-radius: 4px;
   visibility: visible;
+}
+
+/*@media only screen and (min-width: 200px) and (max-width: 450px) {
+  #myDiv {
+    width: auto;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 10%;
+    font-size: 0.65em;
+  }
+}*/
+
+/*@media only screen and (min-width: 550px) and (max-width: 599px) {
+  .navbar-nav {
+    border: none;
+    width: 65%;
+  }
+
+  #dropdownDiv {
+    right: 26%;
+  }
+}*/
+
+@media only screen and (min-width: 1400px) {
+  #dropdownDiv {
+    position: absolute;
+    top: 22%;
+    margin-left: 5%;
+    width: auto;
+    height: 10%;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  #dropdownDiv {
+    position: absolute;
+    top: 18%;
+    margin-left: 5%;
+    width: auto;
+    height: 10%;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 999px) {
+  #dropdownDiv {
+    position: absolute;
+    top: 18%;
+    margin-left: 4%;
+    width: auto;
+    height: 10%;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  .navbar-nav {
+    border: none;
+    width: 60%;
+  }
+
+  #dropdownDiv {
+    right: 25%;
+  }
+
+  span {
+      font-size: 0.8em;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .navbar-nav {
+    border: none;
+    width: 70%;
+    font-size: 0.95em;
+  }
+
+  #dropdownDiv {
+    right: 24%;
+    top: 15%;
+  }
+
+  span {
+    font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 250px) {
+  #myDiv {
+    font-size: 0.3em;
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    top: 5%;
+    padding: 5px;
+  }
+}
+
+@media only screen and (min-width: 251px) and (max-width: 350px) {
+  #myDiv {
+    font-size: 0.35em;
+  }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 420px) {
+  #myDiv {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 600px) {
+  #myDiv {
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #xx {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 281px) and (max-width: 359px) {
+
+  .mobilnav a {
+    font-size: 0.9rem;
+  }
+
+  #mobilLinks {
+    height: auto;
+    padding-bottom: 3vh;
+  }
+
+    #mobilLinks a {
+      background-color: #7094db;
+      height: 2.6vh;
+      margin-left: 0vh;
+      margin-top: 0.5vh;
+      margin-right: 1vh;
+      margin-bottom: 0vh;
+    }
+
+  /*#mobilCart {
+    position: absolute;
+    left: 67%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 35px;
+    font-size: 0.9em;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    top: 18% !important;
+    font-size: 0.7em;
+    position: absolute;
+  }*/
+}
+
+@media only screen and (min-width: 240px) and (max-width: 260px) {
+  #mobilCart {
+    position: absolute;
+    right: 30%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 30px;
+    top: 5%;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    margin-bottom: 3px;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #test {
+    font-size: 3em;
+  }
+
+  #mobilLinks a {
+    padding: 5px 5px 5px 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (min-width: 261px) and (max-width: 280px) {
+
+  #mobilCart {
+    position: absolute;
+    right: 30%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 30px;
+    top: 5%;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    margin-bottom: 3px;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #test {
+    font-size: 3em;
+  }
+
+  #mobilLinks a {
+    padding: 5px 5px 5px 15px;
+  }
+
+  #mobilLinks {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen (min-width: 281px) and (max-width: 319px) {
+  /*#mobilCart {
+    position: absolute;
+    left: 67%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }*/
+
+  #faCart {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    margin-bottom: 3px;
+    font-size: 0.6em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 2vh;
+    padding-top: 2vh;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 340px) {
+  #mobilCart {
+    position: absolute;
+    right: 22.5%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 35px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 8%;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 10px;
+  }
+
+  .mobilnav {
+    font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (min-width: 341px) and (max-width: 360px) {
+  #mobilCart {
+    position: absolute;
+    right: 20%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 35px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 8% ;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+      font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (min-width: 361px) and (max-width: 380px) {
+  #mobilCart {
+    position: absolute;
+    right: 20%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 32%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    top: 8%;
+    margin-bottom: 0;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (min-width: 381px) and (max-width: 410px) {
+  #mobilCart {
+    position: absolute;
+    left: 81%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 2vh;
+    padding-top: 2vh;
+  }
+}
+
+@media only screen and (min-width: 411px) and (max-width: 599px) {
+  #mobilCart {
+    position: absolute;
+    right: 18%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.85em;
+  }
+}
+
+
+/*@media only screen and (min-width: 600px) and (max-width: 680px) {
+  #mobilCart {
+    position: absolute;
+    left: 86.5%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+}*/
+
+@media only screen (min-width: 681px) and (max-width: 800px) {
+  #xx {
+    font-size: 12px;
+  }
+
+  /*ul.navbar-nav {
+    border: none;
+    width: 100%;
+  }*/
+
+  /*#dropdownDiv {
+    left: 430px;
+  }*/
+
+  /*#dropdownDiv {
+    left: 58vw;
+  }*/
 }
 
 #myDivHeader {
@@ -436,12 +885,6 @@ button {
   right: 2%;
   top: 2%;
   height: 25px;
-}
-
-@media only screen and (max-width: 800px){
-  #xx {
-  font-size: 12px;
-  }
 }
 
 th, td {
@@ -472,12 +915,15 @@ button {
   font-weight: 500;
 }
 
-
 /* Style the navigation menu */
 .mobilnav {
   overflow: hidden;
-  background-color: #333;
   position: relative;
+  background-color: #7094db;
+}
+
+.active {
+  background-color: #7094db !important;
 }
 
   /* Hide the links inside the navigation menu (except for logo/home) */
@@ -490,9 +936,10 @@ button {
   color: white;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 14px;
   display: block;
 }
+
 
     /* Style the hamburger menu */
 .mobilnav a.icon {
@@ -516,334 +963,4 @@ button {
   display: flex;
 }
 
-
-#mobilLinks{
-}
-
-
-/*#mobilCart {
-  position: absolute;
-  float: right;
-  right: 8%;
-  display: block;
-  text-align: center;
-  padding: 0;
-  font-size: 2.5vw;
-  background-color: red;
-}
-
-#faCart {
-  position: absolute;
-  bottom: 0.3vh;
-  right: 0.5vw;
-}
-
-#bknMobil {
-  position: absolute;
-  bottom: 0.4vh;
-  right: 0.7vw;
-}*/
-
-
-
-/*@media (max-width: 285px) {
-  #mobilCart {
-    z-index: 2;
-    position: absolute;
-    left: 70%;
-    padding-top: 0;
-    padding-bottom: 0;
-    width: auto;
-    height: 100%;
-    top: 0;
-    background-color: red;
-  }
-
-  #faCart {
-    position: absolute;
-    left: 2%;
-    bottom: -20px;
-    font-size: 10px;
-  }
-
-  #bknMobil {
-    left: 5px;
-    top: -10px;
-    font-size: 10px;
-    margin-bottom: 5px;
-    position: absolute;
-  }
-}
-
-@media (max-width: 350px) {
-  #mobilCart {
-    z-index: 2;
-    position: absolute;
-    right: 80%;
-    padding: 2px 0 2px 0;
-    width: 20px;
-    height: 100%;
-    top: 0;
-    background-color: red;
-  }
-
-  #faCart {
-    position: absolute;
-    bottom: -18px;
-    right: 0;
-    left: 0;
-    font-size: 2.5em;
-  }
-
-  #bknMobil {
-    left: 0;
-    top: -8px;
-    font-size: 10px;
-    position: absolute;
-  }
-}
-
-
-@media (max-width: 380px) {
-  #mobilCart {
-    z-index: 2;
-    position: absolute;
-    left: 60%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 100%;
-    top: 0;
-    background-color: red;
-  }
-
-  #faCart {
-    position: absolute;
-    bottom: 30%;
-    right: 0;
-    left: 0;
-    font-size: 1.2em;
-  }
-
-  #bknMobil {
-    left: 0.6em;
-    top: 5%;
-    font-size: 0.8em;
-    position: absolute;
-  }
-}
-
-
-
-  @media (max-width: 480px) {
-    #mobilCart {
-      z-index: 2;
-      position: absolute;
-      left: 65%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 100%;
-      top: 0;
-      background-color: red;
-    }
-
-    #faCart {
-      position: absolute;
-      bottom: 30%;
-      right: 0;
-      left: 0;
-      font-size: 1.2em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      top: 5%;
-      font-size: 0.8em;
-      position: absolute;
-    }
-  }*/
-
-@media only screen and (max-width: 319px) {
-  #mobilCart {
-    position: absolute;
-    left: 67%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 40px;
-    top: 0;
-  }
-
-  #faCart {
-    position: absolute;
-    top: 43%;
-    right: 0;
-    left: 0;
-    font-size: 1.1em;
-  }
-
-  #bknMobil {
-    left: 0.7em;
-    margin-bottom: 3px;
-    font-size: 0.6em;
-    position: absolute;
-  }
-}
-
-@media (width: 320px) {
-  #mobilCart {
-    position: absolute;
-    right: 25%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 40px;
-    top: 0;
-  }
-
-  #faCart {
-    position: absolute;
-    top: 45%;
-    right: 0;
-    left: 0;
-    font-size: 1.1em;
-  }
-
-  #bknMobil {
-    left: 0.7em;
-    top: 5% !important;
-    font-size: 0.6em;
-    position: absolute;
-  }
-}
-
-@media (width: 360px) {
-  #mobilCart {
-    position: absolute;
-    right: 20%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 40px;
-    top: 0;
-  }
-
-  #faCart {
-    position: absolute;
-    top: 45%;
-    right: 0;
-    left: 0;
-    font-size: 1.1em;
-  }
-
-  #bknMobil {
-    left: 0.7em;
-    top: 5% !important;
-    font-size: 0.6em;
-    position: absolute;
-  }
-}
-
-@media only screen and (min-width: 360px) and (max-width: 370px){
-  #mobilCart {
-    position: absolute;
-    right: 22%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 40px;
-    top: 0;
-  }
-
-  #faCart {
-    position: absolute;
-    bottom: 32%;
-    right: 0;
-    left: 0;
-    font-size: 1.2em;
-  }
-
-  #bknMobil {
-    left: 0.7em;
-    margin-bottom: 3px;
-    font-size: 0.7em;
-    position: absolute;
-  }
-}
-
-@media only screen and (min-width: 371px) and (max-width: 410px){
-    #mobilCart{
-  position: absolute;
-  left: 78%;
-  padding: 2px 0 2px 0;
-  width: auto;
-  height: 40px;
-  top: 0;
-  background-color: red;
-}
-
-#faCart {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: 0;
-  font-size: 1.2em;
-}
-
-#bknMobil {
-  left: 0.6em;
-  top: 5%;
-  font-size: 0.8em;
-  position: absolute;
-}
-}
-
-@media only screen and (min-width: 410px) and (max-width: 580px) {
-  #mobilCart {
-    position: absolute;
-    left: 81%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 55px;
-    top: 0;
-    background-color: red;
-  }
-
-  #faCart {
-    position: absolute;
-    bottom: 30%;
-    right: 0;
-    left: 0;
-    font-size: 1.2em;
-  }
-
-  #bknMobil {
-    left: 0.6em;
-    top: 5%;
-    font-size: 0.8em;
-    position: absolute;
-  }
-}
-
-@media only screen and (min-width: 581px) and (max-width: 680px) {
-  #mobilCart {
-    position: absolute;
-    left: 86.5%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 40px;
-    top: 0;
-    background-color: red;
-  }
-
-  #faCart {
-    position: absolute;
-    top: 45%;
-    right: 0;
-    left: 0;
-    font-size: 1.2em;
-  }
-
-  #bknMobil {
-    left: 0.6em;
-    top: 5%;
-    font-size: 0.8em;
-    position: absolute;
-  }
-}
 

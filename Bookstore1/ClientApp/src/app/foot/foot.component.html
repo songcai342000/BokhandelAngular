@@ -69,7 +69,7 @@
         &nbsp;&nbsp;<a href="#" id="questions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Ofen asked questions</a>
       </textPath>
       <textPath href="#hiddenRight1" startOffset="27%" class="greenText">
-        <a href="#" id="privacy" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Privacy</a>&nbsp;&nbsp; <a href="#" id="mail" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Send us a mail</a>
+        <a href="#" id="privacy" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Privacy</a>&nbsp;&nbsp; <a href="#" id="sendmail" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Send us a mail</a>
       </textPath>
     </text>
   </svg>
@@ -114,21 +114,23 @@
         &nbsp;&nbsp;<a href="#" id="questions" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Ofen asked questions</a>
       </textPath>
       <textPath href="#hiddenRight1" startOffset="5%" class="greenText">
-        <a href="#" id="privacy" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Privacy</a>&nbsp;&nbsp; <a href="#" id="mail" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Send us a mail</a>
+        <a href="#" id="privacy" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Privacy</a>&nbsp;&nbsp; <a href="#" id="sendmail" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()">Send us a mail</a>
       </textPath>
     </text>
   </svg>
   <div id="footerSmall">
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="evn">Events</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="week">One week one book</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="guest">One guest one week</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="fb">On facebook</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="tweeter">On tweeter</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="ep">Environmental protection</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="di">Divisions</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="questions">Often asked questions</a></div>
-    <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)"  (mouseout)="removeTooltip()" value="Events" id="pri">Privacy</a></div>
-    <div class="gridItem">&#169; All right reserved.</div>
+    <div id="links">
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="guest">One guest one week</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="week">One week one book</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="ep">Environmental protection</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="fb">On facebook</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="evn">Events</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="tweeter">On tweeter</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="di">Divisions</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="questions">Often asked questions</a></div>
+      <div class="gridItem"><a href="#" [routerLink]="['/linkdemopage']" [routerLinkActive]="['link-active']" (mouseover)="getTooltip($event)" (mouseout)="removeTooltip()" value="Events" id="pri">Privacy</a></div>
+    </div>
+    <div id="copyright">&#169; All right reserved.</div>
 
   </div>
 </div>

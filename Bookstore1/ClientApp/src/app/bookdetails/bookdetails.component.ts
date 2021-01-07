@@ -1,7 +1,7 @@
 import { Component, ViewContainerRef, ViewChild, ComponentFactoryResolver, Directive, OnInit, Input, HostListener, ElementRef } from '@angular/core';
 import { Book } from '../book';
 import { BookService } from '../book.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ShoppingsummaryComponent } from '../shoppingsummary/shoppingsummary.component';
 import { LoadsummaryDirective } from '../loadsummary.directive';
 import { User } from '../user';
@@ -13,6 +13,7 @@ import { User } from '../user';
 })
 export class BookdetailsComponent implements OnInit {
   books: Book[];
+  authorBooks: Book[];
   book: Book;
   id: number;
   user: User;
@@ -29,7 +30,10 @@ export class BookdetailsComponent implements OnInit {
   ngOnInit() {
     //localStorage.clear();
     this.smallScreen();
-    this.getBook();
+    this.id = +this.router.snapshot.paramMap.get('id');
+    //alert(id);
+    this.getBook(this.id);
+    this.otherBooks(this.id);
     //if no userId, get userId
     let v = localStorage.getItem('4');
     // let o = localStorage.getItem('5');
@@ -37,6 +41,7 @@ export class BookdetailsComponent implements OnInit {
       //localStorage.setItem('4', 'no');
       this.newCustomer();
     }
+    this.findDomibox();
   }
 
   newCustomer() {
@@ -70,12 +75,14 @@ export class BookdetailsComponent implements OnInit {
     }
   }
 
+  //get book by id
+  getBook(id: number): void {
+      this.bookService.getBook(id).subscribe(books => this.books = books);
+  }
 
   //get book by id
-  getBook(): void {
-    //const id = +this.router.snapshot.paramMap.get('id');
-    this.id = +this.router.snapshot.paramMap.get('id');
-    this.bookService.getBook(this.id).subscribe(books => this.books = books);
+  getNewBook(id: number): void {
+    this.bookService.getBook(id).subscribe(books => this.books = books);
   }
 
   //put a book in the shopping cart
@@ -104,6 +111,78 @@ export class BookdetailsComponent implements OnInit {
       i.setAttribute("height", "120");
       i.setAttribute("width", "80");
     }
+  }
+
+  otherBooks(id: number) {
+    this.bookService.getAuthorBooks(id).subscribe(authorBooks => this.authorBooks = authorBooks);
+    //alert('t');
+  }
+
+  domiEffect() {
+    let c = document.getElementsByClassName("griditem");
+    for (let i = 0; i < c.length; i++) {
+      //setTimeout(() => { c[i].classList.add('dominianimation')}, 2000);
+      //c[i].classList.add('dominianimation');
+    }
+  }
+
+  findDomibox() {
+
+    const numSteps = 20.0;
+
+    let boxElement;
+    let prevRatio = 0.0;
+    let increasingColor = "rgba(40, 40, 190, ratio)";
+    let decreasingColor = "rgba(190, 40, 40, ratio)";
+
+    // Set things up
+    window.addEventListener("load", (event) => {
+
+      this.createObserver();
+    }, false);
+  }
+
+  createObserver() {
+    let observer;
+    let boxElement = document.querySelector("domibox");
+
+    let options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: this.buildThresholdList()
+    };
+
+      observer = new IntersectionObserver(this.handleIntersect, options)
+      observer.observe(boxElement);
+    }
+  
+
+    buildThresholdList() {
+      let thresholds = [];
+      let numSteps = 20;
+
+      for (let i = 1.0; i <= numSteps; i++) {
+        let ratio = i / numSteps;
+        thresholds.push(ratio);
+      }
+
+      thresholds.push(0);
+      return thresholds;
+  }
+
+  handleIntersect(entries, observer) {
+    let prevRatio = 0.0;
+    let increasingColor = "rgba(40, 40, 190, ratio)";
+    let decreasingColor = "rgba(190, 40, 40, ratio)";
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > prevRatio) {
+        entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio);
+      } else {
+        entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
+      }
+
+      prevRatio = entry.intersectionRatio;
+    });
   }
 
 }

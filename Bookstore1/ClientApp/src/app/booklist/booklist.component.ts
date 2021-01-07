@@ -52,20 +52,21 @@ export class BooklistComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) { }
 
   ngOnInit() {
-    let t = document.getElementById('total');
+    /*let t = document.getElementById('total');
     if (window.innerHeight < 1050) {
       t.style.height = 'auto';
     }
     else {
       t.style.height = '100%';
-    }
+    }*/
+    this.smallScreen();
     //localStorage.clear();
     this.getCrimeBooks();
     this.getFictionBooks();
     this.getRomanceBooks();
     //sessionStorage.clear();
     //if no userId, get userId
-   // let v = localStorage.getItem('4');
+    // let v = localStorage.getItem('4');
     let v = localStorage.getItem('4');
     // let o = localStorage.getItem('5');
     if (v == null || v == '') {
@@ -73,7 +74,7 @@ export class BooklistComponent implements OnInit {
       this.newCustomer();
     }
     //alert(window.innerWidth);
-  // alert(window.outerWidth);
+    // alert(window.outerWidth);
 
   }
 
@@ -84,7 +85,7 @@ export class BooklistComponent implements OnInit {
   }
 
   newCustomer() {
-    this.user = { userId: 0, userName: '', firstName: '', familyName: '', mail: '', address: '', postNumber: '', country: '', mobil: ''};
+    this.user = { userId: 0, userName: '', firstName: '', familyName: '', mail: '', address: '', postNumber: '', country: '', mobil: '' };
     this.bookService.newCustomer(this.user).subscribe(() => {
       this.bookService.getLastUser().subscribe(userId => this.userId = userId);
     });
@@ -107,7 +108,7 @@ export class BooklistComponent implements OnInit {
   }
 
   saveUserId(event: any) {
-   // localStorage.setItem('4', event.target.value);
+    // localStorage.setItem('4', event.target.value);
     let l4 = localStorage.getItem('4');
     if (l4 == null || l4 == '') {
       this.ids.push(parseInt(event.target.value));
@@ -147,11 +148,11 @@ export class BooklistComponent implements OnInit {
   }
 
   slideLeftCrime(): void {
-    this.crimeBooks.nativeElement.scrollLeft += 20;
+    this.crimeBooks.nativeElement.scrollLeft += 1070;
   }
 
   slideLeftFiction(): void {
-    this.fictionBooks.nativeElement.scrollLeft += 20;
+    this.fictionBooks.nativeElement.scrollLeft += 1070;
   }
 
   slideLeftRomance(): void {
@@ -160,11 +161,11 @@ export class BooklistComponent implements OnInit {
   }
 
   slideRightCrime(): void {
-    this.crimeBooks.nativeElement.scrollLeft -= 20;
+    this.crimeBooks.nativeElement.scrollLeft -= 1070;
   }
 
   slideRightFiction(): void {
-    this.fictionBooks.nativeElement.scrollLeft -= 20;
+    this.fictionBooks.nativeElement.scrollLeft -= 1070;
   }
 
   slideRightRomance(): void {
@@ -179,6 +180,75 @@ export class BooklistComponent implements OnInit {
     const componentRef = viewContainerRef.instance.vcRef;
   }*/
 
+  smallScreen() {
+    if (window.innerWidth <= 300) {
+      let rln = document.getElementById('romanceleftnav');
+      let rlb = document.getElementById('romanceleftbtn');
+      rln.removeChild(rlb);
+      let arl = document.createElement('a');
+      arl.setAttribute('href', '#');
+      arl.setAttribute('style', 'color: black');
+      let arlt = document.createTextNode('<');
+      arl.addEventListener('click', this.slideLeftRomance.bind(this));
+      arl.appendChild(arlt);
+      rln.appendChild(arl);
+
+      let fln = document.getElementById('fictionleftnav');
+      let flb = document.getElementById('fictionleftbtn');
+      fln.removeChild(flb);
+      let afl = document.createElement('a');
+      afl.setAttribute('href', '#');
+      afl.setAttribute('style', 'color: black');
+      let aflt = document.createTextNode('<');
+      afl.appendChild(aflt);
+      afl.addEventListener('click', this.slideLeftFiction.bind(this));
+      fln.appendChild(afl);
+
+      let cln = document.getElementById('crimeleftnav');
+      let clb = document.getElementById('crimeleftbtn');
+      cln.removeChild(clb);
+      let acl = document.createElement('a');
+      acl.setAttribute('href', '#');
+      acl.setAttribute('style', 'color: black');
+      let aclt = document.createTextNode('<');
+      acl.appendChild(aclt);
+      acl.addEventListener('click', this.slideLeftCrime.bind(this));
+      cln.appendChild(acl);
+
+      let rrn = document.getElementById('romancerightnav');
+      let rrb = document.getElementById('romancerightbtn');
+      rrn.removeChild(rrb);
+      let arr = document.createElement('a');
+      arr.setAttribute('href', '#');
+      arr.setAttribute('style', 'color: black');
+      let arrt = document.createTextNode('>');
+      arr.appendChild(arrt);
+      arr.addEventListener('click', this.slideRightRomance.bind(this));
+      rrn.appendChild(arr);
+
+      let frn = document.getElementById('fictionrightnav');
+      let frb = document.getElementById('fictionrightbtn');
+      frn.removeChild(frb);
+      let afr = document.createElement('a');
+      acl.setAttribute('href', '#');
+      afr.setAttribute('style', 'color: black');
+      let afrt = document.createTextNode('>');
+      afr.appendChild(afrt);
+      afr.addEventListener('click', this.slideRightFiction.bind(this));
+      frn.appendChild(afr);
+
+      let crn = document.getElementById('crimerightnav');
+      let crb = document.getElementById('crimerightbtn');
+      crn.removeChild(crb);
+      let acr = document.createElement('a');
+      acr.setAttribute('href', '#');
+      acr.setAttribute('style', 'color: black');
+      let acrt = document.createTextNode('>');
+      acr.appendChild(acrt);
+      acr.addEventListener('click', this.slideRightCrime.bind(this));
+      crn.appendChild(acr);
+    }
+  }
 
 
 }
