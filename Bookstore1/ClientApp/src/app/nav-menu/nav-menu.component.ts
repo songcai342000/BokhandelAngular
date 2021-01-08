@@ -359,7 +359,6 @@ export class NavMenuComponent implements OnInit {
   setWidth() {
     if (window.innerWidth < 450) {
       this.summaryWidth = '90vw';
-      alert('t');
     }
   }
 
