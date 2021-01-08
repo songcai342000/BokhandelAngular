@@ -12,7 +12,7 @@ export class PageNotFoundComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    setTimeout(() => this.navigate(), 4500);
+    //setTimeout(() => this.navigate(), 4500);
   }
 
   navigate() {
