@@ -345,14 +345,14 @@ export class NavMenuComponent implements OnInit {
       s.style.top = "0";
 
     }*/
-    if (window.innerWidth > 599) {
+    if (window.innerWidth > 649) {
       let m = document.getElementsByClassName("mobilnav")[0];
       m.remove();
     }
     else {
       let n = document.getElementsByTagName("nav")[0];
       n.remove();
-      this.setWidth();
+      //this.setWidth();
     }
   }
 
@@ -363,11 +363,11 @@ export class NavMenuComponent implements OnInit {
   }
 
   toggleMobilMeny() {
-  var x = document.getElementById("mobilLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
+    var x = document.getElementById("mobilLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
   }
-}
 }

@@ -124,7 +124,6 @@
     object-fit: scale-down;
   }
 
-
   img:hover {
     opacity: 0.5;
   }
@@ -143,8 +142,6 @@ img {
     opacity: 1;
   }
 }
-
-
 
 #background {
   padding: 20px;
@@ -167,7 +164,23 @@ img {
   font-weight: bold;
 }*/
 
-@media only screen and (max-width: 399px) and (min-width: 240px) {
+@media only screen and (max-width: 299px) and (min-width: 240px) {
+  .content {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+  }
+
+  #background {
+    padding: 15px;
+  }
+
+  #vtext {
+    font-size: 0.65em;
+  }
+}
+
+@media only screen and (max-width: 400px) and (min-width: 300px) {
   .content {
     padding-left: 25%;
     padding-right: 25%;
@@ -185,8 +198,8 @@ img {
 
 @media only screen and (max-width: 600px) and (min-width: 400px) {
   .content {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 2%;
   }
 

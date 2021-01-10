@@ -68,13 +68,13 @@ a {
   }
 }
 
-@media only screen and (max-width: 699px) and (min-width: 21){
+@media only screen and (max-width: 699px) and (min-width: 421){
   svg {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 }
 
-@media only screen and (min-width: 291px) and (max-width: 420px) {
+@media only screen and (min-width: 281px) and (max-width: 420px) {
   svg {
     font-size: 1.45em;
   }

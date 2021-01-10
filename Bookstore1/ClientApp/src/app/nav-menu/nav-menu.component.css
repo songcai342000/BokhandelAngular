@@ -40,9 +40,6 @@ nav {
   height: 10%;
 }
 
-
-
-
   #dropdownDiv > div {
     height: 0;
     position: relative;
@@ -51,10 +48,8 @@ nav {
     width: auto;
   }
 
-
 .navbar-nav > li {
   border: none;
-  //width: 120px;
   width: 26%;
 }
 
@@ -100,8 +95,6 @@ div {
   left: 81.5%;
 }
 
-
-
 .navitem-left {
   border-radius: 4px 0 0 4px;
 }
@@ -114,7 +107,6 @@ span {
   font-weight: 800;
   font-size: 22px;
 }
-
 
 span {
   font-weight: 800;
@@ -446,30 +438,47 @@ button {
 
 @media only screen and (min-width: 200px) and (max-width: 250px) {
   #myDiv {
-    font-size: 0.3em;
+    font-size: 0.18em;
     position: absolute;
-    left: 2%;
-    right: 2%;
+    left: 1%;
+    right: 1%;
     top: 5%;
+    width: auto;
+    padding: 5px;
+  }
+
+  #xx {
+    position: fixed;
+    right: 1%;
+  }
+}
+
+@media only screen and (min-width: 251px) and (max-width: 319px) {
+  #myDiv {
+    font-size: 0.25em;
+    left: 1%;
+    right: 1%;
+    top: 5%;
+    width: auto;
     padding: 5px;
   }
 }
 
-@media only screen and (min-width: 251px) and (max-width: 350px) {
-  #myDiv {
-    font-size: 0.35em;
-  }
-}
-
-@media only screen and (min-width: 351px) and (max-width: 420px) {
+@media only screen and (min-width: 320px) and (max-width: 380px) {
   #myDiv {
     font-size: 0.8em;
+    left: 3%;
+    right: 3%;
+    top: 5%;
+    width: auto;
+    padding: 5px;
   }
+
 }
 
-@media only screen and (min-width: 421px) and (max-width: 600px) {
+@media only screen and (min-width: 391px) and (max-width: 600px) {
   #myDiv {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 
@@ -785,7 +794,85 @@ button {
   }
 }
 
-@media only screen and (min-width: 411px) and (max-width: 599px) {
+@media only screen and (min-width: 551px) and (max-width: 649px) {
+  #mobilCart {
+    position: absolute;
+    right: 13%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.85em;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 550px) {
+  #mobilCart {
+    position: absolute;
+    right: 14%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.85em;
+  }
+}
+
+@media only screen and (min-width: 411px) and (max-width: 499px) {
   #mobilCart {
     position: absolute;
     right: 18%;

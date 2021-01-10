@@ -130,7 +130,7 @@ namespace Bookstore1.Controllers
             double sum = 0;
             foreach (var bk in books)
             {
-                sb += "<div style='width: 100%;  display: flex'><span style='width: 75%; overflow-wrap: break-word; float: left'>" + bk.Title + "</span><span style='width: 25%; float: right'>" + bk.Price.ToString() + " kr </span></span>";
+                sb += "<div style='width: 100%;  display: flex'><span style='width: 75%; overflow-wrap: break-word; text-align: left'>" + bk.Title + "</span><span style='width: 25%; text-align: right'>" + bk.Price.ToString() + " kr </span></div>";
                 sum += bk.Price;
             }
              sb += "<hr><div style='width: 100%; font-weight: bold'>Sum: " + sum.ToString() + " kr </div></div>";
