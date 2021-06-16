@@ -42,13 +42,22 @@ namespace Bookstore1.Controllers
             return order;
         }
 
-        // GET: api/Orders/GetOrderId/5
+        // GET: api/Orders/GetOrderId
         [HttpGet("GetOrderId")]
         public string GetOrderId()
         {
             string orderId = _context.Orders.Max(o => o.OrderId).ToString();
 
             return orderId;
+        }
+
+        // GET: api/Orders/GetOrderStatus/5
+        [HttpGet("GetOrderStatus/{id}")]
+        public IEnumerable<string> GetOrderStatus(int id)
+        {
+            //var status = from s in _context.Orders where s.OrderId == id select s.Status;
+            IEnumerable<string> status = _context.Orders.Where(o => o.OrderId == id).Select(s => s.Status);
+            return status;
         }
 
         // PUT: api/Orders/5

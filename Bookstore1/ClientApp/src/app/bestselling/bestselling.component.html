@@ -1,0 +1,68 @@
+<div id="total">
+  <div>
+    <div id="advertisements">
+      <div id="div1" class="align-items-center"><img src="../../assets/images/likereading-forest.png" class="mr-auto ml-auto"></div>
+      <div [routerLinkActive]="['link-active']" id="div2"><div id="advertisement1" class="text-center"><a [routerLink]="['/booklist']" class="w-75 font-weight-normal">We server you wherever you are.</a></div></div>
+      <div id="div3"><img src="../../assets/images/bookstoreabstract.png" (mouseover)="getCover($event)" (mouseout)="removeCover($event)"></div>
+      <div class="d-block" id="div4">
+        <div id="books" class="ml-0 mr-auto">
+          <div id="cover1">
+            <img src="../../assets/images/bookstopoverlap.png">
+          </div>
+          <div id="cover2">
+            <img src="../../assets/images/booksmiddel.png">
+          </div>
+          <div id="cover3">
+            <img src="../../assets/images/redbook.png">
+          </div>
+        </div>
+      </div>
+      <div class="font-weight-bold" id="div5"><div id="checkOrderDiv" class="text-center" (mouseover)="color($event)" (mouseout)="removeColor($event)"><a [routerLinkActive]="['link-active']" [routerLink]="['orderstatus-dashboard/orderstatus']" class="btn">Check your order</a></div></div>
+
+    </div>
+  </div>
+  <div class="font-weight-bold m-0 text-center mainTitle" *ngIf="bestselling" id="bestsellingTitle">Best Selling Books</div>
+  <div class="d-flex flex-row align-items-center ml-auto mr-auto" id="bestSellingContainer" *ngIf="bestselling">
+    <div class="d-flex flex-row w-100">
+      <div *ngFor="let book of bestselling">
+        <div id="imageContainer"><img src={{book.imageUrl}}></div>
+        <div class="bestselling">
+          <a id="bestsellingDetail" routerLinkActive="active" [routerLink]="['bookdetails', book.bookId]">
+            {{book.title}}
+          </a>&nbsp;&nbsp;
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="articleDiv">
+
+    <div id="backgroundDiv">
+      <div class="font-weight-bold mt-3 mb-3 mainTitle text-center">About us</div>
+
+      <div class="title font-weight-bold" style="display: flex">Long history<div id="circle1" style=" " [@openClose]="isClosed ? 'closed' : 'open'"></div></div>
+      <p style="margin-bottom: 5%">
+        Forest Bookstore was opened by John Kenny and his wife Mary Kenny in 1946. It was in a tiny size for only one year and has become the largest bookstore in the country since 1956.
+        Today it is one of the biggest tax contributer in the state. Except the contributions to
+        cultural and economic development, we provide constantly support to public service and donate continually to environmental protection,
+        health care and education.
+      </p>
+
+      <div class="font-weight-bold">Fast supplement</div>
+      <p style="margin-bottom: 5%">
+        Our solid economy and good cooperation relationships with suppliers and efficient logistics have been guaranteeing us the fastest supplement of books.
+        In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
+      </p>
+
+      <div class="font-weight-bold">Thoughtful service</div>
+      <p>
+        We are a quick learner of new technologies. We apply the newest technologies in the whole of our service process, while user-friendly thought is our most important service idea. Our considerate
+        work has won us the title of "The most pleasant bookstore in the country" for five years in a row.
+      </p>
+    </div>
+  </div>
+  <div id="stickyPane">
+    <div><a [routerLinkActive]="['link-active']" [routerLink]="['contact']">Contact us</a></div>
+    <div><a [routerLinkActive]="['link-active']" [routerLink]="['events']">Events</a></div>
+  </div>
+
+</div>

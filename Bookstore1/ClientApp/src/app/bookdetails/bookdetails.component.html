@@ -1,7 +1,7 @@
-<div id="total">
+<div id="total" class="pl-auto pr-auto">
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v8.0" nonce="PWkINhof"></script>
   <div *ngIf="books" id="onebook">
-    <div id="background">
+    <div id="background" class="m-auto">
       <div class="cell" *ngFor="let book of books">
         <div class="image"><img src={{book.imageUrl}}></div>
         <div class="details">
@@ -23,15 +23,16 @@
             </dl>
           </div>
           <div id="operationBtns">
-            <button class="btn-default" (click)="historyBack()" id="gobackBtn">Go back</button>&nbsp;&nbsp; <button class="btn-default" (click)="chooseBook(book)">Choose</button>&nbsp;&nbsp;
+            <button (click)="historyBack()" id="gobackBtn">Go back</button><button (click)="chooseBook(book)">Choose</button>&nbsp;&nbsp;
           </div>
 
-          <div class="sharebuttons">
-            <a target="_blank" class="fb-share-button" data-href="https://bookstorenetservice2.azurewebsites.net/bookdetails/{{id}}" data-layout="button_count" data-size="small" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore  btn btn-success">Facebook</a>
-            <a class="twitter-share-button btn btn-success"
-               href="https://twitter.com/intent/tweet">
-              Twitter
-            </a>
+          <div class="sharebuttons" style="object-fit: scale-down">
+            <!--<a target="_blank" class="fb-share-button fb-xfbml-parse-ignore  btn btn-success"  style="color: black" data-href="https://bookstorenetservice2.azurewebsites.net/bookdetails/{{id}}" data-layout="button_count" data-size="small" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" ><img src="../../assets/images/facebookLetter.png" style="width: 20%; height: auto"></a>
+  <a class="twitter-share-button btn btn-success"
+     href="https://twitter.com/intent/tweet" style="color: black"><img src="../../assets/images/twitterBird.png" style="width: 30%; height: auto"></a>-->
+            <a target="_blank" class="btn btn-success" id="facebookButton" data-href="https://www.facebook.com/Forest-Bookstore-101461462168729" data-layout="button_count" data-size="small" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbookstorenetservice2.azurewebsites.net%2Fbookdetails%2F8&amp;src=sdkpreparse" ><img src="../../assets/images/facebookLetter.png" id="imgFb"></a>
+  <a class="btn btn-success pt-auto pb-auto"
+     href="https://twitter.com/intent/tweet" id="twitterButton" ><img src="../../assets/images/twitterBird.png" id="imgTwitter"></a>
           </div>
         </div>
       </div>
@@ -45,7 +46,7 @@
   </div>
   -->
 
-  <div id="authorTitleDiv"><label>The books of the author</label></div>
+  <div class="text-center font-weight-bold subTitle" style="font-size: 1.5em; margin-bottom: 2%">The books of the author</div>
 
   <div id="authorbooks" *ngIf="authorBooks">
     <div *ngFor="let book of authorBooks">
@@ -61,10 +62,11 @@
         <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active" (click)="getNewBook(book.bookId)">Detail </a>
       </div>
       <div>
-        <button class="btn-default" (click)="chooseBook(book)">Choose </button>
+        <button (click)="chooseBook(book)">Choose </button>
       </div>
     </div>
   </div>
+</div>
   <!--
   <div id="domibox"><figure><img src="assets/images/GuwenguanzhiSmallFront.png" ><figcaption><img src="assets/images/GuwenguanzhiSmallBottom.png"></figcaption></figure><figure><img src="assets/images/GuwenguanzhiSmallFront.png"><figcaption><img src="assets/images/GuwenguanzhiSmallBottom.png"></figcaption></figure></div>
   <input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">

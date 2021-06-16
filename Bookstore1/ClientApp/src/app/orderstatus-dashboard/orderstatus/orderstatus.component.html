@@ -1,0 +1,15 @@
+
+<div class="w-75 pl-auto pr-auto mainBottom pt-1  background ml-auto mr-auto" style="margin-bottom: 5rem;" id="total">
+  <div class="font-weight-bold mainTitle mainTopMargin mainBottom  text-center">Check your order status</div>
+  <div class="p-0 w-50 ml-auto mr-auto">
+    <app-search (getOrderStatus)="onGetOrderStatus($event)"></app-search>
+    <div class="w-100">
+      <div class="subTitle form-group font-weight-bold mt-4" *ngIf="status">Your order status: </div>
+      <div style="font-size: 1.1rem">{{status}}</div>
+
+    </div>
+  </div>
+  <p style="visibility: hidden">
+    In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
+  </p>
+</div>

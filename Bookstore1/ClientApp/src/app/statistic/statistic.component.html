@@ -1,14 +1,19 @@
 
-<div class="content">
-  <div id="db">
+
+<div class="content h-auto pb-2">
+  <div>
     <canvas #donut></canvas>
+    <div id="periodTitle" class="font-weight-bold" >View the best selling books of</div>
+    <div id="choosePeriod" style="background-color: transparent">
+      <select style="height: 2em" (change)="chooseChart($event)"><option>Last week</option><option>Last month</option>></select>
+    </div>
   </div>
- 
+  
   <p>
     In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
   </p>
 </div>
-
-
+  
+ 
 
 

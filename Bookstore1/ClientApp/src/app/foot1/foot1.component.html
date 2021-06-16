@@ -1,0 +1,25 @@
+<footer>
+  
+    <ul id="ul1">
+      <!--<li class"footerTitle text-center">
+      </li>-->
+      <li class="d-inline-block">
+        <div class="p-0"><i class="fa fa-angle-double-up text-center" (click)="back()"></i></div>
+        <div class="p-0" id="buttonContainer"><button class="btn-link pt-2 pb-2" (click)="back()">BACK TO TOP</button></div>
+      </li>
+    </ul>
+    <ul [routerLinkActive]="['link-active']" id="ul2">
+      <li><a [routerLink]="['careers']" >Careers</a></li>
+      <li><a [routerLink]="['events']">Events</a></li>
+      <li><a [routerLink]="['privacy']">Privacy Policy</a></li>
+    </ul>
+    <ul id="ul3">
+      <li><a [routerLink]="['contact']">Contact</a></li>
+      <li><a [routerLink]="['questions']">Ofen Asked Questions</a></li>
+    </ul>
+    <ul id="ul4">
+      <li><a [routerLink]="['market']">Market Trends</a></li>
+      <li><a [routerLink]="['statistic']">Popular Books</a></li>
+    </ul>
+</footer>
+

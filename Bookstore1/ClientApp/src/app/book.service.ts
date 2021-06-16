@@ -8,6 +8,7 @@ import { Book } from './book';
 import { User } from './user';
 import { Reservation } from './reservation';
 import { Order } from './order';
+import { Event } from './event';
 
 @Injectable({
   providedIn: 'root'
@@ -138,6 +139,11 @@ export class BookService {
     return this.http.get<Book[]>(this.booksUrl);
   }
 
+  //get book list
+  getBestSelling(): Observable<Book[]> {
+    return this.http.get<Book[]>('api/Books/BestSellingBooks');
+  }
+
   //get book by id
   getBook(id: number): Observable<Book[]> {
     return this.http.get<Book[]>(this.booksUrl + '/' + id);
@@ -206,9 +212,13 @@ export class BookService {
     return this.http.post<Reservation>(this.reservationUrl + "/" + 'PostReservations', reservations);
   }
 
-  /*getVideo(video: string) {
-    return this.http.get<string>(this.videoUrl + '/' + video);
-  }*/
+  getEvents() {
+    return this.http.get<Event[]>('api/Events');
+  }
+
+  checkOrderStatus(orderId: number) {
+    return this.http.get<string>('api/Orders/GetOrderStatus/' + orderId);
+  }
 
   handelError(books: Book[]) {
     return (error: any): Observable<Book[]> => {
@@ -220,5 +230,7 @@ export class BookService {
       return of(books);
     };
   }
+
+ 
 }
 

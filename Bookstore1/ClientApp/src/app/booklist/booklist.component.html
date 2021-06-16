@@ -1,10 +1,10 @@
 <div id="total">
-  <div id="background">
+  <div id="background" >
   <ng-template summaryHost></ng-template>
-  <div class="catelog row">Romance</div>
+  <div class="font-weight-bold catelog">Romance</div>
   <div class="row listrow">
     <div class="leftnavigatingdiv" id="romanceleftnav">
-      <button (click)="slideLeftRomance()" class="btn btn-default" id="romanceleftbtn">
+      <button (click)="slideLeftRomance()" class="btn btn-default bg-transparent" id="romanceleftbtn">
         <i class="material-icons">chevron_left</i>
       </button>
     </div>
@@ -15,7 +15,7 @@
           {{book.title}}&nbsp;&nbsp;
         </div>
         <div class="title">
-          <span class="author">Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
+          <span>Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
         </div>
         <div>
           <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a> <button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="rightnavigatingdiv" id="romancerightnav">
-      <button (click)="slideRightRomance()" class="btn btn-default" id="romancerightbtn">
+      <button (click)="slideRightRomance()" class="btn btn-default bg-transparent" id="romancerightbtn">
         <i class="material-icons">chevron_right</i>
       </button>
     </div>
@@ -32,7 +32,7 @@
 
   <div class="row listrow">
     <div class="leftnavigatingdiv" id="fictionleftnav">
-      <button (click)="slideLeftFiction()" class="btn btn-default" id="fictionleftbtn">
+      <button (click)="slideLeftFiction()" class="btn btn-default  bg-transparent" id="fictionleftbtn">
         <i class="material-icons">chevron_left</i>
       </button>
     </div>
@@ -41,7 +41,7 @@
         <div><img src={{book.imageUrl}}></div>
         <div class="title">{{book.title}}</div>
         <div class="title">
-          <span class="author">Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
+          <span>Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
         </div>
         <div>
           <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a>
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div class="rightnavigatingdiv" id="fictionrightnav">
-      <button (click)="slideRightFiction()" class="btn btn-default" id="fictionrightbtn">
+      <button (click)="slideRightFiction()" class="btn btn-default  bg-transparent" id="fictionrightbtn">
         <i class="material-icons">chevron_right</i>
       </button>
     </div>
@@ -59,7 +59,7 @@
 
   <div class="row listrow">
     <div class="navBtn leftnavigatingdiv" id="crimeleftnav">
-      <button (click)="slideLeftCrime()" class="btn btn-default" id="crimeleftbtn">
+      <button (click)="slideLeftCrime()" class="btn btn-default  bg-transparent" id="crimeleftbtn">
         <i class="material-icons">chevron_left</i>
       </button>
     </div>
@@ -68,7 +68,7 @@
         <div><img src={{book.imageUrl}}></div>
         <div class="title">{{book.title}}</div>
         <div class="title">
-          <span class="author">Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
+          <span>Author:</span>&nbsp;{{book.author}}&nbsp;&nbsp;
         </div>
         <div>
           <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a><button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
@@ -76,7 +76,7 @@
       </div>
     </div>
     <div class="rightnavigatingdiv" id="crimerightnav">
-      <button (click)="slideRightCrime()" class="btn btn-default" id="crimerightbtn">
+      <button (click)="slideRightCrime()" class="btn btn-default  bg-transparent" id="crimerightbtn">
         <i class="material-icons">chevron_right</i>
       </button>
     </div>
@@ -84,7 +84,4 @@
     </div>
 </div>
 <input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
-<p style="visibility: hidden">
-  In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
-</p>
 

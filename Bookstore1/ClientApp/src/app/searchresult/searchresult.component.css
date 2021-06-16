@@ -9,8 +9,19 @@
   padding-left: 12%;
   padding-right: 12%;
   padding-top: 2%;
-  height: 100%;
+  padding-bottom: 5%;
+  height: auto;
   width: 100%;
+}
+
+@media (max-width: 992px){
+  .container {
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 2%;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 #result {
@@ -52,6 +63,10 @@ img {
 
 span {
   font-weight: bold;
+}
+
+button{
+    border-radius: 25px;
 }
 
 @media only screen and (max-width: 249px) and (min-width: 200px) {

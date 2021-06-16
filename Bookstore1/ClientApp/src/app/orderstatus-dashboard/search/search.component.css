@@ -1,0 +1,100 @@
+#textDiv {
+  text-align: center;
+  padding: 0;
+  font-weight: bold;
+}
+
+
+.background {
+  padding: 20px;
+  width: auto;
+  height: auto;
+  background-image: linear-gradient(white, #ffff99);
+  /*text-align: center;*/
+}
+
+@media only screen and (max-width: 299px) and (min-width: 240px) {
+  .content {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+  }
+
+  .background {
+    padding: 15px;
+  }
+
+  #vtext {
+    font-size: 0.65em;
+  }
+}
+
+@media only screen and (max-width: 400px) and (min-width: 300px) {
+  .content {
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 2%;
+  }
+
+  .background {
+    padding: 15px;
+  }
+
+  #vtext {
+    font-size: 0.65em;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+  .content {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+  }
+
+  .background {
+    padding: 15px;
+  }
+
+  #vtext {
+    font-size: 2.5vw;
+  }
+}
+
+
+@media only screen and (max-width: 800px) and (min-width: 400px) {
+  .content {
+    padding-left: 32%;
+    padding-right: 32%;
+    padding-top: 2%;
+  }
+
+  .background {
+    padding: 15px;
+  }
+
+  #vtext {
+    font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 801px) {
+  .content {
+    padding-left: 36%;
+    padding-right: 36%;
+    padding-top: 2%;
+  }
+
+
+  #vtext {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1301px) {
+  .content {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 2%;
+  }
+}

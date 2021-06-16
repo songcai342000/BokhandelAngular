@@ -336,24 +336,25 @@ export class NavMenuComponent implements OnInit {
   }
 
   smallScreen() {
-    /*if (window.innerWidth < 400) {
-      let s = document.getElementById("myDiv");
-      s.style.width = window.innerWidth + "px";
-      s.style.fontSize = "1vw";
-      s.style.position = "absolute";
-      s.style.left = "0";
-      s.style.top = "0";
-
-    }*/
-    if (window.innerWidth > 649) {
-      let m = document.getElementsByClassName("mobilnav")[0];
-      m.remove();
-    }
-    else {
+   
+    if (window.innerWidth <= 679) {
       let n = document.getElementsByTagName("nav")[0];
       n.remove();
       //this.setWidth();
+      if (window.innerWidth < 400) {
+        let s = document.getElementById("myDiv");
+        s.style.width = window.innerWidth + "px";
+        s.style.fontSize = "1vw";
+        s.style.position = "absolute";
+        s.style.left = "0";
+        s.style.top = "0";
+      }
     }
+    else {
+      let m = document.getElementsByClassName("mobilnav")[0];
+      m.remove();
+    }
+    
   }
 
   setWidth() {

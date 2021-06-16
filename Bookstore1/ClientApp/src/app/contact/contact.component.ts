@@ -12,6 +12,7 @@ import { google } from '@agm/core/services/google-maps-types';
 })
 export class ContactComponent implements OnInit {
   contentLength: string;
+  currentUrl: string;
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
@@ -26,12 +27,7 @@ export class ContactComponent implements OnInit {
       let s = document.getElementById("contentSmall");
       s.remove();
     }
-    /*if (window.innerHeight < 800) {
-      t.style.height = 'auto';
-    }
-    else {
-      t.style.height = '150%';
-    }*/
+    this.back();
     
 
   }
@@ -58,5 +54,8 @@ export class ContactComponent implements OnInit {
     }
   }
 
-
+  back() {
+    window.scrollTo(0, 0);
+    this.currentUrl = document.referrer;
+  }
 }

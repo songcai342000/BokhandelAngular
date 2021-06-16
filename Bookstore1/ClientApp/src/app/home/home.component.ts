@@ -3,6 +3,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, state, style, animate, transition, keyframes} from '@angular/animations';
+import { Book } from '../book';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-home',
@@ -37,17 +39,21 @@ import { trigger, state, style, animate, transition, keyframes} from '@angular/a
 export class HomeComponent {
   video: string;
   isClosed = true;
-  videos: string[];
+  //videos: string[];
+  images: string[];
   count: number;
+  bestselling: Book[];
 
   constructor() { }
   ngOnInit() {
-    this.smallScreen();
+    window.scrollTo(0, 0);
+    //alert(window.innerHeight);
+    //this.smallScreen();
     setInterval(() => this.fade(), 4000);
-    this.videos = ['fCUkgxNXuJk', 'DUPIecuKN4I', 'U79ehAX1V98'];
-    this.count = 0;
-    setInterval(() => this.shiftVideo(this.videos), 8000);
+    //setInterval(() => this.animateBooks(), 5000);
   }
+
+  
 
   fade() {
     this.isClosed = !this.isClosed;
@@ -60,6 +66,17 @@ export class HomeComponent {
       this.count = 0;
     }
   }
+
+  /*animateBooks() {
+    document.getElementById("cover1").setAttribute('style', 'visibility: hidden');
+    document.getElementById("cover2").setAttribute('style', 'visibility: hidden');
+    document.getElementById("cover3").setAttribute('style', 'visibility: hidden');
+    setTimeout(() => this.showCover3(), 500);
+    setTimeout(() => this.showCover2(), 1000);
+    setTimeout(() => this.showCover1(), 1500);
+  }*/
+
+ 
 
   getCover() {
     document.getElementById("iframe").style.opacity = "0.5";
@@ -88,6 +105,10 @@ export class HomeComponent {
       a.style.paddingRight = '5%';
       a.style.width = 'auto';
       i.style.height = '50%';
+      let h = document.getElementsByTagName('a');
+      for (let l = 0; l < h.length; l++) {
+        h[l].style.color = 'red';
+      }
     }
     else if (window.innerWidth < 801 && window.innerWidth >= 600) {
       t.style.height = '100%';
@@ -108,7 +129,7 @@ export class HomeComponent {
 
     }
   }
-
   
+ 
 
 }

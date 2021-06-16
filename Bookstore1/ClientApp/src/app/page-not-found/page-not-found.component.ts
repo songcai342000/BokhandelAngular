@@ -12,16 +12,13 @@ export class PageNotFoundComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    //setTimeout(() => this.navigate(), 4500);
+    setTimeout(() => this.navigate(), 10000);
   }
 
   navigate() {
     this.router.navigate(['booklist']);
   }
 
-  changeColor() {
-
-  }
 
   loadImages() {
     let d = document.getElementById('recommandBooks');

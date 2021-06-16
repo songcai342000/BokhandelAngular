@@ -14,7 +14,7 @@ namespace Bookstore1.Models
         public string Gender { get; set; }
         public string BirthYear { get; set; }
         public string Description { get; set; }
-        public virtual IList<Registration> Registrations { get; set; }
+        public virtual Book Book { get; set; }
 
     }
 }

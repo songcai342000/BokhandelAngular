@@ -37,6 +37,7 @@ export class PostaddressComponent implements OnInit {
     else {
       t.style.height = '100%';
     }*/
+    window.scrollTo(0, 0);
     if (window.innerWidth < 300) {
       let b = document.getElementById('background');
       let f = document.getElementById('formTitle');
@@ -92,7 +93,7 @@ export class PostaddressComponent implements OnInit {
 
   countries = ['Australia', 'Canada',
     'USA', 'Norway'];
-  user = new User(this.userId, '', '', '', '', '', '', '', '');
+  user = new User(0, '', '', '', '', '', '', '', '');
 
   //update user and order
   saveAddressOrder(): void {
@@ -101,8 +102,6 @@ export class PostaddressComponent implements OnInit {
       this.bookService.updateCustomer(this.userId, this.user).subscribe(() => {
         this.updateOrder(this.orderId, this.userId, this.books);
       });
-  
-    
   }
 
   newOrder(uid: number) {

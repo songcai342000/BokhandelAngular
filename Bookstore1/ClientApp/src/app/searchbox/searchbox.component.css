@@ -55,6 +55,11 @@ button {
   border-radius: 50%;
 }
 
+#x:hover {
+  background-color: blue;
+  color: white;
+}
+
 #close {
   position: absolute;
   top: 2%;

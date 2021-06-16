@@ -1,7 +1,7 @@
-/*.total{
-    width: 1000px;
-}*/
-
+.total{
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
 @media only screen and (max-height: 1049px) {
   .total {
     width: 100%;
@@ -16,41 +16,16 @@
 
 #background {
   background-image: linear-gradient(white, #ffff99);
-  margin: 2% 8%;
+  margin: 3% 8% 5% 8%;
   padding: 6% 0 12% 0;
 }
 
-/*.navigation {
-  display: flex;
-  width: 100%;
-  height: 33%;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.navigation {
-  display: flex;
-  width: 100%;
-  height: 33%;
-  margin-left: 4%;
-  margin-right: 4%;
-}*/
-/*.catelog {
-  height: 60px;
-  padding-left: 250px;
-  font-weight: bold;
-}*/
 .catelog {
-  padding-left: 12%;
+  padding-left: 10%;
   margin: 0 0 2% 0;
   font-weight: bold;
+  font-size: 1.5em;
 }
-
-/*.listrow {
-  height: auto;
-  padding-left: 150px;
-  margin-bottom: 50px;
-}*/
 
 .listrow {
   height: auto;
@@ -58,11 +33,6 @@
   width: 100%;
   border-width: 0;
 }
-
-/*.content {
-  width: 1000px;
-  overflow-x: scroll;
-}*/
 
 .content {
   width: 80%;
@@ -92,14 +62,7 @@
     padding: 13.5% 11%;
     margin-left: 51%;
   }
-  /*.content > div {
-    width: 120px;
-    margin-right: 20px;
-    margin-bottom: 50px;
-    justify-content: flex-start;
-    word-wrap: normal;
-  }*/
-
+ 
   .content > div {
     width: 120px;
     margin-right: 1%;
@@ -107,46 +70,19 @@
     word-wrap: normal;
   }
 
-
-/*.rightnavigatingdiv {
-  padding-top: 5%;
-  text-align: right;
-  width: 120px;
-}*/
-
 .rightnavigatingdiv {
   padding-top: 5%;
 }
-
-/*.leftnavigatingdiv {
-  padding-top: 5%;
-  text-align: left;
-  width: 120px;
-}*/
 
 .leftnavigatingdiv {
   padding-top: 5%;
 }
 
-/*@media only screen and (max-width: 1100px) {
-  .leftnavigatingdiv {
-    padding-top: 10%;
-  }
-
-  .rightnavigatingdiv {
-    padding-top: 10%;
-  }
-
-    .rightnavigatingdiv > button {
-      margin-left: 5%;
-    }
-
-  .leftnavigatingdiv > button {
-      position: relative;
-    right: 15%;
-  }
-}*/
-
+button {
+  border-radius: 25px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 
 @media only screen and (max-width: 1400px) and (min-width: 1281px) {
   .leftnavigatingdiv {
@@ -673,6 +609,8 @@
   word-wrap: break-word;
   overflow: hidden;
 }
+
+
 
 a {
   text-overflow: clip;

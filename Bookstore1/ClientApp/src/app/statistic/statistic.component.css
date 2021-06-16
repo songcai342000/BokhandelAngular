@@ -15,7 +15,6 @@
 }*/
 
 .content {
-  height: 100%;
   padding-top: 2%;
 }
 
@@ -24,8 +23,19 @@
     margin-right: 36%;*/
     position: relative;
     background-image: linear-gradient(white, #ffff99);
+    padding-bottom: 5%;
   }
 
+#choosePeriod {
+  background-color: transparent;
+  padding-left: 5%;
+  margin-top: 2%;
+}
+
+#periodTitle {
+  margin-top: 5%;
+  padding-left: 5%;
+}
 
 p {
     visibility: hidden;
@@ -63,6 +73,38 @@ p {
   }
 }
 
+@media only screen and (max-width: 300px) and (min-width: 200px) {
+  .content > div {
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 0;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 499px) and (min-width: 301px) {
+  .content > div {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+  .content > div {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1450px) {
+  .content > div {
+    width: 46%;
+    margin-left: 27%;
+    position: relative;
+  }
+}
+
 @media only screen and (min-width: 1451px) {
   .content > div {
     margin-left: 32%;
@@ -70,21 +112,3 @@ p {
     position: relative;
   }
 }
-
-/*@media only screen and (max-width: 1280px) {
-  .content > div {
-    width: 70%;
-    margin-left: 26%;
-    margin-right: 26%;
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
-  .content > div {
-    width: 70%;
-    margin-left: 32%;
-    margin-right: 32%;
-    position: relative;
-  }
-}*/

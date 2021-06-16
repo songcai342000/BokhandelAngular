@@ -1,34 +1,70 @@
-  <div id="total" style="padding-left: 6%; padding-right: 6%; padding-top: 2%; display: flex">
-    <div id="iframeDiv" class="col-md-4">
+  <div>
+  <!--<div style="padding-top: 5%; padding-bottom: 5%">
+     <div style="object-fit: scale-down; display: grid; grid-template-columns: auto auto auto auto auto; align-items: center; padding: 1%; padding-left: 0; padding-right: 0; font-size: 1.5em; background-color: white;">
+       <div style="object-fit: scale-down"><img src="../../assets/images/likereading-forest.png" style="width: 17vw; height: auto" ></div>
+       <div class="font-weight-bold p-2" [routerLinkActive]="['link-active']" style="text-wrap: normal; height: auto; width: 13vw; background-color: aliceblue; border: 1px solid blue" id="advertisementHead"><a [routerLink]="['/booklist']" class=" btn">Make an order today! We server you whereever you are.</a></div>
+        <div style="object-fit: scale-down"><img src="../../assets/images/bookstoreabstract.png" style="width: 17vw; height: auto" (mouseover)="getCover($event)" (mouseout)="removeCover($event)"></div>
+         <div class="d-block" style="margin-left: 2.2em;">
+     <div style="position: relative; top: -0.5em">
+           <div style="position: relative; top: 2.2em; z-index:1" id="cover1">
+             <img src="../../assets/images/bookstopoverlap.png" style="width: 60%">
+           </div>
+           <div style="position: relative; top: 1.7em" id="cover2">
+             <img src="../../assets/images/booksmiddel.png"  style="width: 60%">
+           </div>
+           <div id="cover3">
+             <img src="../../assets/images/redbook.png"  style="width: 60%">
+           </div>
+       </div>
+         </div>
+       <div class="font-weight-bold p-2" [routerLinkActive]="['link-active']" style="text-wrap: normal;
+      height: auto;
+      width: 13vw;
+      border: 1px solid blue;
+      background-color: aliceblue;
+      display: flex;
+  " (mouseover)="color($event)" (mouseout)="removeColor($event)"><a [routerLink]="['orderstatus-dashboard/orderstatus']" class="btn ml-auto mr-auto" id="deliveryLink">Check your order</a></div>
 
-      <iframe src="https://www.youtube.com/embed/j8uIRPaRHBY" width="100%" height="80%" style="border: none" (mouseover)="getCover()" (mouseout)="removeCover()" id="iframe">
-      </iframe>
-    </div>
+     </div>
+   </div>
 
-    <div id="articleDiv" style="padding-left: 7%" class="col-md-8">
-
-      <div id="background-div" style="background-image: linear-gradient(white, #ffff99); padding: 5% 8%; box-shadow: #ddd 0 0 3px 3px">
-        <div class="title" style="display: flex"><label>Long history</label><div id="circle1" style=" width: 25px; height: 25px; background-color: red; margin-left: 1%; margin-top: -0.1%; border-radius: 50%; animation: fadeIn 3s;" [@openClose]="isClosed ? 'closed' : 'open'"></div></div>
-        <p style="margin-bottom: 5%">
-          Forest Bookstore was opened by John Kenny and his wife Mary Kenny in 1946. It was in a tiny size for only one year and has become the largest bookstore in the country since 1956.
-          Today it is one of the biggest tax contributer in the state. Except the contributions to
-          cultural and economic development, we provide constantly support to public service and donate continually to environmental protection,
-          health care and education.
-        </p>
-
-
-        <label>Fast supplement</label>
-        <p style="margin-bottom: 5%">
-          Our solid economy and good cooperation relationships with suppliers and efficient logistics have been guaranteeing us the fastest supplement of books.
-          In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
-        </p>
-
-
-        <label>Thoughtful service</label>
-        <p style="margin-bottom: 5%">
-          We are a quick learner of new technologies. We apply the newest technologies in the whole of our service process, while user-friendly thought is our most important service idea. Our considerate
-          work has won us the title of "The most pleasant bookstore in the country" for five years in a row.
-        </p>
-      </div>
-    </div>
+    <div class="font-weight-bold m-0 text-center" *ngIf="bestselling" style="font-size: 1.5em">Top 10 Best Selling Books</div>
+    <div class="w-100 d-flex flex-row align-items-center pl-auto pr-auto" *ngIf="bestselling" style="font-size: 0.9em; padding-top: 5%; padding-bottom: 5%">
+      <div class="content d-flex flex-row w-100">
+        <div *ngFor="let book of bestselling" style="width: auto; word-wrap:normal">
+          <div style="object-fit: scale-down; text-wrap: normal"><img src={{book.imageUrl}} style="width: 77%; height: auto;"></div>
+          <div style="height: 3em; width: 77%;" class="text-center bestselling"><a id="bestsellingDetail" style="text-decoration: none; width: 50%" routerLinkActive="active" [routerLink]="['bookdetails', book.bookId]">
+     {{book.title}}
+  </a>&nbsp;&nbsp;
   </div>
+        </div>
+        </div>
+      </div>-->
+    <app-bestselling></app-bestselling>
+  <!--<div id="articleDiv" class="centerPlacement-Horizental w-75">
+
+    <div id="background-div" style="background-image: linear-gradient(white, #ffff99); padding: 5% 8%; box-shadow: #ddd 0 0 3px 3px">
+      <div class="font-weight-bold text-center mt-3 mb-3 mainTitle">About us</div>
+      <div class="title" style="display: flex"><label>Long history</label><div id="circle1" style=" width: 2em; height: 2em; background-color: red; margin-left: 1%; margin-top: -0.1%; border-radius: 50%;" [@openClose]="isClosed ? 'closed' : 'open'"></div></div>
+      <p style="margin-bottom: 5%">
+        Forest Bookstore was opened by John Kenny and his wife Mary Kenny in 1946. It was in a tiny size for only one year and has become the largest bookstore in the country since 1956.
+        Today it is one of the biggest tax contributer in the state. Except the contributions to
+        cultural and economic development, we provide constantly support to public service and donate continually to environmental protection,
+        health care and education.
+      </p>
+
+      <label>Fast supplement</label>
+      <p style="margin-bottom: 5%">
+        Our solid economy and good cooperation relationships with suppliers and efficient logistics have been guaranteeing us the fastest supplement of books.
+        In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
+      </p>
+
+      <label>Thoughtful service</label>
+      <p>
+        We are a quick learner of new technologies. We apply the newest technologies in the whole of our service process, while user-friendly thought is our most important service idea. Our considerate
+        work has won us the title of "The most pleasant bookstore in the country" for five years in a row.
+      </p>
+    </div>
+  </div>-->
+  
+</div>

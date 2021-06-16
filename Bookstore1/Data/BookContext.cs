@@ -19,6 +19,8 @@ namespace Bookstore1.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Registration> Registrations { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Event> Events { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +33,9 @@ namespace Bookstore1.Data
             modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Registration>().ToTable("Registrations");
             modelBuilder.Entity<Contact>().ToTable("Contacts");
+            modelBuilder.Entity<Event>().ToTable("Events");
         }
+
+
     }
 }

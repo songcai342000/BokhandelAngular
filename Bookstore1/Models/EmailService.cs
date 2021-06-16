@@ -48,11 +48,14 @@ namespace Bookstore1.Models
 				client.ServerCertificateValidationCallback = (sender, certificate, certChainType, errors) => true;
 				client.AuthenticationMechanisms.Remove("XOAUTH2");
 
-				//await client.ConnectAsync("smtp.broadpark.no", 587);
 				await client.ConnectAsync("smtp.gmail.com", 587);
-				await client.AuthenticateAsync("songcai342000@gmail.com", "200219681102sC");
+				await client.AuthenticateAsync("songcai342000@gmail.com", "1102sC!!");
 				await client.SendAsync(email);
 				await client.DisconnectAsync(true);
+				/*await client.ConnectAsync("mailout.telia.com", 465);
+				await client.AuthenticateAsync("songcai342000@yahoo.com", "fgm5jnhdmh");
+				await client.SendAsync(email);
+				await client.DisconnectAsync(true);*/
 			}
 
 		}

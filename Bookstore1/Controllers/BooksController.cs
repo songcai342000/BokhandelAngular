@@ -23,6 +23,13 @@ namespace Bookstore1.Controllers
         }
 
         // GET: api/Books/RomanceBooks
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Book>>> Index()
+        {
+            return await _context.Books.ToListAsync();
+        }
+
+        // GET: api/Books/RomanceBooks
         [HttpGet("RomanceBooks")]
         public async Task<ActionResult<IEnumerable<Object>>> RomanceBooks()
         {
@@ -40,7 +47,6 @@ namespace Bookstore1.Controllers
                             Price = b.Price,
                             ImageUrl = b.ImageUrl,
                         };
-            /* var romances = from r in _context.Books where r.Genre == "Romance" select r;*/
             return await romances.ToListAsync();
         }
 
@@ -62,7 +68,6 @@ namespace Bookstore1.Controllers
                                Price = b.Price,
                                ImageUrl = b.ImageUrl,
                            };
-            /*var fictions = from f in _context.Books where f.Genre == "Fiction" select f;*/
             return await fictions.ToListAsync();
         }
 
@@ -84,15 +89,31 @@ namespace Bookstore1.Controllers
                              Price = b.Price,
                              ImageUrl = b.ImageUrl,
                          };
-            /*var crimes = from c in _context.Books where c.Genre == "Crime" select c;*/
             return await crimes.ToListAsync();
+        }
+
+        // GET: api/Books/BestSellingBooks
+        [HttpGet("BestSellingBooks")]
+        public async Task<ActionResult<IEnumerable<Object>>> BestSellingBooks()
+        {
+            var bestSelling = from r in _context.Reservations
+                              group r by r.BookId into bn
+                              orderby bn.Count()
+                              select new
+                              {
+                                  BookId = (from b in _context.Books where b.BookId == bn.Key select b).FirstOrDefault().BookId,
+                                  Title = (from b in _context.Books where b.BookId == bn.Key select b).FirstOrDefault().Title,
+                                  ImageUrl = (from b in _context.Books where b.BookId == bn.Key select b).FirstOrDefault().ImageUrl
+                              };
+
+
+            return await bestSelling.Take(12).ToListAsync();
         }
 
         // GET: api/Books/SearchByTitle/title
         [HttpGet("SearchByTitle/{title}")]
         public async Task<ActionResult<IEnumerable<Object>>> SearchByTitle(string title)
         {
-            //var books = from b in _context.Books where b.Title == title select b;
             var books = from rg in _context.Registrations
                         join b in _context.Books on rg.BookId equals b.BookId
                         join a in _context.Authors on rg.AuthorId equals a.AuthorId
@@ -107,7 +128,6 @@ namespace Bookstore1.Controllers
                            Price = b.Price,
                            ImageUrl = b.ImageUrl,
                         };
-                        //select b;
             return await books.ToListAsync();
         }
 
@@ -220,7 +240,6 @@ namespace Bookstore1.Controllers
         {
             _context.Books.Add(book);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetBook", new { id = book.BookId }, book);
         }
 

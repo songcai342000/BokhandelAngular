@@ -14,15 +14,13 @@ export class ThankyouComponent implements OnInit {
   constructor(private router: Router, private bookService: BookService) { }
 
   ngOnInit(): void {
-    
+    window.scrollTo(0, 0);
     let s = sessionStorage.getItem('2');
     if (s == null || s == '' || s == 'unpaid') {
       this.router.navigate(['/page-not-found']);
     }
     this.orderId = (JSON.parse(localStorage.getItem('4')))[1];
-   // alert(this.orderId);
     if (this.orderId > 0) {
-      //alert("test");
       this.clearCart();
       sessionStorage.setItem('2', 'unpaid');
       setTimeout(()=>this.sendInvoice(this.orderId), 8000);

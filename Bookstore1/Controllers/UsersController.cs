@@ -123,19 +123,23 @@ namespace Bookstore1.Controllers
                             FamilyName = u.FamilyName,
                             Mail = u.Mail
                         };
-            /*StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Invoice");
-            sb.AppendLine("Your Order Number: " + orderId.ToString());*/
-            String sb = "<div style='padding: 5%; font-size: 14px; width: 100%'><div style='width: 100%; text-align: center; font-weight: bold; font-size: 16px'>Receipt </div><br><div style='width: 100%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div><hr>";
+            String sb = "<div style='padding: 5%; font-size: 14px; width: 90%'><div style='width: 90%; text-align: center; font-weight: bold; font-size: 16px'>Receipt </div><div style='width: 90%; text-align: left'>Your Order Number: " + orderId.ToString() + "</div><hr>";
             double sum = 0;
             foreach (var bk in books)
             {
-                sb += "<div style='width: 100%;  display: flex'><span style='width: 75%; overflow-wrap: break-word; text-align: left'>" + bk.Title + "</span><span style='width: 25%; text-align: right'>" + bk.Price.ToString() + " kr </span></div>";
+                sb += "<div style='width: 90%;  display: flex'><span style='width: 75%; overflow-wrap: break-word; text-align: left'>" + bk.Title + "</span><span style='width: 25%; text-align: right'>" + bk.Price.ToString() + " kr </span></div>";
                 sum += bk.Price;
             }
-             sb += "<hr><div style='width: 100%; font-weight: bold'>Sum: " + sum.ToString() + " kr </div></div>";
+             sb += "<hr><div style='width: 90%; font-weight: bold'>Sum: " + sum.ToString() + " kr </div></div>";
             _emailService = new EmailService();
-            await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@gmail.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Receipt (Fake)", sb.ToString());
+            try
+            {
+                await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@gmail.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Receipt (Fake)", sb.ToString());
+            }
+            catch(Exception ex)
+            {
+
+            }
             return NoContent();
         }
 

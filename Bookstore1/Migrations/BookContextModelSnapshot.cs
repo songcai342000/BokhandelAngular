@@ -15,7 +15,7 @@ namespace Bookstore1.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -32,6 +32,9 @@ namespace Bookstore1.Migrations
                     b.Property<string>("BirthYear")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("BookId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -39,6 +42,8 @@ namespace Bookstore1.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AuthorId");
+
+                    b.HasIndex("BookId");
 
                     b.ToTable("Authors");
                 });
@@ -95,6 +100,30 @@ namespace Bookstore1.Migrations
                     b.HasKey("ContactId");
 
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("Bookstore1.Models.Event", b =>
+                {
+                    b.Property<int>("EventId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Endtime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EventName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Introduction")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Starttime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("EventId");
+
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("Bookstore1.Models.Order", b =>
@@ -193,6 +222,13 @@ namespace Bookstore1.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Bookstore1.Models.Author", b =>
+                {
+                    b.HasOne("Bookstore1.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId");
+                });
+
             modelBuilder.Entity("Bookstore1.Models.Order", b =>
                 {
                     b.HasOne("Bookstore1.Models.User", "User")
@@ -205,7 +241,7 @@ namespace Bookstore1.Migrations
             modelBuilder.Entity("Bookstore1.Models.Registration", b =>
                 {
                     b.HasOne("Bookstore1.Models.Author", "Author")
-                        .WithMany("Registrations")
+                        .WithMany()
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

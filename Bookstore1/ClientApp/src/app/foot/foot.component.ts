@@ -25,11 +25,14 @@ export class FootComponent implements OnInit {
     tooltip.style.width = s.length * 9 + "px";
     tooltip.style.left = event.clientX + "px";
     //tooltip.style.top = window.innerHeight - event.clientY + 20 + "px";
-    if (window.innerWidth > 1000) {
-        tooltip.style.bottom = window.innerHeight - event.clientY - 200 + "px";
+    if (window.innerWidth >= 1400) {
+        tooltip.style.bottom = window.innerHeight - event.clientY - 330 + "px";
+    }
+    else if (window.innerWidth > 1100 && window.innerWidth < 1400) {
+      tooltip.style.bottom = window.innerHeight - event.clientY - 280 + "px";
     }
     else {
-      tooltip.style.bottom = '50px';
+      tooltip.style.bottom = window.innerHeight - event.clientY - 240 + "px";
     }
     tooltip.style.borderColor = "#ddd";
     tooltip.style.backgroundColor = "white";

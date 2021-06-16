@@ -11,6 +11,7 @@ export class ThankcontactComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     if (sessionStorage.getItem('1') != "contact") {
       this.route.navigate(['/page-not-found']);
     }

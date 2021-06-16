@@ -2,8 +2,40 @@
 
 /* Provide sufficient contrast against white background */
 /* unvisited link */
+
+.centerPlacement-Horizental{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centerPlacement-Vertical {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mainTitle {
+    font-size: 1.3rem;
+}
+
+.subTitle {
+  font-size: 1.1rem;
+}
+
+
+.mainTitleBottom {
+    margin-bottom: 2rem
+}
+
+.mainTopMargin{
+    margin-top: 4rem;
+}
+
+.mainBottom{
+    padding-bottom: 4rem;
+}
+
 a:link {
-  color: blue;
+  color: black;
 }
 
 /* visited link */
@@ -19,6 +51,16 @@ a:hover {
 /* selected link */
 a:active {
   color: red;
+}
+
+button, input[type=button] {
+  height: 2em;
+  background-color: grey;
+  color: white;
+}
+
+button:hover, input[type=button]:hover {
+  background-color: blue;
 }
 
 code {
@@ -46,11 +88,11 @@ div {
   margin: 0;
 }
 
-.footer {
+/*.footer {
   position: relative;
   bottom: 0;
   width: 100%;
-}
+}*/
 
 .layer1 {
   z-index: 1;
@@ -139,13 +181,18 @@ body {
   transform: translate(-50%, -50%)
 }*/
 
-
 button:hover {
   background-color: blue;
   color: white;
 }
 
 button {
-  font-weight: bold;
+  background-color: skyblue;
+  color: black;
 }
 
+
+.btn-default {
+  background-color: skyblue;
+  color: black;
+}

@@ -34,6 +34,18 @@ import { PostaddressComponent } from './postaddress/postaddress.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LinkdemopageComponent } from './linkdemopage/linkdemopage.component';
+import { Foot1Component } from './foot1/foot1.component';
+import { Foot2Component } from './foot2/foot2.component';
+import { BestsellingComponent } from './bestselling/bestselling.component';
+import { MarketComponent } from './market/market.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { EventsComponent } from './events/events.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { CareersComponent } from './careers/careers.component';
+import { OrderstatusComponent } from './orderstatus-dashboard/orderstatus/orderstatus.component';
+import { OrderstatusDashboardModule } from './orderstatus-dashboard/orderstatus-dashboard.module';
+import { SearchComponent } from './orderstatus-dashboard/search/search.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -61,13 +73,23 @@ import { LinkdemopageComponent } from './linkdemopage/linkdemopage.component';
     LoadsearchDirective,
     FavoritesComponent,
     LinkdemopageComponent,
-    SearchboxComponent
+    SearchboxComponent,
+    Foot1Component,
+    Foot2Component,
+    BestsellingComponent,
+    MarketComponent,
+    QuestionsComponent,
+    EventsComponent,
+    PrivacyComponent,
+    CareersComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     MatTooltipModule,
     BrowserAnimationsModule,
+    OrderstatusDashboardModule,
     FormsModule,
     DragDropModule,
     AgmCoreModule.forRoot({
@@ -82,6 +104,12 @@ import { LinkdemopageComponent } from './linkdemopage/linkdemopage.component';
       { path: 'searchresult/:author', component: SearchresultComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'statistic', component: StatisticComponent },
+      { path: 'market', component: MarketComponent },
+      { path: 'events', component: EventsComponent },
+      { path: 'orderstatus-dashboard/orderstatus', component: OrderstatusComponent },
+      { path: 'questions', component: QuestionsComponent },
+      { path: 'privacy', component: PrivacyComponent },
+      { path: 'careers', component: CareersComponent },
       { path: 'postaddress', component: PostaddressComponent },
       { path: 'thankyou', component: ThankyouComponent },
       { path: 'thankcontact', component: ThankcontactComponent },
@@ -94,7 +122,7 @@ import { LinkdemopageComponent } from './linkdemopage/linkdemopage.component';
     BrowserModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [ShoppingsummaryComponent, ShoppingcartComponent, SearchboxComponent],
+  entryComponents: [ShoppingsummaryComponent, ShoppingcartComponent, SearchboxComponent, SearchComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
