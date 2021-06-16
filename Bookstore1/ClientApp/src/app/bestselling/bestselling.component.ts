@@ -1,3 +1,4 @@
+import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../book';
 import { BookService } from '../book.service';
@@ -5,10 +6,37 @@ import { BookService } from '../book.service';
 @Component({
   selector: 'app-bestselling',
   templateUrl: './bestselling.component.html',
+  animations: [
+    trigger('openClose', [
+      // ...
+      state('closed', style({
+        opacity: 0.8,
+        transform: 'scale(0.2)'
+      })),
+      state('open', style({
+        opacity: 0.7,
+        transform: 'scale(0.6)'
+      })),
+      transition('closed => open', [
+        animate('1s')
+      ]),
+      /*transition('open => closed', [
+        animate('1s', keyframes([
+          style({ transform: 'scale(1.75)', offset: 0.5 }),
+          style({ transform: 'scale(1)', offset: 1 }),
+        ]))
+      ]), */
+      transition('open => closed', [
+        animate('1s')
+      ]),
+    ]),
+  ],
   styleUrls: ['./bestselling.component.css']
 })
 export class BestsellingComponent implements OnInit {
   bestselling: Book[];
+  isClosed = true;
+
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
