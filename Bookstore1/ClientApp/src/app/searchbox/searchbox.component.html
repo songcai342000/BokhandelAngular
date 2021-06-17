@@ -5,8 +5,8 @@
     </button>
   </div>
     <div class="d-flex flex-row">
-      <div ><input type="search" placeholder="Type your search term" (change)="getSearchTerm($event)" required></div><div>
-        <button type="button" (click)="sendSearch()" class="btn-default" style="">Search</button>
+      <div ><input type="search" placeholder="Type your search term" (change)="getSearchTerm($event)" required></div><div id="searchBtnDiv">
+        <button type="button" (click)="sendSearch()" class="btn-default" >Search</button>
       </div>
     </div>
     <div style="margin-top: 5px"><label for="condition">Search By</label></div>

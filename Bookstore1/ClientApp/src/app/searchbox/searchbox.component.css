@@ -70,3 +70,13 @@ button {
   visibility: visible;
   font-size: 12px;
 }
+
+#searchBtnDiv {
+    margin-left: 2px;
+}
+
+.btn-default{
+    padding-left: 15%;
+    padding-right: 15%;
+    width: auto;
+}

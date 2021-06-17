@@ -3,7 +3,9 @@
   font-weight: bold;
   padding-top: 5rem;
 }*/
-
+.w-100{
+    padding-bottom: 5%;
+}
 
 #background {
   padding: 2rem 2rem 15rem 2rem;
@@ -11,6 +13,13 @@
   background-image: linear-gradient(white, #ffff99);
   margin-top: 3%;
   width: 75%;
+}
+
+@media (max-width: 992px) {
+  #background {
+    width: 90%;
+    margin-top: 3%;
+  }
 }
 
 @media only screen (min-width: 300px) and (max-width: 768px) {
@@ -21,7 +30,6 @@
 
 @media only screen and (max-width: 299px) {
   #background {
-    width: 100%;
     font-size: 0.8em;
   }
 }

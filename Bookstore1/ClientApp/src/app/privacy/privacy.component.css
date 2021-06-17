@@ -1,5 +1,5 @@
 #total{
-    padding-top: 3rem;
+    padding-top: 2rem;
     bottom: 5%;
 }
 
@@ -15,7 +15,6 @@
   width: auto;
   height: auto;
   background-image: linear-gradient(white, #ffff99);
-  /*text-align: center;*/
 }
 
 @media only screen and (max-width: 299px) and (min-width: 240px) {

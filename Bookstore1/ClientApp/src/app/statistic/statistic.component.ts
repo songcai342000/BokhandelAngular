@@ -14,6 +14,8 @@ export class StatisticComponent implements OnInit {
   @Input() sales: Sale[] = [{ id: 1, name: 'Nulraghuvamsa SudhaL', amount: 10000 }, { id: 2, name: 'Arvind Gupta TED Talk', amount: 9900 }, { id: 3, name: 'Event Loop - Philip Roberts', amount: 8000 }, { id: 4, name: 'Betty is a lucky girl', amount: 5200 }, { id: 5, name: 'Purple', amount: 5000 }, { id: 6, name: 'Gone with laugh', amount: 3500 }];
   currentUrl: string;
   caption: string = 'Our best selling of last week';
+  stepSize: number;
+  max: number;
   constructor() { }
 
   ngOnInit(): void {
@@ -134,7 +136,7 @@ export class StatisticComponent implements OnInit {
           }],
           xAxes: [{
             ticks: {
-              fontSize: 9,
+              fontSize: 10,
               fontFamily: 'sans-serif'
             }
           }]
@@ -178,7 +180,7 @@ export class StatisticComponent implements OnInit {
             labels: {
               // This more specific font property overrides the global property
               font: {
-                size: 7,
+                size: 10,
                 family: 'sans-serif',
               }
             }
@@ -187,11 +189,9 @@ export class StatisticComponent implements OnInit {
         scales: {
           yAxes: [{
             ticks: {
-              fontSize: 7,
+              fontSize: 8,
               fontFamily: 'sans-serif',
-              max: 10000,
-              min: 0,
-              stepSize: 3000,
+              stepSize: this.stepSize,
               callback: function (label, index, labels) {
                 if (/\.s/.test(label)) {
                   return label.split(" ");
@@ -219,10 +219,12 @@ export class StatisticComponent implements OnInit {
     let value = event.target.value;
     if (value == 'Last week') {
       this.caption = "Our best selling of last week";
+      this.stepSize = 3000;
       this.sales = [{ id: 1, name: 'Nulraghuvamsa SudhaL', amount: 10000 }, { id: 2, name: 'Arvind Gupta TED Talk', amount: 9900 }, { id: 3, name: 'Event Loop - Philip Roberts', amount: 8000 }, { id: 4, name: 'Betty is a lucky girl', amount: 5200 }, { id: 5, name: 'Purple', amount: 5000 }, { id: 6, name: 'Gone with laugh', amount: 3500 }];
     }
     else {
       this.caption = "Our best selling of last month";
+      this.stepSize = 10000;
       this.sales = [{ id: 1, name: 'Arvind Gupta TED Talk', amount: 50000 }, { id: 2, name: 'Nulraghuvamsa SudhaL', amount: 29900 }, { id: 3, name: 'Event Loop - Philip Roberts', amount: 27000 }, { id: 4, name: 'Gone with laugh', amount: 17800 }, { id: 5, name: 'Purple', amount: 12000 }, { id: 6, name: 'Betty is a lucky girl', amount: 11500 }];
     }
     this.getChart();
@@ -232,7 +234,7 @@ export class StatisticComponent implements OnInit {
     if (window.innerWidth >= 768) {
       this.bigChart();
     }
-    else if (window.innerWidth >= 250 && window.innerWidth < 768) {
+    else if (window.innerWidth >= 299 && window.innerWidth < 768) {
       this.middelChart();
     }
     else {

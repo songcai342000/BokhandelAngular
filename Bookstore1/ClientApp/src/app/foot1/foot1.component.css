@@ -94,6 +94,15 @@ ul {
   }
 }
 
+@media (min-width: 300px) and (max-width: 767px) {
+  #ul2, #ul3, #ul4 {
+    position: relative;
+    left: -5%;
+  }
+}
+
+
+
 @media (max-width: 299px) {
   ul {
     height: 75%;
@@ -101,9 +110,10 @@ ul {
   }
   #ul1 {
     position: relative;
-    top: -10%;
-    height: 80%;
+    height: 75%;
+    left: -5%;
   }
+ 
   #buttonContainer {
     
     margin-top: -5px;
@@ -116,7 +126,10 @@ ul {
     position: relative;
     top: -7%;
   }
- 
+  #ul2, #ul3, #ul4 {
+    position: relative;
+    left: -13%;
+  }
 }
 
 a{
@@ -163,14 +176,6 @@ li {
   }
 
 @media (max-width: 767px) {
-  /*#foot {
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    font-size: 0.8em;
-  }*/
-}
-
-@media (max-width: 767px) {
   .d-inline-block {
       position: relative;
       left: 2%;
@@ -194,11 +199,6 @@ button {
     position: relative;
     left: -40%;
   }
-
-  #ul2, #ul3, #ul4 {
-    position: relative;
-    left: -5%;
-  }
 }
 
   button:hover {
@@ -212,6 +212,20 @@ button {
     text-decoration: none;
     color: white;
   }
+
+
+
+button:hover {
+  background: blue;
+  text-decoration: none;
+  color: white;
+}
+
+button:active {
+  background: transparent;
+  text-decoration: none;
+  color: white;
+}
 
   button:visited {
     background: transparent;

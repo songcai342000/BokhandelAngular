@@ -1,18 +1,18 @@
 
-<div class="w-100 h-auto p-auto">
-  <div id="background" class="ml-auto mr-auto mainBottom mainTopMargin" >
+<div class="w-100 h-auto pl-auto pr-auto pt-auto">
+  <div id="background" class="ml-auto mr-auto mainBottom mainTopMargin">
     <div class="font-weight-bold mainTitle mainTopMargin mb-4 text-center" *ngIf="arrangements">The coming events</div>
     <div class="ml-auto mr-auto grid">
-    <div class="grid-item mr-auto ml-auto" *ngFor="let event of arrangements">
-      <div class="text-center font-weight-bold pb-2" style="font-size: 1.2em">{{event.eventName}}</div>
-      <div><span class="font-weight-bold">Time: </span>{{event.starttime | date: 'short'}} - {{event.endtime | date: 'shortTime'}}</div>
-      <div><span class="font-weight-bold">Introduction:</span> {{event.introduction}}</div>
-    </div>
+      <div class="grid-item mr-auto ml-auto" *ngFor="let event of arrangements">
+        <div class="text-center font-weight-bold pb-2" style="font-size: 1.2em">{{event.eventName}}</div>
+        <div><span class="font-weight-bold">Time: </span>{{event.starttime | date: 'short'}} - {{event.endtime | date: 'shortTime'}}</div>
+        <div><span class="font-weight-bold">Introduction:</span> {{event.introduction}}</div>
+      </div>
     </div>
 
   </div>
-
+  <!--
   <p style="visibility: hidden">
     In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
-  </p>
+  </p>-->
 </div>

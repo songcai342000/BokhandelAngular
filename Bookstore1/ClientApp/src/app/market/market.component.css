@@ -2,4 +2,38 @@
   background-image: linear-gradient(white, #ffff99);
   margin-bottom: 5%;
   margin-top: 3rem;
+  width: 75%;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+@media (max-width: 992px) {
+  #total {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  #total {
+    margin-top: 1rem;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+}
+
+#popularBooks {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 0.2em;
+}
+
+@media (max-width: 768px){
+  #popularBooks {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 0.2em;
+  }
+
 }

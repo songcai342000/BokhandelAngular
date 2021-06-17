@@ -134,7 +134,7 @@ namespace Bookstore1.Controllers
             _emailService = new EmailService();
             try
             {
-                await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@gmail.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Receipt (Fake)", sb.ToString());
+                await _emailService.SendEmailAsync("Forest Bookstore", "songcai342000@yahoo.com", users.First().FirstName + " " + users.First().FamilyName, users.First().Mail, "Receipt (Fake)", sb.ToString());
             }
             catch(Exception ex)
             {

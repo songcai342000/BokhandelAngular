@@ -52,8 +52,8 @@ namespace Bookstore1.Models
 				await client.AuthenticateAsync("songcai342000@gmail.com", "1102sC!!");
 				await client.SendAsync(email);
 				await client.DisconnectAsync(true);
-				/*await client.ConnectAsync("mailout.telia.com", 465);
-				await client.AuthenticateAsync("songcai342000@yahoo.com", "fgm5jnhdmh");
+				/*await client.ConnectAsync("mailout.telia.com", 465, true);
+				await client.AuthenticateAsync("songcai342000@gmail.com", "1102sC!!");
 				await client.SendAsync(email);
 				await client.DisconnectAsync(true);*/
 			}
