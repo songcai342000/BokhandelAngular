@@ -67,6 +67,8 @@ a:hover {
   margin: auto;
   margin-left: 0;
   width: 75%;
+  position: relative;
+  left: -4%;
 }
 
 @media (max-width: 768px) {
@@ -319,7 +321,7 @@ a:hover {
   }
 }
 
-@media (min-width: 600px) and (max-width: 767px) {
+@media (min-width: 600px) and (max-width: 768px) {
   #checkOrderDiv {
     position: relative;
     left: -3.5vw;
@@ -380,8 +382,15 @@ a:hover {
     top: 3.6vw;
     z-index: 2;
 }
+@media (min-width: 768px) and (max-width: 799px) {
+  #cover1 {
+    position: relative;
+    top: 4.2vw;
+    z-index: 2;
+  }
+}
 
-@media (min-width: 600px) and (max-width: 767px) {
+@media (min-width: 631px) and (max-width: 767px) {
   #cover1 {
     position: relative;
     top: 2.8vw;
@@ -389,10 +398,18 @@ a:hover {
   }
 }
 
+@media (min-width: 600px) and (max-width: 630px) {
+  #cover1 {
+    position: relative;
+    top: 7.4vw;
+    z-index: 2;
+  }
+}
+
 @media (min-width: 400px) and (max-width: 599px) {
   #cover1 {
     position: relative;
-    top: 9vw;
+    top: 8.9vw;
     z-index: 2;
   }
 }
@@ -431,10 +448,24 @@ a:hover {
   top: 2.9vw;
   z-index: 1;
 }
-@media (min-width: 600px) and (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 799px) {
   #cover2 {
     position: relative;
     top: 3.8vw;
+    z-index: 1;
+  }
+}
+@media (min-width: 631px) and (max-width: 767px) {
+  #cover2 {
+    position: relative;
+    top: 3.8vw;
+    z-index: 1;
+  }
+}
+@media (min-width: 600px) and (max-width: 630px) {
+  #cover2 {
+    position: relative;
+    top: 6vw;
     z-index: 1;
   }
 }
@@ -480,13 +511,13 @@ a:hover {
   top: 0.5vw;
 }
 
-@media (min-width: 600px) and (max-width: 767px) {
+@media (min-width: 601px) and (max-width: 768px) {
   #cover3 {
     position: relative;
     top: 1.5vw;
   }
 }
-@media (min-width: 400px) and (max-width: 599px) {
+@media (min-width: 400px) and (max-width: 600px) {
   #cover3 {
     position: relative;
     top: 3.2vw;
@@ -525,6 +556,53 @@ a:hover {
   padding-right: 1%;
   word-wrap: normal;
   width: 96.5%;
+}
+
+@media (min-width: 836px) and (max-width: 992px) {
+  #bestSellingContainer {
+    padding-left: 13.5%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 835px) {
+  #bestSellingContainer {
+    padding-right: 0%;
+    padding-left: 0.7%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+  #bestSellingContainer {
+    padding-right: 0%;
+    padding-left: 0.7%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  #bestSellingContainer {
+    padding-right: 0%;
+    padding-left: 0.5%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+  #bestSellingContainer {
+    padding-right: 0%;
+    padding-left: 0.2%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+  #bestSellingContainer {
+    padding-right: 1%;
+  }
+}
+
+@media (max-width: 299px) {
+  #bestSellingContainer {
+    padding-right: 0%;
+    padding-left: 1.2%;
+  }
 }
 
 #bestSellingContainer img {
@@ -746,7 +824,7 @@ a:hover {
   }
 }
 
-@media (max-width:299px) {
+@media (min-width:200px) and (max-width:299px) {
   #circle1 {
     width: 1em;
     height: 1em;

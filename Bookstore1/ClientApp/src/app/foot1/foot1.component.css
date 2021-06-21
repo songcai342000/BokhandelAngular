@@ -94,12 +94,52 @@ ul {
   }
 }
 
-@media (min-width: 300px) and (max-width: 767px) {
-  #ul2, #ul3, #ul4 {
+@media (min-width: 801px) and (max-width: 835px) {
+ 
+  #ul2 {
+    position: relative;
+    left: -4%;
+  }
+
+  #ul3 {
+    position: relative;
+    left: -8%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  #ul3, #ul4 {
+    position: relative;
+    left: -2%;
+  }
+
+  #ul2 {
+    position: relative;
+    left: 3%;
+  }
+
+  #ul1 {
+    position: relative;
+    left: 10%;
+  }
+}
+
+
+@media (min-width: 300px) and (max-width: 599px) {
+  #ul3, #ul4 {
     position: relative;
     left: -5%;
   }
+  #ul2 {
+    position: relative;
+    left: -1%;
+  }
+  #ul1 {
+    position: relative;
+    left: 5%;
+  }
 }
+
 
 
 
@@ -143,15 +183,25 @@ a:hover {
 
 i {
   font-size: 2em;
+  position: relative;
+  right: -3.5%;
 }
 
-@media (min-width: 300px) and (max-width: 767px) {
+@media (min-width: 451px) and (max-width: 767px) {
   i {
     font-size: 18px;
     position: relative;
     right: 6.5%;
   }
 
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+  i {
+    font-size: 18px;
+    position: relative;
+    right: 3%;
+  }
 }
 
 @media (max-width: 299px) {

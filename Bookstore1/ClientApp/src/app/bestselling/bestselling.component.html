@@ -2,7 +2,7 @@
   <div>
     <div id="advertisements">
       <div id="div1" class="align-items-center"><img src="../../assets/images/likereading-forest.png" class="mr-auto ml-auto"></div>
-      <div [routerLinkActive]="['link-active']" id="div2"><div id="advertisement1" class="text-center"><a [routerLink]="['/booklist']" class="w-75 font-weight-normal">We server you wherever you are.</a></div></div>
+      <div [routerLinkActive]="['link-active']" id="div2"><div id="advertisement1" class="text-center"><a [routerLink]="['/booklist']" class="w-75 font-weight-normal">Make an order wherever you are.</a></div></div>
       <div id="div3"><img src="../../assets/images/bookstoreabstract.png" ></div>
       <div class="d-block" id="div4">
         <div id="books" class="ml-0 mr-auto">
@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="font-weight-bold" id="div5"><div id="checkOrderDiv" class="text-center" (mouseover)="color($event)" (mouseout)="removeColor($event)"><a [routerLinkActive]="['link-active']" [routerLink]="['orderstatus-dashboard/orderstatus']" class="btn">Check your order</a></div></div>
+      <div class="font-weight-bold" id="div5"><div id="checkOrderDiv" class="text-center pl-auto pr-auto" (mouseover)="color($event)" (mouseout)="removeColor($event)"><a [routerLinkActive]="['link-active']" [routerLink]="['orderstatus-dashboard/orderstatus']" class="btn">Check your order</a></div></div>
 
     </div>
   </div>
@@ -39,7 +39,7 @@
     <div id="backgroundDiv">
       <div class="font-weight-bold mt-3 mb-3 mainTitle text-center">About us</div>
 
-      <div class="title font-weight-bold" style="display: flex">Long history<div id="circle1" style=" " [@openClose]="isClosed ? 'closed' : 'open'"></div></div>
+      <div class="title font-weight-bold" style="display: flex">Long history<div id="circle1" [@openClose]="isClosed ? 'closed' : 'open'"></div></div>
       <p style="margin-bottom: 5%">
         Forest Bookstore was opened by John Kenny and his wife Mary Kenny in 1946. It was in a tiny size for only one year and has become the largest bookstore in the country since 1956.
         Today it is one of the biggest tax contributer in the state. Except the contributions to

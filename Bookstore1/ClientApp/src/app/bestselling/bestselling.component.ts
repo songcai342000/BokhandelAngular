@@ -41,6 +41,7 @@ export class BestsellingComponent implements OnInit {
 
   ngOnInit(): void {
     setInterval(() => this.animateBooks(), 5000);
+    setInterval(() => this.fade(), 4000);
     this.getBestSellingBooks();
     this.truncateText();
   }
@@ -54,15 +55,25 @@ export class BestsellingComponent implements OnInit {
     setTimeout(() => this.showCover1(), 1500);
   }
 
+  fade() {
+    this.isClosed = !this.isClosed;
+  }
+
   showCover1() {
     let l = window.innerWidth;
-    if (l > 767) {
+    if (l > 799) {
       document.getElementById('cover1').setAttribute('style', 'visibility: visible; position: relative; top: 3.8vw; z-index: 2');
     }
-    else if (l < 768 && l > 599) {
-      document.getElementById('cover1').setAttribute('style', 'visibility: visible; position: relative; top: 6.9vw; z-index: 2');
+    else if (l > 767 && l < 800) {
+      document.getElementById('cover1').setAttribute('style', 'visibility: visible; position: relative; top: 4.8vw; z-index: 2');
     }
-    else if (l > 399 && l < 600) {
+    else if (l <= 767 && l > 630) {
+      document.getElementById('cover1').setAttribute('style', 'visibility: visible; position: relative; top: 7.9vw; z-index: 2');
+    }
+    else if (l <= 630 && l > 599) {
+      document.getElementById('cover1').setAttribute('style', 'visibility: visible; position: relative; top: 7.4vw; z-index: 2');
+    }
+    else if (l > 399 && l <= 599) {
       document.getElementById('cover1').setAttribute('style', 'visibility: visible; position: relative; top: 11vw; z-index: 2');
     }
     else if (l > 350 && l < 400) {
@@ -78,11 +89,17 @@ export class BestsellingComponent implements OnInit {
 
   showCover2() {
     let l = window.innerWidth;
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 799) {
       document.getElementById('cover2').setAttribute('style', 'visibility: visible; position: relative; top: 2.9vw; z-index: 1');
     }
-    else if (l > 599 && l <= 768) {
+    if (window.innerWidth > 767 && l < 800) {
       document.getElementById('cover2').setAttribute('style', 'visibility: visible; position: relative; top: 3.9vw; z-index: 1');
+    }
+    else if (l > 630 && l <= 767) {
+      document.getElementById('cover2').setAttribute('style', 'visibility: visible; position: relative; top: 4.9vw; z-index: 1');
+    }
+    else if (l > 599 && l <= 630) {
+      document.getElementById('cover2').setAttribute('style', 'visibility: visible; position: relative; top: 6vw; z-index: 1');
     }
     else if (l > 399 && l <= 599) {
       document.getElementById('cover2').setAttribute('style', 'visibility: visible; position: relative; top: 8vw; z-index: 1');
@@ -100,10 +117,10 @@ export class BestsellingComponent implements OnInit {
 
   showCover3() {
     let l = window.innerWidth;
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 767) {
       document.getElementById('cover3').setAttribute('style', 'visibility: visible');
     }
-    else if (l <= 768 && l > 599) {
+    else if (l <= 767 && l > 599) {
       document.getElementById('cover3').setAttribute('style', 'visibility: visible;');
     }
     else if (l > 399 && l <= 599) {
