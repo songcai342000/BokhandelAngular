@@ -16,10 +16,17 @@
 
 .content {
   padding-top: 2%;
+  height: auto;
 }
 @media (max-width: 768px) {
   .content {
     padding-top: 5%;
+  }
+}
+
+@media (min-height: 700px) {
+  .content {
+    height: 100%;
   }
 }
 

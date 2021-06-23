@@ -1,6 +1,13 @@
 #total{
     padding-top: 2rem;
     bottom: 5%;
+    height: auto;
+}
+
+@media (min-height: 700px) {
+  #total {
+    height: 100%;
+  }
 }
 
 #textDiv {
