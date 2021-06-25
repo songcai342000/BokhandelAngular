@@ -1,28 +1,27 @@
 <div class="container" id="total">
   <div id="background">
-  <div id="result" class="mainTitle"> Search results  </div>
-  <div class="content">
-    <div *ngFor="let book of books" class="cell" >
-      <div id="imageContainer"><img src="assets/images/askim.jpg" ></div>
-      <div class="title">
-        <span>Title:</span> &nbsp;{{book.title}}&nbsp;&nbsp;
-      </div>
-      <div>
-        <span>Author:</span> &nbsp;{{book.author}}&nbsp;&nbsp;
-      </div>
-      <div>
-        <span>Price:</span> &nbsp;{{book.price}}&nbsp;kr
-      </div>
-      <div>
-        <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a> &nbsp;<button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+    <div id="result" class="mainTitle"> Search results  </div>
+    <div class="content">
+      <div *ngFor="let book of books" class="cell">
+        <div id="imageContainer"><img src="assets/images/askim.jpg"></div>
+        <div class="title">
+          <span>Title:</span> &nbsp;{{book.title}}&nbsp;&nbsp;
+        </div>
+        <div>
+          <span>Author:</span> &nbsp;{{book.author}}&nbsp;&nbsp;
+        </div>
+        <div>
+          <span>Price:</span> &nbsp;{{book.price}}&nbsp;kr
+        </div>
+        <div>
+          <a [routerLink]="['/bookdetails', book.bookId]" routerLinkActive="active">Detail</a> &nbsp;<button type="submit" class="btn-default" (click)="onSelect(book)">Choose</button>
+        </div>
       </div>
     </div>
   </div>
- </div>
 </div>
+
 <input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
-<p style="visibility: hidden">
+<!--<p style="visibility: hidden">
   In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
-</p>
-
-
+</p>-->

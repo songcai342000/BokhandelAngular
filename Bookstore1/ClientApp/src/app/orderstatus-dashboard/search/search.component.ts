@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from '../../book.service';
-import { OrderSearchCondition } from '../../orderSearchCondition';
 
 @Component({
   selector: 'app-search',
