@@ -41,9 +41,6 @@ export class BookService {
 
   //register to localStorage
   register(book: Book) {
-    //localStorage.clear();
-    //alert(localStorage.length);
-   // if (localStorage.length <= 1) {
     if (localStorage.length <= 2) {
       this.bks.length = 0;//clear bks
       this.bks.push(book);
@@ -51,7 +48,6 @@ export class BookService {
     }
     else {
       this.bks = JSON.parse(localStorage.getItem('0'));
-      //alert(this.bks.length);
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
     }
@@ -107,10 +103,6 @@ export class BookService {
       this.parameters.push(totalAmount)
       this.parameters.push(totalPrice)
       localStorage.setItem('1', JSON.stringify(this.parameters));
-      //localStorage.removeItem('1');
-      //localStorage.removeItem('2');
-      //localStorage.setItem('1', totalAmount.toString());
-      //localStorage.setItem('2', totalPrice.toString());
     }
     return bookAms;
     // }
@@ -118,9 +110,6 @@ export class BookService {
 
   //get romance book list
   getRomanceBooks(): Observable<Book[]> {
-    //return this.http.get<Book[]>(this.romanceUrl).pipe(
-    //tap((newBooks: Book[]) => alert("test error")),
-    //catchError(this.handelError));
     return this.http.get<Book[]>(this.romanceUrl);
   }
 
@@ -173,11 +162,6 @@ export class BookService {
     return this.http.get<string>(this.userUrl + '/' + 'GetLastUser');
   }
 
-  /*newCustomerAndId(user: User) {
-    let response1 = this.newCustomer(user);
-    let response2 = this.getLastUser();
-  }*/
-
   newOrder(order: Order) {
     return this.http.post<Order>(this.orderUrl, order);
   }
@@ -203,12 +187,10 @@ export class BookService {
   }
 
   reservateBook(reservation: Reservation) {
-    //alert("res0");
     return this.http.post<Reservation>(this.reservationUrl, reservation);
   }
 
   reservateBooks(reservations: string) {
-    //alert("res0");
     return this.http.post<Reservation>(this.reservationUrl + "/" + 'PostReservations', reservations);
   }
 
@@ -216,8 +198,8 @@ export class BookService {
     return this.http.get<Event[]>('api/Events');
   }
 
-  checkOrderStatus(orderId: number) {
-    return this.http.get<string>('api/Orders/GetOrderStatus/' + orderId);
+  checkOrderStatus(orderSearchCondition: string) {
+    return this.http.get<string>('api/Orders/GetOrderStatus/'+ orderSearchCondition);
   }
 
   handelError(books: Book[]) {

@@ -1,9 +1,12 @@
-#total{
-    margin-top: 3rem;
-    margin-bottom: 5%;
+
+@media (min-height: 700px)
+{
+  #total {
+    height: 100%;
+  }
 }
 
-@media (min-width: 300px) and (max-width: 76800px){
+@media (min-width: 300px) and (max-width: 768px){
     #total {
         font-size: 0.9em;
     }
@@ -14,6 +17,11 @@
   #total {
     font-size: 0.6em;
   }
+}
+
+#background {
+  margin-top: 3rem;
+  margin-bottom: 5%;
 }
 
 #searchDiv {

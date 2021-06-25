@@ -16,6 +16,11 @@ nav {
   font-weight: 600;
 }
 
+img {
+    width: 60%;
+    height: auto;
+}
+
 .navbar-nav  {
   border: none;
   width: 40%;
@@ -45,6 +50,7 @@ a.navbar-brand {
   min-width: 100%;
   font-size: 1.6em;
   font-weight: 800;
+  object-fit: scale-down;
 }
 
 div {

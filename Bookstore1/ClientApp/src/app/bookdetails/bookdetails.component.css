@@ -5,14 +5,7 @@
   margin: 0;
 }
 
-/*@media only screen and (min-height: 1050px){
-  #total {
-    height: 100%;
-  }
-}*/
-
 #onebook {
- /* height: 100%;*/
   width: 100%;
   margin-top: 0;
   margin-bottom: 2%;
@@ -53,12 +46,7 @@ label {
     padding: 0;
 }
 
-/*label {
-  margin-left: 42%;
-  margin-right: 42%;
-  margin-top: 2%;
-  font-size: 1.4em;
-}*/
+
 #authorbooks > div {
   padding-left: 2px;
   padding-right: 2px;
@@ -86,20 +74,6 @@ label {
     background-color: #f2f2f2;
     height: auto;
   }
-
-/*#authorbooks > div:nth-child(2n) button {
-    background-color: #f2f2f2;
-  }
-
-  #authorbooks > div:nth-child(2n+1) button {
-    background-color: white;
-  }
-
-
-  #authorbooks > div button:hover {
-    color: white;
-    background-color: blue;
-  }*/
 
 .cell {
     display: flex;
@@ -337,13 +311,7 @@ span {
     height: auto;
   }
 
-  /*label {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 2%;
-    font-size: 0.9em;
-  }*/
-
+ 
 #domibox {
   width: auto;
   margin-right: 0;
@@ -503,16 +471,6 @@ figure {
     width: auto;
   }
 
-  /*#authorbooks > div button {
-    width: 100%;
-  }*/
-
-  /* label {
-    margin-left: 24%;
-    margin-right: 24%;
-    margin-top: 2%;
-    font-size: 1.1em;
-  }*/
 
   #domibox {
     width: auto;
@@ -653,17 +611,6 @@ figure {
     width: auto;
   }
 
-  /*#authorbooks > div button {
-    width: 100%;
-  }*/
-
-  /*label {
-    margin-left: 24%;
-    margin-right: 24%;
-    margin-top: 2%;
-    font-size: 1.1em;
-  }*/
-
   #domibox {
     width: auto;
     margin-right: 0;
@@ -800,13 +747,6 @@ figure {
     min-width: 50px;
   }
 
-  /*label {
-    margin-left: 28%;
-    margin-right: 28%;
-    margin-top: 2%;
-    font-size: 1.1em;
-  }*/
-
   figure {
     margin: 0;
     width: 100%;
@@ -920,13 +860,6 @@ figure {
   #twitterButton {
     width: 20%;
   }
-
-  /*label {
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 2%;
-    font-size: 3.5vw;
-  }*/
 }
 
 
@@ -979,14 +912,6 @@ figure {
    .title {
     line-height: 2%;
   }
-
-  /*label {
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-top: 2%;
-    font-size: 2.5vw;
-  }*/
- 
 
   #authorbooks > div {
     height: 5vh;
@@ -1087,13 +1012,6 @@ figure {
     line-height: 2%;
   }
 
-  /*label {
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-top: 2%;
-    font-size: 2.5vw;
-  }*/
-
   #authorbooks {
     width: auto;
     margin: 1% 10% 5% 10%;
@@ -1172,11 +1090,6 @@ figure {
     width: 100px !important;
   }
 
-  /*label {
-    margin-left: 38%;
-    margin-right: 38%;
-    margin-top: 2%;
-  }*/
 
   #authorbooks {
       font-size: 0.9em;
@@ -1198,12 +1111,6 @@ figure {
     height: auto;
     padding: 6% 3% 12% 6%;
   }
-
-  /*label {
-    margin-left: 40%;
-    width: 20%;
-    margin-top: 2%;
-  }*/
 
   #authorbooks {
     font-size: 0.9em;

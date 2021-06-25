@@ -28,8 +28,6 @@ export class ContactComponent implements OnInit {
       s.remove();
     }
     this.back();
-    
-
   }
   //coordinator got from Geocoding page of Google
   lat: number = 38.907873;

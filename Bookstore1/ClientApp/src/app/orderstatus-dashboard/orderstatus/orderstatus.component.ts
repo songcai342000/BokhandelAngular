@@ -10,14 +10,14 @@ import { BookService } from '../../book.service';
 export class OrderstatusComponent implements OnInit {
   status: string;
   id: number;
+  name: string;
   constructor(private bookService: BookService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
   }
 
-  onGetOrderStatus(orderId: number) {
-    this.id = orderId;
-    this.bookService.checkOrderStatus(orderId).subscribe(status => this.status = status);
+  onGetOrderStatus(orderSearchCondition: string) {
+    this.bookService.checkOrderStatus(orderSearchCondition).subscribe(status => this.status = status);
   }
 }

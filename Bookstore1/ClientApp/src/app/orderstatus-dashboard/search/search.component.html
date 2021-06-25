@@ -1,10 +1,9 @@
-
-<div class="w-100 m-auto mainTopMargin">
-  <div class=" w-100 subTitle form-group">
-    <div class="mb-4 font-weight-bold">Your order number</div>
-    <div class="border mb-3"><input type="text" id="orderNumber" required class="form-control" (change)="getOrderId($event)"></div>
-    <div><button type="submit" class="form-control pb-2 pt-2 h-auto" (click)="queryById()">Send</button></div>
+  <div class=" w-100 m-auto mainTopMargin">
+    <div class="font-weight-bold mb-2">Your order number</div>
+    <div class="border mb-3"><input type="text" id="orderId" required class="form-control" name="orderId" (change)="getOrderId($event)" ></div>
+    <div class="font-weight-bold mb-2">Your Email Address</div>
+    <div class="border" id="emailContainer"><input type="text" id="email" required class="form-control" name="email" (change)="getEmail($event)"></div>
+    <div><button type="submit" class="form-control pb-2 pt-2 h-auto" (click)="sendCondition()">Send</button></div>
   </div>
-</div>
 <!--<div class="pl-auto pr-auto mainTopMargin pt-1">
 </div>-->

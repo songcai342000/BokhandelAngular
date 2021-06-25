@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from '../../book.service';
+import { OrderSearchCondition } from '../../orderSearchCondition';
 
 @Component({
   selector: 'app-search',
@@ -8,9 +9,9 @@ import { BookService } from '../../book.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  @Output() getOrderStatus: EventEmitter<any> = new EventEmitter<number>();
   orderId: number;
-  status: string;
+  email: string;
+  @Output() getOrderStatus: EventEmitter<any> = new EventEmitter<string>();
 
   constructor(private bookService: BookService) { }
 
@@ -18,11 +19,15 @@ export class SearchComponent implements OnInit {
   }
 
   getOrderId(event: any) {
-    this.orderId = parseInt(event.target.value);
+    this.orderId = event.target.value;
   }
 
-  queryById() {
-    this.getOrderStatus.emit(this.orderId);
+  getEmail(event: any) {
+    this.email = event.target.value;
+  }
+
+  sendCondition() {
+    this.getOrderStatus.emit(this.orderId + '/' + this.email);
   }
 
 }

@@ -42,10 +42,12 @@ import { QuestionsComponent } from './questions/questions.component';
 import { EventsComponent } from './events/events.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { CareersComponent } from './careers/careers.component';
-import { OrderstatusComponent } from './orderstatus-dashboard/orderstatus/orderstatus.component';
+//import { OrderstatusComponent } from './orderstatus-dashboard/orderstatus/orderstatus.component';
 import { OrderstatusDashboardModule } from './orderstatus-dashboard/orderstatus-dashboard.module';
-import { SearchComponent } from './orderstatus-dashboard/search/search.component';
+//import { SearchComponent } from './orderstatus-dashboard/search/search.component';
 import { PaymentComponent } from './payment/payment.component';
+import { OrderstatusComponent } from './orderstatus-dashboard/orderstatus/orderstatus.component';
+import { SearchComponent } from './orderstatus-dashboard/search/search.component';
 
 
 

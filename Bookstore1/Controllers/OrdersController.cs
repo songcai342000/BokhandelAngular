@@ -51,13 +51,14 @@ namespace Bookstore1.Controllers
             return orderId;
         }
 
-        // GET: api/Orders/GetOrderStatus/5
-        [HttpGet("GetOrderStatus/{id}")]
-        public IEnumerable<string> GetOrderStatus(int id)
+        [HttpGet("GetOrderStatus/{orderId}/{email}")]
+        public IEnumerable<string> GetOrderStatus(int orderId, string email)
         {
             //var status = from s in _context.Orders where s.OrderId == id select s.Status;
-            IEnumerable<string> status = _context.Orders.Where(o => o.OrderId == id).Select(s => s.Status);
-            return status;
+            //IEnumerable<string> status = _context.Orders.Where(o => o.OrderId == id).Select(s => s.Status);
+            var query = from o in _context.Orders join u in _context.Users on o.UserId equals u.UserId where u.Mail == email && o.OrderId == orderId select o.Status;
+            IEnumerable<string> Status = query.AsEnumerable();
+            return Status;
         }
 
         // PUT: api/Orders/5
