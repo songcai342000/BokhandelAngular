@@ -4,7 +4,7 @@
   padding-right: 12%;
   padding-top: 2%;
   height: auto;
-  width: 100%;
+  width: auto;
 }
 
 @media (min-height: 700px) {

@@ -70,6 +70,7 @@ a {
   position: relative;
   left: -4%;
   color: black;
+  height: auto;
 }
 
 @media (max-width: 768px) {
@@ -91,7 +92,6 @@ a {
 @media (min-width: 800px) and (max-width: 992px) {
   #advertisement1 {
     line-height: 50%;
-    height: auto;
     margin-left: 2.7vw;
     padding-top: 5%;
     padding-bottom: 10%;
@@ -101,7 +101,6 @@ a {
 @media (min-width: 768px) and (max-width: 799px) {
   #advertisement1 {
     line-height: 50%;
-    height: auto;
     margin-left: 3vw;
     padding-top: 5%;
     padding-bottom: 10%;
@@ -131,6 +130,7 @@ a {
     padding-left: 2vw;
     padding-right: 2vw;
     width: 100%;
+    height: auto;
   }
 }
 
