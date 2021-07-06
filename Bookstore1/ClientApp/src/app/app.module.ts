@@ -48,6 +48,8 @@ import { OrderstatusDashboardModule } from './orderstatus-dashboard/orderstatus-
 import { PaymentComponent } from './payment/payment.component';
 import { OrderstatusComponent } from './orderstatus-dashboard/orderstatus/orderstatus.component';
 import { SearchComponent } from './orderstatus-dashboard/search/search.component';
+import { PaypalcheckoutComponent } from './paypalcheckout/paypalcheckout.component';
+import { Foot3Component } from './foot3/foot3.component';
 
 
 
@@ -85,6 +87,8 @@ import { SearchComponent } from './orderstatus-dashboard/search/search.component
     PrivacyComponent,
     CareersComponent,
     PaymentComponent,
+    PaypalcheckoutComponent,
+    Foot3Component,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -110,6 +114,7 @@ import { SearchComponent } from './orderstatus-dashboard/search/search.component
       { path: 'events', component: EventsComponent },
       { path: 'orderstatus-dashboard/orderstatus', component: OrderstatusComponent },
       { path: 'questions', component: QuestionsComponent },
+      { path: 'checkout', component: PaypalcheckoutComponent },
       { path: 'privacy', component: PrivacyComponent },
       { path: 'careers', component: CareersComponent },
       { path: 'postaddress', component: PostaddressComponent },

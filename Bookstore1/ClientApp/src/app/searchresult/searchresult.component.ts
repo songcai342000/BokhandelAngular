@@ -44,15 +44,10 @@ export class SearchresultComponent implements OnInit {
     });
     //if no userId, get userId
     let v = localStorage.getItem('4');
-    // let o = localStorage.getItem('5');
     if (v == null || v == '') {
-      //localStorage.setItem('4', 'no');
       this.newCustomer();
     }
 
-        /*alert(window.innerWidth);
-    alert(window.outerWidth);
-    alert(window.innerHeight);*/
   }
 
   newCustomer() {
@@ -66,19 +61,13 @@ export class SearchresultComponent implements OnInit {
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
     let elem1 = document.getElementById("idInput");
-    //alert(elem1);
     if (elem1 != undefined && elem1 != null) {
-      //alert('4');
       let e1 = new Event('change', { bubbles: true });
-      //elem.dispatchEvent(e)
-      //make it asynatic
-      //alert("change");
       setTimeout(() => elem1.dispatchEvent(e1));
     }
   }
 
   saveUserId(event: any) {
-    // localStorage.setItem('4', event.target.value);
     let l4 = localStorage.getItem('4');
     if (l4 == null || l4 == '') {
       this.ids.push(parseInt(event.target.value));

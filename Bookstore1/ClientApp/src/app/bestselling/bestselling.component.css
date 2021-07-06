@@ -13,13 +13,13 @@
 }
 
 a {
-    text-decoration: none;
-    font-size: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
-a:hover {
-  text-decoration: underline;
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
 @media (min-width: 768px) and (max-width: 1000px) {
   a {
@@ -52,8 +52,8 @@ a:hover {
   }
 }
 
-#div2{
-    height: auto;
+#div2 {
+  height: auto;
 }
 
 #advertisement1 {
@@ -69,6 +69,7 @@ a:hover {
   width: 75%;
   position: relative;
   left: -4%;
+  color: black;
 }
 
 @media (max-width: 768px) {
@@ -144,7 +145,6 @@ a:hover {
     padding-right: 2vw;
     width: 100%;
   }
-
 }
 
 @media (min-width: 300px) and (max-width: 349px) {
@@ -170,12 +170,12 @@ a:hover {
 }
 
 #div4 {
-    margin-left: 0.3vw;
+  margin-left: 0.3vw;
 }
 
-#div4 img {
+  #div4 img {
     width: 60%;
-}
+  }
 
 @media (min-width: 767px) and (max-width: 1000px) {
   #div4 img {
@@ -204,9 +204,9 @@ a:hover {
 }
 
 #books {
-    position: relative;
-    top: -1.7vw;
-    left: -0.1vw;
+  position: relative;
+  top: -1.7vw;
+  left: -0.1vw;
 }
 
 @media (min-width: 768px) and (max-width: 1000px) {
@@ -216,6 +216,7 @@ a:hover {
     left: 4.8vw;
   }
 }
+
 @media (min-width: 600px) and (max-width: 767px) {
   #books {
     position: relative;
@@ -263,19 +264,19 @@ a:hover {
 
 @media (max-width: 299px) {
   #books, #cover1, #cover2, #cover3 {
-   visibility: hidden;
+    visibility: hidden;
   }
 }
 
-#div1, #div3{
-    display: block;
-    object-fit: scale-down;
+#div1, #div3 {
+  display: block;
+  object-fit: scale-down;
 }
 
-#div1 img, #div3 img {
-  width: 16vw;
-  height: auto;
-}
+  #div1 img, #div3 img {
+    width: 16vw;
+    height: auto;
+  }
 
 @media (min-width: 768px) and (max-width: 1000px) {
   #div3 img {
@@ -319,20 +320,21 @@ a:hover {
   }
 }
 
-#div5{
-    padding-right: 4%;
+#div5 {
+  padding-right: 4%;
 }
 
 #checkOrderDiv {
   text-wrap: normal;
   height: auto;
   border: 1px solid #efefef;
-  background-color:aliceblue;
+  background-color: aliceblue;
   position: relative;
   left: -2.5vw;
   padding-top: 3%;
   padding-bottom: 3%;
   border-radius: 4px;
+  font-size: 1em;
 }
 
 @media (max-width: 767px) {
@@ -385,6 +387,23 @@ a:hover {
     padding-bottom: 0%;
   }
 
+  #check {
+      text-decoration: none;
+  }
+
+  /*@media (min-width: 300px) and (max-width: 767px)
+  {
+    #check {
+      font-size: 1.2em;
+    }
+  }
+
+  @media (max-width: 299px) {
+    #check {
+      font-size: 0.9em;
+    }
+  }*/
+
   #div5 {
     padding-top: 25%;
     padding-bottom: 25%;
@@ -397,11 +416,12 @@ a:hover {
 }
 
 
-#cover1{
-    position: relative;
-    top: 3.6vw;
-    z-index: 2;
+#cover1 {
+  position: relative;
+  top: 3.6vw;
+  z-index: 2;
 }
+
 @media (min-width: 768px) and (max-width: 799px) {
   #cover1 {
     position: relative;
@@ -433,6 +453,7 @@ a:hover {
     z-index: 2;
   }
 }
+
 @media (min-width: 381px) and (max-width: 399px) {
   #cover1 {
     position: relative;
@@ -440,6 +461,7 @@ a:hover {
     z-index: 2;
   }
 }
+
 @media (min-width: 350px) and (max-width: 380px) {
   #cover1 {
     position: relative;
@@ -468,6 +490,7 @@ a:hover {
   top: 2.9vw;
   z-index: 1;
 }
+
 @media (min-width: 768px) and (max-width: 799px) {
   #cover2 {
     position: relative;
@@ -475,6 +498,7 @@ a:hover {
     z-index: 1;
   }
 }
+
 @media (min-width: 631px) and (max-width: 767px) {
   #cover2 {
     position: relative;
@@ -482,6 +506,7 @@ a:hover {
     z-index: 1;
   }
 }
+
 @media (min-width: 600px) and (max-width: 630px) {
   #cover2 {
     position: relative;
@@ -489,6 +514,7 @@ a:hover {
     z-index: 1;
   }
 }
+
 @media (min-width: 400px) and (max-width: 599px) {
   #cover2 {
     position: relative;
@@ -496,6 +522,7 @@ a:hover {
     z-index: 1;
   }
 }
+
 @media (min-width: 381px) and (max-width: 399px) {
   #cover2 {
     position: relative;
@@ -503,6 +530,7 @@ a:hover {
     z-index: 2;
   }
 }
+
 @media (min-width: 350px) and (max-width: 380px) {
   #cover2 {
     position: relative;
@@ -510,6 +538,7 @@ a:hover {
     z-index: 2;
   }
 }
+
 @media (min-width: 300px) and (max-width: 349px) {
   #cover2 {
     position: relative;
@@ -517,6 +546,7 @@ a:hover {
     z-index: 1;
   }
 }
+
 @media (max-width: 299px) {
   #cover2 {
     position: relative;
@@ -537,12 +567,14 @@ a:hover {
     top: 1.5vw;
   }
 }
+
 @media (min-width: 400px) and (max-width: 600px) {
   #cover3 {
     position: relative;
     top: 3.2vw;
   }
 }
+
 @media (min-width: 381px) and (max-width: 399px) {
   #cover3 {
     position: relative;
@@ -664,14 +696,14 @@ a:hover {
   box-shadow: #ddd 0 0 3px 3px
 }
 
-@media (max-width: 299px){
-    #backgroundDiv{
-        font-size: 0.8em;
-    }
+@media (max-width: 299px) {
+  #backgroundDiv {
+    font-size: 0.8em;
+  }
 }
 
-.mainTitle{
-    font-size: 1.2rem;
+.mainTitle {
+  font-size: 1.2rem;
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
@@ -687,7 +719,7 @@ a:hover {
   }
 
   #bestsellingTitle {
-      font-size: 0.9em;
+    font-size: 0.9em;
   }
 }
 
@@ -711,8 +743,8 @@ a:hover {
   border-radius: 4px;
   display: block;
   padding-left: 3%;
-  
 }
+
 @media (min-width: 1201px) and (max-width: 1400px) {
   #stickyPane {
     font-size: 0.6rem;
@@ -754,22 +786,23 @@ a:hover {
     font-size: 0.6rem;
     bottom: 3.8rem;
     left: 128%;
-    width: 4rem;
+    width: 4.5rem;
   }
 }
+
 @media (max-width: 412px) and (min-width: 400px) {
   #stickyPane {
     font-size: 0.6rem;
     bottom: 1.2rem;
     left: 128%;
-    width: 4rem;
+    width: 4.5rem;
   }
 }
 
 @media (min-width: 361px) and (max-width:399px) {
   #stickyPane {
     font-size: 0.6rem;
-    width: 3.5rem;
+    width: 4rem;
     bottom: 6%;
     left: 129%;
     padding-top: 2%;
@@ -782,7 +815,7 @@ a:hover {
 @media (min-width: 350px) and (max-width:360px) {
   #stickyPane {
     font-size: 0.6rem;
-    width: 3.5rem;
+    width: 4rem;
     bottom: -3.5%;
     left: 129%;
     padding-top: 2%;
@@ -796,7 +829,7 @@ a:hover {
 @media (min-width: 300px) and (max-width:349px) {
   #stickyPane {
     font-size: 0.6rem;
-    width: 3.5rem;
+    width: 4rem;
     bottom: -7%;
     left: 125%;
     padding-top: 2%;
@@ -810,7 +843,7 @@ a:hover {
 @media (max-width:299px) {
   #stickyPane {
     font-size: 0.6rem;
-    width: 3.5rem;
+    width: 4rem;
     left: 119%;
     padding-top: 2%;
     padding-bottom: 1%;
@@ -818,6 +851,12 @@ a:hover {
     padding-right: 1%;
     bottom: -46%;
   }
+}
+
+@media (max-width: 767px){
+    #events, #contact{
+        font-size: 1.1em;
+    }
 }
 
 #circle1 {
@@ -836,6 +875,7 @@ a:hover {
     margin-top: 0.5%;
   }
 }
+
 @media (min-width:300px) and (max-width:767px) {
   #circle1 {
     width: 1em;

@@ -25,6 +25,7 @@ import { forkJoin } from 'rxjs';
 })
 export class BooklistComponent implements OnInit {
   @Input() book: Book;
+  @Output() emitBookNumber: EventEmitter<any> = new EventEmitter<number>();
   crimes: Crime[];
   romances: Romance[];
   visibleRomances: Romance[];
@@ -52,30 +53,18 @@ export class BooklistComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) { }
 
   ngOnInit() {
-    /*let t = document.getElementById('total');
-    if (window.innerHeight < 1050) {
-      t.style.height = 'auto';
-    }
-    else {
-      t.style.height = '100%';
-    }*/
+  
     this.smallScreen();
-    //localStorage.clear();
+    localStorage.clear();
     this.getCrimeBooks();
     this.getFictionBooks();
     this.getRomanceBooks();
     //sessionStorage.clear();
     //if no userId, get userId
-    // let v = localStorage.getItem('4');
     let v = localStorage.getItem('4');
-    // let o = localStorage.getItem('5');
     if (v == null || v == '') {
-      //localStorage.setItem('4', 'no');
       this.newCustomer();
     }
-    //alert(window.innerWidth);
-    // alert(window.outerWidth);
-
   }
 
   onSelect(book: Book): void {
@@ -95,20 +84,13 @@ export class BooklistComponent implements OnInit {
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
     let elem1 = document.getElementById("idInput");
-    //alert(elem1);
-    //if (localStorage.getItem('4') == 'no' && elem1 != undefined && elem1 != null) {
     if (elem1 != undefined && elem1 != null) {
-      //alert('4');
       let e1 = new Event('change', { bubbles: true });
-      //elem.dispatchEvent(e)
-      //make it asynatic
-      //alert("change");
       setTimeout(() => elem1.dispatchEvent(e1));
     }
   }
 
   saveUserId(event: any) {
-    // localStorage.setItem('4', event.target.value);
     let l4 = localStorage.getItem('4');
     if (l4 == null || l4 == '') {
       this.ids.push(parseInt(event.target.value));
@@ -171,14 +153,6 @@ export class BooklistComponent implements OnInit {
   slideRightRomance(): void {
     this.romanceBooks.nativeElement.scrollLeft -= 1070;
   }
-
-  //resolve the dynamic component 
-  /*loadComponent() {
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(ShoppingsummaryComponent);
-    //this.vcRef.clear();
-    const viewContainerRef = this.vcRef.createComponent(componentFactory);
-    const componentRef = viewContainerRef.instance.vcRef;
-  }*/
 
   smallScreen() {
     if (window.innerWidth <= 300) {

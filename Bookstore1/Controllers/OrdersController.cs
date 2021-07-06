@@ -51,10 +51,16 @@ namespace Bookstore1.Controllers
             return orderId;
         }
 
+        [HttpGet("GetTotalValue/{orderId}")]
+        public double GetTotalValue(int orderId)
+        {
+            double Total = (from r in _context.Reservations join b in _context.Books on r.BookId equals b.BookId join o in _context.Orders on r.OrderId equals o.OrderId where o.OrderId == orderId select b.Price).Sum();
+            return Total;
+        }
+
         [HttpGet("GetOrderStatus/{orderId}/{email}")]
         public IEnumerable<string> GetOrderStatus(int orderId, string email)
         {
-            //var status = from s in _context.Orders where s.OrderId == id select s.Status;
             //IEnumerable<string> status = _context.Orders.Where(o => o.OrderId == id).Select(s => s.Status);
             var query = from o in _context.Orders join u in _context.Users on o.UserId equals u.UserId where u.Mail == email && o.OrderId == orderId select o.Status;
             IEnumerable<string> Status = query.AsEnumerable();

@@ -1,0 +1,125 @@
+footer {
+    background-color: black;
+    padding: 0;
+    height: auto;
+}
+
+  footer > div {
+    display: flex;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    height: auto;
+  }
+
+@media (min-width: 400px) and (max-width: 768px) {
+  footer > div {
+    height: auto;
+    padding-top: 4%;
+    padding-bottom: 1%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+  footer > div {
+    height: auto;
+    padding-top: 4%;
+    padding-bottom: 1%;
+    padding-left: 13%;
+  }
+}
+
+@media (max-width: 299px) {
+  footer > div {
+    height: auto;
+    padding-top: 4%;
+    padding-bottom: 1%;
+    padding-left: 0%;
+  }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-link {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+}
+
+  .btn-link:hover {
+    text-decoration: none;
+  }
+
+i {
+  color: white;
+  font-size: 1.1em;
+}
+
+li {
+  list-style: none;
+  font-size: 0.85em;
+}
+
+#ul1{
+    width: 25%;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  #ul1 {
+    width: 35%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 599px) {
+  #ul1 {
+    width: 20%;
+  }
+}
+
+#ul2 {
+  display: grid;
+  width: 75%;
+  margin-left: 0;
+  margin-right: 0;
+  grid-template-columns: auto auto auto auto;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  #ul2 {
+    grid-template-columns: 50% 50%;
+    width: 65%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+  #ul2 {
+    width: 80%;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+  #ul2 {
+    width: 100%;
+    grid-template-columns: auto auto;
+  }
+}
+
+
+@media (max-width: 399px) {
+  #ul2 {
+    width: 100%;
+    grid-template-columns: auto auto;
+    font-size: 0.9em;
+    position: relative;
+    left: -5%;
+  }
+}
+

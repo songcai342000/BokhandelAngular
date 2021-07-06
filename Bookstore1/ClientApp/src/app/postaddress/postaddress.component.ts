@@ -17,7 +17,7 @@ export class PostaddressComponent implements OnInit {
   order: Order;
   reservation: Reservation;
   reservations: Reservation[];
-  books: Book[]=[];
+  books: Book[] = [];
   book: Book;
   orderId: number;
   orderIdInputV: string;
@@ -30,13 +30,13 @@ export class PostaddressComponent implements OnInit {
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
-   /* let t = document.getElementById('total');
-    if (window.innerHeight < 800) {
-      t.style.height = 'auto';
-    }
-    else {
-      t.style.height = '100%';
-    }*/
+    /* let t = document.getElementById('total');
+     if (window.innerHeight < 800) {
+       t.style.height = 'auto';
+     }
+     else {
+       t.style.height = '100%';
+     }*/
     window.scrollTo(0, 0);
     if (window.innerWidth < 300) {
       let b = document.getElementById('background');
@@ -44,7 +44,7 @@ export class PostaddressComponent implements OnInit {
       b.style.fontSize = '0.8em';
       f.innerHTML = "Postal-address";
     }
-   // sessionStorage.removeItem('4');
+    // sessionStorage.removeItem('4');
     this.ids = JSON.parse(localStorage.getItem('4'));
     if (this.ids != null) {
       this.userId = this.ids[0];
@@ -52,7 +52,7 @@ export class PostaddressComponent implements OnInit {
     }
     if (this.ids != null && this.ids.length == 2) {
       this.orderId = this.ids[1];
-     // alert(this.orderId);
+      // alert(this.orderId);
     }
     if (this.userId == null || this.userId == NaN || this.userId == 0) {
       this.router.navigate(['/page-not-found']);
@@ -66,21 +66,15 @@ export class PostaddressComponent implements OnInit {
   handleStorage(event) {
     if (this.orderId == null || this.orderId == undefined) {
       let elem1 = document.getElementById("orderIdInput");
-     // let l = sessionStorage.getItem('4');
-      //if (l != 'oid' && parseInt(l) != NaN && elem1 != undefined && elem1 != null) {
       if (elem1 != undefined && elem1 != null) {
         let e1 = new Event('change', { bubbles: true });
-        //make it asynatic
-        //alert("change");
         setTimeout(() => elem1.dispatchEvent(e1));
-       // sessionStorage.setItem('4', 'oid');
+        // sessionStorage.setItem('4', 'oid');
       }
     }
   }
 
   saveOrderId(event: any) {
-   // this.ids = JSON.parse(localStorage.getItem('4'));
-   // alert('1');
     if (this.ids.length < 2) {
       this.orderIdInputV = event.target.value;
       //alert(this.orderIdInputV);
@@ -97,16 +91,15 @@ export class PostaddressComponent implements OnInit {
 
   //update user and order
   saveAddressOrder(): void {
-    //make it is ready for event trigger
-    //alert(this.orderId);
-      this.bookService.updateCustomer(this.userId, this.user).subscribe(() => {
-        this.updateOrder(this.orderId, this.userId, this.books);
-      });
+    //make it ready for event trigger
+    this.bookService.updateCustomer(this.userId, this.user).subscribe(() => {
+      this.updateOrder(this.orderId, this.userId, this.books);
+    });
   }
 
   newOrder(uid: number) {
-  //  alert(localStorage.getItem('4'));
-    this.order = { userId: uid, status: 'Not Paid'};
+    //  alert(localStorage.getItem('4'));
+    this.order = { userId: uid, status: 'Not Paid' };
     this.bookService.newOrder(this.order).subscribe(() => {
       this.getOrderId();
     });
@@ -117,7 +110,7 @@ export class PostaddressComponent implements OnInit {
   }
 
   updateOrder(oid: number, uid: number, bks: Book[]) {
-    this.order = { orderId: oid, userId: uid, status: 'Paid'};
+    this.order = { orderId: oid, userId: uid, status: 'Paid' };
     this.bookService.updateOrder(oid, this.order).subscribe(() => {
       //saveReservation must be wrapped together
       this.saveReservation(oid, bks);
@@ -126,7 +119,6 @@ export class PostaddressComponent implements OnInit {
 
   saveReservation(oid: number, bks: Book[]) {
     let l = this.books.length;
-    //alert(l);
     this.count = 0;
     for (let i = 0; i < l; i++) {
       let now = new Date(Date.now());
@@ -135,8 +127,6 @@ export class PostaddressComponent implements OnInit {
       });
       this.count++;
     }
-    //alert(l);
-    //alert(this.count);
     //if all reservations are registrated
     if (this.count == l) {
       this.books = [];
@@ -148,37 +138,5 @@ export class PostaddressComponent implements OnInit {
       alert("Something is wrong. Please try later.");
     }
   }
-
- /* saveReservation() {
-    let l = this.books.length;
-    alert(l.toString());
-    for (let i = 0; i < l; i++) {
-      let now = new Date(Date.now());
-      this.reservation = { orderId: this.orderId, bookId: this.books[i]["bookId"], reservationTime: now };
-      this.reservations.push(this.reservation);
-      this.bookService.reservateBook(JSON.parse(this.reservations)).subscribe(() => {
-      });
-    }
-  }*/
-
-  /*clearCart() {
-    localStorage.clear();
-    sessionStorage.setItem('3', 'i');
-  }*/
-
- 
-
- /* @HostListener('window:click', ['$event'])
-  handleStorage(event) {
-    
-  }*/
-
-  sendInvoice(id: number): void {
-    this.bookService.sendInvoice(id).subscribe(() => {
-      //sessionStorage.setItem('2', 'paid');
-    });
-  }
-
-
 
 }

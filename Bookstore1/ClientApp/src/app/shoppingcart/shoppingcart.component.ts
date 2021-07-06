@@ -12,4 +12,7 @@ export class ShoppingcartComponent implements OnInit {
   ngOnInit() {
   }
 
+  onEmitBookEvent(bookNumber: number) {
+    this.bookCount = bookNumber;
+  }
 }

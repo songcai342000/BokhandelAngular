@@ -21,21 +21,7 @@ export class SearchboxComponent implements OnInit {
     ngOnInit(): void {
   }
  
-  /*searchForm = new FormGroup({
-    searchString: new FormControl(''),
-    condition: new FormControl('')
-  });
-
-  // Push a search term into the observable stream.
-  onSubmit(): void {
-    if (this.searchForm.get('condition').value == 'author') {
-      this.route.navigateByUrl('/searchresult?author=' + this.searchForm.get('searchString').value);
-    }
-    else if (this.searchForm.get('condition').value == 'title') {
-      this.route.navigateByUrl('/searchresult?title=' + this.searchForm.get('searchString').value);
-    }
-  }
-*/
+  
 
   getSearchTerm(event: any) {
     this.searchTerm = event.target.value;
@@ -43,16 +29,17 @@ export class SearchboxComponent implements OnInit {
 
   byTitle() {
     this.searchCondition = "title";
+    (<HTMLInputElement>document.getElementsByName('condition')[0]).checked = true;
   }
 
   byAuthor() {
     this.searchCondition = "author";
+    (<HTMLInputElement>document.getElementsByName('condition')[1]).checked = true;
   }
 
   sendSearch() {
     //localStorage.setItem('4', 'ch');
-    if (this.searchCondition == 'author') {
-      //location.assign("/searchresult?" + "author=" + this.searchTerm);
+    if (this.searchCondition == "author") {
       this.closeDisplay();
       this.route.navigate(['/searchresult'], { queryParams: { author: this.searchTerm } });
     }

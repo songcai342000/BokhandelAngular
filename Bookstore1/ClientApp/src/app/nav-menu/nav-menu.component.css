@@ -501,15 +501,7 @@ button {
   }
 
   @media only screen (min-width: 281px) and (max-width: 319px) {
-    /*#mobilCart {
-    position: absolute;
-    left: 67%;
-    padding: 2px 0 2px 0;
-    width: auto;
-    height: 40px;
-    top: 0;
-  }*/
-
+   
     #faCart {
       position: absolute;
       top: 43%;

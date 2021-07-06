@@ -194,6 +194,10 @@ export class BookService {
     return this.http.post<Reservation>(this.reservationUrl + "/" + 'PostReservations', reservations);
   }
 
+  getTotalPurchasedValue(orderId: number) {
+    return this.http.get<number>('api/Reservations/GetTotalValue/' + orderId);
+  }
+
   getEvents() {
     return this.http.get<Event[]>('api/Events');
   }

@@ -60,13 +60,13 @@ export class NavMenuComponent implements OnInit {
       document.getElementById("test").style.height = "0";
       this.bookNumber = 0;
     }
-    else if (localStorage.length > 1) {
+    else if (l > 1) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
     }
-    else if (localStorage.length <= 1) {
+    else if (l <= 1) {
       this.bookNumber = 0;
     }
-    let v = localStorage.getItem('3');
+   let v = localStorage.getItem('3');
     if (v == 'y' || v == 'r' || v == 'c') {
       /*let m = document.getElementById("myDiv");
       if (window.innerWidth < 400) {
@@ -77,7 +77,7 @@ export class NavMenuComponent implements OnInit {
         m.setAttribute('style', 'width: 400px');
         alert('4');
       }*/
-      if (localStorage.length > 1) {
+       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
         this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
         this.totalPrice = parseInt((JSON.parse(localStorage.getItem('1')))[1]);
@@ -337,7 +337,7 @@ export class NavMenuComponent implements OnInit {
 
   smallScreen() {
    
-    if (window.innerWidth <= 679) {
+    if (window.innerWidth <= 677) {
       let n = document.getElementsByTagName("nav")[0];
       n.remove();
       //this.setWidth();

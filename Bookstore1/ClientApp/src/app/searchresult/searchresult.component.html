@@ -1,6 +1,7 @@
 <div class="container" id="total">
   <div id="background">
-    <div id="result" class="mainTitle"> Search results  </div>
+    <div id="result" class="mainTitle" *ngIf="books.length > 0"> Search results  </div>
+    <div *ngIf="books.length == 0"  class="mainTitle"> No Search result  </div>
     <div class="content">
       <div *ngFor="let book of books" class="cell">
         <div id="imageContainer"><img src="assets/images/askim.jpg"></div>
@@ -22,6 +23,6 @@
 </div>
 
 <input type="text" id="idInput" *ngIf="userId" value="{{userId}}" style="visibility: hidden" (change)="saveUserId($event)">
-<!--<p style="visibility: hidden">
+<p style="visibility: hidden">
   In addition, we have our own publishers following tightly the changes of the market and producing books that meet new market trends. With this strategy we have not only satisfied well our customers but also contributed significantly to increasing the generall reading interest in the soceity.
-</p>-->
+</p>

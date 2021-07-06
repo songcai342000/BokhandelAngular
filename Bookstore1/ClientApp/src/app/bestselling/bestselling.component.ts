@@ -20,12 +20,6 @@ import { BookService } from '../book.service';
       transition('closed => open', [
         animate('1s')
       ]),
-      /*transition('open => closed', [
-        animate('1s', keyframes([
-          style({ transform: 'scale(1.75)', offset: 0.5 }),
-          style({ transform: 'scale(1)', offset: 1 }),
-        ]))
-      ]), */
       transition('open => closed', [
         animate('1s')
       ]),
@@ -44,6 +38,37 @@ export class BestsellingComponent implements OnInit {
     setInterval(() => this.fade(), 4000);
     this.getBestSellingBooks();
     this.truncateText();
+    let o = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
+    alert(o);
+    if (o == true) {
+      let ad1 = document.getElementById('advertisement1');
+      let div2 = document.getElementById('div2');
+      ad1.remove;
+      let newAd1 = document.createElement('button');
+      let text = document.createTextNode('Make an order wherever you are');
+      newAd1.appendChild(text);
+      if (window.innerWidth > 992) {
+        newAd1.setAttribute('style', 'background-color: aliceblue; font-size: 0.95rem; border-radius: 4px; color: black');
+        newAd1.setAttribute('class', 'text-center p-1 h-auto w-75 ml-auto mr-auto btn-link');
+      }
+     // newAd1.setAttribute('id', 'advertisement1');
+      else {
+        newAd1.setAttribute('style', 'background-color: aliceblue; font-size: 0.8rem; border-radius: 4p; position: relative; left: 15%; color: black');
+        newAd1.setAttribute('class', 'text-center p-1 h-auto w-75 btn-link');
+      }
+      div2.appendChild(newAd1);
+    }
+    if (window.innerWidth < 768) {
+      let books = document.getElementById('books');
+      books.remove();
+      let newBooks = document.createElement('div');
+      let newImage = document.createElement('img');
+      newImage.setAttribute('src', '../../assets/images/books.png');
+      newBooks.appendChild(newImage);
+      let div4 = document.getElementById('div4');
+      div4.appendChild(newBooks);
+
+    }
   }
 
   animateBooks() {
