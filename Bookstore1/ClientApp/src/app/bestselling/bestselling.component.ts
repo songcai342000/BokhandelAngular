@@ -1,5 +1,6 @@
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Book } from '../book';
 import { BookService } from '../book.service';
 
@@ -31,31 +32,28 @@ export class BestsellingComponent implements OnInit {
   bestselling: Book[];
   isClosed = true;
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     setInterval(() => this.fade(), 4000);
     this.getBestSellingBooks();
     this.truncateText();
     let o = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
-    alert(o);
-    if (o == true) {
+    if (o) {
       let ad1 = document.getElementById('advertisement1');
       let div2 = document.getElementById('div2');
-      ad1.remove;
+      ad1.remove();
       let newAd1 = document.createElement('button');
       let text = document.createTextNode('Make an order wherever you are');
+      newAd1.setAttribute('class', 'text-center mr-auto ml-auto p-1 h-auto w-75');
       newAd1.appendChild(text);
-      if (window.innerWidth > 992) {
-        newAd1.setAttribute('style', 'background-color: aliceblue; font-size: 0.95rem; border-radius: 4px; color: black');
-        newAd1.setAttribute('class', 'text-center p-1 h-auto w-75 ml-auto mr-auto btn-link');
-      }
-     // newAd1.setAttribute('id', 'advertisement1');
-      else {
-        newAd1.setAttribute('style', 'background-color: aliceblue; font-size: 0.8rem; border-radius: 4p; position: relative; left: 15%; color: black');
-        newAd1.setAttribute('class', 'text-center p-1 h-auto w-75 btn-link');
-      }
       div2.appendChild(newAd1);
+      if (window.innerWidth < 768) {
+        newAd1.setAttribute('style', 'font-size: 0.55rem; position: relative; left: 2vw');
+      }
+      else {
+        newAd1.setAttribute('style', 'font-size: 0.95rem');
+      }
     }
     if (window.innerWidth < 768) {
       let books = document.getElementById('books');
@@ -70,6 +68,7 @@ export class BestsellingComponent implements OnInit {
     if (window.innerWidth > 767) {
       setInterval(() => this.animateBooks(), 5000);
     }
+   
   }
 
   animateBooks() {
@@ -181,5 +180,9 @@ export class BestsellingComponent implements OnInit {
     if (window.innerWidth < 1000) {
       elm.setAttribute("class", "text-left text-truncate");
     }
+  }
+
+  navigateToBooks() {
+    this.router.navigateByUrl('booklist');
   }
 }

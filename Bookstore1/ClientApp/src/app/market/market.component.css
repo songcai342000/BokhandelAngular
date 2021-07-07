@@ -1,4 +1,16 @@
-#total {
+
+
+@media (max-width: 600px) {
+  #total {
+    background-color: white;
+    position: relative;
+    top: -2%;
+    margin-bottom: -10%;
+    padding-bottom: 2%;
+  }
+}
+
+.background {
   background-image: linear-gradient(white, #ffff99);
   margin-bottom: 5%;
   margin-top: 3rem;
@@ -11,13 +23,13 @@
 
 
 @media (max-width: 992px) {
-  #total {
+  .background {
     width: 90%;
   }
 }
 
 @media (max-width: 768px) {
-  #total {
+  .background {
     margin-top: 1rem;
     padding-top: 1%;
     padding-left: 1%;

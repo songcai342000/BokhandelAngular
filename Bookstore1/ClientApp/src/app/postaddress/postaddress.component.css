@@ -18,6 +18,14 @@
   margin-bottom: 0;
 }
 
+@media (max-width: 600px)
+{
+  .container {
+    background-color: white;
+    margin-bottom: -50%;
+  }
+}
+
 #background {
   background-image: linear-gradient(white, #ffff99);
   margin: 0% 4% 5% 4%;

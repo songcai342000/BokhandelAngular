@@ -3,6 +3,12 @@
     bottom: 5%;
     height: auto;
 }
+@media (max-width: 600px) {
+  #total {
+    background-color: white;
+    margin-bottom: -50%;
+  }
+}
 
 @media (min-height: 700px) {
   #total {

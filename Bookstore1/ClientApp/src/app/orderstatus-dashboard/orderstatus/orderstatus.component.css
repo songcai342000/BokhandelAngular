@@ -1,8 +1,37 @@
+@media (max-width: 600px) {
+  #total {
+    background-color: white;
+    position: relative;
+    top: -5%;
+    margin-bottom: -10%;
+    padding-bottom: 2%;
+  }
+}
 
 @media (min-height: 700px)
 {
   #total {
     height: 100%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+  #total {
+    background-color: white;
+    position: relative;
+    top: -6%;
+    margin-bottom: -10%;
+    padding-bottom: 2%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+  #total {
+    background-color: white;
+    position: relative;
+    top: -7%;
+    margin-bottom: -10%;
+    padding-bottom: 2%;
   }
 }
 
@@ -16,6 +45,11 @@
 @media (max-width: 299px) {
   #total {
     font-size: 0.6em;
+    background-color: white;
+    position: relative;
+    top: -17%;
+    margin-bottom: -15%;
+    padding-bottom: 2%;
   }
 }
 

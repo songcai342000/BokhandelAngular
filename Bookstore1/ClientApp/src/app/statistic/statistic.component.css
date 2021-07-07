@@ -18,13 +18,21 @@
   padding-top: 2%;
   height: auto;
 }
+
+@media (max-width: 600px) {
+  .content {
+    background-color: white;
+    margin-bottom: -50%;
+  }
+}
+
 @media (max-width: 768px) {
   .content {
     padding-top: 5%;
   }
 }
 
-@media (min-height: 700px) {
+@media (min-height: 600px) {
   .content {
     height: 100%;
   }

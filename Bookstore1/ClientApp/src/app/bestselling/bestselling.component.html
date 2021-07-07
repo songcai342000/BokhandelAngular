@@ -2,7 +2,8 @@
   <div>
     <div id="advertisements">
       <div id="div1" class="align-items-center"><img src="../../assets/images/likereading-forest.png" class="mr-auto ml-auto"></div>
-      <div id="div2"><div id="advertisement1" class="text-center"><a [routerLink]="['/booklist']" class="w-75 font-weight-normal">Make an order wherever you are.</a></div></div>
+      <!--<div id="div2"><div id="advertisement1" class="text-center"><a [routerLink]="['/booklist']" class="w-75 font-weight-normal">Make an order wherever you are.</a></div></div>-->
+      <div id="div2"><button id="advertisement1" class="text-center" (click)="navigateToBooks()">Make an order wherever you are</button></div>
       <div id="div3"><img src="../../assets/images/bookstoreabstract.png"></div>
       <div class="d-block" id="div4">
         <div id="books" class="ml-0 mr-auto">
@@ -60,9 +61,8 @@
       </p>
     </div>
   </div>
-  <div id="stickyPane">
-    <div><a [routerLinkActive]="['link-active']" [routerLink]="['contact']" id="contact">Contact us</a></div>
-    <div><a [routerLinkActive]="['link-active']" [routerLink]="['events']" id="events">Events</a></div>
-  </div>
-
+</div>
+<div id="stickyPane">
+  <div><a [routerLinkActive]="['link-active']" [routerLink]="['contact']" id="contact">Contact us</a></div>
+  <div><a [routerLinkActive]="['link-active']" [routerLink]="['events']" id="events">Events</a></div>
 </div>
