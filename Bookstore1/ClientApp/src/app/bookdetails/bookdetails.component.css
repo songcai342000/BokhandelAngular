@@ -5,6 +5,15 @@
   margin: 0;
 }
 
+@media (max-width: 600px) {
+  #total {
+    background-color: white;
+    position: relative;
+    top: -0.1em;
+    margin-bottom: -0.9em;
+  }
+}
+
 #onebook {
   width: 100%;
   margin-top: 0;

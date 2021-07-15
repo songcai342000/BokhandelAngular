@@ -45,7 +45,7 @@ export class BestsellingComponent implements OnInit {
       ad1.remove();
       let newAd1 = document.createElement('button');
       let text = document.createTextNode('Make an order wherever you are');
-      newAd1.setAttribute('class', 'text-center mr-auto ml-auto p-1 h-auto w-75');
+      newAd1.setAttribute('class', 'text-center mr-auto ml-auto p-2 h-auto w-75');
       newAd1.appendChild(text);
       div2.appendChild(newAd1);
       if (window.innerWidth < 768) {

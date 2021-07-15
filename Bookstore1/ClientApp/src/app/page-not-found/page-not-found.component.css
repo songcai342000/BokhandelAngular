@@ -13,6 +13,14 @@
   text-align: center;
 }
 
+@media (max-width: 600px)
+{
+  .content {
+    background-color: white;
+    margin-bottom: -1em;
+  }
+}
+
 #textDiv {
   text-align: center;
   padding: 0;
@@ -166,8 +174,8 @@ img {
 
 @media only screen and (max-width: 299px) and (min-width: 240px) {
   .content {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 2%;
   }
 

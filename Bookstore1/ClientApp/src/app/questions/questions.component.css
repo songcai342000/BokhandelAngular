@@ -12,9 +12,10 @@
 }
 
 
-@media (min-height: 700px) {
+@media (min-height: 600px) {
   #total {
     height: 100%;
+    margin-bottom: -1em;
   }
 }
 

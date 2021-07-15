@@ -1,6 +1,6 @@
 #total{
     padding-top: 2rem;
-    bottom: 5%;
+    padding-bottom: 2%;
     height: auto;
 }
 @media (max-width: 600px) {
@@ -10,9 +10,10 @@
   }
 }
 
-@media (min-height: 700px) {
+@media (min-height: 600px) {
   #total {
     height: 100%;
+    margin-bottom: -1em;
   }
 }
 

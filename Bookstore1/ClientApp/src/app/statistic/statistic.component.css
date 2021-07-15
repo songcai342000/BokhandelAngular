@@ -22,7 +22,6 @@
 @media (max-width: 600px) {
   .content {
     background-color: white;
-    margin-bottom: -50%;
   }
 }
 
@@ -38,12 +37,11 @@
   }
 }
 
-  .content > div {
-
-    position: relative;
-    background-image: linear-gradient(white, #ffff99);
-    padding-bottom: 5%;
-  }
+.content > div {
+  position: relative;
+  background-image: linear-gradient(white, #ffff99);
+  padding-bottom: 5%;
+}
 
 @media (max-width: 300px) {
   .content {
@@ -84,7 +82,7 @@
 
 
 @media only screen and (min-width: 1451px) {
-  .content > div {
+  #total > div {
     margin-left: 32%;
     margin-right: 32%;
     position: relative;
@@ -115,7 +113,13 @@ select {
 }
 
 p {
-    visibility: hidden;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+  p {
+    background-color: white;
+  }
 }
 
 
