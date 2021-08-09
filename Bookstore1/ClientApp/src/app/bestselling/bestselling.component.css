@@ -146,11 +146,13 @@ a {
 @media (min-width: 300px) and (max-width: 349px) {
   #advertisement1 {
     padding-top: 0.2em;
-    padding-bottom: 0.4em;
+    padding-bottom: 0.2em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
     position: relative;
     left: 1.9vw;
     width: 100%;
-    font-size: 0.55rem;
+    font-size: 0.5rem;
   }
 }
 
@@ -209,7 +211,7 @@ a {
   #books {
     position: relative;
     top: -1.5vw;
-    left: 4.8vw;
+    left: 3.5vw;
   }
 }
 
@@ -274,7 +276,7 @@ a {
     height: auto;
   }
 
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 992px) {
   #div3 img {
     position: relative;
     left: 2.3vw;
@@ -339,7 +341,23 @@ a {
   }
 }
 
-@media (min-width: 600px) and (max-width: 768px) {
+@media (min-width: 993px) and (max-width: 1200px) {
+  #checkOrderDiv {
+    position: relative;
+    left: -3.5vw;
+    line-height: 15%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  #checkOrderDiv {
+    position: relative;
+    left: -4vw;
+    line-height: 15%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
   #checkOrderDiv {
     position: relative;
     left: -3.5vw;
@@ -600,7 +618,7 @@ a {
 
 @media (min-width: 836px) and (max-width: 992px) {
   #bestSellingContainer {
-    padding-left: 13.5%;
+    padding-left: 0.8%;
   }
 }
 
@@ -759,7 +777,7 @@ a {
   }
 }
 
-@media (max-width: 600px) and (min-width: 767px) {
+@media (min-width: 600px) and (max-width: 767px) {
   #stickyPane {
     font-size: 0.6rem;
     bottom: 5rem;

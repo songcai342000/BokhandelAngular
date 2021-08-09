@@ -17,17 +17,17 @@ nav {
 }
 
 img {
-    width: 60%;
-    height: auto;
+  width: 60%;
+  height: auto;
 }
 
-.navbar-nav  {
+.navbar-nav {
   border: none;
   width: 40%;
 }
 
 .dropdown-menu {
-  min-width: 110px; 
+  min-width: 110px;
   right: 100% !important;
 }
 
@@ -54,7 +54,7 @@ a.navbar-brand {
 }
 
 div {
-    border: none;
+  border: none;
 }
 
 span {
@@ -110,10 +110,12 @@ span {
     background-color: #fc71b6;
     background-image: radial-gradient(#fc71b6, #fe59ba);
   }
+
   50% {
     background-color: #fa46b0;
     background-image: radial-gradient(#fa46b0, #fe59ba);
   }
+
   100% {
     background-image: radial-gradient(#fc71b6, #fe59ba);
   }
@@ -144,9 +146,9 @@ li > div {
 
 
 #bookstore {
-    position: absolute;
-    top: 40px;
-    opacity: 0.7;
+  position: absolute;
+  top: 40px;
+  opacity: 0.7;
 }
 
 .left-growth {
@@ -167,14 +169,14 @@ li > div {
 }
 
 #menuicons {
-    z-index: 2;
-    display: flex;
-    width: 200px;
+  z-index: 2;
+  display: flex;
+  width: 200px;
 }
 
-#menuicons > div {
-  width: 50%;
-}
+  #menuicons > div {
+    width: 50%;
+  }
 
 #shoppingcartdiv {
   margin-bottom: 10px;
@@ -195,7 +197,7 @@ li > div {
 }
 
 #x {
-  background-color:transparent;
+  background-color: transparent;
   margin-right: 15px;
   margin-top: 5px;
   width: 20px;
@@ -209,14 +211,14 @@ li > div {
   visibility: hidden;
 }
 
-nav-item:hover{
-    color: #ff66ff;
+nav-item:hover {
+  color: #ff66ff;
 }
 
 .cover {
-    position: absolute;
-    width: 100%;
-    left: 450px;
+  position: absolute;
+  width: 100%;
+  left: 450px;
 }
 
 .caret.caret-up {
@@ -236,9 +238,13 @@ button {
   height: 85%;
   border-radius: 15px;
 }
-#test{
-    position: relative;
-    z-index: 2;
+
+#test {
+  /*position: relative;*/
+  position: sticky;
+  left: 5em;
+  top: 5em;
+  z-index: 2;
 }
 
 /*#myDiv {
@@ -318,7 +324,7 @@ button {
   }
 
   span {
-      font-size: 0.8em;
+    font-size: 0.8em;
   }
 }
 
@@ -377,7 +383,6 @@ button {
     width: auto;
     padding: 5px;
   }
-
 }
 
 @media only screen and (min-width: 361px) and (max-width: 600px) {
@@ -412,7 +417,6 @@ button {
 
     #mobilLinks a {
       background-color: #7094db;
-      height: 2.5vh;
       margin-left: 0vh;
       margin-top: 0.5vh;
       margin-right: 1vh;
@@ -422,475 +426,473 @@ button {
     }
 }
 
-  @media only screen and (min-width: 240px) and (max-width: 260px) {
-    #mobilCart {
-      position: absolute;
-      right: 30%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 30px;
-      top: 5%;
-    }
-
-    #faCart {
-      position: absolute;
-      top: 43%;
-      right: 0;
-      left: 0;
-      font-size: 1.1em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      margin-bottom: 3px;
-      font-size: 0.7em;
-      position: absolute;
-    }
-
-    #test {
-      font-size: 3em;
-    }
-
-    #mobilLinks a {
-      padding: 5px 5px 5px 15px;
-    }
-
-    .mobilnav {
-      font-size: 0.85rem;
-    }
-  }
-
-  @media only screen and (min-width: 261px) and (max-width: 280px) {
-
-    #mobilCart {
-      position: absolute;
-      right: 30%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 30px;
-      top: 5%;
-    }
-
-    #faCart {
-      position: absolute;
-      top: 43%;
-      right: 0;
-      left: 0;
-      font-size: 1.1em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      margin-bottom: 3px;
-      font-size: 0.7em;
-      position: absolute;
-    }
-
-    #test {
-      font-size: 3em;
-    }
-
-    #mobilLinks a {
-      padding: 5px 5px 5px 15px;
-    }
-
-    #mobilLinks {
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-    }
-  }
-
-  @media only screen (min-width: 281px) and (max-width: 319px) {
-   
-    #faCart {
-      position: absolute;
-      top: 43%;
-      right: 0;
-      left: 0;
-      font-size: 1.1em;
-    }
-
-    #bknMobil {
-      left: 0.7em;
-      margin-bottom: 3px;
-      font-size: 0.6em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      padding-top: 2vh;
-      padding-top: 2vh;
-    }
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 340px) {
-    #mobilCart {
-      position: absolute;
-      right: 22.5%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 35px;
-      top: 0;
-    }
-
-    #faCart {
-      position: absolute;
-      top: 45%;
-      right: 0;
-      left: 0;
-      font-size: 1.1em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      top: 8%;
-      font-size: 0.7em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-
-    #mobilLinks {
-      margin-bottom: 10px;
-    }
-
-    .mobilnav {
-      font-size: 0.9em;
-    }
-  }
-
-
-  @media only screen and (min-width: 341px) and (max-width: 360px) {
-    #mobilCart {
-      position: absolute;
-      right: 20%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 35px;
-      top: 0;
-    }
-
-    #faCart {
-      position: absolute;
-      top: 45%;
-      right: 0;
-      left: 0;
-      font-size: 1.1em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      top: 8%;
-      font-size: 0.7em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    #mobilLinks {
-      margin-bottom: 15px;
-    }
-
-    .mobilnav {
-      font-size: 0.9em;
-    }
-  }
-
-
-  @media only screen and (min-width: 361px) and (max-width: 380px) {
-    #mobilCart {
-      position: absolute;
-      right: 20%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 50px;
-      top: 0;
-    }
-
-    #faCart {
-      position: absolute;
-      bottom: 32%;
-      right: 0;
-      left: 0;
-      font-size: 1.2em;
-    }
-
-    #bknMobil {
-      left: 0.7em;
-      top: 8%;
-      margin-bottom: 0;
-      font-size: 0.7em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    #mobilLinks {
-      margin-bottom: 15px;
-    }
-
-    .mobilnav {
-      font-size: 0.9em;
-    }
-  }
-
-  @media only screen and (min-width: 381px) and (max-width: 410px) {
-    #mobilCart {
-      position: absolute;
-      left: 81%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 40px;
-      top: 0;
-    }
-
-    #faCart {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      left: 0;
-      font-size: 1.2em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      top: 5%;
-      font-size: 0.8em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      padding-top: 2vh;
-      padding-top: 2vh;
-    }
-  }
-
-  @media only screen and (min-width: 551px) and (max-width: 649px) {
-    #mobilCart {
-      position: absolute;
-      right: 13%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 50px;
-      top: 0;
-    }
-
-    #faCart {
-      position: absolute;
-      bottom: 30%;
-      right: 0;
-      left: 0;
-      font-size: 1.2em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      top: 5%;
-      font-size: 0.8em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    #mobilLinks {
-      margin-bottom: 15px;
-    }
-
-    .mobilnav {
-      font-size: 0.85em;
-    }
-  }
-
-  @media only screen and (min-width: 500px) and (max-width: 550px) {
-    #mobilCart {
-      position: absolute;
-      right: 14%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 50px;
-      top: 0;
-    }
-
-    #faCart {
-      position: absolute;
-      bottom: 30%;
-      right: 0;
-      left: 0;
-      font-size: 1.2em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      top: 5%;
-      font-size: 0.8em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    #mobilLinks {
-      margin-bottom: 15px;
-    }
-
-    .mobilnav {
-      font-size: 0.85em;
-    }
-  }
-
-  @media only screen and (min-width: 411px) and (max-width: 499px) {
-    #mobilCart {
-      position: absolute;
-      right: 18%;
-      padding: 2px 0 2px 0;
-      width: auto;
-      height: 50px;
-      top: 0;
-    }
-
-    #faCart {
-      position: absolute;
-      bottom: 30%;
-      right: 0;
-      left: 0;
-      font-size: 1.2em;
-    }
-
-    #bknMobil {
-      left: 0.6em;
-      top: 5%;
-      font-size: 0.8em;
-      position: absolute;
-    }
-
-    #mobilLinks a {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    #mobilLinks {
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .mobilnav {
-      font-size: 0.85em;
-    }
-  }
-
-  @media only screen (min-width: 681px) and (max-width: 800px) {
-    #xx {
-      font-size: 12px;
-    }
-  }
-
-  #myDivHeader {
-    padding-bottom: 20px;
-    cursor: move;
-    background-color: aliceblue;
-    color: #fff;
-  }
-
-  #xx {
-    border-radius: 50%;
-    background-color: white;
-    border: none;
+@media only screen and (min-width: 240px) and (max-width: 260px) {
+  #mobilCart {
     position: absolute;
-    right: 2%;
-    top: 2%;
-    height: 25px;
+    right: 30%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 30px;
+    top: 5%;
   }
 
-  th, td {
-    padding: 10px;
+  #faCart {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    margin-bottom: 3px;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #test {
+    font-size: 3em;
+  }
+
+  #mobilLinks a {
+    padding: 5px 5px 5px 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (min-width: 261px) and (max-width: 280px) {
+
+  #mobilCart {
+    position: absolute;
+    right: 30%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 30px;
+    top: 5%;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    margin-bottom: 3px;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #test {
+    font-size: 3em;
+  }
+
+  #mobilLinks a {
+    padding: 5px 5px 5px 15px;
+  }
+
+  #mobilLinks {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen (min-width: 281px) and (max-width: 319px) {
+
+  #faCart {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.7em;
+    margin-bottom: 3px;
+    font-size: 0.6em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 2vh;
+    padding-top: 2vh;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 340px) {
+  #mobilCart {
+    position: absolute;
+    right: 22.5%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 35px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 8%;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 10px;
+  }
+
+  .mobilnav {
+    font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (min-width: 341px) and (max-width: 360px) {
+  #mobilCart {
+    position: absolute;
+    right: 20%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 35px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 8%;
+    font-size: 0.7em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
     padding-bottom: 5px;
   }
 
-  table {
-    width: 100%;
-    margin-bottom: 10%;
+  #mobilLinks {
+    margin-bottom: 15px;
   }
 
-  .title {
-    width: 40%;
-  }
-
-  .price, .amount, .remove {
-    width: 20%;
-  }
-
-  #xx:hover {
-    background-color: blue;
-    color: white;
-    border-radius: 15px;
-  }
-
-  button {
-    font-weight: 500;
-  }
-
-  /* Style the navigation menu */
   .mobilnav {
-    overflow: hidden;
-    position: relative;
-    background-color: #7094db;
+    font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (min-width: 361px) and (max-width: 380px) {
+  #mobilCart {
+    position: absolute;
+    right: 20%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
   }
 
-  .active {
-    background-color: #7094db !important;
+  #faCart {
+    position: absolute;
+    bottom: 32%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
   }
 
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .mobilnav #mobilLinks {
-    display: none;
+  #bknMobil {
+    left: 0.7em;
+    top: 8%;
+    margin-bottom: 0;
+    font-size: 0.7em;
+    position: absolute;
   }
 
-  /* Style navigation menu links */
-  .mobilnav a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 14px;
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (min-width: 381px) and (max-width: 410px) {
+  #mobilCart {
+    position: absolute;
+    left: 81%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 40px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 2vh;
+    padding-top: 2vh;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 649px) {
+  #mobilCart {
+    position: absolute;
+    right: 13%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.85em;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 550px) {
+  #mobilCart {
+    position: absolute;
+    right: 14%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
+  }
+
+  .mobilnav {
+    font-size: 0.85em;
+  }
+}
+
+@media only screen and (min-width: 411px) and (max-width: 499px) {
+  #mobilCart {
+    position: absolute;
+    right: 18%;
+    padding: 2px 0 2px 0;
+    width: auto;
+    height: 50px;
+    top: 0;
+  }
+
+  #faCart {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    font-size: 1.2em;
+  }
+
+  #bknMobil {
+    left: 0.6em;
+    top: 5%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+
+  #mobilLinks a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #mobilLinks {
+    margin-bottom: 15px;
     display: block;
   }
 
+  .mobilnav {
+    font-size: 0.85em;
+  }
+}
 
-    /* Style the hamburger menu */
-    .mobilnav a.icon {
-      background: black;
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
+@media only screen (min-width: 681px) and (max-width: 800px) {
+  #xx {
+    font-size: 12px;
+  }
+}
 
-    /* Add a grey background color on mouse-over */
-    .mobilnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
+#myDivHeader {
+  padding-bottom: 20px;
+  cursor: move;
+  background-color: aliceblue;
+  color: #fff;
+}
 
-  /* Style the active link (or home/logo) */
-  .active {
-    background-color: #4CAF50;
-    color: white;
-    display: flex;
+#xx {
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  height: 25px;
+}
+
+th, td {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.title {
+  width: 40%;
+}
+
+.price, .amount, .remove {
+  width: 20%;
+}
+
+#xx:hover {
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+}
+
+button {
+  font-weight: 500;
+}
+
+/* Style the navigation menu */
+.mobilnav {
+  overflow: hidden;
+  position: relative;
+  background-color: #7094db;
+}
+
+.active {
+  background-color: #7094db !important;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.mobilnav #mobilLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.mobilnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+}
+
+
+  /* Style the hamburger menu */
+  .mobilnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
+  /* Add a grey background color on mouse-over */
+  .mobilnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
 
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+}
 
 

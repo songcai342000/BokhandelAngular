@@ -31,7 +31,7 @@ export class NavMenuComponent implements OnInit {
   //[xx: string]: any;
   books: Book[] = [];
   bookAmounts: BookAmount[] = [];
-  dragPosition = { x: 0, y: 0 };
+  dragPosition = { x: 0, y: 0};
   isShow = true;
 
   @Input() bookAmount: BookAmount;
@@ -40,7 +40,7 @@ export class NavMenuComponent implements OnInit {
   @Input() summaryWidth: string;
   @ViewChild('myDiv', { static: true }) summaryDiv: ElementRef;
   @ViewChild(LoadsearchDirective, { static: true }) searchHost: LoadsearchDirective;
-  @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
+ // @ViewChild(LoadsummaryDirective, { static: true }) summaryHost !: LoadsummaryDirective;
   componentRef: ComponentRef<any>;
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private route: Router) { }
 
@@ -115,14 +115,14 @@ export class NavMenuComponent implements OnInit {
   }
 
   //resolve the dynamic component 
-  loadSummaryComponent() {
+ /*loadSummaryComponent() {
     if (localStorage.length > 1) {
       let componentFactory = this.componentFactoryResolver.resolveComponentFactory(ShoppingsummaryComponent);
       const viewContainerRef = this.summaryHost.viewContainerRef;
       viewContainerRef.clear();
       const componentRef = viewContainerRef.createComponent(componentFactory);
     }
-  }
+  }*/
 
   loadSearchBox() {
     //document.getElementById("close").style.visibility = "visible";
@@ -241,10 +241,6 @@ export class NavMenuComponent implements OnInit {
     document.getElementsByTagName("textPath")[0].style.color = "White";
   }
 
- /* getCurrentPath() {
-    this.currentPath = window.location.pathname;
-  }*/
-
   booksFocus() {
     document.getElementById("booksLinkDiv").style.backgroundColor = "blue";
   }
@@ -324,6 +320,7 @@ export class NavMenuComponent implements OnInit {
     }
     else {
       let original = document.getElementById("myDiv").getBoundingClientRect();
+      alert(original);
       this.dragPosition.x = 500;
       this.dragPosition.y = -1000;
     }

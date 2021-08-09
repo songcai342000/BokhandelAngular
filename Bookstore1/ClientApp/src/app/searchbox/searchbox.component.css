@@ -12,7 +12,7 @@
   z-index: 4;
 }
 
-@media only screen and (max-width: 250px) and (min-width: 200px) {
+@media only screen and (max-width: 260px) and (min-width: 200px) {
   #searchBox {
     position: relative;
     left: 0%;
@@ -23,13 +23,43 @@
 }
 
 
-@media only screen and (max-width: 599px) and (min-width: 251px) {
+@media only screen and (max-width: 599px) and (min-width: 400px) {
   #searchBox {
     position: relative;
     left: 0%;
     top: 10px;
     z-index: 4;
-    width: 65vw;
+    width: 20em;
+  }
+}
+
+@media only screen and (max-width: 399px) and (min-width: 350px) {
+  #searchBox {
+    position: relative;
+    left: 0%;
+    top: 10px;
+    z-index: 4;
+    width: 20.5em;
+  }
+}
+
+@media only screen and (max-width: 349px) and (min-width: 281px) {
+  #searchBox {
+    position: relative;
+    left: 0%;
+    top: 10px;
+    z-index: 4;
+    width: 85vw;
+  }
+}
+
+@media only screen and (max-width: 280px) and (min-width: 261px) {
+  #searchBox {
+    position: relative;
+    left: 0%;
+    top: 10px;
+    z-index: 4;
+    width: 95vw;
   }
 }
 
