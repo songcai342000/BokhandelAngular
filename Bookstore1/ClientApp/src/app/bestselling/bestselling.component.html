@@ -7,13 +7,13 @@
       <div id="div3"><img src="../../assets/images/bookstoreabstract.png"></div>
       <div class="d-block" id="div4">
         <div id="books" class="ml-0 mr-auto">
-          <div id="cover1">
+          <div id="cover1" [@showHide1]="isVisible ? 'show' : 'hide'">
             <img src="../../assets/images/bookstopoverlap.png">
           </div>
-          <div id="cover2">
+          <div id="cover2" [@showHide2]="isVisible ? 'show' : 'hide'">
             <img src="../../assets/images/booksmiddel.png">
           </div>
-          <div id="cover3">
+          <div id="cover3" [@showHide3]="isVisible ? 'show' : 'hide'">
             <img src="../../assets/images/redbook.png">
           </div>
         </div>

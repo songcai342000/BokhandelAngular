@@ -25,17 +25,66 @@ import { BookService } from '../book.service';
         animate('1s')
       ]),
     ]),
+    trigger('showHide1', [
+      // ...
+      state('show', style({
+        visibility: 'visible'
+      })),
+      state('hide', style({
+        visibility: 'hidden',
+      })),
+      transition('show => hide', [
+        animate('3.5s')
+      ]),
+      transition('hide => show', [
+        animate('500ms 1s')
+      ])
+    ]),
+    trigger('showHide2', [
+      // ...
+      state('show', style({
+        visibility: 'visible'
+      })),
+      state('hide', style({
+        visibility: 'hidden',
+      })),
+      transition('show => hide', [
+        animate('3.5s')
+      ]),
+      transition('hide => show', [
+        animate('500ms 500ms')
+      ])
+    ]),
+    trigger('showHide3', [
+      // ...
+      state('show', style({
+        visibility: 'visible'
+      })),
+      state('hide', style({
+        visibility: 'hidden',
+      })),
+      transition('show => hide', [
+        animate('3.5s')
+      ]),
+      transition('hide => show', [
+        animate('500ms')
+      ])
+    ])
   ],
+
   styleUrls: ['./bestselling.component.css']
 })
 export class BestsellingComponent implements OnInit {
   bestselling: Book[];
   isClosed = true;
+  isVisible = true;
 
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     setInterval(() => this.fade(), 4000);
+   // setInterval(() => this.toggle(), 4000);
+
     this.getBestSellingBooks();
     this.truncateText();
     let o = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
@@ -66,7 +115,7 @@ export class BestsellingComponent implements OnInit {
       div4.appendChild(newBooks);
     }
     if (window.innerWidth > 767) {
-      setInterval(() => this.animateBooks(), 5000);
+      setInterval(() => this.toggle(), 4000);
     }
    
   }
@@ -75,13 +124,24 @@ export class BestsellingComponent implements OnInit {
     document.getElementById("cover1").setAttribute('style', 'visibility: hidden');
     document.getElementById("cover2").setAttribute('style', 'visibility: hidden');
     document.getElementById("cover3").setAttribute('style', 'visibility: hidden');
-    setTimeout(() => this.showCover3(), 500);
-    setTimeout(() => this.showCover2(), 1000);
-    setTimeout(() => this.showCover1(), 1500);
+    setTimeout(() => this.showCover3(), 200);
+    setTimeout(() => this.showCover2(), 400);
+    setTimeout(() => this.showCover1(), 600);
+  }
+
+  toggle() {
+    this.isVisible = !this.isVisible;
+  }
+  showHide2() {
+    this.isVisible = !this.isVisible;
+  }
+  showHide3() {
+    this.isVisible = !this.isVisible;
   }
 
   fade() {
     this.isClosed = !this.isClosed;
+
   }
 
   showCover1() {

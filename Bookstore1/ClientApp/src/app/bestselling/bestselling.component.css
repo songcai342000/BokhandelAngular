@@ -135,7 +135,7 @@ a {
     padding-top: 0.2em;
     padding-bottom: 0.4em;
     position: relative;
-    left: 2vw;
+    left: 2.8vw;
     padding-left: 2vw;
     padding-right: 2vw;
     width: 100%;
@@ -150,7 +150,7 @@ a {
     padding-left: 0.4em;
     padding-right: 0.4em;
     position: relative;
-    left: 1.9vw;
+    left: 2.1vw;
     width: 100%;
     font-size: 0.5rem;
   }
@@ -236,7 +236,7 @@ a {
   #books {
     position: relative;
     top: -6.7vw;
-    left: 6.8vw;
+    left: 8.3vw;
     width: 78%;
   }
 }
@@ -246,7 +246,7 @@ a {
   #books {
     position: relative;
     top: -6.7vw;
-    left: 6.5vw;
+    left: 6.7vw;
     width: 78%;
   }
 }
@@ -265,6 +265,21 @@ a {
     visibility: hidden;
   }
 }
+
+/*#cover1 {
+  animation: cover1ShowHide 0.5s;
+  animation-delay: 5s;
+}
+
+@keyframes cover1ShowHide {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}*/
 
 #div1, #div3 {
   display: block;
@@ -300,14 +315,14 @@ a {
 @media (min-width: 350px) and (max-width: 399px) {
   #div3 img {
     position: relative;
-    left: 4.6vw;
+    left: 6.1vw;
   }
 }
 
 @media (min-width: 300px) and (max-width: 349px) {
   #div3 img {
     position: relative;
-    left: 4.3vw;
+    left: 4.5vw;
   }
 }
 
