@@ -34,7 +34,7 @@ import { BookService } from '../book.service';
         visibility: 'hidden',
       })),
       transition('show => hide', [
-        animate('1.5s')
+        animate('3.5s')
       ]),
       transition('hide => show', [
         animate('500ms 1s')
@@ -49,7 +49,7 @@ import { BookService } from '../book.service';
         visibility: 'hidden',
       })),
       transition('show => hide', [
-        animate('1.5s')
+        animate('3.5s')
       ]),
       transition('hide => show', [
         animate('500ms 500ms')
@@ -64,7 +64,7 @@ import { BookService } from '../book.service';
         visibility: 'hidden',
       })),
       transition('show => hide', [
-        animate('1.5s')
+        animate('3.5s')
       ]),
       transition('hide => show', [
         animate('500ms')
@@ -115,7 +115,7 @@ export class BestsellingComponent implements OnInit {
       div4.appendChild(newBooks);
     }
     if (window.innerWidth > 767) {
-      setInterval(() => this.toggle(), 2000);
+      setInterval(() => this.toggle(), 4000);
     }
    
   }

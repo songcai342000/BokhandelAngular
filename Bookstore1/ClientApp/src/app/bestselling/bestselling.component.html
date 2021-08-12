@@ -27,7 +27,7 @@
     <div class="d-flex flex-row w-100">
       <div *ngFor="let book of bestselling">
         <div id="imageContainer"><img src={{book.imageUrl}}></div>
-        <div class="bestselling">
+        <div class="bestselling h-auto">
           <a id="bestsellingDetail" routerLinkActive="active" [routerLink]="['bookdetails', book.bookId]">
             {{book.title}}
           </a>&nbsp;&nbsp;
