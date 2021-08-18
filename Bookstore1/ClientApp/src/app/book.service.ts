@@ -41,7 +41,17 @@ export class BookService {
 
   //register to localStorage
   register(book: Book) {
-    if (localStorage.length <= 2) {
+    let b = localStorage.getItem('0');
+    this.bks.length = 0;//clear the array
+    if (b != null) {
+      this.bks = JSON.parse(b);
+      this.bks.push(book);
+    }
+    else {
+      this.bks.push(book);
+    }
+    localStorage.setItem('0', JSON.stringify(this.bks));
+    /*if (localStorage.length <= 2) {
       this.bks.length = 0;//clear bks
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
@@ -50,7 +60,7 @@ export class BookService {
       this.bks = JSON.parse(localStorage.getItem('0'));
       this.bks.push(book);
       localStorage.setItem('0', JSON.stringify(this.bks));
-    }
+    }*/
   }
 
   removeItem(bookAmount: BookAmount) {

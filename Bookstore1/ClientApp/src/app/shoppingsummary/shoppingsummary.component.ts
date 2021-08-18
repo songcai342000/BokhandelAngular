@@ -27,15 +27,17 @@ export class ShoppingsummaryComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
-    //this.getSummary();
+   
     this.setPosition();
+   /* let e = document.getElementById('myDiv');
+    e.setAttribute('style', 'backgroundColor: red');*/
   }
 
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
     let v = localStorage.getItem('3');
     if (v == 'y' || v == 'c' || v == 'r') {
-       document.getElementById("test").style.height = "auto";
+      document.getElementById("test").style.height = "auto";
       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
         //this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
@@ -76,7 +78,7 @@ export class ShoppingsummaryComponent implements OnInit {
     this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
     localStorage.setItem('3', 'r');
   }
-  
+
   //create shopping summary
   getSummary(): void {
     //this.bookService.createSummary(this.bookAmounts, this.books);
@@ -84,6 +86,9 @@ export class ShoppingsummaryComponent implements OnInit {
   }
 
   dragEnded(event: CdkDragEnd) {
+    if (sessionStorage.getItem('0') == null) {
+      this.dragPosition.x = 100;
+    }
     const { x, y } = event.distance;
     this.dragPosition.x += x;
     this.dragPosition.y += y;
@@ -93,7 +98,7 @@ export class ShoppingsummaryComponent implements OnInit {
 
   getPosition() {
     let obj = document.getElementById("myDiv").getBoundingClientRect();
-    
+
   }
 
   //set the start position of a draged element when the page is reloaded
@@ -102,10 +107,11 @@ export class ShoppingsummaryComponent implements OnInit {
       let obj = JSON.parse(sessionStorage.getItem("0"));
       this.dragPosition.x = obj.x;
       this.dragPosition.y = obj.y;
-      //alert(this.dragPosition.x);
+      alert(this.dragPosition.x);
     }
     else {
       let original = document.getElementById("myDiv").getBoundingClientRect();
+      alert(original.left);
       this.dragPosition.x = 500;
       this.dragPosition.y = -1000;
       //alert(this.dragPosition.y);
@@ -118,5 +124,5 @@ export class ShoppingsummaryComponent implements OnInit {
     this.getSummary();
   }
 
- 
+
 }

@@ -91,10 +91,15 @@ export class PostaddressComponent implements OnInit {
 
   //update user and order
   saveAddressOrder(): void {
-    //make it ready for event trigger
-    this.bookService.updateCustomer(this.userId, this.user).subscribe(() => {
-      this.updateOrder(this.orderId, this.userId, this.books);
-    });
+    if (localStorage.getItem('0') != null && JSON.parse(localStorage.getItem('0')).length > 0) {
+      //make it ready for event trigger
+      this.bookService.updateCustomer(this.userId, this.user).subscribe(() => {
+        this.updateOrder(this.orderId, this.userId, this.books);
+      });
+    }
+    else {
+      alert('You have no order yet');
+    }
   }
 
   newOrder(uid: number) {

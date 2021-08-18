@@ -68,15 +68,7 @@ export class NavMenuComponent implements OnInit {
     }
    let v = localStorage.getItem('3');
     if (v == 'y' || v == 'r' || v == 'c') {
-      /*let m = document.getElementById("myDiv");
-      if (window.innerWidth < 400) {
-        m.setAttribute('style', 'width: 100px');
-        alert('1');
-      }
-      else {
-        m.setAttribute('style', 'width: 400px');
-        alert('4');
-      }*/
+    
        if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
         this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
@@ -202,16 +194,7 @@ export class NavMenuComponent implements OnInit {
     c.appendChild(bt);*/
   }
 
-  sendSearch() {
-   /*if (this.searchCondition == 'title')
-      this.route.navigateByUrl('/searchresult?title=' + this.searchTerm);
-    else if (this.searchCondition == 'author')
-     this.route.navigateByUrl('/searchresult?author=' + this.searchTerm);
-    var f = document.getElementById("formDiv");
-    var c = document.getElementById("contents");
-    f.removeChild(c);:*/
-  }
-
+  
   //close the shopping record div
   closeDisplay() {
     if (this.componentRef) {

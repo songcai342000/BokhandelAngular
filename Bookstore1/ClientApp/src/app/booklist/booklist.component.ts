@@ -53,9 +53,8 @@ export class BooklistComponent implements OnInit {
   constructor(private bookService: BookService, private componentFactoryResolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) { }
 
   ngOnInit() {
-  
+
     this.smallScreen();
-    localStorage.clear();
     this.getCrimeBooks();
     this.getFictionBooks();
     this.getRomanceBooks();
@@ -226,3 +225,4 @@ export class BooklistComponent implements OnInit {
 
 
 }
+
