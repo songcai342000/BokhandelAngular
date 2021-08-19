@@ -48,7 +48,7 @@ export class NavMenuComponent implements OnInit {
     //localStorage.clear();
     this.smallScreen();
     this.setPosition();
-    if (localStorage.getItem('0') != null) {
+    if (localStorage.getItem('bookservice-song-0') != null) {
       this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
     }
   }
@@ -61,18 +61,18 @@ export class NavMenuComponent implements OnInit {
       this.bookNumber = 0;
     }
     else if (l > 1) {
-      this.bookNumber = JSON.parse(localStorage.getItem('0')).length;
+      this.bookNumber = JSON.parse(localStorage.getItem('bookservice-song-0')).length;
     }
     else if (l <= 1) {
       this.bookNumber = 0;
     }
-   let v = localStorage.getItem('3');
+    let v = localStorage.getItem('bookservice-song-3');
     if (v == 'y' || v == 'r' || v == 'c') {
     
        if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-        this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
-        this.totalPrice = parseInt((JSON.parse(localStorage.getItem('1')))[1]);
+         this.totalAmount = parseInt((JSON.parse(localStorage.getItem('bookservice-song-1')))[0]);
+         this.totalPrice = parseInt((JSON.parse(localStorage.getItem('bookservice-song-1')))[1]);
 
         this.isShow = true;
         if (this.isShow) {
@@ -86,7 +86,7 @@ export class NavMenuComponent implements OnInit {
         this.totalAmount = 0;
         this.totalPrice = 0;
       }
-      localStorage.setItem('3', '');
+      localStorage.setItem('bookservice-song-3', '');
     }
   }
 
@@ -102,7 +102,7 @@ export class NavMenuComponent implements OnInit {
   //load the summary
   loadSummary() {
     if (localStorage.length > 1) {
-      localStorage.setItem('3', 'y');
+      localStorage.setItem('bookservice-song-3', 'y');
     }
   }
 
@@ -272,7 +272,7 @@ export class NavMenuComponent implements OnInit {
     this.bookAmount = bookAmount;
     this.bookService.removeItem(this.bookAmount);
     this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-    localStorage.setItem('3', 'r');
+    localStorage.setItem('bookservice-song-3', 'r');
   }
 
   //create shopping summary
@@ -311,7 +311,7 @@ export class NavMenuComponent implements OnInit {
 
   clearCart() {
     localStorage.clear();
-    localStorage.setItem('3', 'c');
+    localStorage.setItem('bookservice-song-3', 'c');
     this.getSummary();
   }
 

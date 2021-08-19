@@ -41,7 +41,7 @@ export class BookService {
 
   //register to localStorage
   register(book: Book) {
-    let b = localStorage.getItem('0');
+    let b = localStorage.getItem('bookservice-song-0');
     this.bks.length = 0;//clear the array
     if (b != null) {
       this.bks = JSON.parse(b);
@@ -50,7 +50,7 @@ export class BookService {
     else {
       this.bks.push(book);
     }
-    localStorage.setItem('0', JSON.stringify(this.bks));
+    localStorage.setItem('bookservice-song-0', JSON.stringify(this.bks));
     /*if (localStorage.length <= 2) {
       this.bks.length = 0;//clear bks
       this.bks.push(book);
@@ -64,7 +64,7 @@ export class BookService {
   }
 
   removeItem(bookAmount: BookAmount) {
-    let books = JSON.parse(localStorage.getItem('0'));
+    let books = JSON.parse(localStorage.getItem('bookservice-song-0'));
     for (let i = 0; i < books.length; i++) {
       let obj = books[i];
       if (obj.bookId == bookAmount["bookId"]) {
@@ -74,14 +74,14 @@ export class BookService {
     }
     //update the bookamount array in localstorage
     localStorage.clear();
-    localStorage.setItem('0', JSON.stringify(books));
+    localStorage.setItem('bookservice-song-0', JSON.stringify(books));
   }
 
   clearItems() {
-    var books = JSON.parse(localStorage.getItem('0'));
+    var books = JSON.parse(localStorage.getItem('bookservice-song-0'));
     books.length = 0;
     localStorage.clear();
-    localStorage.setItem('0', JSON.stringify(books));
+    localStorage.setItem('bookservice-song-0', JSON.stringify(books));
   }
 
   //create shopping summary
@@ -93,7 +93,7 @@ export class BookService {
     let totalAmount = 0;
     this.parameters = [];
     if (localStorage.length > 1) {
-      this.bks = JSON.parse(localStorage.getItem('0'));
+      this.bks = JSON.parse(localStorage.getItem('bookservice-song-0'));
       bks = this.bks;
       for (var a = 0; a < this.bks.length; a++) {
         itemNumber = 0;
@@ -112,7 +112,7 @@ export class BookService {
       }
       this.parameters.push(totalAmount)
       this.parameters.push(totalPrice)
-      localStorage.setItem('1', JSON.stringify(this.parameters));
+      localStorage.setItem('bookservice-song-1', JSON.stringify(this.parameters));
     }
     return bookAms;
     // }

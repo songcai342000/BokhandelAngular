@@ -68,7 +68,7 @@ export class BooklistComponent implements OnInit {
 
   onSelect(book: Book): void {
     this.book = book;
-    localStorage.setItem('3', 'y');
+    localStorage.setItem('bookservice-song-3', 'y');
     this.bookService.register(this.book);
   }
 
@@ -93,7 +93,7 @@ export class BooklistComponent implements OnInit {
     let l4 = localStorage.getItem('4');
     if (l4 == null || l4 == '') {
       this.ids.push(parseInt(event.target.value));
-      localStorage.setItem('4', JSON.stringify(this.ids));
+      localStorage.setItem('bookservice-song-4', JSON.stringify(this.ids));
     }
   }
 

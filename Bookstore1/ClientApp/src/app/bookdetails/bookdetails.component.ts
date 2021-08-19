@@ -35,7 +35,7 @@ export class BookdetailsComponent implements OnInit {
     this.getBook(this.id);
     this.otherBooks(this.id);
     //if no userId, get userId
-    let v = localStorage.getItem('4');
+    let v = localStorage.getItem('bookservice-song-4');
     // let o = localStorage.getItem('5');
     if (v == null || v == '') {
       //localStorage.setItem('4', 'no');
@@ -68,10 +68,10 @@ export class BookdetailsComponent implements OnInit {
 
   saveUserId(event: any) {
     // localStorage.setItem('4', event.target.value);
-    let l4 = localStorage.getItem('4');
+    let l4 = localStorage.getItem('bookservice-song-4');
     if (l4 == null || l4 == '') {
       this.ids.push(parseInt(event.target.value));
-      localStorage.setItem('4', JSON.stringify(this.ids));
+      localStorage.setItem('bookservice-song-4', JSON.stringify(this.ids));
     }
   }
 
@@ -88,7 +88,7 @@ export class BookdetailsComponent implements OnInit {
   //put a book in the shopping cart
   chooseBook(book: Book): void {
     this.book = book;
-    localStorage.setItem('3', 'y');
+    localStorage.setItem('bookservice-song-3', 'y');
     this.bookService.register(this.book);
     //this.loadComponent();
   }

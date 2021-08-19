@@ -35,15 +35,15 @@ export class ShoppingsummaryComponent implements OnInit {
 
   @HostListener('window:click', ['$event'])
   handleStorage(event) {
-    let v = localStorage.getItem('3');
+    let v = localStorage.getItem('bookservice-song-3');
     if (v == 'y' || v == 'c' || v == 'r') {
       document.getElementById("test").style.height = "auto";
       if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
         //this.totalAmount = parseInt(JSON.parse(localStorage.getItem('1')));
         //this.totalPrice = parseInt(JSON.parse(localStorage.getItem('2')));
-        this.totalAmount = parseInt((JSON.parse(localStorage.getItem('1')))[0]);
-        this.totalPrice = parseInt((JSON.parse(localStorage.getItem('1')))[1]);
+        this.totalAmount = parseInt((JSON.parse(localStorage.getItem('bookservice-song-1')))[0]);
+        this.totalPrice = parseInt((JSON.parse(localStorage.getItem('bookservice-song-1')))[1]);
         this.isShow = true;
         if (this.isShow) {
           this.isShow = false;
@@ -56,7 +56,7 @@ export class ShoppingsummaryComponent implements OnInit {
         this.totalAmount = 0;
         this.totalPrice = 0;
       }
-      localStorage.setItem('3', '');
+      localStorage.setItem('bookservice-song-3', '');
     }
   }
 
@@ -76,7 +76,7 @@ export class ShoppingsummaryComponent implements OnInit {
     this.bookAmount = bookAmount;
     this.bookService.removeItem(this.bookAmount);
     this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
-    localStorage.setItem('3', 'r');
+    localStorage.setItem('bookservice-song-3', 'r');
   }
 
   //create shopping summary
@@ -120,7 +120,7 @@ export class ShoppingsummaryComponent implements OnInit {
 
   clearCart() {
     localStorage.clear();
-    localStorage.setItem('3', 'c');
+    localStorage.setItem('bookservice-song-3', 'c');
     this.getSummary();
   }
 

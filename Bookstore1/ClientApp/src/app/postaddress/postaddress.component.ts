@@ -45,7 +45,7 @@ export class PostaddressComponent implements OnInit {
       f.innerHTML = "Postal-address";
     }
     // sessionStorage.removeItem('4');
-    this.ids = JSON.parse(localStorage.getItem('4'));
+    this.ids = JSON.parse(localStorage.getItem('bookservice-song-4'));
     if (this.ids != null) {
       this.userId = this.ids[0];
       //alert(this.userId);
@@ -57,7 +57,7 @@ export class PostaddressComponent implements OnInit {
     if (this.userId == null || this.userId == NaN || this.userId == 0) {
       this.router.navigate(['/page-not-found']);
     }
-    this.books = JSON.parse(localStorage.getItem('0'));
+    this.books = JSON.parse(localStorage.getItem('bookservice-song-0'));
     this.newOrder(this.userId);
   }
 
@@ -80,7 +80,7 @@ export class PostaddressComponent implements OnInit {
       //alert(this.orderIdInputV);
       this.orderId = parseInt(this.orderIdInputV);
       this.ids.push(this.orderId);
-      localStorage.setItem('4', JSON.stringify(this.ids));
+      localStorage.setItem('bookservice-song-4', JSON.stringify(this.ids));
       //sessionStorage.setItem('4', this.orderId.toString());
     }
   }
@@ -91,7 +91,7 @@ export class PostaddressComponent implements OnInit {
 
   //update user and order
   saveAddressOrder(): void {
-    if (localStorage.getItem('0') != null && JSON.parse(localStorage.getItem('0')).length > 0) {
+    if (localStorage.getItem('bookservice-song-0') != null && JSON.parse(localStorage.getItem('bookservice-song-0')).length > 0) {
       //make it ready for event trigger
       this.bookService.updateCustomer(this.userId, this.user).subscribe(() => {
         this.updateOrder(this.orderId, this.userId, this.books);
@@ -135,7 +135,7 @@ export class PostaddressComponent implements OnInit {
     //if all reservations are registrated
     if (this.count == l) {
       this.books = [];
-      localStorage.setItem('0', JSON.stringify(this.books));
+      localStorage.setItem('bookservice-song-0', JSON.stringify(this.books));
       sessionStorage.setItem('2', 'paid');
       this.router.navigate(['/thankyou']);
     }
