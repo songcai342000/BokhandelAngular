@@ -14,7 +14,7 @@
 }
 
 
-@media (min-height: 1000px) {
+@media (min-height: 850px) {
   #total {
     height: 100%;
   }

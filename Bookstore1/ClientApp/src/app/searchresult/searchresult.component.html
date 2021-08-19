@@ -1,4 +1,4 @@
-<div id="total" >
+<div id="total" [ngStyle]="{'min-height': books.length <= 1 ? '100%': 'auto'} ">
   <div id="background" *ngIf="books">
     <div id="result" class="mainTitle" *ngIf="books.length > 0"> Search results  </div>
     <div class="content">
