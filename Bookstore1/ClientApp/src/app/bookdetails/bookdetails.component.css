@@ -41,9 +41,26 @@
 #authorbooks {
   width: auto;
   background-image: linear-gradient(white, #ffff99);
-  padding: 20px;
-  margin: 1% 5% 5% 5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: auto;
+ /* border-left: 1px solid white;
+  border-right: 1px solid white;*/
+}
+
+@media (max-width: 550px){
+    #authorbooks {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#authorbooks > div {
+  height: 5em;
 }
 
 #authorTitleDiv {

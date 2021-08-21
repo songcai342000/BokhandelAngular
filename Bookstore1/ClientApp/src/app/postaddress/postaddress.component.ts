@@ -118,12 +118,15 @@ export class PostaddressComponent implements OnInit {
     this.order = { orderId: oid, userId: uid, status: 'Paid' };
     this.bookService.updateOrder(oid, this.order).subscribe(() => {
       //saveReservation must be wrapped together
+      alert('r1');
       this.saveReservation(oid, bks);
     });
   }
 
   saveReservation(oid: number, bks: Book[]) {
+    alert('r');
     let l = this.books.length;
+    alert(l);
     this.count = 0;
     for (let i = 0; i < l; i++) {
       let now = new Date(Date.now());
