@@ -269,7 +269,6 @@ button {
   position: absolute;
   left: 5vh;
   top: 5vw;
-  z-index: 4;
   background-color: aliceblue;
   border: 1px solid #d3d3d3;
   text-align: center;

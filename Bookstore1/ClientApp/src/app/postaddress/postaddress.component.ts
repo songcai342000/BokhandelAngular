@@ -30,13 +30,7 @@ export class PostaddressComponent implements OnInit {
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
-    /* let t = document.getElementById('total');
-     if (window.innerHeight < 800) {
-       t.style.height = 'auto';
-     }
-     else {
-       t.style.height = '100%';
-     }*/
+ 
     window.scrollTo(0, 0);
     if (window.innerWidth < 300) {
       let b = document.getElementById('background');
@@ -77,7 +71,6 @@ export class PostaddressComponent implements OnInit {
   saveOrderId(event: any) {
     if (this.ids.length < 2) {
       this.orderIdInputV = event.target.value;
-      //alert(this.orderIdInputV);
       this.orderId = parseInt(this.orderIdInputV);
       this.ids.push(this.orderId);
       localStorage.setItem('bookservice-song-4', JSON.stringify(this.ids));
@@ -103,7 +96,6 @@ export class PostaddressComponent implements OnInit {
   }
 
   newOrder(uid: number) {
-    //  alert(localStorage.getItem('4'));
     this.order = { userId: uid, status: 'Not Paid' };
     this.bookService.newOrder(this.order).subscribe(() => {
       this.getOrderId();
@@ -118,15 +110,12 @@ export class PostaddressComponent implements OnInit {
     this.order = { orderId: oid, userId: uid, status: 'Paid' };
     this.bookService.updateOrder(oid, this.order).subscribe(() => {
       //saveReservation must be wrapped together
-      alert('r1');
       this.saveReservation(oid, bks);
     });
   }
 
   saveReservation(oid: number, bks: Book[]) {
-    alert('r');
     let l = this.books.length;
-    alert(l);
     this.count = 0;
     for (let i = 0; i < l; i++) {
       let now = new Date(Date.now());
