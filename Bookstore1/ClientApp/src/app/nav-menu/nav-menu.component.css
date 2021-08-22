@@ -241,10 +241,11 @@ button {
 
 #test {
   /*position: relative;*/
-  position: sticky;
+  /*position: sticky;
   left: 5em;
-  top: 5em;
-  z-index: 2;
+  top: 5em;*/
+  background-color: aliceblue;
+  z-index: 999;
 }
 
 /*#myDiv {
@@ -264,11 +265,15 @@ button {
   border-radius: 4px;
   visibility: visible;
 }*/
+.move {
+  cursor: move;
+}
 
 #myDiv {
   position: absolute;
   left: 5vh;
-  top: 5vw;
+  top: 30vw;
+  z-index: 999;
   background-color: aliceblue;
   border: 1px solid #d3d3d3;
   text-align: center;

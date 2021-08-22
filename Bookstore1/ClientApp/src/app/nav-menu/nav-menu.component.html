@@ -68,8 +68,8 @@
 
 
 <!-- Draggable DIV -->
-<div *ngIf="bookAmounts" id="test">
-  <div cdkDrag id="myDiv" [cdkDragFreeDragPosition]="dragPosition" *ngIf="!isShow" (cdkDragEnded)="dragEnded($event)" [style.width]="summaryWidth">
+<div *ngIf="bookAmounts" id="test" class="move">
+  <div cdkDrag id="myDiv" [cdkDragFreeDragPosition]="dragPosition" *ngIf="!isShow" (cdkDragEnded)="dragEnded($event)" [style.width]="summaryWidth" >
     <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
     <div id="myDivHeader">
       <button id="xx" (mousedown)="toggleDisplay()">

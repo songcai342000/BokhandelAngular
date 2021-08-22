@@ -68,7 +68,6 @@ export class NavMenuComponent implements OnInit {
     }
     let v = localStorage.getItem('bookservice-song-3');
     if (v == 'y' || v == 'r' || v == 'c') {
-    
        if (localStorage.length > 1) {
         this.bookAmounts = this.bookService.createSummary(this.bookAmounts, this.books);
          this.totalAmount = parseInt((JSON.parse(localStorage.getItem('bookservice-song-1')))[0]);
@@ -303,7 +302,6 @@ export class NavMenuComponent implements OnInit {
     }
     else {
       let original = document.getElementById("myDiv").getBoundingClientRect();
-      alert(original);
       this.dragPosition.x = 500;
       this.dragPosition.y = -1000;
     }
@@ -342,6 +340,7 @@ export class NavMenuComponent implements OnInit {
       this.summaryWidth = '90vw';
     }
   }
+
 
   toggleMobilMeny() {
     var x = document.getElementById("mobilLinks");
