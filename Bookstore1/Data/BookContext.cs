@@ -24,8 +24,6 @@ namespace Bookstore1.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Registration>().HasKey(r => new { r.BookId, r.AuthorId });
-            modelBuilder.Entity<Reservation>().HasOne<Order>(o => o.Order).WithMany(rs => rs.Reservations).HasForeignKey(o => o.OrderId);
             modelBuilder.Entity<Book>().ToTable("Books");
             modelBuilder.Entity<Author>().ToTable("Authors");
             modelBuilder.Entity<Order>().ToTable("Orders");
@@ -34,6 +32,9 @@ namespace Bookstore1.Data
             modelBuilder.Entity<Registration>().ToTable("Registrations");
             modelBuilder.Entity<Contact>().ToTable("Contacts");
             modelBuilder.Entity<Event>().ToTable("Events");
+            modelBuilder.Entity<Registration>().HasKey(r => new { r.BookId, r.AuthorId });
+            modelBuilder.Entity<Reservation>().HasOne<Order>(o => o.Order).WithMany(rs => rs.Reservations).HasForeignKey(o => o.OrderId);
+
         }
 
 
