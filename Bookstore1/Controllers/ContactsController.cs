@@ -119,7 +119,7 @@ namespace Bookstore1.Controllers
             // Specify the email sender.
             // Create a mailing address that includes a UTF8 character
             // in the display name.
-            MailAddress from = new MailAddress("songhelene@hotmail.com",
+            MailAddress from = new MailAddress("*************",
                contact.FirstName + (char)0xD8 + contact.LastName,
             System.Text.Encoding.UTF8);
             // Set destinations for the email message.
