@@ -33,21 +33,22 @@ namespace Bookstore1.Controllers
         [HttpGet("RomanceBooks")]
         public async Task<ActionResult<IEnumerable<Object>>> RomanceBooks()
         {
-            var romances = from rg in _context.Registrations
-                        join b in _context.Books on rg.BookId equals b.BookId
-                        join a in _context.Authors on rg.AuthorId equals a.AuthorId
-                        where b.Genre == "Romance"
-                        select new
-                        {
-                            BookId = b.BookId,
-                            Title = b.Title,
-                            Author = a.AuthorName,
-                            Introduction = b.Introduction,
-                            Genre = b.Genre,
-                            Price = b.Price,
-                            ImageUrl = b.ImageUrl,
-                        };
-            return await romances.ToListAsync();
+          
+                var romances = from rg in _context.Registrations
+                               join b in _context.Books on rg.BookId equals b.BookId
+                               join a in _context.Authors on rg.AuthorId equals a.AuthorId
+                               where b.Genre == "Romance"
+                               select new
+                               {
+                                   BookId = b.BookId,
+                                   Title = b.Title,
+                                   Author = a.AuthorName,
+                                   Introduction = b.Introduction,
+                                   Genre = b.Genre,
+                                   Price = b.Price,
+                                   ImageUrl = b.ImageUrl,
+                               };
+                return await romances.ToListAsync();
         }
 
         // GET: api/Books/RomanceBooks
