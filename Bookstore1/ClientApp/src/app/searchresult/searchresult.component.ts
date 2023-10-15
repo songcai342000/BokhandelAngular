@@ -50,6 +50,24 @@ export class SearchresultComponent implements OnInit {
 
   }
 
+  /*ngAfterViewInit() { //this doesn't work
+    const t = this.route.snapshot.queryParams["title"];
+    alert(t);
+    const a = this.route.snapshot.queryParams["author"];
+    if (t != null && t != '') {
+      alert('search');
+      this.bookService.getByTitle(t).subscribe(books => this.books = books);
+    }
+    if (a != null && a != '') {
+      this.bookService.getByAuthor(this.route.snapshot.queryParams["author"]).subscribe(books => this.books = books);
+    }
+    //if no userId, get userId
+    let v = localStorage.getItem('bookservice-song-4');
+    if (v == null || v == '') {
+      this.newCustomer();
+    }
+  }*/
+
   newCustomer() {
     this.user = { userId: 0, userName: '', firstName: '', familyName: '', mail: '', address: '', postNumber: '', country: '', mobil: '' };
     this.bookService.newCustomer(this.user).subscribe(() => {
