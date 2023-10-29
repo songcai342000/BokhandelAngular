@@ -8,8 +8,7 @@ const routes: Routes = [{ path: '', component: BooklistComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  entryComponents: [ShoppingsummaryComponent],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class BooklistRoutingModule { }
